@@ -150,6 +150,12 @@
     <Compile Include="Formularios\Bienvenida.Designer.cs">
       <DependentUpon>Bienvenida.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Creditos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Creditos.Designer.cs">
+      <DependentUpon>Creditos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FormMenuPrueba.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,9 @@
     <Compile Include="Clases\Sesion.cs" />
     <EmbeddedResource Include="Formularios\Bienvenida.resx">
       <DependentUpon>Bienvenida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Creditos.resx">
+      <DependentUpon>Creditos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormMenuPrueba.resx">
       <DependentUpon>FormMenuPrueba.cs</DependentUpon>
