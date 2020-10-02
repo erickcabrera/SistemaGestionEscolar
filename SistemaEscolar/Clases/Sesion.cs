@@ -13,7 +13,7 @@ namespace SistemaEscolar
     {
         private int nivel;
         private String nombre;
-
+      
         public int Nivel { get => nivel; set => nivel = value; }
         public string Nombre { get => nombre; set => nombre = value; }
 
@@ -83,7 +83,7 @@ namespace SistemaEscolar
 
                 while (dr1.Read())
                 {
-                    nombreProfesor = dr1["nombre"].ToString().Trim();
+                    nombreProfesor = dr1["nombreProfesor"].ToString().Trim();
                 }
                 if (dr1 != null)
                 {

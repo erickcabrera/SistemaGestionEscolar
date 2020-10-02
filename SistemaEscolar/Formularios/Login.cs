@@ -68,12 +68,21 @@ namespace SistemaEscolar
             try
             {
                 Sesion sesion = new Sesion();
-                if (sesion.Iniciar(txtUsuario.Text, txtContra.Text) == 1)
+                sesion.Nivel = sesion.Iniciar(txtUsuario.Text, txtContra.Text);
+                if (sesion.Nivel == 1)
                 {
                     idProfesor = sesion.ExtraerID(txtUsuario.Text, txtContra.Text);
                     nombreProfesor = sesion.ExtraerNombre(txtUsuario.Text, txtContra.Text);
                     FormMenuPrueba formMenuPrueba = new FormMenuPrueba();
                     formMenuPrueba.Show();
+                    this.Hide();
+                }
+                else if (sesion.Nivel == 2)
+                {
+                    idProfesor = sesion.ExtraerID(txtUsuario.Text, txtContra.Text);
+                    nombreProfesor = sesion.ExtraerNombre(txtUsuario.Text, txtContra.Text);
+                    MenuProfesor menuProfesor = new MenuProfesor();
+                    menuProfesor.Show();
                     this.Hide();
                 }
                 else
@@ -85,7 +94,6 @@ namespace SistemaEscolar
             {
                 Console.WriteLine("Error: " + Ex);
             }
-            
         }
     }
 }

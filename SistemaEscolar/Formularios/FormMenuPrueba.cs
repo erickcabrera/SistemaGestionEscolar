@@ -27,5 +27,10 @@ namespace SistemaEscolar.Formularios
         {
 
         }
+
+        private void FormMenuPrueba_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
