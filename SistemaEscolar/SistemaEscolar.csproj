@@ -144,11 +144,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Conexion.cs" />
-    <Compile Include="Formularios\Alumno.cs">
+    <Compile Include="Formularios\FrmAlumno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Alumno.Designer.cs">
-      <DependentUpon>Alumno.cs</DependentUpon>
+    <Compile Include="Formularios\FrmAlumno.Designer.cs">
+      <DependentUpon>FrmAlumno.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Bienvenida.cs">
       <SubType>Form</SubType>
@@ -183,8 +183,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Clases\Sesion.cs" />
-    <EmbeddedResource Include="Formularios\Alumno.resx">
-      <DependentUpon>Alumno.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\FrmAlumno.resx">
+      <DependentUpon>FrmAlumno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Bienvenida.resx">
       <DependentUpon>Bienvenida.cs</DependentUpon>

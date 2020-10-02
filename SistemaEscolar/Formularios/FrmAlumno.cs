@@ -12,7 +12,7 @@ using SistemaEscolar.Formularios;
 
 namespace SistemaEscolar.Formularios
 {
-    public partial class Alumno : Form
+    public partial class FrmAlumno : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -24,7 +24,7 @@ namespace SistemaEscolar.Formularios
              int nWidthEllipse,
              int nHeightEllipse
          );
-        public Alumno()
+        public FrmAlumno()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;

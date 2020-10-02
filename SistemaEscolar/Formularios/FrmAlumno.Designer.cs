@@ -1,6 +1,6 @@
 ﻿namespace SistemaEscolar.Formularios
 {
-    partial class Alumno
+    partial class FrmAlumno
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Alumno));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAlumno));
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.picBMinimizar = new System.Windows.Forms.PictureBox();
             this.picBSalir = new System.Windows.Forms.PictureBox();
+            this.picBMinimizar = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -60,8 +60,8 @@
             this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvDatos
@@ -94,17 +94,6 @@
             this.panel1.Size = new System.Drawing.Size(1387, 76);
             this.panel1.TabIndex = 1;
             // 
-            // picBMinimizar
-            // 
-            this.picBMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picBMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("picBMinimizar.Image")));
-            this.picBMinimizar.Location = new System.Drawing.Point(1252, 20);
-            this.picBMinimizar.Name = "picBMinimizar";
-            this.picBMinimizar.Size = new System.Drawing.Size(45, 42);
-            this.picBMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBMinimizar.TabIndex = 8;
-            this.picBMinimizar.TabStop = false;
-            // 
             // picBSalir
             // 
             this.picBSalir.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -115,6 +104,17 @@
             this.picBSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBSalir.TabIndex = 26;
             this.picBSalir.TabStop = false;
+            // 
+            // picBMinimizar
+            // 
+            this.picBMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picBMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("picBMinimizar.Image")));
+            this.picBMinimizar.Location = new System.Drawing.Point(1252, 20);
+            this.picBMinimizar.Name = "picBMinimizar";
+            this.picBMinimizar.Size = new System.Drawing.Size(45, 42);
+            this.picBMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBMinimizar.TabIndex = 8;
+            this.picBMinimizar.TabStop = false;
             // 
             // label2
             // 
@@ -348,7 +348,7 @@
             this.label12.Text = "Registro de alumnos";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // Alumno
+            // FrmAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -381,14 +381,14 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvDatos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Alumno";
+            this.Name = "FrmAlumno";
             this.Text = "Alumno";
             this.Load += new System.EventHandler(this.Alumno_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
