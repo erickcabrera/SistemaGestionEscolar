@@ -10,7 +10,7 @@ namespace SistemaEscolar.Clases
     {
         private string dui;
         private string nit;
-        private string correo; 
+        private string correo;
         public Profesor()
         {
 
