@@ -8,24 +8,59 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SistemaEscolar.Formularios;
+using System.Runtime.InteropServices;
+
 
 namespace SistemaEscolar.Formularios
 {
     public partial class FormMenuPrueba : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+         (
+             int nLeftRect,
+             int nTopRect,
+             int nRightRect,
+             int nBottomRect,
+             int nWidthEllipse,
+             int nHeightEllipse
+         );
+
         public FormMenuPrueba()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
         private void FormMenuPrueba_Load(object sender, EventArgs e)
         {
             MessageBox.Show("Bienvenido " + FrmLogin.nombreProfesor.ToString() + " con codigo "+ FrmLogin.idProfesor.ToString());
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+        
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Seguro que desea salir?", "SALIR", MessageBoxButtons.YesNo);
+            if(resultado == DialogResult.Yes)
+            {
+                this.Hide();
+                FrmLogin login = new FrmLogin();
+                login.Show();
+            }else if(resultado == DialogResult.No)
+            {
+                MessageBox.Show("Continue con su sesión...", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
