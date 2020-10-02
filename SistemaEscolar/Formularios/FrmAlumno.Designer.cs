@@ -58,6 +58,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
@@ -209,7 +211,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(38, 487);
+            this.label10.Location = new System.Drawing.Point(38, 530);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(101, 22);
             this.label10.TabIndex = 27;
@@ -291,7 +293,7 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(277, 487);
+            this.richTextBox1.Location = new System.Drawing.Point(277, 550);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(258, 96);
             this.richTextBox1.TabIndex = 30;
@@ -303,9 +305,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(54, 600);
+            this.button1.Location = new System.Drawing.Point(42, 668);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(481, 53);
+            this.button1.Size = new System.Drawing.Size(493, 53);
             this.button1.TabIndex = 31;
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = false;
@@ -348,12 +350,33 @@
             this.label12.Text = "Registro de alumnos";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(38, 489);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(57, 22);
+            this.label13.TabIndex = 35;
+            this.label13.Text = "Sexo:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(277, 489);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(258, 21);
+            this.comboBox1.TabIndex = 36;
+            // 
             // FrmAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1320, 682);
+            this.ClientSize = new System.Drawing.Size(1320, 744);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
@@ -425,5 +448,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
