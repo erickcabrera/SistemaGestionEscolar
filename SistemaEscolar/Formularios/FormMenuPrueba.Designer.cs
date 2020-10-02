@@ -347,6 +347,7 @@
             this.Name = "FormMenuPrueba";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMenuPrueba";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMenuPrueba_FormClosed);
             this.Load += new System.EventHandler(this.FormMenuPrueba_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

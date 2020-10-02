@@ -62,5 +62,10 @@ namespace SistemaEscolar.Formularios
                 MessageBox.Show("Continue con su sesión...", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void FormMenuPrueba_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
