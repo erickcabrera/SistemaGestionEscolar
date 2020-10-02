@@ -24,7 +24,7 @@ namespace SistemaEscolar.Clases
         {
 
         }
-        public Alumno(string nombres, string apellidos, string fechaNac, string sexo, string telefono, string direccion, string numPartida, string nie, 
+        public Alumno(string nombres, string apellidos, string fechaNac, string sexo, string telefono, string direccion, string numPartida, string nie,
             string nombrePadre, string nombreMadre, string nombreEncargado, string fotoAlumno)
         {
             this.nombres = nombres;

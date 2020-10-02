@@ -28,7 +28,7 @@ namespace SistemaEscolar.Clases
         {
 
         }
-        public Persona(string nombres, string apellidos, string fechaNac, string sexo, string telefono, string direccion,string foto)
+        public Persona(string nombres, string apellidos, string fechaNac, string sexo, string telefono, string direccion, string foto)
         {
             this.nombres = nombres;
             this.apellidos = apellidos;
@@ -43,4 +43,3 @@ namespace SistemaEscolar.Clases
 
         }
     }
-}

@@ -143,7 +143,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Alumno.cs" />
     <Compile Include="Clases\Conexion.cs" />
+    <Compile Include="Clases\Persona.cs" />
+    <Compile Include="Clases\Profesor.cs" />
     <Compile Include="Formularios\FrmAlumno.cs">
       <SubType>Form</SubType>
     </Compile>
