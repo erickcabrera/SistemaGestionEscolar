@@ -168,6 +168,12 @@
     <Compile Include="Formularios\FormMenuPrueba.Designer.cs">
       <DependentUpon>FormMenuPrueba.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmProfesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmProfesor.Designer.cs">
+      <DependentUpon>FrmProfesor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormMenuPrueba.resx">
       <DependentUpon>FormMenuPrueba.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmProfesor.resx">
+      <DependentUpon>FrmProfesor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
