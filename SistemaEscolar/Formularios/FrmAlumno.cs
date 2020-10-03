@@ -35,5 +35,10 @@ namespace SistemaEscolar.Formularios
         {
             
         }
+
+        private void picBMinimizar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

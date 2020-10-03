@@ -67,5 +67,10 @@ namespace SistemaEscolar.Formularios
         {
             Application.Exit();
         }
+
+        private void picBMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }
