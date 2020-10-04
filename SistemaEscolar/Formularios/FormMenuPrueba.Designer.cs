@@ -84,7 +84,7 @@
             // 
             // btnEstudiantes
             // 
-            this.btnEstudiantes.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstudiantes.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEstudiantes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnEstudiantes.Location = new System.Drawing.Point(130, 72);
             this.btnEstudiantes.Name = "btnEstudiantes";
@@ -107,11 +107,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(136, 27);
+            this.label1.Location = new System.Drawing.Point(107, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(236, 31);
+            this.label1.Size = new System.Drawing.Size(287, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "Gestión de estudiantes";
             // 
@@ -142,7 +142,7 @@
             // 
             // btnMaterias
             // 
-            this.btnMaterias.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaterias.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMaterias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnMaterias.Location = new System.Drawing.Point(123, 72);
             this.btnMaterias.Name = "btnMaterias";
@@ -150,6 +150,7 @@
             this.btnMaterias.TabIndex = 6;
             this.btnMaterias.Text = "Acceder";
             this.btnMaterias.UseVisualStyleBackColor = true;
+            this.btnMaterias.Click += new System.EventHandler(this.btnMaterias_Click);
             // 
             // pictureBox4
             // 
@@ -164,11 +165,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(129, 27);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(208, 31);
+            this.label4.Size = new System.Drawing.Size(254, 30);
             this.label4.TabIndex = 5;
             this.label4.Text = "Gestión de materias";
             // 
@@ -186,7 +187,7 @@
             // 
             // btnCursos
             // 
-            this.btnCursos.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCursos.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCursos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnCursos.Location = new System.Drawing.Point(130, 72);
             this.btnCursos.Name = "btnCursos";
@@ -208,11 +209,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(136, 27);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(189, 31);
+            this.label5.Size = new System.Drawing.Size(225, 30);
             this.label5.TabIndex = 3;
             this.label5.Text = "Gestión de cursos";
             // 
@@ -230,7 +231,7 @@
             // 
             // btnUsuario
             // 
-            this.btnUsuario.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuario.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnUsuario.Location = new System.Drawing.Point(130, 72);
             this.btnUsuario.Name = "btnUsuario";
@@ -252,11 +253,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(160, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(168, 31);
+            this.label3.Size = new System.Drawing.Size(200, 30);
             this.label3.TabIndex = 3;
             this.label3.Text = "Agregar usuario";
             // 
@@ -274,7 +275,7 @@
             // 
             // btnProfesores
             // 
-            this.btnProfesores.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfesores.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProfesores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnProfesores.Location = new System.Drawing.Point(126, 73);
             this.btnProfesores.Name = "btnProfesores";
@@ -297,11 +298,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(129, 27);
+            this.label2.Location = new System.Drawing.Point(118, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(227, 31);
+            this.label2.Size = new System.Drawing.Size(273, 30);
             this.label2.TabIndex = 0;
             this.label2.Text = "Gestión de profesores";
             // 
@@ -343,11 +344,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial Narrow", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(35, 11);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(166, 37);
+            this.label7.Size = new System.Drawing.Size(213, 39);
             this.label7.TabIndex = 0;
             this.label7.Text = "¡Bienvenido!";
             // 

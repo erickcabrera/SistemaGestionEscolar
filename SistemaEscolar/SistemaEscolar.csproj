@@ -183,6 +183,12 @@
     <Compile Include="Formularios\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\materia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\materia.Designer.cs">
+      <DependentUpon>materia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\MenuProfesor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\materia.resx">
+      <DependentUpon>materia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\MenuProfesor.resx">
       <DependentUpon>MenuProfesor.cs</DependentUpon>

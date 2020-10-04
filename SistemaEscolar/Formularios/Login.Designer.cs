@@ -70,11 +70,11 @@
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(40, 93);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(208, 106);
+            this.label3.Size = new System.Drawing.Size(227, 106);
             this.label3.TabIndex = 0;
             this.label3.Text = "Sistema de gestión Escolar";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -82,11 +82,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(64, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 32);
+            this.label1.Size = new System.Drawing.Size(183, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "¡Bienvenido!";
             // 
@@ -104,40 +104,40 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(432, 91);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(177, 27);
+            this.label2.Size = new System.Drawing.Size(197, 30);
             this.label2.TabIndex = 2;
             this.label2.Text = "Inicio de sesión";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(347, 177);
+            this.label4.Location = new System.Drawing.Point(357, 181);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 27);
+            this.label4.Size = new System.Drawing.Size(106, 30);
             this.label4.TabIndex = 2;
             this.label4.Text = "Usuario:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(313, 249);
+            this.label5.Location = new System.Drawing.Point(304, 243);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(143, 27);
+            this.label5.Size = new System.Drawing.Size(159, 30);
             this.label5.TabIndex = 2;
             this.label5.Text = "Contraseña:";
             // 
             // txtUsuario
             // 
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(462, 177);
+            this.txtUsuario.Location = new System.Drawing.Point(475, 181);
             this.txtUsuario.MaxLength = 20;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(201, 26);
@@ -146,7 +146,7 @@
             // txtContra
             // 
             this.txtContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContra.Location = new System.Drawing.Point(462, 249);
+            this.txtContra.Location = new System.Drawing.Point(478, 249);
             this.txtContra.MaxLength = 20;
             this.txtContra.Name = "txtContra";
             this.txtContra.Size = new System.Drawing.Size(201, 26);
