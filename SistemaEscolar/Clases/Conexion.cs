@@ -14,7 +14,7 @@ namespace SistemaEscolar.Clases
         private static String usuario = "sa";
         private static String clave = "123456";
         private static String db = "BD_escuela";
-        private static String cadena = "server=" + server + ";uid=" + usuario + ";pwd=" + clave + ";database=" + db;
+        private static String cadena = "server=" + server + ";uid=" + usuario + ";pwd=" + clave + ";database=" + db+ "; Integrated security = true;";
         
         public SqlConnection Conectar()
         {
