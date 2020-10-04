@@ -56,5 +56,21 @@ namespace SistemaEscolar.Formularios
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void MenuProfesor_Load(object sender, EventArgs e)
+        {
+            System.IO.FileStream fs = new System.IO.FileStream(FrmLogin.fotoPerfilProfesor.ToString(), System.IO.FileMode.Open, System.IO.FileAccess.Read);
+            pbFotoPerfil.Image = System.Drawing.Image.FromStream(fs);
+            lblNombreUsuario.Text = FrmLogin.nombreProfesor.ToString();
+            fs.Close();
+            //MessageBox.Show("Bienvenido " + FrmLogin.nombreProfesor.ToString() + " con codigo " + FrmLogin.idProfesor.ToString());
+        }
+
+       
     }
 }
