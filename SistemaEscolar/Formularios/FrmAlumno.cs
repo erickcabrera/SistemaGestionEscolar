@@ -40,14 +40,19 @@ namespace SistemaEscolar.Formularios
         private bool ValidarFechaySexo()
 
         {
-            DateTime FechaNAlumno= dtpFechanacimiento.Value.Date;
+            DateTime FechaNacimiento= dtpFechanacimiento.Value;
             bool validarF = true;
 
 
-            if (FechaNAlumno.Date >= System.DateTime.Now.Date || cmbSexoA.SelectedIndex == -1)
+            if (FechaNacimiento > System.DateTime.Now.Date )
             {
                 validarF = false;
                 errorProvider1.SetError(dtpFechanacimiento, "La fecha no puede ser mayor a la fecha de este día");
+                
+            }
+            if(cmbSexoA.SelectedIndex==-1)
+            {
+                validarF = false;
                 errorProvider1.SetError(cmbSexoA, "Este campo no puede estar vacío");
             }
             return validarF;

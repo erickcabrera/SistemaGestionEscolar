@@ -110,18 +110,22 @@ namespace SistemaEscolar.Formularios
             errorProvider1.SetError(rtbDireccionP, "");
         }
 
-        //validar que la fecha de nacimiento no sea mayor a la fecha del sistema
         private bool ValidarFechaySexo()
 
         {
-            DateTime FechaNProfesor = dtpFechaP.Value;
+            DateTime FechaNacimiento = dtpFechaP.Value;
             bool validarF = true;
 
 
-            if (FechaNProfesor >= System.DateTime.Now.Date || cmbSexoP.SelectedIndex == -1)
+            if (FechaNacimiento > System.DateTime.Now.Date )
             {
                 validarF = false;
                 errorProvider1.SetError(dtpFechaP, "La fecha no puede ser mayor a la fecha de este día");
+
+            }
+            if (cmbSexoP.SelectedIndex == -1)
+            {
+                validarF = false;
                 errorProvider1.SetError(cmbSexoP, "Este campo no puede estar vacío");
             }
             return validarF;
