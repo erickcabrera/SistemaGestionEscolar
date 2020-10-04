@@ -30,15 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(materia));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.picBSalir = new System.Windows.Forms.PictureBox();
             this.picBMinimizar = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtMateria = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnAgregarMateria = new System.Windows.Forms.Button();
             this.btnModificarMateria = new System.Windows.Forms.Button();
             this.btnEliminarMateria = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
@@ -55,17 +56,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(667, 72);
             this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(16, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(282, 33);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Gestión de materias";
             // 
             // picBSalir
             // 
@@ -91,6 +81,17 @@
             this.picBMinimizar.TabStop = false;
             this.picBMinimizar.Click += new System.EventHandler(this.picBMinimizar_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(16, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(282, 33);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Gestión de materias";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -106,7 +107,7 @@
             // 
             this.txtMateria.Location = new System.Drawing.Point(210, 89);
             this.txtMateria.Name = "txtMateria";
-            this.txtMateria.Size = new System.Drawing.Size(165, 20);
+            this.txtMateria.Size = new System.Drawing.Size(192, 20);
             this.txtMateria.TabIndex = 1;
             // 
             // dataGridView1
@@ -114,15 +115,15 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(18, 219);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(568, 245);
+            this.dataGridView1.Size = new System.Drawing.Size(581, 245);
             this.dataGridView1.TabIndex = 2;
             // 
             // btnAgregarMateria
             // 
             this.btnAgregarMateria.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarMateria.Location = new System.Drawing.Point(396, 77);
+            this.btnAgregarMateria.Location = new System.Drawing.Point(25, 141);
             this.btnAgregarMateria.Name = "btnAgregarMateria";
-            this.btnAgregarMateria.Size = new System.Drawing.Size(190, 45);
+            this.btnAgregarMateria.Size = new System.Drawing.Size(139, 45);
             this.btnAgregarMateria.TabIndex = 3;
             this.btnAgregarMateria.Text = "Agregar";
             this.btnAgregarMateria.UseVisualStyleBackColor = true;
@@ -131,9 +132,9 @@
             // btnModificarMateria
             // 
             this.btnModificarMateria.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarMateria.Location = new System.Drawing.Point(94, 153);
+            this.btnModificarMateria.Location = new System.Drawing.Point(170, 141);
             this.btnModificarMateria.Name = "btnModificarMateria";
-            this.btnModificarMateria.Size = new System.Drawing.Size(190, 45);
+            this.btnModificarMateria.Size = new System.Drawing.Size(139, 45);
             this.btnModificarMateria.TabIndex = 3;
             this.btnModificarMateria.Text = "Modificar";
             this.btnModificarMateria.UseVisualStyleBackColor = true;
@@ -141,12 +142,22 @@
             // btnEliminarMateria
             // 
             this.btnEliminarMateria.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarMateria.Location = new System.Drawing.Point(323, 153);
+            this.btnEliminarMateria.Location = new System.Drawing.Point(315, 141);
             this.btnEliminarMateria.Name = "btnEliminarMateria";
-            this.btnEliminarMateria.Size = new System.Drawing.Size(190, 45);
+            this.btnEliminarMateria.Size = new System.Drawing.Size(139, 45);
             this.btnEliminarMateria.TabIndex = 3;
             this.btnEliminarMateria.Text = "Eliminar";
             this.btnEliminarMateria.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(460, 141);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(139, 45);
+            this.btnBuscar.TabIndex = 3;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // materia
             // 
@@ -155,6 +166,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(618, 489);
             this.Controls.Add(this.btnModificarMateria);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnEliminarMateria);
             this.Controls.Add(this.btnAgregarMateria);
             this.Controls.Add(this.dataGridView1);
@@ -187,5 +199,6 @@
         private System.Windows.Forms.Button btnAgregarMateria;
         private System.Windows.Forms.Button btnModificarMateria;
         private System.Windows.Forms.Button btnEliminarMateria;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

@@ -93,5 +93,17 @@ namespace SistemaEscolar.Formularios
             frmMa.Show();
             this.Hide();
         }
+
+        private void btnCursos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FrmGrado frmG = new FrmGrado();
+            frmG.Show();
+            this.Hide();
+        }
     }
 }

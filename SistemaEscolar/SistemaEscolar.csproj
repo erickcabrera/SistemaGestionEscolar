@@ -171,6 +171,12 @@
     <Compile Include="Formularios\FormMenuPrueba.Designer.cs">
       <DependentUpon>FormMenuPrueba.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmGrado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmGrado.Designer.cs">
+      <DependentUpon>FrmGrado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmProfesor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormMenuPrueba.resx">
       <DependentUpon>FormMenuPrueba.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmGrado.resx">
+      <DependentUpon>FrmGrado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmProfesor.resx">
       <DependentUpon>FrmProfesor.cs</DependentUpon>
