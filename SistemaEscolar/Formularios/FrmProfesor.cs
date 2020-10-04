@@ -235,9 +235,14 @@ namespace SistemaEscolar.Formularios
             }
         }
 
-        private void picBMinimizar_Click(object sender, EventArgs e)
+        private void picBMinimizar_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        /* private void picBMinimizar_Click(object sender, EventArgs e)
+         {
+             this.WindowState = FormWindowState.Minimized;
+         }*/
     }
 }
