@@ -34,7 +34,7 @@ namespace SistemaEscolar.Formularios
         private void picBSalir_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormMenuPrueba formMP = new FormMenuPrueba();
+            FrmMenuAdmin formMP = new FrmMenuAdmin();
             formMP.Show();
             this.Hide();
         }

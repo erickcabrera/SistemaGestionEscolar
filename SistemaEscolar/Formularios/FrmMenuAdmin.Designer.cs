@@ -1,6 +1,6 @@
 ﻿namespace SistemaEscolar.Formularios
 {
-    partial class FormMenuPrueba
+    partial class FrmMenuAdmin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenuPrueba));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuAdmin));
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnEstudiantes = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
