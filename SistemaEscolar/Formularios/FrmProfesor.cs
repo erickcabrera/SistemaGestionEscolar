@@ -38,23 +38,50 @@ namespace SistemaEscolar.Formularios
             //esta variable verifica si se está validando algo
             bool validado = true;
 
-            //if para validar camppos vacíos en el formulario de Profesor
-            if (txtApellidoP.Text == "" || mtxtDUIP.Text == "" || mtxtNITP.Text == "" ||
-                txtNombreP.Text == "" || mtxtNumEscalafonP.Text == "" || mtxtTelefonoP.Text == "" || txtEmailP.Text == ""||rtbDireccionP.Text=="")
+           //if para validar camppos vacíos en el formulario de Profesor
+            
+            if(txtApellidoP.Text=="")
             {
                 validado = false;
                 errorProvider1.SetError(txtApellidoP, "Ingresar los apellidos del docente");
+            }
+            if(mtxtDUIP.Text=="        - ")
+            {
+                validado = false;
                 errorProvider1.SetError(mtxtDUIP, "Ingresar el número de DUI");
+            }
+            if(mtxtNITP.Text=="    -      -   - ")
+            {
+                validado = false;
                 errorProvider1.SetError(mtxtNITP, "Ingresar el número de NIT del docente");
-                errorProvider1.SetError(txtEmailP, "Ingresar el correo electrónico del docente");
+            }
+            if(txtNombreP.Text=="")
+            {
+                validado = false;
                 errorProvider1.SetError(txtNombreP, "Ingresar el nombre del docente");
+            }
+            if(mtxtNumEscalafonP.Text=="       ")
+            {
+                validado = false;
                 errorProvider1.SetError(mtxtNumEscalafonP, "Ingresar el número de escalafón");
+            }
+            if(mtxtTelefonoP.Text=="    -    ")
+            {
+                validado = false;
                 errorProvider1.SetError(mtxtTelefonoP, "Ingresar el número de teléfono del docente");
-                errorProvider1.SetError(txtNombreP, "Ingresar el correo electrónico del docente");
+            }
+            if(txtEmailP.Text=="")
+            {
+                validado = false;
+                errorProvider1.SetError(txtEmailP, "Ingresar el correo electrónico del docente");
+            }
+            if(rtbDireccionP.Text=="")
+            {
+                validado = false;
                 errorProvider1.SetError(rtbDireccionP, "Proporcione una dirección de vivienda");
             }
-            return validado;
 
+            return validado;
         }
 
 

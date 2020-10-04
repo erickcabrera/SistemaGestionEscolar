@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAlumno));
-            this.dgvDatos = new System.Windows.Forms.DataGridView();
+            this.dgvDatosA = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.picBSalir = new System.Windows.Forms.PictureBox();
@@ -44,35 +45,37 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.txtNombreA = new System.Windows.Forms.TextBox();
+            this.txtApellidoA = new System.Windows.Forms.TextBox();
+            this.txtPadre = new System.Windows.Forms.TextBox();
+            this.txtMadre = new System.Windows.Forms.TextBox();
+            this.txtEncargado = new System.Windows.Forms.TextBox();
+            this.dtpFechanacimiento = new System.Windows.Forms.DateTimePicker();
+            this.rtbDireccionA = new System.Windows.Forms.RichTextBox();
+            this.btnGuardarA = new System.Windows.Forms.Button();
+            this.btnEditarA = new System.Windows.Forms.Button();
+            this.btnEliminarA = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
+            this.cmbSexoA = new System.Windows.Forms.ComboBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.mtxtNIEA = new System.Windows.Forms.MaskedTextBox();
+            this.mtxtNumPartidaA = new System.Windows.Forms.MaskedTextBox();
+            this.mtxtTelefonoA = new System.Windows.Forms.MaskedTextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosA)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvDatos
+            // dgvDatosA
             // 
-            this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDatos.Location = new System.Drawing.Point(577, 122);
-            this.dgvDatos.Name = "dgvDatos";
-            this.dgvDatos.Size = new System.Drawing.Size(719, 375);
-            this.dgvDatos.TabIndex = 0;
+            this.dgvDatosA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDatosA.Location = new System.Drawing.Point(577, 122);
+            this.dgvDatosA.Name = "dgvDatosA";
+            this.dgvDatosA.Size = new System.Drawing.Size(719, 375);
+            this.dgvDatosA.TabIndex = 0;
             // 
             // label1
             // 
@@ -230,115 +233,100 @@
             this.label11.TabIndex = 27;
             this.label11.Text = "Fecha de nacimiento:";
             // 
-            // textBox1
+            // txtNombreA
             // 
-            this.textBox1.Location = new System.Drawing.Point(277, 103);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(258, 20);
-            this.textBox1.TabIndex = 28;
+            this.txtNombreA.Location = new System.Drawing.Point(277, 103);
+            this.txtNombreA.Name = "txtNombreA";
+            this.txtNombreA.Size = new System.Drawing.Size(258, 20);
+            this.txtNombreA.TabIndex = 28;
+            this.txtNombreA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreA_KeyPress);
             // 
-            // textBox2
+            // txtApellidoA
             // 
-            this.textBox2.Location = new System.Drawing.Point(277, 140);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(258, 20);
-            this.textBox2.TabIndex = 28;
+            this.txtApellidoA.Location = new System.Drawing.Point(277, 140);
+            this.txtApellidoA.Name = "txtApellidoA";
+            this.txtApellidoA.Size = new System.Drawing.Size(258, 20);
+            this.txtApellidoA.TabIndex = 28;
+            this.txtApellidoA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidoA_KeyPress);
             // 
-            // textBox3
+            // txtPadre
             // 
-            this.textBox3.Location = new System.Drawing.Point(277, 180);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(258, 20);
-            this.textBox3.TabIndex = 28;
+            this.txtPadre.Location = new System.Drawing.Point(277, 351);
+            this.txtPadre.Name = "txtPadre";
+            this.txtPadre.Size = new System.Drawing.Size(258, 20);
+            this.txtPadre.TabIndex = 28;
+            this.txtPadre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPadre_KeyPress);
             // 
-            // textBox4
+            // txtMadre
             // 
-            this.textBox4.Location = new System.Drawing.Point(277, 225);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(258, 20);
-            this.textBox4.TabIndex = 28;
+            this.txtMadre.Location = new System.Drawing.Point(277, 396);
+            this.txtMadre.Name = "txtMadre";
+            this.txtMadre.Size = new System.Drawing.Size(258, 20);
+            this.txtMadre.TabIndex = 28;
+            this.txtMadre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMadre_KeyPress);
             // 
-            // textBox5
+            // txtEncargado
             // 
-            this.textBox5.Location = new System.Drawing.Point(277, 310);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(258, 20);
-            this.textBox5.TabIndex = 28;
+            this.txtEncargado.Location = new System.Drawing.Point(277, 440);
+            this.txtEncargado.Name = "txtEncargado";
+            this.txtEncargado.Size = new System.Drawing.Size(258, 20);
+            this.txtEncargado.TabIndex = 28;
+            this.txtEncargado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEncargado_KeyPress);
             // 
-            // textBox6
+            // dtpFechanacimiento
             // 
-            this.textBox6.Location = new System.Drawing.Point(277, 351);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(258, 20);
-            this.textBox6.TabIndex = 28;
+            this.dtpFechanacimiento.Location = new System.Drawing.Point(277, 272);
+            this.dtpFechanacimiento.Name = "dtpFechanacimiento";
+            this.dtpFechanacimiento.Size = new System.Drawing.Size(258, 20);
+            this.dtpFechanacimiento.TabIndex = 29;
             // 
-            // textBox7
+            // rtbDireccionA
             // 
-            this.textBox7.Location = new System.Drawing.Point(277, 396);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(258, 20);
-            this.textBox7.TabIndex = 28;
+            this.rtbDireccionA.Location = new System.Drawing.Point(277, 550);
+            this.rtbDireccionA.Name = "rtbDireccionA";
+            this.rtbDireccionA.Size = new System.Drawing.Size(258, 96);
+            this.rtbDireccionA.TabIndex = 30;
+            this.rtbDireccionA.Text = "";
             // 
-            // textBox8
+            // btnGuardarA
             // 
-            this.textBox8.Location = new System.Drawing.Point(277, 440);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(258, 20);
-            this.textBox8.TabIndex = 28;
+            this.btnGuardarA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(151)))), ((int)(((byte)(178)))));
+            this.btnGuardarA.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGuardarA.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarA.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarA.Location = new System.Drawing.Point(42, 668);
+            this.btnGuardarA.Name = "btnGuardarA";
+            this.btnGuardarA.Size = new System.Drawing.Size(493, 53);
+            this.btnGuardarA.TabIndex = 31;
+            this.btnGuardarA.Text = "Guardar";
+            this.btnGuardarA.UseVisualStyleBackColor = false;
+            this.btnGuardarA.Click += new System.EventHandler(this.btnGuardarA_Click);
             // 
-            // dateTimePicker1
+            // btnEditarA
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(277, 272);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(258, 20);
-            this.dateTimePicker1.TabIndex = 29;
+            this.btnEditarA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(151)))), ((int)(((byte)(178)))));
+            this.btnEditarA.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEditarA.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarA.ForeColor = System.Drawing.Color.White;
+            this.btnEditarA.Location = new System.Drawing.Point(577, 530);
+            this.btnEditarA.Name = "btnEditarA";
+            this.btnEditarA.Size = new System.Drawing.Size(301, 53);
+            this.btnEditarA.TabIndex = 33;
+            this.btnEditarA.Text = "Editar";
+            this.btnEditarA.UseVisualStyleBackColor = false;
             // 
-            // richTextBox1
+            // btnEliminarA
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(277, 550);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(258, 96);
-            this.richTextBox1.TabIndex = 30;
-            this.richTextBox1.Text = "";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(151)))), ((int)(((byte)(178)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(42, 668);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(493, 53);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(151)))), ((int)(((byte)(178)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(577, 530);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(301, 53);
-            this.button3.TabIndex = 33;
-            this.button3.Text = "Editar";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(151)))), ((int)(((byte)(178)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(1007, 530);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(301, 53);
-            this.button2.TabIndex = 34;
-            this.button2.Text = "Eliminar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnEliminarA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(151)))), ((int)(((byte)(178)))));
+            this.btnEliminarA.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEliminarA.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarA.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarA.Location = new System.Drawing.Point(1007, 530);
+            this.btnEliminarA.Name = "btnEliminarA";
+            this.btnEliminarA.Size = new System.Drawing.Size(301, 53);
+            this.btnEliminarA.TabIndex = 34;
+            this.btnEliminarA.Text = "Eliminar";
+            this.btnEliminarA.UseVisualStyleBackColor = false;
             // 
             // label12
             // 
@@ -363,13 +351,40 @@
             this.label13.TabIndex = 35;
             this.label13.Text = "Sexo:";
             // 
-            // comboBox1
+            // cmbSexoA
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(277, 489);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(258, 21);
-            this.comboBox1.TabIndex = 36;
+            this.cmbSexoA.FormattingEnabled = true;
+            this.cmbSexoA.Location = new System.Drawing.Point(277, 489);
+            this.cmbSexoA.Name = "cmbSexoA";
+            this.cmbSexoA.Size = new System.Drawing.Size(258, 21);
+            this.cmbSexoA.TabIndex = 36;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // mtxtNIEA
+            // 
+            this.mtxtNIEA.Location = new System.Drawing.Point(277, 180);
+            this.mtxtNIEA.Mask = "00000000";
+            this.mtxtNIEA.Name = "mtxtNIEA";
+            this.mtxtNIEA.Size = new System.Drawing.Size(258, 20);
+            this.mtxtNIEA.TabIndex = 37;
+            // 
+            // mtxtNumPartidaA
+            // 
+            this.mtxtNumPartidaA.Location = new System.Drawing.Point(277, 225);
+            this.mtxtNumPartidaA.Name = "mtxtNumPartidaA";
+            this.mtxtNumPartidaA.Size = new System.Drawing.Size(258, 20);
+            this.mtxtNumPartidaA.TabIndex = 38;
+            // 
+            // mtxtTelefonoA
+            // 
+            this.mtxtTelefonoA.Location = new System.Drawing.Point(277, 310);
+            this.mtxtTelefonoA.Mask = "0000-0000";
+            this.mtxtTelefonoA.Name = "mtxtTelefonoA";
+            this.mtxtTelefonoA.Size = new System.Drawing.Size(258, 20);
+            this.mtxtTelefonoA.TabIndex = 39;
             // 
             // FrmAlumno
             // 
@@ -377,21 +392,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1320, 744);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.mtxtTelefonoA);
+            this.Controls.Add(this.mtxtNumPartidaA);
+            this.Controls.Add(this.mtxtNIEA);
+            this.Controls.Add(this.cmbSexoA);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnEliminarA);
+            this.Controls.Add(this.btnEditarA);
+            this.Controls.Add(this.btnGuardarA);
+            this.Controls.Add(this.rtbDireccionA);
+            this.Controls.Add(this.dtpFechanacimiento);
+            this.Controls.Add(this.txtEncargado);
+            this.Controls.Add(this.txtMadre);
+            this.Controls.Add(this.txtPadre);
+            this.Controls.Add(this.txtApellidoA);
+            this.Controls.Add(this.txtNombreA);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -404,16 +419,17 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dgvDatos);
+            this.Controls.Add(this.dgvDatosA);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAlumno";
             this.Text = "Alumno";
             this.Load += new System.EventHandler(this.Alumno_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosA)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -421,7 +437,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvDatos;
+        private System.Windows.Forms.DataGridView dgvDatosA;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox picBMinimizar;
@@ -436,21 +452,22 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtNombreA;
+        private System.Windows.Forms.TextBox txtApellidoA;
+        private System.Windows.Forms.TextBox txtPadre;
+        private System.Windows.Forms.TextBox txtMadre;
+        private System.Windows.Forms.TextBox txtEncargado;
+        private System.Windows.Forms.DateTimePicker dtpFechanacimiento;
+        private System.Windows.Forms.RichTextBox rtbDireccionA;
+        private System.Windows.Forms.Button btnGuardarA;
+        private System.Windows.Forms.Button btnEditarA;
+        private System.Windows.Forms.Button btnEliminarA;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbSexoA;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.MaskedTextBox mtxtTelefonoA;
+        private System.Windows.Forms.MaskedTextBox mtxtNumPartidaA;
+        private System.Windows.Forms.MaskedTextBox mtxtNIEA;
     }
 }

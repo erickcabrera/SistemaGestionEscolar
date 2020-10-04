@@ -36,6 +36,22 @@ namespace SistemaEscolar.Formularios
             
         }
 
+        //validar que la fecha de nacimiento no sea mayor a la fecha del sistema
+        private bool ValidarFechaySexo()
+
+        {
+            DateTime FechaNAlumno= dtpFechanacimiento.Value;
+            bool validarF = true;
+
+
+            if (FechaNAlumno > System.DateTime.Now.Date || cmbSexoA.SelectedIndex == -1)
+            {
+                validarF = false;
+                errorProvider1.SetError(dtpFechanacimiento, "La fecha no puede ser mayor a la fecha de este día");
+                errorProvider1.SetError(cmbSexoA, "Este campo no puede estar vacío");
+            }
+            return validarF;
+        }
         private void picBMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -47,6 +63,202 @@ namespace SistemaEscolar.Formularios
             FormMenuPrueba frmMP = new FormMenuPrueba();
             frmMP.Show();
             this.Hide();
+        }
+
+        private void txtNombreA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //condición para validar sólo letras
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+
+            }
+            else
+            {
+                e.Handled = true;
+                errorProvider1.SetError(txtNombreA, "En este campo sólo se permiten letras");
+            }
+        }
+
+        private bool validarCampos()
+        {
+            //esta variable verifica si se está validando algo
+            bool validado = true;
+
+            //if para validar camppos vacíos en el formulario de Alumno
+            if(txtApellidoA.Text=="")
+            {
+                validado = false;
+                errorProvider1.SetError(txtApellidoA, "Ingresar los apellidos del alumno");
+            }
+            if(mtxtNIEA.Text=="")
+            {
+                validado = false;
+                errorProvider1.SetError(mtxtNIEA, "Ingresar el número de NIE del alumno");
+            }
+            if(txtPadre.Text=="")
+            {
+                validado = false;
+                errorProvider1.SetError(txtPadre, "Ingresar el nombre del padre");
+            }
+            if(txtMadre.Text=="")
+            {
+                validado = false;
+                errorProvider1.SetError(txtMadre, "Ingresar el nombre de la madre");
+            }
+            if(txtEncargado.Text=="")
+            {
+                validado = false;
+                errorProvider1.SetError(txtEncargado, "Ingresar el nombre del encargado");
+            }
+            if (txtNombreA.Text == "")
+            {
+                validado = false;
+                errorProvider1.SetError(txtNombreA, "Ingresar el nombre del alumno");
+            }
+            if(mtxtNumPartidaA.Text=="")
+            {
+                validado = false;
+                errorProvider1.SetError(mtxtNumPartidaA, "Ingresar el número de partida de nacimiento");
+            }
+            if(mtxtTelefonoA.Text=="")
+            {
+                validado = false;
+                errorProvider1.SetError(mtxtTelefonoA, "Ingresar el número de teléfono del alumno");
+            }
+            if(rtbDireccionA.Text=="")
+            {
+                validado = false;
+                errorProvider1.SetError(rtbDireccionA, "Proporcione una dirección de vivienda");
+            }
+            return validado;
+
+        }
+
+        //borrar los mensajes que provee el error provider
+        private void BorrarMensaje()
+        {
+            errorProvider1.SetError(txtApellidoA, "");
+            errorProvider1.SetError(txtPadre, "");
+            errorProvider1.SetError(mtxtNIEA, "");
+            errorProvider1.SetError(txtMadre, "");
+            errorProvider1.SetError(txtNombreA, "");
+            errorProvider1.SetError(mtxtNumPartidaA, "");
+            errorProvider1.SetError(mtxtTelefonoA, "");
+            errorProvider1.SetError(txtEncargado, "");
+            errorProvider1.SetError(rtbDireccionA, "");
+        }
+
+        private void txtApellidoA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //condición para validar sólo letras
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+
+            }
+            else
+            {
+                e.Handled = true;
+                errorProvider1.SetError(txtApellidoA, "En este campo sólo se permiten letras");
+            }
+        }
+
+        private void btnGuardarA_Click(object sender, EventArgs e)
+        {
+            //validaciones
+            BorrarMensaje();
+
+            if (validarCampos() || ValidarFechaySexo())
+            {
+                MessageBox.Show("Los datos se han ingresado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+        }
+
+        private void txtPadre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //condición para validar sólo letras
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+
+            }
+            else
+            {
+                e.Handled = true;
+                errorProvider1.SetError(txtPadre, "En este campo sólo se permiten letras");
+            }
+        }
+
+        private void txtMadre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //condición para validar sólo letras
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+
+            }
+            else
+            {
+                e.Handled = true;
+                errorProvider1.SetError(txtMadre, "En este campo sólo se permiten letras");
+            }
+        }
+
+        private void txtEncargado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //condición para validar sólo letras
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+
+            }
+            else
+            {
+                e.Handled = true;
+                errorProvider1.SetError(txtEncargado, "En este campo sólo se permiten letras");
+            }
         }
     }
 }
