@@ -38,17 +38,18 @@ namespace SistemaEscolar.Formularios
 
             //if para validar camppos vacíos en el formulario de Profesor
             if (txtApellidoP.Text == "" || txtDUIP.Text == "" ||  txtNITP.Text == "" ||
-                txtNombreP.Text == "" || txtNumEscalafonP.Text == "" || txtTelefonoP.Text == ""||txtEmailP.Text=="")
+                txtNombreP.Text == "" || txtNumEscalafonP.Text == "" || txtTelefonoP.Text == ""||label.Text=="")
             {
                 validado = false;
                 errorProvider1.SetError(txtApellidoP, "Ingresar los apellidos del docente");
                 errorProvider1.SetError(txtDUIP, "Ingresar el número de DUI");
                 errorProvider1.SetError(txtNITP, "Ingresar el número de NIT del docente");
+                errorProvider1.SetError(txtEmailP, "Ingresar el correo electrónico del docente");
                 errorProvider1.SetError(txtNombreP, "Ingresar el nombre del docente");
                 errorProvider1.SetError(txtNumEscalafonP, "Ingresar el número de escalafón");
                 errorProvider1.SetError(txtTelefonoP, "Ingresar el número de teléfono del docente");
                 errorProvider1.SetError(txtNombreP, "Ingresar el correo electrónico del docente");
-                errorProvider1.SetError(txtEmailP, "Ingresar el correo electrónico del docente");
+                
 
 
             }
@@ -66,16 +67,40 @@ namespace SistemaEscolar.Formularios
             errorProvider1.SetError(txtNumEscalafonP, "");
             errorProvider1.SetError(txtTelefonoP, "");
             errorProvider1.SetError(txtEmailP, "");
+            errorProvider1.SetError(dtpFechaP, "");
         }
+
+        //validar que la fecha de nacimiento no sea mayor a la fecha del sistema
+        private bool ValidarFechaySexo()
+
+        {
+            DateTime FechaNProfesor = dtpFechaP.Value;
+            bool validarF=true;
+            
+
+            if (FechaNProfesor > System.DateTime.Now.Date ||cmbSexoP.SelectedIndex==-1)
+            {
+                validarF = false;
+                errorProvider1.SetError(dtpFechaP, "La fecha no puede ser mayor a la fecha de este día");
+                errorProvider1.SetError(cmbSexoP, "Este campo no puede estar vacío");
+            }
+            return validarF;
+        }
+
+        //Uso de expresiones regulares para validar campos
+
 
         private void btnGuardarP_Click(object sender, EventArgs e)
         {
+            //validaciones
             BorrarMensaje();
-            if(validarCampos())
+            if(validarCampos()||ValidarFechaySexo())
             {
                 MessageBox.Show("Los datos se han ingresado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
+            
+            
         }
     }
 }

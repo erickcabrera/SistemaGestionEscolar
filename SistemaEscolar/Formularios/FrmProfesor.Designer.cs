@@ -38,7 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtEmailP = new System.Windows.Forms.Label();
+            this.label = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@
             this.txtNombreP = new System.Windows.Forms.TextBox();
             this.txtApellidoP = new System.Windows.Forms.TextBox();
             this.txtTelefonoP = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtEmailP = new System.Windows.Forms.TextBox();
             this.txtDUIP = new System.Windows.Forms.TextBox();
             this.txtNITP = new System.Windows.Forms.TextBox();
             this.txtNumEscalafonP = new System.Windows.Forms.TextBox();
@@ -155,16 +155,16 @@
             this.label5.TabIndex = 28;
             this.label5.Text = "Teléfono:";
             // 
-            // txtEmailP
+            // label
             // 
-            this.txtEmailP.AutoSize = true;
-            this.txtEmailP.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmailP.ForeColor = System.Drawing.Color.Black;
-            this.txtEmailP.Location = new System.Drawing.Point(48, 279);
-            this.txtEmailP.Name = "txtEmailP";
-            this.txtEmailP.Size = new System.Drawing.Size(186, 22);
-            this.txtEmailP.TabIndex = 28;
-            this.txtEmailP.Text = "Correo electrónico:";
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.ForeColor = System.Drawing.Color.Black;
+            this.label.Location = new System.Drawing.Point(48, 279);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(186, 22);
+            this.label.TabIndex = 28;
+            this.label.Text = "Correo electrónico:";
             // 
             // label7
             // 
@@ -242,12 +242,12 @@
             this.txtTelefonoP.Size = new System.Drawing.Size(258, 20);
             this.txtTelefonoP.TabIndex = 29;
             // 
-            // textBox4
+            // txtEmailP
             // 
-            this.textBox4.Location = new System.Drawing.Point(276, 279);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(258, 20);
-            this.textBox4.TabIndex = 29;
+            this.txtEmailP.Location = new System.Drawing.Point(276, 279);
+            this.txtEmailP.Name = "txtEmailP";
+            this.txtEmailP.Size = new System.Drawing.Size(258, 20);
+            this.txtEmailP.TabIndex = 29;
             // 
             // txtDUIP
             // 
@@ -374,7 +374,7 @@
             this.Controls.Add(this.txtNumEscalafonP);
             this.Controls.Add(this.txtNITP);
             this.Controls.Add(this.txtDUIP);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtEmailP);
             this.Controls.Add(this.txtTelefonoP);
             this.Controls.Add(this.txtApellidoP);
             this.Controls.Add(this.txtNombreP);
@@ -383,7 +383,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtEmailP);
+            this.Controls.Add(this.label);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -413,7 +413,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label txtEmailP;
+        private System.Windows.Forms.Label label;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -422,7 +422,7 @@
         private System.Windows.Forms.TextBox txtNombreP;
         private System.Windows.Forms.TextBox txtApellidoP;
         private System.Windows.Forms.TextBox txtTelefonoP;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtEmailP;
         private System.Windows.Forms.TextBox txtDUIP;
         private System.Windows.Forms.TextBox txtNITP;
         private System.Windows.Forms.TextBox txtNumEscalafonP;
