@@ -86,5 +86,12 @@ namespace SistemaEscolar.Formularios
             frmP.Show();
             this.Hide();
         }
+
+        private void btnMaterias_Click(object sender, EventArgs e)
+        {
+            materia frmMa = new materia();
+            frmMa.Show();
+            this.Hide();
+        }
     }
 }

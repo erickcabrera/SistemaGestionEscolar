@@ -38,7 +38,15 @@ namespace SistemaEscolar.Formularios
 
         private void picBMinimizar_Click(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Minimized;
+        }
 
+        private void picBSalir_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormMenuPrueba frmMP = new FormMenuPrueba();
+            frmMP.Show();
+            this.Hide();
         }
     }
 }
