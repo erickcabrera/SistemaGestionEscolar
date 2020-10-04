@@ -374,6 +374,7 @@
             // mtxtNumPartidaA
             // 
             this.mtxtNumPartidaA.Location = new System.Drawing.Point(277, 225);
+            this.mtxtNumPartidaA.Mask = "00000000";
             this.mtxtNumPartidaA.Name = "mtxtNumPartidaA";
             this.mtxtNumPartidaA.Size = new System.Drawing.Size(258, 20);
             this.mtxtNumPartidaA.TabIndex = 38;

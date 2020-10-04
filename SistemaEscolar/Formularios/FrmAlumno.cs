@@ -40,11 +40,11 @@ namespace SistemaEscolar.Formularios
         private bool ValidarFechaySexo()
 
         {
-            DateTime FechaNAlumno= dtpFechanacimiento.Value;
+            DateTime FechaNAlumno= dtpFechanacimiento.Value.Date;
             bool validarF = true;
 
 
-            if (FechaNAlumno > System.DateTime.Now.Date || cmbSexoA.SelectedIndex == -1)
+            if (FechaNAlumno.Date >= System.DateTime.Now.Date || cmbSexoA.SelectedIndex == -1)
             {
                 validarF = false;
                 errorProvider1.SetError(dtpFechanacimiento, "La fecha no puede ser mayor a la fecha de este día");
@@ -92,18 +92,21 @@ namespace SistemaEscolar.Formularios
         {
             //esta variable verifica si se está validando algo
             bool validado = true;
-
             //if para validar camppos vacíos en el formulario de Alumno
             if(txtApellidoA.Text=="")
             {
                 validado = false;
                 errorProvider1.SetError(txtApellidoA, "Ingresar los apellidos del alumno");
             }
-            if(mtxtNIEA.Text=="")
+           
+
+            if(mtxtNIEA.MaskFull){ }
+            else
             {
                 validado = false;
                 errorProvider1.SetError(mtxtNIEA, "Ingresar el número de NIE del alumno");
             }
+
             if(txtPadre.Text=="")
             {
                 validado = false;
@@ -124,12 +127,15 @@ namespace SistemaEscolar.Formularios
                 validado = false;
                 errorProvider1.SetError(txtNombreA, "Ingresar el nombre del alumno");
             }
-            if(mtxtNumPartidaA.Text=="")
+            if(mtxtNumPartidaA.MaskFull){ }
+            else
             {
                 validado = false;
                 errorProvider1.SetError(mtxtNumPartidaA, "Ingresar el número de partida de nacimiento");
             }
-            if(mtxtTelefonoA.Text=="")
+
+            if (mtxtTelefonoA.MaskFull) { }
+            else
             {
                 validado = false;
                 errorProvider1.SetError(mtxtTelefonoA, "Ingresar el número de teléfono del alumno");

@@ -45,36 +45,47 @@ namespace SistemaEscolar.Formularios
                 validado = false;
                 errorProvider1.SetError(txtApellidoP, "Ingresar los apellidos del docente");
             }
-            if(mtxtDUIP.Text=="        - ")
+
+            if (mtxtDUIP.MaskFull) { }
+            else
             {
                 validado = false;
                 errorProvider1.SetError(mtxtDUIP, "Ingresar el número de DUI");
             }
-            if(mtxtNITP.Text=="    -      -   - ")
+
+            if (mtxtNITP.MaskFull) { }
+            else
             {
                 validado = false;
                 errorProvider1.SetError(mtxtNITP, "Ingresar el número de NIT del docente");
             }
+
             if(txtNombreP.Text=="")
             {
                 validado = false;
                 errorProvider1.SetError(txtNombreP, "Ingresar el nombre del docente");
             }
-            if(mtxtNumEscalafonP.Text=="       ")
+
+            if (mtxtNumEscalafonP.MaskFull) { }
+            else
             {
                 validado = false;
                 errorProvider1.SetError(mtxtNumEscalafonP, "Ingresar el número de escalafón");
             }
-            if(mtxtTelefonoP.Text=="    -    ")
+
+            if (mtxtTelefonoP.MaskFull) { }
+            else
             {
                 validado = false;
                 errorProvider1.SetError(mtxtTelefonoP, "Ingresar el número de teléfono del docente");
             }
+
             if(txtEmailP.Text=="")
             {
                 validado = false;
                 errorProvider1.SetError(txtEmailP, "Ingresar el correo electrónico del docente");
             }
+
             if(rtbDireccionP.Text=="")
             {
                 validado = false;
@@ -107,7 +118,7 @@ namespace SistemaEscolar.Formularios
             bool validarF = true;
 
 
-            if (FechaNProfesor > System.DateTime.Now.Date || cmbSexoP.SelectedIndex == -1)
+            if (FechaNProfesor >= System.DateTime.Now.Date || cmbSexoP.SelectedIndex == -1)
             {
                 validarF = false;
                 errorProvider1.SetError(dtpFechaP, "La fecha no puede ser mayor a la fecha de este día");
