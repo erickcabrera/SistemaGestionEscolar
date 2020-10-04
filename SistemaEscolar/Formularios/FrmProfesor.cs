@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using SistemaEscolar.Formularios;
+using System.Text.RegularExpressions;
 
 namespace SistemaEscolar.Formularios
 {
@@ -30,24 +31,25 @@ namespace SistemaEscolar.Formularios
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
-
+        
+       
         private bool validarCampos()
         {
             //esta variable verifica si se está validando algo
             bool validado = true;
 
             //if para validar camppos vacíos en el formulario de Profesor
-            if (txtApellidoP.Text == "" || txtDUIP.Text == "" || txtNITP.Text == "" ||
-                txtNombreP.Text == "" || txtNumEscalafonP.Text == "" || txtTelefonoP.Text == "" || txtEmailP.Text == ""||rtbDireccionP.Text=="")
+            if (txtApellidoP.Text == "" || mtxtDUIP.Text == "" || mtxtNITP.Text == "" ||
+                txtNombreP.Text == "" || mtxtNumEscalafonP.Text == "" || mtxtTelefonoP.Text == "" || txtEmailP.Text == ""||rtbDireccionP.Text=="")
             {
                 validado = false;
                 errorProvider1.SetError(txtApellidoP, "Ingresar los apellidos del docente");
-                errorProvider1.SetError(txtDUIP, "Ingresar el número de DUI");
-                errorProvider1.SetError(txtNITP, "Ingresar el número de NIT del docente");
+                errorProvider1.SetError(mtxtDUIP, "Ingresar el número de DUI");
+                errorProvider1.SetError(mtxtNITP, "Ingresar el número de NIT del docente");
                 errorProvider1.SetError(txtEmailP, "Ingresar el correo electrónico del docente");
                 errorProvider1.SetError(txtNombreP, "Ingresar el nombre del docente");
-                errorProvider1.SetError(txtNumEscalafonP, "Ingresar el número de escalafón");
-                errorProvider1.SetError(txtTelefonoP, "Ingresar el número de teléfono del docente");
+                errorProvider1.SetError(mtxtNumEscalafonP, "Ingresar el número de escalafón");
+                errorProvider1.SetError(mtxtTelefonoP, "Ingresar el número de teléfono del docente");
                 errorProvider1.SetError(txtNombreP, "Ingresar el correo electrónico del docente");
                 errorProvider1.SetError(rtbDireccionP, "Proporcione una dirección de vivienda");
             }
@@ -60,11 +62,11 @@ namespace SistemaEscolar.Formularios
         private void BorrarMensaje()
         {
             errorProvider1.SetError(txtApellidoP, "");
-            errorProvider1.SetError(txtDUIP, "");
-            errorProvider1.SetError(txtNITP, "");
+            errorProvider1.SetError(mtxtDUIP, "");
+            errorProvider1.SetError(mtxtNITP, "");
             errorProvider1.SetError(txtNombreP, "");
-            errorProvider1.SetError(txtNumEscalafonP, "");
-            errorProvider1.SetError(txtTelefonoP, "");
+            errorProvider1.SetError(mtxtNumEscalafonP, "");
+            errorProvider1.SetError(mtxtTelefonoP, "");
             errorProvider1.SetError(txtEmailP, "");
             errorProvider1.SetError(dtpFechaP, "");
             errorProvider1.SetError(rtbDireccionP, "");
@@ -87,7 +89,25 @@ namespace SistemaEscolar.Formularios
             return validarF;
         }
 
-
+        private bool validarCorreo(string correo)
+        {
+            string cadena = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(correo, cadena))
+            {
+                if (Regex.Replace(correo, cadena, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         private void btnGuardarP_Click(object sender, EventArgs e)
         {
@@ -103,6 +123,72 @@ namespace SistemaEscolar.Formularios
         private void picBSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+       
+
+        private void txtEmailP_TextChanged(object sender, EventArgs e)
+        {
+            BorrarMensaje();
+            if (validarCorreo(txtEmailP.Text))
+            {
+
+            }
+            else
+            {
+                errorProvider1.SetError(txtEmailP, "El formato del correo no es válido");
+            }
+        }
+
+        private void txtNombreP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //condición para validar sólo letras
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+
+            }
+            else
+            {
+                e.Handled = true;
+                errorProvider1.SetError(txtNombreP, "En este campo sólo se permiten letras");
+            }
+        }
+
+        private void txtApellidoP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //condición para validar sólo letras
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+
+            }
+            else
+            {
+                e.Handled = true;
+                errorProvider1.SetError(txtApellidoP, "En este campo sólo se permiten letras");
+            }
+        }
+
+        private void picBMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

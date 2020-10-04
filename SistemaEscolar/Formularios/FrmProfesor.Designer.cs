@@ -46,11 +46,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtNombreP = new System.Windows.Forms.TextBox();
             this.txtApellidoP = new System.Windows.Forms.TextBox();
-            this.txtTelefonoP = new System.Windows.Forms.TextBox();
             this.txtEmailP = new System.Windows.Forms.TextBox();
-            this.txtDUIP = new System.Windows.Forms.TextBox();
-            this.txtNITP = new System.Windows.Forms.TextBox();
-            this.txtNumEscalafonP = new System.Windows.Forms.TextBox();
             this.dtpFechaP = new System.Windows.Forms.DateTimePicker();
             this.cmbSexoP = new System.Windows.Forms.ComboBox();
             this.rtbDireccionP = new System.Windows.Forms.RichTextBox();
@@ -60,6 +56,10 @@
             this.btnEditarP = new System.Windows.Forms.Button();
             this.btnEliminarP = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.mtxtTelefonoP = new System.Windows.Forms.MaskedTextBox();
+            this.mtxtDUIP = new System.Windows.Forms.MaskedTextBox();
+            this.mtxtNITP = new System.Windows.Forms.MaskedTextBox();
+            this.mtxtNumEscalafonP = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
@@ -111,6 +111,7 @@
             this.picBMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBMinimizar.TabIndex = 8;
             this.picBMinimizar.TabStop = false;
+            this.picBMinimizar.Click += new System.EventHandler(this.picBMinimizar_Click);
             // 
             // label2
             // 
@@ -228,6 +229,7 @@
             this.txtNombreP.Name = "txtNombreP";
             this.txtNombreP.Size = new System.Drawing.Size(258, 20);
             this.txtNombreP.TabIndex = 29;
+            this.txtNombreP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreP_KeyPress);
             // 
             // txtApellidoP
             // 
@@ -235,13 +237,7 @@
             this.txtApellidoP.Name = "txtApellidoP";
             this.txtApellidoP.Size = new System.Drawing.Size(258, 20);
             this.txtApellidoP.TabIndex = 29;
-            // 
-            // txtTelefonoP
-            // 
-            this.txtTelefonoP.Location = new System.Drawing.Point(276, 234);
-            this.txtTelefonoP.Name = "txtTelefonoP";
-            this.txtTelefonoP.Size = new System.Drawing.Size(258, 20);
-            this.txtTelefonoP.TabIndex = 29;
+            this.txtApellidoP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidoP_KeyPress);
             // 
             // txtEmailP
             // 
@@ -249,27 +245,7 @@
             this.txtEmailP.Name = "txtEmailP";
             this.txtEmailP.Size = new System.Drawing.Size(258, 20);
             this.txtEmailP.TabIndex = 29;
-            // 
-            // txtDUIP
-            // 
-            this.txtDUIP.Location = new System.Drawing.Point(276, 321);
-            this.txtDUIP.Name = "txtDUIP";
-            this.txtDUIP.Size = new System.Drawing.Size(258, 20);
-            this.txtDUIP.TabIndex = 29;
-            // 
-            // txtNITP
-            // 
-            this.txtNITP.Location = new System.Drawing.Point(276, 359);
-            this.txtNITP.Name = "txtNITP";
-            this.txtNITP.Size = new System.Drawing.Size(258, 20);
-            this.txtNITP.TabIndex = 29;
-            // 
-            // txtNumEscalafonP
-            // 
-            this.txtNumEscalafonP.Location = new System.Drawing.Point(276, 399);
-            this.txtNumEscalafonP.Name = "txtNumEscalafonP";
-            this.txtNumEscalafonP.Size = new System.Drawing.Size(258, 20);
-            this.txtNumEscalafonP.TabIndex = 29;
+            this.txtEmailP.TextChanged += new System.EventHandler(this.txtEmailP_TextChanged);
             // 
             // dtpFechaP
             // 
@@ -358,12 +334,48 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // mtxtTelefonoP
+            // 
+            this.mtxtTelefonoP.Location = new System.Drawing.Point(276, 238);
+            this.mtxtTelefonoP.Mask = "0000-0000";
+            this.mtxtTelefonoP.Name = "mtxtTelefonoP";
+            this.mtxtTelefonoP.Size = new System.Drawing.Size(258, 20);
+            this.mtxtTelefonoP.TabIndex = 38;
+            // 
+            // mtxtDUIP
+            // 
+            this.mtxtDUIP.Location = new System.Drawing.Point(276, 321);
+            this.mtxtDUIP.Mask = "00000000-0";
+            this.mtxtDUIP.Name = "mtxtDUIP";
+            this.mtxtDUIP.Size = new System.Drawing.Size(258, 20);
+            this.mtxtDUIP.TabIndex = 38;
+            // 
+            // mtxtNITP
+            // 
+            this.mtxtNITP.Location = new System.Drawing.Point(276, 359);
+            this.mtxtNITP.Mask = "0000-000000-000-0";
+            this.mtxtNITP.Name = "mtxtNITP";
+            this.mtxtNITP.Size = new System.Drawing.Size(258, 20);
+            this.mtxtNITP.TabIndex = 38;
+            // 
+            // mtxtNumEscalafonP
+            // 
+            this.mtxtNumEscalafonP.Location = new System.Drawing.Point(276, 399);
+            this.mtxtNumEscalafonP.Mask = "0000000";
+            this.mtxtNumEscalafonP.Name = "mtxtNumEscalafonP";
+            this.mtxtNumEscalafonP.Size = new System.Drawing.Size(258, 20);
+            this.mtxtNumEscalafonP.TabIndex = 38;
+            // 
             // FrmProfesor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1321, 710);
+            this.Controls.Add(this.mtxtNumEscalafonP);
+            this.Controls.Add(this.mtxtNITP);
+            this.Controls.Add(this.mtxtDUIP);
+            this.Controls.Add(this.mtxtTelefonoP);
             this.Controls.Add(this.btnEliminarP);
             this.Controls.Add(this.btnEditarP);
             this.Controls.Add(this.label12);
@@ -372,11 +384,7 @@
             this.Controls.Add(this.rtbDireccionP);
             this.Controls.Add(this.cmbSexoP);
             this.Controls.Add(this.dtpFechaP);
-            this.Controls.Add(this.txtNumEscalafonP);
-            this.Controls.Add(this.txtNITP);
-            this.Controls.Add(this.txtDUIP);
             this.Controls.Add(this.txtEmailP);
-            this.Controls.Add(this.txtTelefonoP);
             this.Controls.Add(this.txtApellidoP);
             this.Controls.Add(this.txtNombreP);
             this.Controls.Add(this.label11);
@@ -422,11 +430,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtNombreP;
         private System.Windows.Forms.TextBox txtApellidoP;
-        private System.Windows.Forms.TextBox txtTelefonoP;
         private System.Windows.Forms.TextBox txtEmailP;
-        private System.Windows.Forms.TextBox txtDUIP;
-        private System.Windows.Forms.TextBox txtNITP;
-        private System.Windows.Forms.TextBox txtNumEscalafonP;
         private System.Windows.Forms.DateTimePicker dtpFechaP;
         private System.Windows.Forms.ComboBox cmbSexoP;
         private System.Windows.Forms.RichTextBox rtbDireccionP;
@@ -436,5 +440,9 @@
         private System.Windows.Forms.Button btnEditarP;
         private System.Windows.Forms.Button btnEliminarP;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.MaskedTextBox mtxtNITP;
+        private System.Windows.Forms.MaskedTextBox mtxtDUIP;
+        private System.Windows.Forms.MaskedTextBox mtxtTelefonoP;
+        private System.Windows.Forms.MaskedTextBox mtxtNumEscalafonP;
     }
 }
