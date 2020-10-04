@@ -72,5 +72,19 @@ namespace SistemaEscolar.Formularios
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void btnEstudiantes_Click(object sender, EventArgs e)
+        {
+            FrmAlumno frmA = new FrmAlumno();
+            frmA.Show();
+            this.Hide();
+        }
+
+        private void btnProfesores_Click(object sender, EventArgs e)
+        {
+            FrmProfesor frmP = new FrmProfesor();
+            frmP.Show();
+            this.Hide();
+        }
     }
 }
