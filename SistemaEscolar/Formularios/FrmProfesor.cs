@@ -30,5 +30,10 @@ namespace SistemaEscolar.Formularios
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
+
+        private void btnGuardarP_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
