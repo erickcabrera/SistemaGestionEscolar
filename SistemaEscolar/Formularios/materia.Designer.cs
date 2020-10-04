@@ -28,21 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(materia));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.picBSalir = new System.Windows.Forms.PictureBox();
             this.picBMinimizar = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtMateria = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnAgregarMateria = new System.Windows.Forms.Button();
             this.btnModificarMateria = new System.Windows.Forms.Button();
             this.btnEliminarMateria = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -55,17 +58,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(667, 72);
             this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(16, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(282, 33);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Gestión de materias";
             // 
             // picBSalir
             // 
@@ -90,6 +82,17 @@
             this.picBMinimizar.TabIndex = 27;
             this.picBMinimizar.TabStop = false;
             this.picBMinimizar.Click += new System.EventHandler(this.picBMinimizar_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(16, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(282, 33);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Gestión de materias";
             // 
             // label2
             // 
@@ -148,6 +151,10 @@
             this.btnEliminarMateria.Text = "Eliminar";
             this.btnEliminarMateria.UseVisualStyleBackColor = true;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // materia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -170,6 +177,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,5 +195,6 @@
         private System.Windows.Forms.Button btnAgregarMateria;
         private System.Windows.Forms.Button btnModificarMateria;
         private System.Windows.Forms.Button btnEliminarMateria;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -149,6 +149,7 @@
             this.txtContra.Location = new System.Drawing.Point(478, 249);
             this.txtContra.MaxLength = 20;
             this.txtContra.Name = "txtContra";
+            this.txtContra.PasswordChar = '*';
             this.txtContra.Size = new System.Drawing.Size(201, 26);
             this.txtContra.TabIndex = 2;
             // 
