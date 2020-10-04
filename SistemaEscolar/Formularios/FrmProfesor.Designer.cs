@@ -54,16 +54,16 @@
             this.dtpFechaP = new System.Windows.Forms.DateTimePicker();
             this.cmbSexoP = new System.Windows.Forms.ComboBox();
             this.rtbDireccionP = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dgvDatos = new System.Windows.Forms.DataGridView();
+            this.btnGuardarP = new System.Windows.Forms.Button();
+            this.dgvDatosP = new System.Windows.Forms.DataGridView();
             this.label12 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnEditarP = new System.Windows.Forms.Button();
+            this.btnEliminarP = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -293,26 +293,27 @@
             this.rtbDireccionP.TabIndex = 32;
             this.rtbDireccionP.Text = "";
             // 
-            // button1
+            // btnGuardarP
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(151)))), ((int)(((byte)(178)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(41, 615);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(493, 53);
-            this.button1.TabIndex = 33;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnGuardarP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(151)))), ((int)(((byte)(178)))));
+            this.btnGuardarP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGuardarP.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarP.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarP.Location = new System.Drawing.Point(41, 615);
+            this.btnGuardarP.Name = "btnGuardarP";
+            this.btnGuardarP.Size = new System.Drawing.Size(493, 53);
+            this.btnGuardarP.TabIndex = 33;
+            this.btnGuardarP.Text = "Guardar";
+            this.btnGuardarP.UseVisualStyleBackColor = false;
+            this.btnGuardarP.Click += new System.EventHandler(this.btnGuardarP_Click);
             // 
-            // dgvDatos
+            // dgvDatosP
             // 
-            this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDatos.Location = new System.Drawing.Point(576, 141);
-            this.dgvDatos.Name = "dgvDatos";
-            this.dgvDatos.Size = new System.Drawing.Size(719, 375);
-            this.dgvDatos.TabIndex = 34;
+            this.dgvDatosP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDatosP.Location = new System.Drawing.Point(576, 141);
+            this.dgvDatosP.Name = "dgvDatosP";
+            this.dgvDatosP.Size = new System.Drawing.Size(719, 375);
+            this.dgvDatosP.TabIndex = 34;
             // 
             // label12
             // 
@@ -326,31 +327,31 @@
             this.label12.Text = "Registro de profesores";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // button3
+            // btnEditarP
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(151)))), ((int)(((byte)(178)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(576, 556);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(301, 53);
-            this.button3.TabIndex = 36;
-            this.button3.Text = "Editar";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnEditarP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(151)))), ((int)(((byte)(178)))));
+            this.btnEditarP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEditarP.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarP.ForeColor = System.Drawing.Color.White;
+            this.btnEditarP.Location = new System.Drawing.Point(576, 556);
+            this.btnEditarP.Name = "btnEditarP";
+            this.btnEditarP.Size = new System.Drawing.Size(301, 53);
+            this.btnEditarP.TabIndex = 36;
+            this.btnEditarP.Text = "Editar";
+            this.btnEditarP.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnEliminarP
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(151)))), ((int)(((byte)(178)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(994, 556);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(301, 53);
-            this.button2.TabIndex = 37;
-            this.button2.Text = "Eliminar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnEliminarP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(151)))), ((int)(((byte)(178)))));
+            this.btnEliminarP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEliminarP.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarP.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarP.Location = new System.Drawing.Point(994, 556);
+            this.btnEliminarP.Name = "btnEliminarP";
+            this.btnEliminarP.Size = new System.Drawing.Size(301, 53);
+            this.btnEliminarP.TabIndex = 37;
+            this.btnEliminarP.Text = "Eliminar";
+            this.btnEliminarP.UseVisualStyleBackColor = false;
             // 
             // errorProvider1
             // 
@@ -362,11 +363,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1321, 710);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnEliminarP);
+            this.Controls.Add(this.btnEditarP);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.dgvDatos);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dgvDatosP);
+            this.Controls.Add(this.btnGuardarP);
             this.Controls.Add(this.rtbDireccionP);
             this.Controls.Add(this.cmbSexoP);
             this.Controls.Add(this.dtpFechaP);
@@ -395,7 +396,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -428,11 +429,11 @@
         private System.Windows.Forms.DateTimePicker dtpFechaP;
         private System.Windows.Forms.ComboBox cmbSexoP;
         private System.Windows.Forms.RichTextBox rtbDireccionP;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dgvDatos;
+        private System.Windows.Forms.Button btnGuardarP;
+        private System.Windows.Forms.DataGridView dgvDatosP;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnEditarP;
+        private System.Windows.Forms.Button btnEliminarP;
         private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

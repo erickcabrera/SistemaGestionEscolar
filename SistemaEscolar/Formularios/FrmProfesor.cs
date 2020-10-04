@@ -37,7 +37,45 @@ namespace SistemaEscolar.Formularios
             bool validado = true;
 
             //if para validar camppos vacíos en el formulario de Profesor
-            if()
+            if (txtApellidoP.Text == "" || txtDUIP.Text == "" ||  txtNITP.Text == "" ||
+                txtNombreP.Text == "" || txtNumEscalafonP.Text == "" || txtTelefonoP.Text == ""||txtEmailP.Text=="")
+            {
+                validado = false;
+                errorProvider1.SetError(txtApellidoP, "Ingresar los apellidos del docente");
+                errorProvider1.SetError(txtDUIP, "Ingresar el número de DUI");
+                errorProvider1.SetError(txtNITP, "Ingresar el número de NIT del docente");
+                errorProvider1.SetError(txtNombreP, "Ingresar el nombre del docente");
+                errorProvider1.SetError(txtNumEscalafonP, "Ingresar el número de escalafón");
+                errorProvider1.SetError(txtTelefonoP, "Ingresar el número de teléfono del docente");
+                errorProvider1.SetError(txtNombreP, "Ingresar el correo electrónico del docente");
+                errorProvider1.SetError(txtEmailP, "Ingresar el correo electrónico del docente");
+
+
+            }
+            return validado;
+        
+        }
+
+        //borrar los mensajes que provee el error provider
+        private void BorrarMensaje()
+        {
+            errorProvider1.SetError(txtApellidoP, "");
+            errorProvider1.SetError(txtDUIP, "");
+            errorProvider1.SetError(txtNITP, "");
+            errorProvider1.SetError(txtNombreP, "");
+            errorProvider1.SetError(txtNumEscalafonP, "");
+            errorProvider1.SetError(txtTelefonoP, "");
+            errorProvider1.SetError(txtEmailP, "");
+        }
+
+        private void btnGuardarP_Click(object sender, EventArgs e)
+        {
+            BorrarMensaje();
+            if(validarCampos())
+            {
+                MessageBox.Show("Los datos se han ingresado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
         }
     }
 }
