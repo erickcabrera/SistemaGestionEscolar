@@ -30,5 +30,14 @@ namespace SistemaEscolar.Formularios
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
+
+        private bool validarCampos()
+        {
+            //esta variable verifica si se está validando algo
+            bool validado = true;
+
+            //if para validar camppos vacíos en el formulario de Profesor
+            if()
+        }
     }
 }
