@@ -88,6 +88,7 @@
             this.picBSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBSalir.TabIndex = 26;
             this.picBSalir.TabStop = false;
+            this.picBSalir.Click += new System.EventHandler(this.picBSalir_Click);
             // 
             // label1
             // 
