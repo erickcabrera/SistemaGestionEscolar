@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGrado));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dgvGrados = new System.Windows.Forms.DataGridView();
             this.picBSalir = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.picBMinimizar = new System.Windows.Forms.PictureBox();
+            this.dgvGrados = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.txtGrado = new System.Windows.Forms.TextBox();
             this.btnAgregarGrado = new System.Windows.Forms.Button();
@@ -41,9 +41,9 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGrados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGrados)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -57,25 +57,6 @@
             this.panel1.Size = new System.Drawing.Size(709, 71);
             this.panel1.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(29, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(259, 33);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Gestión de grados";
-            // 
-            // dgvGrados
-            // 
-            this.dgvGrados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGrados.Location = new System.Drawing.Point(50, 219);
-            this.dgvGrados.Name = "dgvGrados";
-            this.dgvGrados.Size = new System.Drawing.Size(518, 248);
-            this.dgvGrados.TabIndex = 1;
-            // 
             // picBSalir
             // 
             this.picBSalir.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -88,6 +69,17 @@
             this.picBSalir.TabStop = false;
             this.picBSalir.Click += new System.EventHandler(this.picBSalir_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(29, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(259, 33);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Gestión de grados";
+            // 
             // picBMinimizar
             // 
             this.picBMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -99,6 +91,14 @@
             this.picBMinimizar.TabIndex = 27;
             this.picBMinimizar.TabStop = false;
             this.picBMinimizar.Click += new System.EventHandler(this.picBMinimizar_Click);
+            // 
+            // dgvGrados
+            // 
+            this.dgvGrados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGrados.Location = new System.Drawing.Point(50, 219);
+            this.dgvGrados.Name = "dgvGrados";
+            this.dgvGrados.Size = new System.Drawing.Size(518, 248);
+            this.dgvGrados.TabIndex = 1;
             // 
             // label2
             // 
@@ -127,6 +127,7 @@
             this.btnAgregarGrado.TabIndex = 3;
             this.btnAgregarGrado.Text = "Agregar";
             this.btnAgregarGrado.UseVisualStyleBackColor = true;
+            this.btnAgregarGrado.Click += new System.EventHandler(this.btnAgregarGrado_Click);
             // 
             // btnModificar
             // 
@@ -178,9 +179,9 @@
             this.Text = "FrmGrado";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGrados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGrados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -28,5 +28,11 @@ namespace SistemaEscolar.Formularios
             f.Show();
             this.Hide();
         }
+
+        //testing
+        private void btnAgregarGrado_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
