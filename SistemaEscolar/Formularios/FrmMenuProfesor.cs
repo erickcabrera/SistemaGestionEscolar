@@ -72,6 +72,7 @@ namespace SistemaEscolar.Formularios
             lblNombreUsuario.Text = FrmLogin.nombreProfesor.ToString();
             fs.Close();
             //MessageBox.Show("Bienvenido " + FrmLogin.nombreProfesor.ToString() + " con codigo " + FrmLogin.idProfesor.ToString());
+            //
         }
 
         private void btnGruposP_Click(object sender, EventArgs e)

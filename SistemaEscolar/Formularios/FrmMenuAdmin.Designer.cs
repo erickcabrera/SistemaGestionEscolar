@@ -47,7 +47,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.btnCursos = new System.Windows.Forms.Button();
+            this.btnDetalleGS = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -291,7 +291,7 @@
             // 
             this.panel6.AutoScroll = true;
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(164)))), ((int)(((byte)(243)))));
-            this.panel6.Controls.Add(this.btnCursos);
+            this.panel6.Controls.Add(this.btnDetalleGS);
             this.panel6.Controls.Add(this.pictureBox5);
             this.panel6.Controls.Add(this.label5);
             this.panel6.Location = new System.Drawing.Point(17, 325);
@@ -299,17 +299,17 @@
             this.panel6.Size = new System.Drawing.Size(399, 137);
             this.panel6.TabIndex = 4;
             // 
-            // btnCursos
+            // btnDetalleGS
             // 
-            this.btnCursos.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCursos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCursos.Location = new System.Drawing.Point(130, 72);
-            this.btnCursos.Name = "btnCursos";
-            this.btnCursos.Size = new System.Drawing.Size(230, 38);
-            this.btnCursos.TabIndex = 4;
-            this.btnCursos.Text = "Acceder";
-            this.btnCursos.UseVisualStyleBackColor = true;
-            this.btnCursos.Click += new System.EventHandler(this.btnCursos_Click);
+            this.btnDetalleGS.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetalleGS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnDetalleGS.Location = new System.Drawing.Point(130, 72);
+            this.btnDetalleGS.Name = "btnDetalleGS";
+            this.btnDetalleGS.Size = new System.Drawing.Size(230, 38);
+            this.btnDetalleGS.TabIndex = 4;
+            this.btnDetalleGS.Text = "Acceder";
+            this.btnDetalleGS.UseVisualStyleBackColor = true;
+            this.btnDetalleGS.Click += new System.EventHandler(this.btnCursos_Click);
             // 
             // pictureBox5
             // 
@@ -323,14 +323,14 @@
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(136, 27);
+            this.label5.Location = new System.Drawing.Point(125, 7);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(225, 30);
+            this.label5.Size = new System.Drawing.Size(269, 70);
             this.label5.TabIndex = 3;
-            this.label5.Text = "Gestión de cursos";
+            this.label5.Text = "Detalle de grados y sección";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel4
             // 
@@ -565,7 +565,6 @@
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -605,7 +604,7 @@
         private System.Windows.Forms.Button btnMaterias;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button btnCursos;
+        private System.Windows.Forms.Button btnDetalleGS;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnUsuario;

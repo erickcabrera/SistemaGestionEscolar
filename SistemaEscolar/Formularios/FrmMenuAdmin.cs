@@ -96,7 +96,9 @@ namespace SistemaEscolar.Formularios
 
         private void btnCursos_Click(object sender, EventArgs e)
         {
-
+            FrmDetalleGradoSeccion f = new FrmDetalleGradoSeccion();
+            f.Show();
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)

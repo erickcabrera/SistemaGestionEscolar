@@ -7,11 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 using System.Runtime.InteropServices;
 
 namespace SistemaEscolar.Formularios
 {
-    public partial class FrmGrado : Form
+    public partial class FrmDetalleGradoSeccion : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -24,16 +25,11 @@ namespace SistemaEscolar.Formularios
              int nHeightEllipse
          );
 
-        public FrmGrado()
+        public FrmDetalleGradoSeccion()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-        }
-
-        private void picBMinimizar_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void picBSalir_Click(object sender, EventArgs e)
@@ -43,14 +39,9 @@ namespace SistemaEscolar.Formularios
             this.Hide();
         }
 
-        private void FrmGrado_Load(object sender, EventArgs e)
+        private void picBMinimizar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnAgregarGrado_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Test");
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
