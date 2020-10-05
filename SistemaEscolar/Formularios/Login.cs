@@ -18,6 +18,7 @@ namespace SistemaEscolar
         //VARIABLES GLOBALES
         internal static int idProfesor = 0;
         internal static String nombreProfesor = String.Empty;
+        internal static String fotoPerfilProfesor = String.Empty;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -73,7 +74,9 @@ namespace SistemaEscolar
                 {
                     idProfesor = sesion.ExtraerID(txtUsuario.Text, txtContra.Text);
                     nombreProfesor = sesion.ExtraerNombre(txtUsuario.Text, txtContra.Text);
-                    FormMenuPrueba formMenuPrueba = new FormMenuPrueba();
+                    fotoPerfilProfesor = sesion.ExtraerFoto(txtUsuario.Text, txtContra.Text);
+
+                    FrmMenuAdmin formMenuPrueba = new FrmMenuAdmin();
                     formMenuPrueba.Show();
                     this.Hide();
                 }
@@ -81,6 +84,7 @@ namespace SistemaEscolar
                 {
                     idProfesor = sesion.ExtraerID(txtUsuario.Text, txtContra.Text);
                     nombreProfesor = sesion.ExtraerNombre(txtUsuario.Text, txtContra.Text);
+                    fotoPerfilProfesor = sesion.ExtraerFoto(txtUsuario.Text, txtContra.Text);
                     MenuProfesor menuProfesor = new MenuProfesor();
                     menuProfesor.Show();
                     this.Hide();

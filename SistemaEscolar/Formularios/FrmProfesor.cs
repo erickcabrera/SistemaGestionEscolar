@@ -164,7 +164,14 @@ namespace SistemaEscolar.Formularios
 
         private void picBSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            FrmMenuAdmin f = new FrmMenuAdmin();
+            f.Show();
+        }
+
+        private void picBMinimizar_Click(object sender, EventArgs e)
+        {
+
         }
 
        
@@ -228,9 +235,14 @@ namespace SistemaEscolar.Formularios
             }
         }
 
-        private void picBMinimizar_Click(object sender, EventArgs e)
+        private void picBMinimizar_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        /* private void picBMinimizar_Click(object sender, EventArgs e)
+         {
+             this.WindowState = FormWindowState.Minimized;
+         }*/
     }
 }

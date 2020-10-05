@@ -83,7 +83,7 @@ namespace SistemaEscolar
 
                 while (dr1.Read())
                 {
-                    nombreProfesor = dr1["nombreProfesor"].ToString().Trim();
+                    nombreProfesor = dr1["nombreProfesor"].ToString().Trim() + " " + dr1["apellidoProfesor"].ToString().Trim();
                 }
                 if (dr1 != null)
                 {
@@ -132,6 +132,39 @@ namespace SistemaEscolar
                 Console.WriteLine("Error al inicar sesión " + e);
             }
             return id_Profesor;
+        }
+
+        public string ExtraerFoto(String user, String password)
+        {
+            string fotoPerfilProfesor = "";
+            try
+            {
+                SqlDataReader dr1 = null;
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = this.Conectar();
+                comando.CommandText = "ps_mostrar_foto_profesor";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@usuario", user);
+                comando.Parameters.AddWithValue("@contra", password);
+                dr1 = comando.ExecuteReader();
+
+                while (dr1.Read())
+                {
+                    fotoPerfilProfesor = dr1["fotoPerfilProfesor"].ToString();
+                }
+                if (dr1 != null)
+                {
+                    Console.WriteLine("Datos encontrados");
+                }
+                this.Desconectar();
+                dr1.Close();
+                return fotoPerfilProfesor;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine("Error al inicar sesión " + e);
+            }
+            return fotoPerfilProfesor;
         }
     }
 }

@@ -10,7 +10,7 @@ namespace SistemaEscolar.Clases
     class Conexion
     {
         private static SqlConnection cone = null;
-        private static String server = "localhost";
+        private static String server = "localhost";       
         private static String usuario = "sa";
         private static String clave = "123456";
         private static String db = "BD_escuela";
