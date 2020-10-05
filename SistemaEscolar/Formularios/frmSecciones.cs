@@ -11,8 +11,9 @@ using System.Runtime.InteropServices;
 
 namespace SistemaEscolar.Formularios
 {
-    public partial class FrmGrado : Form
+    public partial class frmSecciones : Form
     {
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
          (
@@ -24,28 +25,23 @@ namespace SistemaEscolar.Formularios
              int nHeightEllipse
          );
 
-        public FrmGrado()
+        public frmSecciones()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
-        private void picBMinimizar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void picBSalir_Click(object sender, EventArgs e)
         {
-            FrmMenuAdmin f = new FrmMenuAdmin();
-            f.Show();
+            FrmMenuAdmin frmMA = new FrmMenuAdmin();
+            frmMA.Show();
             this.Hide();
         }
 
-        private void FrmGrado_Load(object sender, EventArgs e)
+        private void picBMinimizar_Click(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

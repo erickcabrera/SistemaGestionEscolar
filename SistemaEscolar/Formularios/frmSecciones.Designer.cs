@@ -1,6 +1,6 @@
 ﻿namespace SistemaEscolar.Formularios
 {
-    partial class FrmGrado
+    partial class frmSecciones
     {
         /// <summary>
         /// Required designer variable.
@@ -28,161 +28,159 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGrado));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSecciones));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.picBSalir = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.picBSalir = new System.Windows.Forms.PictureBox();
             this.picBMinimizar = new System.Windows.Forms.PictureBox();
-            this.dgvGrados = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtGrado = new System.Windows.Forms.TextBox();
-            this.btnAgregarGrado = new System.Windows.Forms.Button();
+            this.txtSeccion = new System.Windows.Forms.TextBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.dgvSecciones = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGrados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSecciones)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(164)))), ((int)(((byte)(243)))));
             this.panel1.Controls.Add(this.picBSalir);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.picBMinimizar);
-            this.panel1.Location = new System.Drawing.Point(-3, -1);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(-13, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(709, 71);
+            this.panel1.Size = new System.Drawing.Size(578, 80);
             this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(25, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(272, 30);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Gestión de secciones";
             // 
             // picBSalir
             // 
             this.picBSalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picBSalir.Image = ((System.Drawing.Image)(resources.GetObject("picBSalir.Image")));
-            this.picBSalir.Location = new System.Drawing.Point(560, 13);
+            this.picBSalir.Location = new System.Drawing.Point(463, 28);
             this.picBSalir.Name = "picBSalir";
             this.picBSalir.Size = new System.Drawing.Size(40, 42);
             this.picBSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBSalir.TabIndex = 28;
+            this.picBSalir.TabIndex = 30;
             this.picBSalir.TabStop = false;
             this.picBSalir.Click += new System.EventHandler(this.picBSalir_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(29, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(259, 33);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Gestión de grados";
             // 
             // picBMinimizar
             // 
             this.picBMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picBMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("picBMinimizar.Image")));
-            this.picBMinimizar.Location = new System.Drawing.Point(509, 13);
+            this.picBMinimizar.Location = new System.Drawing.Point(412, 28);
             this.picBMinimizar.Name = "picBMinimizar";
             this.picBMinimizar.Size = new System.Drawing.Size(45, 42);
             this.picBMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBMinimizar.TabIndex = 27;
+            this.picBMinimizar.TabIndex = 29;
             this.picBMinimizar.TabStop = false;
             this.picBMinimizar.Click += new System.EventHandler(this.picBMinimizar_Click);
-            // 
-            // dgvGrados
-            // 
-            this.dgvGrados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGrados.Location = new System.Drawing.Point(50, 219);
-            this.dgvGrados.Name = "dgvGrados";
-            this.dgvGrados.Size = new System.Drawing.Size(518, 248);
-            this.dgvGrados.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(46, 94);
+            this.label2.Location = new System.Drawing.Point(40, 99);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(184, 22);
+            this.label2.Size = new System.Drawing.Size(87, 22);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Nombre del grado:";
+            this.label2.Text = "Sección:";
             // 
-            // txtGrado
+            // txtSeccion
             // 
-            this.txtGrado.Location = new System.Drawing.Point(246, 94);
-            this.txtGrado.Name = "txtGrado";
-            this.txtGrado.Size = new System.Drawing.Size(206, 20);
-            this.txtGrado.TabIndex = 2;
+            this.txtSeccion.Location = new System.Drawing.Point(133, 103);
+            this.txtSeccion.Name = "txtSeccion";
+            this.txtSeccion.Size = new System.Drawing.Size(227, 20);
+            this.txtSeccion.TabIndex = 1;
             // 
-            // btnAgregarGrado
+            // btnAgregar
             // 
-            this.btnAgregarGrado.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarGrado.Location = new System.Drawing.Point(50, 143);
-            this.btnAgregarGrado.Name = "btnAgregarGrado";
-            this.btnAgregarGrado.Size = new System.Drawing.Size(110, 40);
-            this.btnAgregarGrado.TabIndex = 3;
-            this.btnAgregarGrado.Text = "Agregar";
-            this.btnAgregarGrado.UseVisualStyleBackColor = true;
-            this.btnAgregarGrado.Click += new System.EventHandler(this.btnAgregarGrado_Click);
+            this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Location = new System.Drawing.Point(44, 145);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(107, 39);
+            this.btnAgregar.TabIndex = 2;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
             // 
             // btnModificar
             // 
-            this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(166, 143);
+            this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Location = new System.Drawing.Point(157, 145);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(110, 40);
-            this.btnModificar.TabIndex = 3;
+            this.btnModificar.Size = new System.Drawing.Size(107, 39);
+            this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(282, 143);
+            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(270, 145);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(110, 40);
-            this.btnEliminar.TabIndex = 3;
+            this.btnEliminar.Size = new System.Drawing.Size(107, 39);
+            this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(398, 143);
+            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(383, 145);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(110, 40);
-            this.btnBuscar.TabIndex = 3;
+            this.btnBuscar.Size = new System.Drawing.Size(107, 39);
+            this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
-            // FrmGrado
+            // dgvSecciones
+            // 
+            this.dgvSecciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSecciones.Location = new System.Drawing.Point(44, 203);
+            this.dgvSecciones.Name = "dgvSecciones";
+            this.dgvSecciones.Size = new System.Drawing.Size(446, 159);
+            this.dgvSecciones.TabIndex = 3;
+            // 
+            // frmSecciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(619, 509);
+            this.ClientSize = new System.Drawing.Size(526, 403);
+            this.Controls.Add(this.dgvSecciones);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.btnAgregarGrado);
-            this.Controls.Add(this.txtGrado);
-            this.Controls.Add(this.dgvGrados);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.txtSeccion);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmGrado";
+            this.Name = "frmSecciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmGrado";
-            this.Load += new System.EventHandler(this.FrmGrado_Load);
+            this.Text = "frmSecciones";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGrados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSecciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,14 +190,14 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvGrados;
         private System.Windows.Forms.PictureBox picBSalir;
         private System.Windows.Forms.PictureBox picBMinimizar;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtGrado;
-        private System.Windows.Forms.Button btnAgregarGrado;
+        private System.Windows.Forms.TextBox txtSeccion;
+        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.DataGridView dgvSecciones;
     }
 }

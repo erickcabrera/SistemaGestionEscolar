@@ -105,5 +105,17 @@ namespace SistemaEscolar.Formularios
             frmG.Show();
             this.Hide();
         }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            frmSecciones frmS = new frmSecciones();
+            frmS.Show();
+            this.Hide();
+        }
     }
 }
