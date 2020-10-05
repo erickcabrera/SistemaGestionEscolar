@@ -47,5 +47,10 @@ namespace SistemaEscolar.Formularios
         {
 
         }
+
+        private void btnAgregarGrado_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Test");
+        }
     }
 }
