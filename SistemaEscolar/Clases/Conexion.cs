@@ -10,12 +10,13 @@ namespace SistemaEscolar.Clases
     class Conexion
     {
         private static SqlConnection cone = null;
-        private static String server = "localhost";       
-        private static String usuario = "sa";
-        private static String clave = "123456";
+        private static String server = "FABIOLA\\SQLEXPRESS";       
+       // private static String usuario = "sa";
+       // private static String clave = "123456";
         private static String db = "BD_escuela";
-        private static String cadena = "server=" + server + ";uid=" + usuario + ";pwd=" + clave + ";database=" + db+ "; Integrated security = true;";
-        
+        //private static String cadena = "server=" + server + ";uid=" + usuario + ";pwd=" + clave + ";database=" + db+ "; Integrated security = true;";
+        private static String cadena = "server=" + server +  ";database=" + db + "; Integrated security = true;";
+
         /// <summary>
         /// 
         /// </summary>
