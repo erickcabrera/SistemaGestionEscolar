@@ -136,20 +136,20 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.Location = new System.Drawing.Point(475, 181);
             this.txtUsuario.MaxLength = 20;
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(201, 26);
+            this.txtUsuario.Size = new System.Drawing.Size(201, 27);
             this.txtUsuario.TabIndex = 1;
             // 
             // txtContra
             // 
-            this.txtContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContra.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContra.Location = new System.Drawing.Point(478, 249);
             this.txtContra.MaxLength = 20;
             this.txtContra.Name = "txtContra";
-            this.txtContra.Size = new System.Drawing.Size(201, 26);
+            this.txtContra.Size = new System.Drawing.Size(201, 27);
             this.txtContra.TabIndex = 2;
             // 
             // picBMinimizar

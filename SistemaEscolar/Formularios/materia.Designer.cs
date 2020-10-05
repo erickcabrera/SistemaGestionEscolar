@@ -105,9 +105,10 @@
             // 
             // txtMateria
             // 
+            this.txtMateria.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMateria.Location = new System.Drawing.Point(210, 89);
             this.txtMateria.Name = "txtMateria";
-            this.txtMateria.Size = new System.Drawing.Size(192, 20);
+            this.txtMateria.Size = new System.Drawing.Size(192, 27);
             this.txtMateria.TabIndex = 1;
             // 
             // dataGridView1

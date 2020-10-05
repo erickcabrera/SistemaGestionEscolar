@@ -225,30 +225,34 @@
             // 
             // txtNombreP
             // 
+            this.txtNombreP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreP.Location = new System.Drawing.Point(276, 112);
             this.txtNombreP.Name = "txtNombreP";
-            this.txtNombreP.Size = new System.Drawing.Size(258, 20);
+            this.txtNombreP.Size = new System.Drawing.Size(258, 27);
             this.txtNombreP.TabIndex = 29;
             this.txtNombreP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreP_KeyPress);
             // 
             // txtApellidoP
             // 
+            this.txtApellidoP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellidoP.Location = new System.Drawing.Point(276, 152);
             this.txtApellidoP.Name = "txtApellidoP";
-            this.txtApellidoP.Size = new System.Drawing.Size(258, 20);
+            this.txtApellidoP.Size = new System.Drawing.Size(258, 27);
             this.txtApellidoP.TabIndex = 29;
             this.txtApellidoP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidoP_KeyPress);
             // 
             // txtEmailP
             // 
+            this.txtEmailP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailP.Location = new System.Drawing.Point(276, 279);
             this.txtEmailP.Name = "txtEmailP";
-            this.txtEmailP.Size = new System.Drawing.Size(258, 20);
+            this.txtEmailP.Size = new System.Drawing.Size(258, 27);
             this.txtEmailP.TabIndex = 29;
             this.txtEmailP.TextChanged += new System.EventHandler(this.txtEmailP_TextChanged);
             // 
             // dtpFechaP
             // 
+            this.dtpFechaP.CalendarFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaP.Location = new System.Drawing.Point(276, 194);
             this.dtpFechaP.Name = "dtpFechaP";
             this.dtpFechaP.Size = new System.Drawing.Size(258, 20);
@@ -256,17 +260,19 @@
             // 
             // cmbSexoP
             // 
+            this.cmbSexoP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSexoP.FormattingEnabled = true;
             this.cmbSexoP.Location = new System.Drawing.Point(276, 440);
             this.cmbSexoP.Name = "cmbSexoP";
-            this.cmbSexoP.Size = new System.Drawing.Size(258, 21);
+            this.cmbSexoP.Size = new System.Drawing.Size(258, 29);
             this.cmbSexoP.TabIndex = 31;
             // 
             // rtbDireccionP
             // 
+            this.rtbDireccionP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbDireccionP.Location = new System.Drawing.Point(276, 484);
             this.rtbDireccionP.Name = "rtbDireccionP";
-            this.rtbDireccionP.Size = new System.Drawing.Size(258, 96);
+            this.rtbDireccionP.Size = new System.Drawing.Size(258, 48);
             this.rtbDireccionP.TabIndex = 32;
             this.rtbDireccionP.Text = "";
             // 
@@ -276,9 +282,9 @@
             this.btnGuardarP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardarP.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarP.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarP.Location = new System.Drawing.Point(41, 615);
+            this.btnGuardarP.Location = new System.Drawing.Point(52, 556);
             this.btnGuardarP.Name = "btnGuardarP";
-            this.btnGuardarP.Size = new System.Drawing.Size(493, 53);
+            this.btnGuardarP.Size = new System.Drawing.Size(493, 38);
             this.btnGuardarP.TabIndex = 33;
             this.btnGuardarP.Text = "Guardar";
             this.btnGuardarP.UseVisualStyleBackColor = false;
@@ -312,7 +318,7 @@
             this.btnEditarP.ForeColor = System.Drawing.Color.White;
             this.btnEditarP.Location = new System.Drawing.Point(576, 556);
             this.btnEditarP.Name = "btnEditarP";
-            this.btnEditarP.Size = new System.Drawing.Size(301, 53);
+            this.btnEditarP.Size = new System.Drawing.Size(301, 38);
             this.btnEditarP.TabIndex = 36;
             this.btnEditarP.Text = "Editar";
             this.btnEditarP.UseVisualStyleBackColor = false;
@@ -325,7 +331,7 @@
             this.btnEliminarP.ForeColor = System.Drawing.Color.White;
             this.btnEliminarP.Location = new System.Drawing.Point(994, 556);
             this.btnEliminarP.Name = "btnEliminarP";
-            this.btnEliminarP.Size = new System.Drawing.Size(301, 53);
+            this.btnEliminarP.Size = new System.Drawing.Size(301, 38);
             this.btnEliminarP.TabIndex = 37;
             this.btnEliminarP.Text = "Eliminar";
             this.btnEliminarP.UseVisualStyleBackColor = false;
@@ -336,34 +342,38 @@
             // 
             // mtxtTelefonoP
             // 
+            this.mtxtTelefonoP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxtTelefonoP.Location = new System.Drawing.Point(276, 238);
             this.mtxtTelefonoP.Mask = "0000-0000";
             this.mtxtTelefonoP.Name = "mtxtTelefonoP";
-            this.mtxtTelefonoP.Size = new System.Drawing.Size(258, 20);
+            this.mtxtTelefonoP.Size = new System.Drawing.Size(258, 27);
             this.mtxtTelefonoP.TabIndex = 38;
             // 
             // mtxtDUIP
             // 
+            this.mtxtDUIP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxtDUIP.Location = new System.Drawing.Point(276, 321);
             this.mtxtDUIP.Mask = "00000000-0";
             this.mtxtDUIP.Name = "mtxtDUIP";
-            this.mtxtDUIP.Size = new System.Drawing.Size(258, 20);
+            this.mtxtDUIP.Size = new System.Drawing.Size(258, 27);
             this.mtxtDUIP.TabIndex = 38;
             // 
             // mtxtNITP
             // 
+            this.mtxtNITP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxtNITP.Location = new System.Drawing.Point(276, 359);
             this.mtxtNITP.Mask = "0000-000000-000-0";
             this.mtxtNITP.Name = "mtxtNITP";
-            this.mtxtNITP.Size = new System.Drawing.Size(258, 20);
+            this.mtxtNITP.Size = new System.Drawing.Size(258, 27);
             this.mtxtNITP.TabIndex = 38;
             // 
             // mtxtNumEscalafonP
             // 
+            this.mtxtNumEscalafonP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxtNumEscalafonP.Location = new System.Drawing.Point(276, 399);
             this.mtxtNumEscalafonP.Mask = "0000000";
             this.mtxtNumEscalafonP.Name = "mtxtNumEscalafonP";
-            this.mtxtNumEscalafonP.Size = new System.Drawing.Size(258, 20);
+            this.mtxtNumEscalafonP.Size = new System.Drawing.Size(258, 27);
             this.mtxtNumEscalafonP.TabIndex = 38;
             // 
             // FrmProfesor
@@ -371,7 +381,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1321, 710);
+            this.ClientSize = new System.Drawing.Size(1321, 623);
             this.Controls.Add(this.mtxtNumEscalafonP);
             this.Controls.Add(this.mtxtNITP);
             this.Controls.Add(this.mtxtDUIP);

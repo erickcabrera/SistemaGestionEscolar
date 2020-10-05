@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSecciones));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.picBSalir = new System.Windows.Forms.PictureBox();
             this.picBMinimizar = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSeccion = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -56,17 +56,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(578, 80);
             this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(25, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(272, 30);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Gestión de secciones";
             // 
             // picBSalir
             // 
@@ -92,6 +81,17 @@
             this.picBMinimizar.TabStop = false;
             this.picBMinimizar.Click += new System.EventHandler(this.picBMinimizar_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(25, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(272, 30);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Gestión de secciones";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -105,9 +105,10 @@
             // 
             // txtSeccion
             // 
+            this.txtSeccion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSeccion.Location = new System.Drawing.Point(133, 103);
             this.txtSeccion.Name = "txtSeccion";
-            this.txtSeccion.Size = new System.Drawing.Size(227, 20);
+            this.txtSeccion.Size = new System.Drawing.Size(227, 27);
             this.txtSeccion.TabIndex = 1;
             // 
             // btnAgregar
