@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuProfesor));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.picBMinimizar = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pbFotoPerfil = new System.Windows.Forms.PictureBox();
@@ -42,7 +43,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -66,6 +66,17 @@
             this.panel1.Size = new System.Drawing.Size(907, 92);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // lblNombreUsuario
+            // 
+            this.lblNombreUsuario.AutoSize = true;
+            this.lblNombreUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreUsuario.ForeColor = System.Drawing.Color.White;
+            this.lblNombreUsuario.Location = new System.Drawing.Point(49, 67);
+            this.lblNombreUsuario.Name = "lblNombreUsuario";
+            this.lblNombreUsuario.Size = new System.Drawing.Size(133, 21);
+            this.lblNombreUsuario.TabIndex = 10;
+            this.lblNombreUsuario.Text = "Nombre Usuario";
             // 
             // picBMinimizar
             // 
@@ -132,6 +143,7 @@
             this.btnGruposP.TabIndex = 3;
             this.btnGruposP.Text = "Acceder";
             this.btnGruposP.UseVisualStyleBackColor = true;
+            this.btnGruposP.Click += new System.EventHandler(this.btnGruposP_Click);
             // 
             // pictureBox3
             // 
@@ -197,17 +209,6 @@
             this.label3.Size = new System.Drawing.Size(231, 30);
             this.label3.TabIndex = 0;
             this.label3.Text = "Visualizar alumnos";
-            // 
-            // lblNombreUsuario
-            // 
-            this.lblNombreUsuario.AutoSize = true;
-            this.lblNombreUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreUsuario.ForeColor = System.Drawing.Color.White;
-            this.lblNombreUsuario.Location = new System.Drawing.Point(49, 67);
-            this.lblNombreUsuario.Name = "lblNombreUsuario";
-            this.lblNombreUsuario.Size = new System.Drawing.Size(133, 21);
-            this.lblNombreUsuario.TabIndex = 10;
-            this.lblNombreUsuario.Text = "Nombre Usuario";
             // 
             // MenuProfesor
             // 
