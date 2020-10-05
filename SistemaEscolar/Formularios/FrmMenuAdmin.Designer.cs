@@ -38,6 +38,10 @@
             this.btnGrados = new System.Windows.Forms.Button();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -59,20 +63,18 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.pbFotoPerfil = new System.Windows.Forms.PictureBox();
             this.picBMinimizar = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
-            this.picAdmin = new System.Windows.Forms.PictureBox();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel5.SuspendLayout();
@@ -84,11 +86,9 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFotoPerfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAdmin)).BeginInit();
-            this.panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -196,6 +196,52 @@
             this.label8.Size = new System.Drawing.Size(232, 30);
             this.label8.TabIndex = 5;
             this.label8.Text = "Gestión de grados";
+            // 
+            // panel10
+            // 
+            this.panel10.AutoScroll = true;
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(164)))), ((int)(((byte)(243)))));
+            this.panel10.Controls.Add(this.button2);
+            this.panel10.Controls.Add(this.pictureBox9);
+            this.panel10.Controls.Add(this.label9);
+            this.panel10.Location = new System.Drawing.Point(443, 480);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(399, 137);
+            this.panel10.TabIndex = 4;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(123, 74);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(219, 39);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Acceder";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
+            this.pictureBox9.Location = new System.Drawing.Point(16, 27);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(85, 84);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 1;
+            this.pictureBox9.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(118, 27);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(272, 30);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Gestión de secciones";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // panel7
             // 
@@ -424,7 +470,7 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(164)))), ((int)(((byte)(243)))));
-            this.panel8.Controls.Add(this.picAdmin);
+            this.panel8.Controls.Add(this.pbFotoPerfil);
             this.panel8.Controls.Add(this.picBMinimizar);
             this.panel8.Controls.Add(this.pictureBox7);
             this.panel8.Controls.Add(this.lblNombreUsuario);
@@ -434,6 +480,15 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1049, 86);
             this.panel8.TabIndex = 6;
+            // 
+            // pbFotoPerfil
+            // 
+            this.pbFotoPerfil.Location = new System.Drawing.Point(812, 11);
+            this.pbFotoPerfil.Name = "pbFotoPerfil";
+            this.pbFotoPerfil.Size = new System.Drawing.Size(72, 71);
+            this.pbFotoPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbFotoPerfil.TabIndex = 10;
+            this.pbFotoPerfil.TabStop = false;
             // 
             // picBMinimizar
             // 
@@ -458,6 +513,17 @@
             this.pictureBox7.TabStop = false;
             this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
+            // lblNombreUsuario
+            // 
+            this.lblNombreUsuario.AutoSize = true;
+            this.lblNombreUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreUsuario.ForeColor = System.Drawing.Color.White;
+            this.lblNombreUsuario.Location = new System.Drawing.Point(42, 50);
+            this.lblNombreUsuario.Name = "lblNombreUsuario";
+            this.lblNombreUsuario.Size = new System.Drawing.Size(157, 21);
+            this.lblNombreUsuario.TabIndex = 0;
+            this.lblNombreUsuario.Text = "Nombre de usuario";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -468,73 +534,6 @@
             this.label7.Size = new System.Drawing.Size(213, 39);
             this.label7.TabIndex = 0;
             this.label7.Text = "¡Bienvenido!";
-            // 
-            // lblNombreUsuario
-            // 
-            this.lblNombreUsuario.AutoSize = true;
-            this.lblNombreUsuario.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreUsuario.ForeColor = System.Drawing.Color.White;
-            this.lblNombreUsuario.Location = new System.Drawing.Point(42, 50);
-            this.lblNombreUsuario.Name = "lblNombreUsuario";
-            this.lblNombreUsuario.Size = new System.Drawing.Size(206, 24);
-            this.lblNombreUsuario.TabIndex = 0;
-            this.lblNombreUsuario.Text = "Nombre de usuario";
-            // 
-            // picAdmin
-            // 
-            this.picAdmin.Image = ((System.Drawing.Image)(resources.GetObject("picAdmin.Image")));
-            this.picAdmin.Location = new System.Drawing.Point(812, 11);
-            this.picAdmin.Name = "picAdmin";
-            this.picAdmin.Size = new System.Drawing.Size(72, 71);
-            this.picAdmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picAdmin.TabIndex = 10;
-            this.picAdmin.TabStop = false;
-            // 
-            // panel10
-            // 
-            this.panel10.AutoScroll = true;
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(164)))), ((int)(((byte)(243)))));
-            this.panel10.Controls.Add(this.button2);
-            this.panel10.Controls.Add(this.pictureBox9);
-            this.panel10.Controls.Add(this.label9);
-            this.panel10.Location = new System.Drawing.Point(443, 480);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(399, 137);
-            this.panel10.TabIndex = 4;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(16, 27);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(85, 84);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 1;
-            this.pictureBox9.TabStop = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(118, 27);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(272, 30);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Gestión de secciones";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(123, 74);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(219, 39);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Acceder";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // FrmMenuAdmin
             // 
@@ -558,6 +557,9 @@
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -574,12 +576,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFotoPerfil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAdmin)).EndInit();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -618,7 +617,7 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnGrados;
-        private System.Windows.Forms.PictureBox picAdmin;
+        private System.Windows.Forms.PictureBox pbFotoPerfil;
         private System.Windows.Forms.Label lblNombreUsuario;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.PictureBox pictureBox9;

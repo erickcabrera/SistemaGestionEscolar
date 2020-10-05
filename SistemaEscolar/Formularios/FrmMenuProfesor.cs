@@ -64,15 +64,12 @@ namespace SistemaEscolar.Formularios
 
         private void MenuProfesor_Load(object sender, EventArgs e)
         {
-            //FrmLogin.fotoPerfilProfesor.ToString()
             string ruta = "";
             ruta = "..\\..\\" + FrmLogin.fotoPerfilProfesor.ToString();
             System.IO.FileStream fs = new System.IO.FileStream(ruta, System.IO.FileMode.Open, System.IO.FileAccess.Read);
             pbFotoPerfil.Image = System.Drawing.Image.FromStream(fs);
             lblNombreUsuario.Text = FrmLogin.nombreProfesor.ToString();
             fs.Close();
-            //MessageBox.Show("Bienvenido " + FrmLogin.nombreProfesor.ToString() + " con codigo " + FrmLogin.idProfesor.ToString());
-            //
         }
 
         private void btnGruposP_Click(object sender, EventArgs e)
