@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Data.OleDb;
+using System.Data;
 
 namespace SistemaEscolar.Clases
 {
@@ -42,6 +45,31 @@ namespace SistemaEscolar.Clases
         ~Alumno()
         {
 
+        }
+
+        public DataTable Mostrar()
+        {
+            DataTable tabla = new DataTable();
+            try
+            {
+                Conexion conexion = new Conexion();
+                SqlDataReader leer = null;
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = conexion.Conectar();
+                comando.CommandText = "ps_mostrar_alumnos";
+                comando.CommandType = CommandType.StoredProcedure;
+                leer = comando.ExecuteReader();
+                tabla.Load(leer);
+
+                conexion.Desconectar();
+                leer.Close();
+                return tabla;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine("Error al inicar sesión " + e);
+            }
+            return tabla;
         }
     }
 }

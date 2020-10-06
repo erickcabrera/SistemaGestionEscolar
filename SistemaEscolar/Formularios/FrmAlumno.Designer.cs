@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAlumno));
-            this.dgvDatosA = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.picBSalir = new System.Windows.Forms.PictureBox();
@@ -62,20 +61,13 @@
             this.mtxtNIEA = new System.Windows.Forms.MaskedTextBox();
             this.mtxtNumPartidaA = new System.Windows.Forms.MaskedTextBox();
             this.mtxtTelefonoA = new System.Windows.Forms.MaskedTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosA)).BeginInit();
+            this.dvgDatosAlumnos = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgDatosAlumnos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvDatosA
-            // 
-            this.dgvDatosA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDatosA.Location = new System.Drawing.Point(577, 122);
-            this.dgvDatosA.Name = "dgvDatosA";
-            this.dgvDatosA.Size = new System.Drawing.Size(673, 375);
-            this.dgvDatosA.TabIndex = 0;
             // 
             // label1
             // 
@@ -396,12 +388,25 @@
             this.mtxtTelefonoA.Size = new System.Drawing.Size(258, 27);
             this.mtxtTelefonoA.TabIndex = 39;
             // 
+            // dvgDatosAlumnos
+            // 
+            this.dvgDatosAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgDatosAlumnos.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.dvgDatosAlumnos.Location = new System.Drawing.Point(577, 112);
+            this.dvgDatosAlumnos.MultiSelect = false;
+            this.dvgDatosAlumnos.Name = "dvgDatosAlumnos";
+            this.dvgDatosAlumnos.ReadOnly = true;
+            this.dvgDatosAlumnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dvgDatosAlumnos.Size = new System.Drawing.Size(654, 350);
+            this.dvgDatosAlumnos.TabIndex = 40;
+            // 
             // FrmAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1269, 660);
+            this.Controls.Add(this.dvgDatosAlumnos);
             this.Controls.Add(this.mtxtTelefonoA);
             this.Controls.Add(this.mtxtNumPartidaA);
             this.Controls.Add(this.mtxtNIEA);
@@ -429,25 +434,23 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dgvDatosA);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAlumno";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alumno";
             this.Load += new System.EventHandler(this.Alumno_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosA)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgDatosAlumnos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvDatosA;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox picBMinimizar;
@@ -479,5 +482,6 @@
         private System.Windows.Forms.MaskedTextBox mtxtTelefonoA;
         private System.Windows.Forms.MaskedTextBox mtxtNumPartidaA;
         private System.Windows.Forms.MaskedTextBox mtxtNIEA;
+        private System.Windows.Forms.DataGridView dvgDatosAlumnos;
     }
 }

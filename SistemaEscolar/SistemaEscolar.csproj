@@ -145,8 +145,11 @@
   <ItemGroup>
     <Compile Include="Clases\Alumno.cs" />
     <Compile Include="Clases\Conexion.cs" />
+    <Compile Include="Clases\Grado.cs" />
+    <Compile Include="Clases\Materia.cs" />
     <Compile Include="Clases\Persona.cs" />
     <Compile Include="Clases\Profesor.cs" />
+    <Compile Include="Clases\Seccion.cs" />
     <Compile Include="Formularios\FrmAlumno.cs">
       <SubType>Form</SubType>
     </Compile>

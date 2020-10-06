@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using SistemaEscolar.Formularios;
+using SistemaEscolar.Clases;
 
 namespace SistemaEscolar.Formularios
 {
@@ -33,7 +34,16 @@ namespace SistemaEscolar.Formularios
 
         private void Alumno_Load(object sender, EventArgs e)
         {
-            
+            Alumno alumno = new Alumno();
+            try
+            {
+                dvgDatosAlumnos.DataSource = null;
+                dvgDatosAlumnos.DataSource = alumno.Mostrar();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Error al mostrar datos " + Ex.Message);
+            }
         }
 
         //validar que la fecha de nacimiento no sea mayor a la fecha del sistema
