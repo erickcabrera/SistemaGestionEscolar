@@ -29,8 +29,8 @@ namespace SistemaEscolar.Formularios
         public FrmMenuAdmin()
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None;
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+           /* this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));*/
         }
 
         private void FormMenuPrueba_Load(object sender, EventArgs e)
@@ -95,8 +95,8 @@ namespace SistemaEscolar.Formularios
 
         private void btnMaterias_Click(object sender, EventArgs e)
         {
-            materia frmMa = new materia();
-            frmMa.Show();
+            materia frmM = new materia();
+            frmM.Show();
             this.Hide();
         }
 
@@ -123,6 +123,13 @@ namespace SistemaEscolar.Formularios
         {
             frmSecciones frmS = new frmSecciones();
             frmS.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Cursos frmC = new Cursos();
+            frmC.Show();
             this.Hide();
         }
     }

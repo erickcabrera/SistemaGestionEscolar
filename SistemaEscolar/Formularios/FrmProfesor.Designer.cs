@@ -278,10 +278,10 @@
             // 
             // btnGuardarP
             // 
-            this.btnGuardarP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(151)))), ((int)(((byte)(178)))));
+            this.btnGuardarP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnGuardarP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardarP.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarP.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarP.ForeColor = System.Drawing.Color.Black;
             this.btnGuardarP.Location = new System.Drawing.Point(52, 556);
             this.btnGuardarP.Name = "btnGuardarP";
             this.btnGuardarP.Size = new System.Drawing.Size(493, 38);
@@ -312,10 +312,10 @@
             // 
             // btnEditarP
             // 
-            this.btnEditarP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(151)))), ((int)(((byte)(178)))));
+            this.btnEditarP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnEditarP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEditarP.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarP.ForeColor = System.Drawing.Color.White;
+            this.btnEditarP.ForeColor = System.Drawing.Color.Black;
             this.btnEditarP.Location = new System.Drawing.Point(576, 556);
             this.btnEditarP.Name = "btnEditarP";
             this.btnEditarP.Size = new System.Drawing.Size(301, 38);
@@ -325,10 +325,10 @@
             // 
             // btnEliminarP
             // 
-            this.btnEliminarP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(151)))), ((int)(((byte)(178)))));
+            this.btnEliminarP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnEliminarP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminarP.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarP.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarP.ForeColor = System.Drawing.Color.Black;
             this.btnEliminarP.Location = new System.Drawing.Point(994, 556);
             this.btnEliminarP.Name = "btnEliminarP";
             this.btnEliminarP.Size = new System.Drawing.Size(301, 38);
