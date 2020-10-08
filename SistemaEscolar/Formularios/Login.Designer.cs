@@ -149,7 +149,7 @@
             this.txtContra.Location = new System.Drawing.Point(478, 249);
             this.txtContra.MaxLength = 20;
             this.txtContra.Name = "txtContra";
-            this.txtContra.Size = new System.Drawing.Size(201, 26);
+            this.txtContra.Size = new System.Drawing.Size(201, 27);
             this.txtContra.TabIndex = 2;
             // 
             // picBMinimizar
@@ -206,6 +206,7 @@
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
