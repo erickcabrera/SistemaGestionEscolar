@@ -234,6 +234,12 @@
     <Compile Include="Formularios\VisualizarAlumnos.Designer.cs">
       <DependentUpon>VisualizarAlumnos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\VisualizarCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\VisualizarCursos.Designer.cs">
+      <DependentUpon>VisualizarCursos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Clases\Sesion.cs" />
@@ -279,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\VisualizarAlumnos.resx">
       <DependentUpon>VisualizarAlumnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\VisualizarCursos.resx">
+      <DependentUpon>VisualizarCursos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

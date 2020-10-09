@@ -74,7 +74,9 @@ namespace SistemaEscolar.Formularios
 
         private void btnGruposP_Click(object sender, EventArgs e)
         {
-
+            VisualizarCursos frmVC = new VisualizarCursos();
+            frmVC.Show();
+            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
