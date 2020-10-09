@@ -33,7 +33,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.picBSalir = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.picBMinimizar = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -62,17 +61,17 @@
             this.mtxtNumEscalafonP = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(164)))), ((int)(((byte)(243)))));
             this.panel1.Controls.Add(this.picBSalir);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.picBMinimizar);
             this.panel1.Location = new System.Drawing.Point(-2, -1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1387, 76);
@@ -80,6 +79,7 @@
             // 
             // picBSalir
             // 
+            this.picBSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picBSalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picBSalir.Image = ((System.Drawing.Image)(resources.GetObject("picBSalir.Image")));
             this.picBSalir.Location = new System.Drawing.Point(1248, 20);
@@ -100,18 +100,6 @@
             this.label1.Size = new System.Drawing.Size(354, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "Gestión de Profesores";
-            // 
-            // picBMinimizar
-            // 
-            this.picBMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picBMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("picBMinimizar.Image")));
-            this.picBMinimizar.Location = new System.Drawing.Point(1197, 20);
-            this.picBMinimizar.Name = "picBMinimizar";
-            this.picBMinimizar.Size = new System.Drawing.Size(45, 42);
-            this.picBMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBMinimizar.TabIndex = 8;
-            this.picBMinimizar.TabStop = false;
-            this.picBMinimizar.Click += new System.EventHandler(this.picBMinimizar_Click_1);
             // 
             // label2
             // 
@@ -408,14 +396,14 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmProfesor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmProfesor";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
@@ -428,7 +416,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox picBSalir;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox picBMinimizar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

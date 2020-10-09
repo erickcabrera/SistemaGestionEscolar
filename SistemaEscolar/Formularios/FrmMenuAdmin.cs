@@ -132,5 +132,10 @@ namespace SistemaEscolar.Formularios
             frmC.Show();
             this.Hide();
         }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -33,31 +33,30 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.picBSalir = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtContra = new System.Windows.Forms.TextBox();
-            this.picBMinimizar = new System.Windows.Forms.PictureBox();
             this.btnIngresar = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(164)))), ((int)(((byte)(243)))));
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.flowLayoutPanel1);
-            this.panel1.Location = new System.Drawing.Point(-1, -2);
+            this.panel1.Location = new System.Drawing.Point(2, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(299, 497);
+            this.panel1.Size = new System.Drawing.Size(290, 530);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -92,23 +91,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "¡Bienvenido!";
             // 
-            // picBSalir
-            // 
-            this.picBSalir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picBSalir.Image = ((System.Drawing.Image)(resources.GetObject("picBSalir.Image")));
-            this.picBSalir.Location = new System.Drawing.Point(705, 12);
-            this.picBSalir.Name = "picBSalir";
-            this.picBSalir.Size = new System.Drawing.Size(40, 42);
-            this.picBSalir.TabIndex = 1;
-            this.picBSalir.TabStop = false;
-            this.picBSalir.Click += new System.EventHandler(this.picBSalir_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(432, 91);
+            this.label2.Location = new System.Drawing.Point(139, 93);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(197, 30);
             this.label2.TabIndex = 2;
@@ -119,7 +107,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(357, 181);
+            this.label4.Location = new System.Drawing.Point(74, 183);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 30);
             this.label4.TabIndex = 2;
@@ -130,7 +118,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(304, 243);
+            this.label5.Location = new System.Drawing.Point(21, 245);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(159, 30);
             this.label5.TabIndex = 2;
@@ -139,7 +127,7 @@
             // txtUsuario
             // 
             this.txtUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(475, 181);
+            this.txtUsuario.Location = new System.Drawing.Point(192, 183);
             this.txtUsuario.MaxLength = 20;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(201, 27);
@@ -148,22 +136,11 @@
             // txtContra
             // 
             this.txtContra.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContra.Location = new System.Drawing.Point(478, 249);
+            this.txtContra.Location = new System.Drawing.Point(195, 251);
             this.txtContra.MaxLength = 20;
             this.txtContra.Name = "txtContra";
             this.txtContra.Size = new System.Drawing.Size(201, 27);
             this.txtContra.TabIndex = 2;
-            // 
-            // picBMinimizar
-            // 
-            this.picBMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picBMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("picBMinimizar.Image")));
-            this.picBMinimizar.Location = new System.Drawing.Point(663, 12);
-            this.picBMinimizar.Name = "picBMinimizar";
-            this.picBMinimizar.Size = new System.Drawing.Size(45, 42);
-            this.picBMinimizar.TabIndex = 6;
-            this.picBMinimizar.TabStop = false;
-            this.picBMinimizar.Click += new System.EventHandler(this.picBMinimizar_Click);
             // 
             // btnIngresar
             // 
@@ -183,7 +160,7 @@
             this.btnIngresar.IdleFillColor = System.Drawing.Color.White;
             this.btnIngresar.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(164)))), ((int)(((byte)(243)))));
             this.btnIngresar.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(164)))), ((int)(((byte)(243)))));
-            this.btnIngresar.Location = new System.Drawing.Point(437, 337);
+            this.btnIngresar.Location = new System.Drawing.Point(154, 339);
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(5);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(182, 41);
@@ -191,31 +168,40 @@
             this.btnIngresar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnIngresar.Click += new System.EventHandler(this.BtnIngresar);
             // 
-            // flowLayoutPanel1
+            // panel2
             // 
-            this.flowLayoutPanel1.AllowDrop = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 3);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(756, 472);
-            this.flowLayoutPanel1.TabIndex = 3;
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel2.Location = new System.Drawing.Point(2, 1);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(323, 536);
+            this.panel2.TabIndex = 8;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.btnIngresar);
+            this.panel3.Controls.Add(this.txtUsuario);
+            this.panel3.Controls.Add(this.txtContra);
+            this.panel3.Location = new System.Drawing.Point(299, 1);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(455, 530);
+            this.panel3.TabIndex = 9;
             // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(252)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(753, 485);
-            this.Controls.Add(this.btnIngresar);
-            this.Controls.Add(this.picBMinimizar);
-            this.Controls.Add(this.txtContra);
-            this.Controls.Add(this.txtUsuario);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.picBSalir);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(753, 533);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -224,10 +210,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -237,15 +222,14 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox picBSalir;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtContra;
-        private System.Windows.Forms.PictureBox picBMinimizar;
         private Bunifu.Framework.UI.BunifuThinButton2 btnIngresar;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
     }
 }
 

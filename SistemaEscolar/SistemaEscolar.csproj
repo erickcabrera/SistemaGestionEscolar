@@ -198,6 +198,12 @@
     <Compile Include="Formularios\FrmProfesor.Designer.cs">
       <DependentUpon>FrmProfesor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmPruebas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmPruebas.Designer.cs">
+      <DependentUpon>FrmPruebas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmSecciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmProfesor.resx">
       <DependentUpon>FrmProfesor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmPruebas.resx">
+      <DependentUpon>FrmPruebas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmSecciones.resx">
       <DependentUpon>frmSecciones.cs</DependentUpon>
