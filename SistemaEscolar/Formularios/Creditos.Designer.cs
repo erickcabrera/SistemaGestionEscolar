@@ -274,6 +274,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Creditos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Creditos";
             this.Load += new System.EventHandler(this.Creditos_Load);
             this.panel1.ResumeLayout(false);

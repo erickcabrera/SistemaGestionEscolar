@@ -49,10 +49,7 @@ namespace SistemaEscolar.Formularios
 
         private void picBSalir_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FrmMenuAdmin frmMA = new FrmMenuAdmin();
-            frmMA.Show();
-            this.Hide();
+            this.Hide();                  
         }
     }
 }

@@ -87,8 +87,7 @@ namespace SistemaEscolar.Formularios
         private void button2_Click(object sender, EventArgs e)
         {
             Creditos frmC = new Creditos();
-            frmC.Show();
-            this.Hide();
+            frmC.ShowDialog();            
         }
     }
 }
