@@ -70,7 +70,7 @@ namespace SistemaEscolar.Formularios
             BorrarMensaje();
             if (validarCampos())
             {
-                MessageBox.Show("Los datos se han ingresado correctamente", "¡Enhorabuena!", MessageBoxButtons.Ok, MessageBoxIcon.Information);
+                MessageBox.Show("Los datos se han ingresado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

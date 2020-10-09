@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 using SistemaEscolar.Formularios;
 
 namespace SistemaEscolar
@@ -20,7 +20,7 @@ namespace SistemaEscolar
         internal static String nombreProfesor = String.Empty;
         internal static String fotoPerfilProfesor = String.Empty;
 
-       /* [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
            (
                int nLeftRect,     
@@ -29,13 +29,13 @@ namespace SistemaEscolar
                int nBottomRect,   
                int nWidthEllipse, 
                int nHeightEllipse 
-           );*/
+           );
 
         public FrmLogin()
         {
             InitializeComponent();
-           /* this.FormBorderStyle = FormBorderStyle.None;
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));*/
+           this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
         private void picBSalir_Click(object sender, EventArgs e)
@@ -98,6 +98,16 @@ namespace SistemaEscolar
             {
                 Console.WriteLine("Error: " + Ex);
             }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();            
         }
     }
 }

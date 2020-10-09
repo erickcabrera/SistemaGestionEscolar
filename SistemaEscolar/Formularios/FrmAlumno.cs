@@ -281,5 +281,10 @@ namespace SistemaEscolar.Formularios
                 errorProvider1.SetError(txtEncargado, "En este campo sólo se permiten letras");
             }
         }
+
+        private void picBMinimizar_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

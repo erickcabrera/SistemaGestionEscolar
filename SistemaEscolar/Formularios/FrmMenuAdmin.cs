@@ -29,8 +29,8 @@ namespace SistemaEscolar.Formularios
         public FrmMenuAdmin()
         {
             InitializeComponent();
-           /* this.FormBorderStyle = FormBorderStyle.None;
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));*/
+            this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
         private void FormMenuPrueba_Load(object sender, EventArgs e)

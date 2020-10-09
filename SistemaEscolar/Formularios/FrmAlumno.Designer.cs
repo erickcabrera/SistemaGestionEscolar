@@ -64,12 +64,16 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picBMinimizar = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvgDatosAlumnos)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -88,6 +92,8 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(164)))), ((int)(((byte)(243)))));
+            this.panel1.Controls.Add(this.picBMinimizar);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.picBSalir);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(-1, -2);
@@ -451,6 +457,26 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Registro de alumnos";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(-22, -44);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            // 
+            // picBMinimizar
+            // 
+            this.picBMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picBMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("picBMinimizar.Image")));
+            this.picBMinimizar.Location = new System.Drawing.Point(1160, 14);
+            this.picBMinimizar.Name = "picBMinimizar";
+            this.picBMinimizar.Size = new System.Drawing.Size(45, 42);
+            this.picBMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBMinimizar.TabIndex = 30;
+            this.picBMinimizar.TabStop = false;
+            this.picBMinimizar.Click += new System.EventHandler(this.picBMinimizar_Click_1);
+            // 
             // FrmAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -475,6 +501,8 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -514,5 +542,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picBMinimizar;
     }
 }

@@ -59,10 +59,12 @@
             this.mtxtDUIP = new System.Windows.Forms.MaskedTextBox();
             this.mtxtNITP = new System.Windows.Forms.MaskedTextBox();
             this.mtxtNumEscalafonP = new System.Windows.Forms.MaskedTextBox();
+            this.picBMinimizar = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -70,6 +72,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(164)))), ((int)(((byte)(243)))));
+            this.panel1.Controls.Add(this.picBMinimizar);
             this.panel1.Controls.Add(this.picBSalir);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(-2, -1);
@@ -364,6 +367,18 @@
             this.mtxtNumEscalafonP.Size = new System.Drawing.Size(258, 27);
             this.mtxtNumEscalafonP.TabIndex = 38;
             // 
+            // picBMinimizar
+            // 
+            this.picBMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picBMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("picBMinimizar.Image")));
+            this.picBMinimizar.Location = new System.Drawing.Point(1197, 20);
+            this.picBMinimizar.Name = "picBMinimizar";
+            this.picBMinimizar.Size = new System.Drawing.Size(45, 42);
+            this.picBMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBMinimizar.TabIndex = 39;
+            this.picBMinimizar.TabStop = false;
+            this.picBMinimizar.Click += new System.EventHandler(this.picBMinimizar_Click_2);
+            // 
             // FrmProfesor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -406,6 +421,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -442,5 +458,6 @@
         private System.Windows.Forms.MaskedTextBox mtxtDUIP;
         private System.Windows.Forms.MaskedTextBox mtxtTelefonoP;
         private System.Windows.Forms.MaskedTextBox mtxtNumEscalafonP;
+        private System.Windows.Forms.PictureBox picBMinimizar;
     }
 }
