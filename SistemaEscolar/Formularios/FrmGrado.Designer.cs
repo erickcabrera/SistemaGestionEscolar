@@ -116,9 +116,10 @@
             // 
             // txtGrado
             // 
-            this.txtGrado.Location = new System.Drawing.Point(246, 94);
+            this.txtGrado.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGrado.Location = new System.Drawing.Point(236, 92);
             this.txtGrado.Name = "txtGrado";
-            this.txtGrado.Size = new System.Drawing.Size(206, 20);
+            this.txtGrado.Size = new System.Drawing.Size(206, 27);
             this.txtGrado.TabIndex = 2;
             // 
             // btnAgregarGrado
@@ -130,7 +131,6 @@
             this.btnAgregarGrado.TabIndex = 3;
             this.btnAgregarGrado.Text = "Agregar";
             this.btnAgregarGrado.UseVisualStyleBackColor = true;
-            this.btnAgregarGrado.Click += new System.EventHandler(this.btnAgregarGrado_Click);
             // 
             // btnModificar
             // 
@@ -181,6 +181,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmGrado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmGrado";

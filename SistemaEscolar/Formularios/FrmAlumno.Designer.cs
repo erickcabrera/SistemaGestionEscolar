@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAlumno));
-            this.dgvDatosA = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.picBSalir = new System.Windows.Forms.PictureBox();
@@ -62,20 +61,13 @@
             this.mtxtNIEA = new System.Windows.Forms.MaskedTextBox();
             this.mtxtNumPartidaA = new System.Windows.Forms.MaskedTextBox();
             this.mtxtTelefonoA = new System.Windows.Forms.MaskedTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosA)).BeginInit();
+            this.dvgDatosAlumnos = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgDatosAlumnos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvDatosA
-            // 
-            this.dgvDatosA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDatosA.Location = new System.Drawing.Point(577, 122);
-            this.dgvDatosA.Name = "dgvDatosA";
-            this.dgvDatosA.Size = new System.Drawing.Size(719, 375);
-            this.dgvDatosA.TabIndex = 0;
             // 
             // label1
             // 
@@ -96,14 +88,14 @@
             this.panel1.Controls.Add(this.picBMinimizar);
             this.panel1.Location = new System.Drawing.Point(-1, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1387, 76);
+            this.panel1.Size = new System.Drawing.Size(1336, 76);
             this.panel1.TabIndex = 1;
             // 
             // picBSalir
             // 
             this.picBSalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picBSalir.Image = ((System.Drawing.Image)(resources.GetObject("picBSalir.Image")));
-            this.picBSalir.Location = new System.Drawing.Point(1257, 20);
+            this.picBSalir.Location = new System.Drawing.Point(1211, 14);
             this.picBSalir.Name = "picBSalir";
             this.picBSalir.Size = new System.Drawing.Size(40, 42);
             this.picBSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -115,7 +107,7 @@
             // 
             this.picBMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picBMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("picBMinimizar.Image")));
-            this.picBMinimizar.Location = new System.Drawing.Point(1206, 20);
+            this.picBMinimizar.Location = new System.Drawing.Point(1160, 14);
             this.picBMinimizar.Name = "picBMinimizar";
             this.picBMinimizar.Size = new System.Drawing.Size(45, 42);
             this.picBMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -235,41 +227,46 @@
             // 
             // txtNombreA
             // 
+            this.txtNombreA.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreA.Location = new System.Drawing.Point(277, 103);
             this.txtNombreA.Name = "txtNombreA";
-            this.txtNombreA.Size = new System.Drawing.Size(258, 20);
+            this.txtNombreA.Size = new System.Drawing.Size(258, 27);
             this.txtNombreA.TabIndex = 28;
             this.txtNombreA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreA_KeyPress);
             // 
             // txtApellidoA
             // 
+            this.txtApellidoA.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellidoA.Location = new System.Drawing.Point(277, 140);
             this.txtApellidoA.Name = "txtApellidoA";
-            this.txtApellidoA.Size = new System.Drawing.Size(258, 20);
+            this.txtApellidoA.Size = new System.Drawing.Size(258, 27);
             this.txtApellidoA.TabIndex = 28;
             this.txtApellidoA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidoA_KeyPress);
             // 
             // txtPadre
             // 
+            this.txtPadre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPadre.Location = new System.Drawing.Point(277, 351);
             this.txtPadre.Name = "txtPadre";
-            this.txtPadre.Size = new System.Drawing.Size(258, 20);
+            this.txtPadre.Size = new System.Drawing.Size(258, 27);
             this.txtPadre.TabIndex = 28;
             this.txtPadre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPadre_KeyPress);
             // 
             // txtMadre
             // 
+            this.txtMadre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMadre.Location = new System.Drawing.Point(277, 396);
             this.txtMadre.Name = "txtMadre";
-            this.txtMadre.Size = new System.Drawing.Size(258, 20);
+            this.txtMadre.Size = new System.Drawing.Size(258, 27);
             this.txtMadre.TabIndex = 28;
             this.txtMadre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMadre_KeyPress);
             // 
             // txtEncargado
             // 
+            this.txtEncargado.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEncargado.Location = new System.Drawing.Point(277, 440);
             this.txtEncargado.Name = "txtEncargado";
-            this.txtEncargado.Size = new System.Drawing.Size(258, 20);
+            this.txtEncargado.Size = new System.Drawing.Size(258, 27);
             this.txtEncargado.TabIndex = 28;
             this.txtEncargado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEncargado_KeyPress);
             // 
@@ -282,21 +279,21 @@
             // 
             // rtbDireccionA
             // 
-            this.rtbDireccionA.Location = new System.Drawing.Point(277, 550);
+            this.rtbDireccionA.Location = new System.Drawing.Point(277, 541);
             this.rtbDireccionA.Name = "rtbDireccionA";
-            this.rtbDireccionA.Size = new System.Drawing.Size(258, 96);
+            this.rtbDireccionA.Size = new System.Drawing.Size(258, 56);
             this.rtbDireccionA.TabIndex = 30;
             this.rtbDireccionA.Text = "";
             // 
             // btnGuardarA
             // 
-            this.btnGuardarA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(151)))), ((int)(((byte)(178)))));
+            this.btnGuardarA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnGuardarA.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardarA.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarA.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarA.Location = new System.Drawing.Point(42, 668);
+            this.btnGuardarA.ForeColor = System.Drawing.Color.Black;
+            this.btnGuardarA.Location = new System.Drawing.Point(42, 603);
             this.btnGuardarA.Name = "btnGuardarA";
-            this.btnGuardarA.Size = new System.Drawing.Size(493, 53);
+            this.btnGuardarA.Size = new System.Drawing.Size(493, 34);
             this.btnGuardarA.TabIndex = 31;
             this.btnGuardarA.Text = "Guardar";
             this.btnGuardarA.UseVisualStyleBackColor = false;
@@ -304,26 +301,26 @@
             // 
             // btnEditarA
             // 
-            this.btnEditarA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(151)))), ((int)(((byte)(178)))));
+            this.btnEditarA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnEditarA.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEditarA.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarA.ForeColor = System.Drawing.Color.White;
+            this.btnEditarA.ForeColor = System.Drawing.Color.Black;
             this.btnEditarA.Location = new System.Drawing.Point(577, 530);
             this.btnEditarA.Name = "btnEditarA";
-            this.btnEditarA.Size = new System.Drawing.Size(301, 53);
+            this.btnEditarA.Size = new System.Drawing.Size(301, 35);
             this.btnEditarA.TabIndex = 33;
             this.btnEditarA.Text = "Editar";
             this.btnEditarA.UseVisualStyleBackColor = false;
             // 
             // btnEliminarA
             // 
-            this.btnEliminarA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(151)))), ((int)(((byte)(178)))));
+            this.btnEliminarA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnEliminarA.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminarA.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarA.ForeColor = System.Drawing.Color.White;
-            this.btnEliminarA.Location = new System.Drawing.Point(1007, 530);
+            this.btnEliminarA.ForeColor = System.Drawing.Color.Black;
+            this.btnEliminarA.Location = new System.Drawing.Point(930, 530);
             this.btnEliminarA.Name = "btnEliminarA";
-            this.btnEliminarA.Size = new System.Drawing.Size(301, 53);
+            this.btnEliminarA.Size = new System.Drawing.Size(301, 35);
             this.btnEliminarA.TabIndex = 34;
             this.btnEliminarA.Text = "Eliminar";
             this.btnEliminarA.UseVisualStyleBackColor = false;
@@ -333,7 +330,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Gray;
-            this.label12.Location = new System.Drawing.Point(1103, 87);
+            this.label12.Location = new System.Drawing.Point(1057, 87);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(193, 22);
             this.label12.TabIndex = 27;
@@ -353,10 +350,11 @@
             // 
             // cmbSexoA
             // 
+            this.cmbSexoA.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSexoA.FormattingEnabled = true;
             this.cmbSexoA.Location = new System.Drawing.Point(277, 489);
             this.cmbSexoA.Name = "cmbSexoA";
-            this.cmbSexoA.Size = new System.Drawing.Size(258, 21);
+            this.cmbSexoA.Size = new System.Drawing.Size(258, 29);
             this.cmbSexoA.TabIndex = 36;
             // 
             // errorProvider1
@@ -365,34 +363,50 @@
             // 
             // mtxtNIEA
             // 
+            this.mtxtNIEA.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxtNIEA.Location = new System.Drawing.Point(277, 180);
             this.mtxtNIEA.Mask = "00000000";
             this.mtxtNIEA.Name = "mtxtNIEA";
-            this.mtxtNIEA.Size = new System.Drawing.Size(258, 20);
+            this.mtxtNIEA.Size = new System.Drawing.Size(258, 27);
             this.mtxtNIEA.TabIndex = 37;
             // 
             // mtxtNumPartidaA
             // 
+            this.mtxtNumPartidaA.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxtNumPartidaA.Location = new System.Drawing.Point(277, 225);
             this.mtxtNumPartidaA.Mask = "00000000";
             this.mtxtNumPartidaA.Name = "mtxtNumPartidaA";
-            this.mtxtNumPartidaA.Size = new System.Drawing.Size(258, 20);
+            this.mtxtNumPartidaA.Size = new System.Drawing.Size(258, 27);
             this.mtxtNumPartidaA.TabIndex = 38;
             // 
             // mtxtTelefonoA
             // 
+            this.mtxtTelefonoA.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxtTelefonoA.Location = new System.Drawing.Point(277, 310);
             this.mtxtTelefonoA.Mask = "0000-0000";
             this.mtxtTelefonoA.Name = "mtxtTelefonoA";
-            this.mtxtTelefonoA.Size = new System.Drawing.Size(258, 20);
+            this.mtxtTelefonoA.Size = new System.Drawing.Size(258, 27);
             this.mtxtTelefonoA.TabIndex = 39;
+            // 
+            // dvgDatosAlumnos
+            // 
+            this.dvgDatosAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgDatosAlumnos.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.dvgDatosAlumnos.Location = new System.Drawing.Point(577, 112);
+            this.dvgDatosAlumnos.MultiSelect = false;
+            this.dvgDatosAlumnos.Name = "dvgDatosAlumnos";
+            this.dvgDatosAlumnos.ReadOnly = true;
+            this.dvgDatosAlumnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dvgDatosAlumnos.Size = new System.Drawing.Size(654, 350);
+            this.dvgDatosAlumnos.TabIndex = 40;
             // 
             // FrmAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1320, 744);
+            this.ClientSize = new System.Drawing.Size(1269, 660);
+            this.Controls.Add(this.dvgDatosAlumnos);
             this.Controls.Add(this.mtxtTelefonoA);
             this.Controls.Add(this.mtxtNumPartidaA);
             this.Controls.Add(this.mtxtNIEA);
@@ -420,25 +434,24 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dgvDatosA);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAlumno";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alumno";
             this.Load += new System.EventHandler(this.Alumno_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosA)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgDatosAlumnos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvDatosA;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox picBMinimizar;
@@ -470,5 +483,6 @@
         private System.Windows.Forms.MaskedTextBox mtxtTelefonoA;
         private System.Windows.Forms.MaskedTextBox mtxtNumPartidaA;
         private System.Windows.Forms.MaskedTextBox mtxtNIEA;
+        private System.Windows.Forms.DataGridView dvgDatosAlumnos;
     }
 }

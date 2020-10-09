@@ -29,14 +29,19 @@ namespace SistemaEscolar.Formularios
         public FrmMenuAdmin()
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None;
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+           /* this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));*/
         }
 
         private void FormMenuPrueba_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Bienvenido " + FrmLogin.nombreProfesor.ToString() + " con codigo "+ FrmLogin.idProfesor.ToString());
             
+            string ruta = "";
+            ruta = "..\\..\\" + FrmLogin.fotoPerfilProfesor.ToString();
+            System.IO.FileStream fs = new System.IO.FileStream(ruta, System.IO.FileMode.Open, System.IO.FileAccess.Read);
+            pbFotoPerfil.Image = System.Drawing.Image.FromStream(fs);
+            lblNombreUsuario.Text = FrmLogin.nombreProfesor.ToString();
+            fs.Close();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -75,6 +80,7 @@ namespace SistemaEscolar.Formularios
 
         private void btnEstudiantes_Click(object sender, EventArgs e)
         {
+
             FrmAlumno frmA = new FrmAlumno();
             frmA.Show();
             this.Hide();
@@ -89,14 +95,16 @@ namespace SistemaEscolar.Formularios
 
         private void btnMaterias_Click(object sender, EventArgs e)
         {
-            materia frmMa = new materia();
-            frmMa.Show();
+            materia frmM = new materia();
+            frmM.Show();
             this.Hide();
         }
 
         private void btnCursos_Click(object sender, EventArgs e)
         {
-
+            FrmDetalleGradoSeccion f = new FrmDetalleGradoSeccion();
+            f.Show();
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -115,6 +123,13 @@ namespace SistemaEscolar.Formularios
         {
             frmSecciones frmS = new frmSecciones();
             frmS.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Cursos frmC = new Cursos();
+            frmC.Show();
             this.Hide();
         }
     }
