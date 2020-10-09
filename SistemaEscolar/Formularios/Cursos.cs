@@ -47,5 +47,43 @@ namespace SistemaEscolar.Formularios
             frmMA.Show();
             this.Hide();
         }
+        private bool validarCampos()
+        {
+            //esta variable verifica si se está validando algo
+            bool validado = true;
+
+            //if para validar camppos vacíos en el formulario de Profesor
+
+            if (cmbMaterias.SelectedIndex == -1)
+            {
+                validado = false;
+                errorProvider1.SetError(cmbMaterias, "Debe elegir una materia");
+            }
+            if (cmbProfesor.SelectedIndex == -1)
+            {
+                validado = false;
+                errorProvider1.SetError(cmbProfesor, "Debe elegir un profesor");
+            }
+
+
+            return validado;
+        }
+
+        //borrar los mensajes que provee el error provider
+        private void BorrarMensaje()
+        {
+            errorProvider1.SetError(cmbMaterias, "");
+            errorProvider1.SetError(cmbProfesor, "");
+            
+        }
+
+        private void btnAsignar_Click(object sender, EventArgs e)
+        {
+            BorrarMensaje();
+            if (validarCampos())
+            {
+                MessageBox.Show("Los datos se han ingresado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

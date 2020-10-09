@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSecciones));
             this.panel1 = new System.Windows.Forms.Panel();
             this.picBSalir = new System.Windows.Forms.PictureBox();
@@ -40,10 +41,12 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dgvSecciones = new System.Windows.Forms.DataGridView();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSecciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -120,6 +123,7 @@
             this.btnAgregar.TabIndex = 2;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnModificar
             // 
@@ -159,6 +163,10 @@
             this.dgvSecciones.Size = new System.Drawing.Size(446, 159);
             this.dgvSecciones.TabIndex = 3;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmSecciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -183,6 +191,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSecciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,5 +210,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridView dgvSecciones;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
