@@ -246,6 +246,7 @@
             this.picBSalir.Size = new System.Drawing.Size(40, 42);
             this.picBSalir.TabIndex = 25;
             this.picBSalir.TabStop = false;
+            this.picBSalir.Click += new System.EventHandler(this.picBSalir_Click);
             // 
             // Creditos
             // 

@@ -279,6 +279,7 @@
             this.btnUsuario.TabIndex = 4;
             this.btnUsuario.Text = "Acceder";
             this.btnUsuario.UseVisualStyleBackColor = true;
+            this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
             // 
             // pictureBox3
             // 
@@ -295,11 +296,11 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(160, 27);
+            this.label3.Location = new System.Drawing.Point(175, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(200, 30);
+            this.label3.Size = new System.Drawing.Size(140, 30);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Agregar usuario";
+            this.label3.Text = "Acerca de";
             // 
             // panel6
             // 
