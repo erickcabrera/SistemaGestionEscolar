@@ -75,6 +75,7 @@
             this.picBMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBMinimizar.TabIndex = 41;
             this.picBMinimizar.TabStop = false;
+            this.picBMinimizar.Click += new System.EventHandler(this.picBMinimizar_Click);
             // 
             // picBSalir
             // 
@@ -87,6 +88,7 @@
             this.picBSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBSalir.TabIndex = 40;
             this.picBSalir.TabStop = false;
+            this.picBSalir.Click += new System.EventHandler(this.picBSalir_Click);
             // 
             // label2
             // 
