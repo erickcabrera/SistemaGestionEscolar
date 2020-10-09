@@ -76,5 +76,12 @@ namespace SistemaEscolar.Formularios
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            VisualizarAlumnos frmVA = new VisualizarAlumnos();
+            frmVA.Show();
+            this.Hide();
+        }
     }
 }
