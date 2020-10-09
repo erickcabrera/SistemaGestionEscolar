@@ -131,6 +131,7 @@
             this.btnAgregarGrado.TabIndex = 3;
             this.btnAgregarGrado.Text = "Agregar";
             this.btnAgregarGrado.UseVisualStyleBackColor = true;
+       
             // 
             // btnModificar
             // 

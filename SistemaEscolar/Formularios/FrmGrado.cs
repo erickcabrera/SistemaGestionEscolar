@@ -79,5 +79,7 @@ namespace SistemaEscolar.Formularios
                 MessageBox.Show("Los datos se han ingresado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+      
     }
 }

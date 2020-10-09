@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cursos));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.picBSalir = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.picBMinimizar = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbMaterias = new System.Windows.Forms.ComboBox();
@@ -42,13 +45,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.picBSalir = new System.Windows.Forms.PictureBox();
-            this.picBMinimizar = new System.Windows.Forms.PictureBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -62,6 +65,18 @@
             this.panel1.Size = new System.Drawing.Size(963, 82);
             this.panel1.TabIndex = 0;
             // 
+            // picBSalir
+            // 
+            this.picBSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picBSalir.Image = ((System.Drawing.Image)(resources.GetObject("picBSalir.Image")));
+            this.picBSalir.Location = new System.Drawing.Point(880, 31);
+            this.picBSalir.Name = "picBSalir";
+            this.picBSalir.Size = new System.Drawing.Size(40, 42);
+            this.picBSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBSalir.TabIndex = 30;
+            this.picBSalir.TabStop = false;
+            this.picBSalir.Click += new System.EventHandler(this.picBSalir_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -73,6 +88,18 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Gestión de cursos";
             this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // picBMinimizar
+            // 
+            this.picBMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picBMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("picBMinimizar.Image")));
+            this.picBMinimizar.Location = new System.Drawing.Point(829, 31);
+            this.picBMinimizar.Name = "picBMinimizar";
+            this.picBMinimizar.Size = new System.Drawing.Size(45, 42);
+            this.picBMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBMinimizar.TabIndex = 29;
+            this.picBMinimizar.TabStop = false;
+            this.picBMinimizar.Click += new System.EventHandler(this.picBMinimizar_Click);
             // 
             // dataGridView1
             // 
@@ -131,6 +158,7 @@
             this.btnAsignar.TabIndex = 3;
             this.btnAsignar.Text = "Asignar";
             this.btnAsignar.UseVisualStyleBackColor = true;
+            this.btnAsignar.Click += new System.EventHandler(this.btnAsignar_Click);
             // 
             // dataGridView2
             // 
@@ -184,29 +212,9 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // picBSalir
+            // errorProvider1
             // 
-            this.picBSalir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picBSalir.Image = ((System.Drawing.Image)(resources.GetObject("picBSalir.Image")));
-            this.picBSalir.Location = new System.Drawing.Point(880, 31);
-            this.picBSalir.Name = "picBSalir";
-            this.picBSalir.Size = new System.Drawing.Size(40, 42);
-            this.picBSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBSalir.TabIndex = 30;
-            this.picBSalir.TabStop = false;
-            this.picBSalir.Click += new System.EventHandler(this.picBSalir_Click);
-            // 
-            // picBMinimizar
-            // 
-            this.picBMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picBMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("picBMinimizar.Image")));
-            this.picBMinimizar.Location = new System.Drawing.Point(829, 31);
-            this.picBMinimizar.Name = "picBMinimizar";
-            this.picBMinimizar.Size = new System.Drawing.Size(45, 42);
-            this.picBMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBMinimizar.TabIndex = 29;
-            this.picBMinimizar.TabStop = false;
-            this.picBMinimizar.Click += new System.EventHandler(this.picBMinimizar_Click);
+            this.errorProvider1.ContainerControl = this;
             // 
             // Cursos
             // 
@@ -233,10 +241,11 @@
             this.Text = "Cursos";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,5 +268,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.PictureBox picBSalir;
         private System.Windows.Forms.PictureBox picBMinimizar;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
