@@ -48,6 +48,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -57,7 +58,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(100, 72);
+            this.pictureBox1.Location = new System.Drawing.Point(81, 114);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(255, 258);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -190,7 +191,7 @@
             // 
             // proBar
             // 
-            this.proBar.Location = new System.Drawing.Point(21, 374);
+            this.proBar.Location = new System.Drawing.Point(31, 410);
             this.proBar.Name = "proBar";
             this.proBar.Size = new System.Drawing.Size(384, 23);
             this.proBar.TabIndex = 3;
@@ -214,6 +215,7 @@
             // panel3
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.proBar);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Location = new System.Drawing.Point(449, 2);
@@ -255,6 +257,17 @@
             this.label12.Text = "Septiembre-Noviembre 2020";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label12.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label13
+            // 
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(25, 63);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(383, 48);
+            this.label13.TabIndex = 29;
+            this.label13.Text = "Universidad Don Bosco";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Bienvenida
             // 
@@ -298,5 +311,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }
