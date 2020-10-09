@@ -15,7 +15,7 @@ namespace SistemaEscolar.Formularios
 {
     public partial class FrmAlumno : Form
     {
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        /*[DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
          (
              int nLeftRect,
@@ -24,12 +24,12 @@ namespace SistemaEscolar.Formularios
              int nBottomRect,
              int nWidthEllipse,
              int nHeightEllipse
-         );
+         );*/
         public FrmAlumno()
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None;
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            /*this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));*/
         }
 
         private void Alumno_Load(object sender, EventArgs e)

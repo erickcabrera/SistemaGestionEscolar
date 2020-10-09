@@ -29,7 +29,7 @@ namespace SistemaEscolar.Formularios
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));           
         }
 
         private void picBSalir_Click(object sender, EventArgs e)
