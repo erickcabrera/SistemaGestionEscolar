@@ -83,5 +83,12 @@ namespace SistemaEscolar.Formularios
             frmVA.Show();
             this.Hide();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Creditos frmC = new Creditos();
+            frmC.Show();
+            this.Hide();
+        }
     }
 }

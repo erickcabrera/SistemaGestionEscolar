@@ -38,8 +38,8 @@ namespace SistemaEscolar.Formularios
 
         private void picBSalir_Click(object sender, EventArgs e)
         {
-            FrmMenuAdmin FrmMA = new FrmMenuAdmin();
-            FrmMA.Show();
+            MenuProfesor frmMP = new MenuProfesor();
+            frmMP.Show();
             this.Hide();
         }
     }

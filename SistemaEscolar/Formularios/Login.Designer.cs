@@ -39,7 +39,6 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtContra = new System.Windows.Forms.TextBox();
             this.btnIngresar = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -58,9 +57,9 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(2, 1);
+            this.panel1.Location = new System.Drawing.Point(-3, -10);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(290, 530);
+            this.panel1.Size = new System.Drawing.Size(296, 541);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -172,15 +171,6 @@
             this.btnIngresar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnIngresar.Click += new System.EventHandler(this.BtnIngresar);
             // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel2.Location = new System.Drawing.Point(2, 1);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(323, 536);
-            this.panel2.TabIndex = 8;
-            // 
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -228,8 +218,8 @@
             this.ClientSize = new System.Drawing.Size(753, 533);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -259,7 +249,6 @@
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtContra;
         private Bunifu.Framework.UI.BunifuThinButton2 btnIngresar;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
