@@ -36,6 +36,29 @@ namespace SistemaEscolar.Formularios
 
         }
 
+        private bool validarCampos()
+        {
+            //esta variable verifica si se está validando algo
+            bool validado = true;
+
+            //if para validar camppos vacíos en el formulario de Profesor
+
+            if (txtGrado.Text == "")
+            {
+                validado = false;
+                errorProvider1.SetError(txtGrado, "Debe ingresar una materia");
+            }
+
+            return validado;
+        }
+
+        //borrar los mensajes que provee el error provider
+        private void BorrarMensaje()
+        {
+            errorProvider1.SetError(txtGrado, "");
+        }
+
+
         private void picBSalir_Click(object sender, EventArgs e)
         {
             FrmMenuAdmin f = new FrmMenuAdmin();
@@ -50,7 +73,11 @@ namespace SistemaEscolar.Formularios
 
         private void btnAgregarGrado_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Test");
+            BorrarMensaje();
+            if (validarCampos())
+            {
+                MessageBox.Show("Los datos se han ingresado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
