@@ -37,11 +37,12 @@
             this.dgvGrados = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.txtGrado = new System.Windows.Forms.TextBox();
-            this.btnAgregarGrado = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblIdGrado = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
@@ -97,11 +98,20 @@
             // 
             // dgvGrados
             // 
+            this.dgvGrados.AllowUserToAddRows = false;
+            this.dgvGrados.AllowUserToDeleteRows = false;
+            this.dgvGrados.AllowUserToResizeRows = false;
+            this.dgvGrados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvGrados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGrados.Location = new System.Drawing.Point(50, 219);
+            this.dgvGrados.Location = new System.Drawing.Point(50, 240);
+            this.dgvGrados.MultiSelect = false;
             this.dgvGrados.Name = "dgvGrados";
+            this.dgvGrados.ReadOnly = true;
+            this.dgvGrados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvGrados.Size = new System.Drawing.Size(518, 248);
-            this.dgvGrados.TabIndex = 1;
+            this.dgvGrados.TabIndex = 7;
+            this.dgvGrados.SelectionChanged += new System.EventHandler(this.DgvGrados_SelectionChanged);
+            this.dgvGrados.DoubleClick += new System.EventHandler(this.DgvGrados_DoubleClick);
             // 
             // label2
             // 
@@ -120,52 +130,62 @@
             this.txtGrado.Location = new System.Drawing.Point(236, 92);
             this.txtGrado.Name = "txtGrado";
             this.txtGrado.Size = new System.Drawing.Size(206, 27);
-            this.txtGrado.TabIndex = 2;
+            this.txtGrado.TabIndex = 1;
             // 
-            // btnAgregarGrado
+            // btnAgregar
             // 
-            this.btnAgregarGrado.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarGrado.Location = new System.Drawing.Point(50, 143);
-            this.btnAgregarGrado.Name = "btnAgregarGrado";
-            this.btnAgregarGrado.Size = new System.Drawing.Size(110, 40);
-            this.btnAgregarGrado.TabIndex = 3;
-            this.btnAgregarGrado.Text = "Agregar";
-            this.btnAgregarGrado.UseVisualStyleBackColor = true;
-       
+            this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Location = new System.Drawing.Point(50, 143);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(110, 40);
+            this.btnAgregar.TabIndex = 2;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // btnModificar
             // 
             this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(166, 143);
+            this.btnModificar.Location = new System.Drawing.Point(258, 143);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(110, 40);
+            this.btnModificar.Size = new System.Drawing.Size(131, 40);
             this.btnModificar.TabIndex = 3;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(282, 143);
+            this.btnEliminar.Location = new System.Drawing.Point(458, 143);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(110, 40);
-            this.btnEliminar.TabIndex = 3;
+            this.btnEliminar.TabIndex = 4;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(398, 143);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(110, 40);
-            this.btnBuscar.TabIndex = 3;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // lblIdGrado
+            // 
+            this.lblIdGrado.AutoSize = true;
+            this.lblIdGrado.Location = new System.Drawing.Point(449, 102);
+            this.lblIdGrado.Name = "lblIdGrado";
+            this.lblIdGrado.Size = new System.Drawing.Size(44, 13);
+            this.lblIdGrado.TabIndex = 4;
+            this.lblIdGrado.Text = "idGrado";
+            this.lblIdGrado.Visible = false;
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(50, 205);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(308, 20);
+            this.txtBuscar.TabIndex = 6;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.TxtBuscar_TextChanged);
             // 
             // FrmGrado
             // 
@@ -173,10 +193,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(619, 509);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.lblIdGrado);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.btnAgregarGrado);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.txtGrado);
             this.Controls.Add(this.dgvGrados);
             this.Controls.Add(this.label2);
@@ -207,10 +228,11 @@
         private System.Windows.Forms.PictureBox picBMinimizar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtGrado;
-        private System.Windows.Forms.Button btnAgregarGrado;
+        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label lblIdGrado;
+        private System.Windows.Forms.TextBox txtBuscar;
     }
 }

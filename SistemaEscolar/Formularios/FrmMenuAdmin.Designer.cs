@@ -186,7 +186,7 @@
             this.btnEstudiantes.Location = new System.Drawing.Point(130, 72);
             this.btnEstudiantes.Name = "btnEstudiantes";
             this.btnEstudiantes.Size = new System.Drawing.Size(230, 38);
-            this.btnEstudiantes.TabIndex = 2;
+            this.btnEstudiantes.TabIndex = 1;
             this.btnEstudiantes.Text = "Acceder";
             this.btnEstudiantes.UseVisualStyleBackColor = true;
             this.btnEstudiantes.Click += new System.EventHandler(this.btnEstudiantes_Click);
@@ -276,7 +276,7 @@
             this.btnUsuario.Location = new System.Drawing.Point(130, 72);
             this.btnUsuario.Name = "btnUsuario";
             this.btnUsuario.Size = new System.Drawing.Size(230, 38);
-            this.btnUsuario.TabIndex = 4;
+            this.btnUsuario.TabIndex = 7;
             this.btnUsuario.Text = "Acceder";
             this.btnUsuario.UseVisualStyleBackColor = true;
             this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
@@ -321,7 +321,7 @@
             this.btnDetalleGS.Location = new System.Drawing.Point(130, 72);
             this.btnDetalleGS.Name = "btnDetalleGS";
             this.btnDetalleGS.Size = new System.Drawing.Size(230, 38);
-            this.btnDetalleGS.TabIndex = 4;
+            this.btnDetalleGS.TabIndex = 3;
             this.btnDetalleGS.Text = "Acceder";
             this.btnDetalleGS.UseVisualStyleBackColor = true;
             this.btnDetalleGS.Click += new System.EventHandler(this.btnCursos_Click);
@@ -366,7 +366,7 @@
             this.btnMaterias.Location = new System.Drawing.Point(123, 72);
             this.btnMaterias.Name = "btnMaterias";
             this.btnMaterias.Size = new System.Drawing.Size(230, 38);
-            this.btnMaterias.TabIndex = 6;
+            this.btnMaterias.TabIndex = 4;
             this.btnMaterias.Text = "Acceder";
             this.btnMaterias.UseVisualStyleBackColor = true;
             this.btnMaterias.Click += new System.EventHandler(this.btnMaterias_Click);
@@ -411,7 +411,7 @@
             this.button1.Location = new System.Drawing.Point(134, 72);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(219, 38);
-            this.button1.TabIndex = 6;
+            this.button1.TabIndex = 5;
             this.button1.Text = "Acceder";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -502,7 +502,7 @@
             this.btnGrados.Location = new System.Drawing.Point(130, 72);
             this.btnGrados.Name = "btnGrados";
             this.btnGrados.Size = new System.Drawing.Size(227, 39);
-            this.btnGrados.TabIndex = 6;
+            this.btnGrados.TabIndex = 4;
             this.btnGrados.Text = "Acceder";
             this.btnGrados.UseVisualStyleBackColor = true;
             this.btnGrados.Click += new System.EventHandler(this.button2_Click);

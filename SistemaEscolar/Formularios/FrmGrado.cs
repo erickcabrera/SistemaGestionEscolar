@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using SistemaEscolar.Clases;
 
 namespace SistemaEscolar.Formularios
 {
@@ -68,10 +69,20 @@ namespace SistemaEscolar.Formularios
 
         private void FrmGrado_Load(object sender, EventArgs e)
         {
-
+            Grado grado = new Grado();
+            try
+            {
+                ActualizarDataGrid();
+                btnModificar.Enabled = false;
+                btnEliminar.Enabled = false;
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Error al mostrar datos " + Ex.Message);
+            }
         }
 
-        private void btnAgregarGrado_Click(object sender, EventArgs e)
+        private void BtnAgregarGrado_Click(object sender, EventArgs e)
         {
             BorrarMensaje();
             if (validarCampos())
@@ -80,6 +91,180 @@ namespace SistemaEscolar.Formularios
             }
         }
 
-      
+        private void Limpiar()
+        {
+            txtGrado.Clear();
+            txtGrado.Focus();
+            lblIdGrado.Text = "";
+        }
+
+        private void ActualizarDataGrid()
+        {
+            Grado grado = new Grado();
+            dgvGrados.DataSource = null;
+            dgvGrados.DataSource = grado.Mostrar();
+            dgvGrados.ClearSelection();
+        }
+
+        private void BtnAgregar_Click(object sender, EventArgs e)
+        {
+            if (txtGrado.Text == String.Empty)
+            {
+                MessageBox.Show("Por favor ingresar todos los datos");
+            }
+            else
+            {
+                try
+                {
+                    Grado grado = new Grado();
+                    grado.NombreGrado = txtGrado.Text.ToUpper();
+
+                    if (grado.Agregar(grado.NombreGrado) == true)
+                    {
+                        MessageBox.Show("El grado ha sido agregado correctamente");
+                        ActualizarDataGrid();
+                        Limpiar();
+                        btnEliminar.Enabled = false;
+                        btnAgregar.Enabled = true;
+                        btnModificar.Enabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al agregar el grado");
+                    }
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        private void DgvGrados_DoubleClick(object sender, EventArgs e)
+        {
+            if (dgvGrados.SelectedRows.Count > 0)
+            {
+                txtGrado.Text = dgvGrados.CurrentRow.Cells["Grado"].Value.ToString();
+                lblIdGrado.Text = dgvGrados.CurrentRow.Cells["Num"].Value.ToString();
+
+                btnModificar.Enabled = true;
+                btnEliminar.Enabled = false;
+                btnAgregar.Enabled = false;
+                txtGrado.Focus();
+                dgvGrados.CurrentCell.Selected = false;
+                dgvGrados.ClearSelection();
+            }
+            else
+            {
+                MessageBox.Show("seleccione una fila por favor");
+            }
+        }
+
+        private void BtnModificar_Click(object sender, EventArgs e)
+        {
+            if (txtGrado.Text == String.Empty && lblIdGrado.Text == String.Empty)
+            {
+                MessageBox.Show("Por favor ingresar todos los datos");
+            }
+            else
+            {
+                try
+                {
+                    Grado grado = new Grado();
+                    grado.NombreGrado = txtGrado.Text.ToUpper();
+                    
+                    if (grado.Modificar(grado.NombreGrado,int.Parse(lblIdGrado.Text)) == true)
+                    {
+                        MessageBox.Show("El grado ha sido modificado correctamente");
+                        ActualizarDataGrid();
+                        Limpiar();
+                        lblIdGrado.Text = "";
+                        btnModificar.Enabled = false;
+                        btnAgregar.Enabled = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al modificar el grado");
+                    }
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvGrados.SelectedRows.Count > 0)
+            {
+                DialogResult resultado = MessageBox.Show("¿Seguro que desea eliminar el registro numero " + lblIdGrado.Text  + "?", "SALIR", MessageBoxButtons.YesNo);
+                if (resultado == DialogResult.Yes)
+                {
+                    Grado grado = new Grado();
+
+                    if (grado.Eliminar(int.Parse(lblIdGrado.Text)) == true)
+                    {
+                        MessageBox.Show("El grado ha sido eliminado correctamente");
+                        ActualizarDataGrid();
+                        Limpiar();
+                        btnEliminar.Enabled = false;
+                        btnAgregar.Enabled = true;
+                        btnModificar.Enabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al eliminar el grado");
+                        txtGrado.Text = "";
+                    }
+                }
+                else if (resultado == DialogResult.No)
+                {
+                    btnEliminar.Enabled = false;
+                    dgvGrados.ClearSelection();
+                    Limpiar();
+                }
+            }
+            else
+            {
+                MessageBox.Show("seleccione una fila por favor");
+            }
+        }
+
+        private void DgvGrados_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvGrados.SelectedRows.Count > 0)
+            {
+                try
+                {
+                    Limpiar();
+                    btnModificar.Enabled = false;
+                    btnEliminar.Enabled = true;
+                    btnAgregar.Enabled = true;
+                    lblIdGrado.Text = dgvGrados.CurrentRow.Cells["Num"].Value.ToString();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+        }
+
+        private void TxtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Grado grado = new Grado();
+
+                dgvGrados.DataSource = null;
+                dgvGrados.DataSource = grado.Buscar(txtBuscar.Text);
+                dgvGrados.ClearSelection();
+                txtBuscar.Focus();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        }
     }
 }
