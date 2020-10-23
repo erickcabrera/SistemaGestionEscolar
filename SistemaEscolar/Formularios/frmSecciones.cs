@@ -120,6 +120,8 @@ namespace SistemaEscolar.Formularios
                 ActualizarDataGrid();
                 btnModificar.Enabled = false;
                 btnEliminar.Enabled = false;
+                lblseccion.Visible = false;
+
             }
             catch (Exception Ex)
             {
