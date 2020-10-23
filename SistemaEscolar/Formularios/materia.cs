@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using SistemaEscolar.Clases;
 
 namespace SistemaEscolar.Formularios
 {
@@ -65,14 +66,53 @@ namespace SistemaEscolar.Formularios
             errorProvider1.SetError(txtMateria, "");
         }
 
-            private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            BorrarMensaje();
+            /*BorrarMensaje();
             if(validarCampos())
             {
                 MessageBox.Show("Los datos se han ingresado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }*/
+
+            if(txtMateria.Text == string.Empty)
+            {
+                MessageBox.Show("Por favor ingresar todos los datos");
+            }
+            else
+            {
+                try
+                {
+                    Materia materia = new Materia();
+                    materia.NombreMateria = txtMateria.Text.ToUpper();
+
+                    if(materia.Agregar(materia.NombreMateria) == true)
+                    {
+                        MessageBox.Show("La materia ha sido agregada correctamente");
+                        btnEliminarMateria.Enabled = false;
+                        btnAgregarMateria.Enabled = true;
+                        btnModificarMateria.Enabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al agregar materia");
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
              
+        }
+
+        public void Limpiar()
+        {
+            txtMateria.Clear();
+        }
+
+        public void ActualizarDataGrid()
+        {
+
         }
     }
 }

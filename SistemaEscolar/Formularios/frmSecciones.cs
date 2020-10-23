@@ -93,7 +93,7 @@ namespace SistemaEscolar.Formularios
 
                     if (seccion.Agregar(seccion.NombreSeccion) == true)
                     {
-                        MessageBox.Show("La secciónha sido agregada correctamente");
+                        MessageBox.Show("La sección ha sido agregada correctamente");
                         ActualizarDataGrid();
                         Limpiar();
                         btnEliminar.Enabled = false;
