@@ -39,9 +39,11 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.dgvSecciones = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblseccion = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
@@ -64,7 +66,7 @@
             // 
             this.picBSalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picBSalir.Image = ((System.Drawing.Image)(resources.GetObject("picBSalir.Image")));
-            this.picBSalir.Location = new System.Drawing.Point(463, 28);
+            this.picBSalir.Location = new System.Drawing.Point(512, 16);
             this.picBSalir.Name = "picBSalir";
             this.picBSalir.Size = new System.Drawing.Size(40, 42);
             this.picBSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -76,7 +78,7 @@
             // 
             this.picBMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picBMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("picBMinimizar.Image")));
-            this.picBMinimizar.Location = new System.Drawing.Point(412, 28);
+            this.picBMinimizar.Location = new System.Drawing.Point(461, 14);
             this.picBMinimizar.Name = "picBMinimizar";
             this.picBMinimizar.Size = new System.Drawing.Size(45, 42);
             this.picBMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -128,53 +130,75 @@
             // btnModificar
             // 
             this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(157, 145);
+            this.btnModificar.Location = new System.Drawing.Point(211, 145);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(107, 39);
             this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(270, 145);
+            this.btnEliminar.Location = new System.Drawing.Point(432, 145);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(107, 39);
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(383, 145);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(107, 39);
-            this.btnBuscar.TabIndex = 2;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // dgvSecciones
             // 
             this.dgvSecciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSecciones.Location = new System.Drawing.Point(44, 203);
+            this.dgvSecciones.Location = new System.Drawing.Point(44, 264);
             this.dgvSecciones.Name = "dgvSecciones";
-            this.dgvSecciones.Size = new System.Drawing.Size(446, 159);
+            this.dgvSecciones.Size = new System.Drawing.Size(470, 159);
             this.dgvSecciones.TabIndex = 3;
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // lblseccion
+            // 
+            this.lblseccion.AutoSize = true;
+            this.lblseccion.Location = new System.Drawing.Point(377, 112);
+            this.lblseccion.Name = "lblseccion";
+            this.lblseccion.Size = new System.Drawing.Size(54, 13);
+            this.lblseccion.TabIndex = 4;
+            this.lblseccion.Text = "idSeccion";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(144, 215);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(308, 20);
+            this.txtBuscar.TabIndex = 7;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(40, 215);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 22);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Buscar:";
+            // 
             // frmSecciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(526, 403);
+            this.ClientSize = new System.Drawing.Size(565, 449);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.lblseccion);
             this.Controls.Add(this.dgvSecciones);
-            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
@@ -186,6 +210,7 @@
             this.Name = "frmSecciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmSecciones";
+            this.Load += new System.EventHandler(this.frmSecciones_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).EndInit();
@@ -208,8 +233,10 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridView dgvSecciones;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label lblseccion;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label label3;
     }
 }

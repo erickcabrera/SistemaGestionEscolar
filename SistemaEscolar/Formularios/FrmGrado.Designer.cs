@@ -43,6 +43,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblIdGrado = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
@@ -181,11 +182,22 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(50, 205);
+            this.txtBuscar.Location = new System.Drawing.Point(157, 205);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(308, 20);
             this.txtBuscar.TabIndex = 6;
             this.txtBuscar.TextChanged += new System.EventHandler(this.TxtBuscar_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(46, 205);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 22);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Buscar:";
             // 
             // FrmGrado
             // 
@@ -193,6 +205,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(619, 509);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.lblIdGrado);
             this.Controls.Add(this.btnEliminar);
@@ -234,5 +247,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label lblIdGrado;
         private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label label3;
     }
 }
