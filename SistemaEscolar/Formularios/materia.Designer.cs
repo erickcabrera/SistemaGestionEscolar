@@ -36,7 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtMateria = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvMaterias = new System.Windows.Forms.DataGridView();
             this.btnAgregarMateria = new System.Windows.Forms.Button();
             this.btnModificarMateria = new System.Windows.Forms.Button();
             this.btnEliminarMateria = new System.Windows.Forms.Button();
@@ -45,7 +45,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,13 +114,13 @@
             this.txtMateria.Size = new System.Drawing.Size(192, 27);
             this.txtMateria.TabIndex = 1;
             // 
-            // dataGridView1
+            // dgvMaterias
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 219);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(581, 245);
-            this.dataGridView1.TabIndex = 2;
+            this.dgvMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMaterias.Location = new System.Drawing.Point(18, 219);
+            this.dgvMaterias.Name = "dgvMaterias";
+            this.dgvMaterias.Size = new System.Drawing.Size(581, 245);
+            this.dgvMaterias.TabIndex = 2;
             // 
             // btnAgregarMateria
             // 
@@ -177,7 +177,7 @@
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnEliminarMateria);
             this.Controls.Add(this.btnAgregarMateria);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvMaterias);
             this.Controls.Add(this.txtMateria);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
@@ -186,11 +186,12 @@
             this.Name = "materia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "materia";
+            this.Load += new System.EventHandler(this.materia_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -205,7 +206,7 @@
         private System.Windows.Forms.PictureBox picBMinimizar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMateria;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvMaterias;
         private System.Windows.Forms.Button btnAgregarMateria;
         private System.Windows.Forms.Button btnModificarMateria;
         private System.Windows.Forms.Button btnEliminarMateria;

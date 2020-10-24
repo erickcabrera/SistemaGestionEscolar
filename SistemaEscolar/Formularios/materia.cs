@@ -91,6 +91,8 @@ namespace SistemaEscolar.Formularios
                         btnEliminarMateria.Enabled = false;
                         btnAgregarMateria.Enabled = true;
                         btnModificarMateria.Enabled = false;
+                        ActualizarDataGrid();
+                        Limpiar();
                     }
                     else
                     {
@@ -112,7 +114,26 @@ namespace SistemaEscolar.Formularios
 
         public void ActualizarDataGrid()
         {
+            Materia materia = new Materia();
+            dgvMaterias.DataSource = null;
+            dgvMaterias.DataSource = materia.Mostrar();
+            dgvMaterias.ClearSelection();
+            
+        }
 
+        private void materia_Load(object sender, EventArgs e)
+        {
+            materia  materia = new materia();
+            try
+            {
+                ActualizarDataGrid();
+                btnModificarMateria.Enabled = false;
+                btnEliminarMateria.Enabled = false;
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Error al mostrar datos " + Ex.Message);
+            }
         }
     }
 }

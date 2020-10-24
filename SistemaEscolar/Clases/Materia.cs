@@ -50,5 +50,29 @@ namespace SistemaEscolar.Clases
             }
             return false;
         }
+
+        public DataTable Mostrar()
+        {
+            DataTable tabla = new DataTable();
+            try
+            {
+                SqlDataReader leer = null;
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = this.Conectar();
+                comando.CommandText = "ps_mostrar_materias";
+                comando.CommandType = CommandType.StoredProcedure;
+                leer = comando.ExecuteReader();
+                tabla.Load(leer);
+
+                this.Desconectar();
+                leer.Close();
+                return tabla;
+            }
+            catch(SqlException e)
+            {
+                Console.WriteLine("Error al mostrar datos de las materias "+e);
+            }
+            return tabla;
+        }
     }
 }
