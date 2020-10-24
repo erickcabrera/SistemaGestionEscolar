@@ -42,6 +42,7 @@
             this.btnEliminarMateria = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblIdMateria = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
@@ -121,6 +122,8 @@
             this.dgvMaterias.Name = "dgvMaterias";
             this.dgvMaterias.Size = new System.Drawing.Size(581, 245);
             this.dgvMaterias.TabIndex = 2;
+            this.dgvMaterias.SelectionChanged += new System.EventHandler(this.dgvMaterias_SelectionChanged);
+            this.dgvMaterias.DoubleClick += new System.EventHandler(this.dgvMaterias_DoubleClick);
             // 
             // btnAgregarMateria
             // 
@@ -142,6 +145,7 @@
             this.btnModificarMateria.TabIndex = 3;
             this.btnModificarMateria.Text = "Modificar";
             this.btnModificarMateria.UseVisualStyleBackColor = true;
+            this.btnModificarMateria.Click += new System.EventHandler(this.btnModificarMateria_Click);
             // 
             // btnEliminarMateria
             // 
@@ -167,12 +171,23 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // lblIdMateria
+            // 
+            this.lblIdMateria.AutoSize = true;
+            this.lblIdMateria.ForeColor = System.Drawing.Color.White;
+            this.lblIdMateria.Location = new System.Drawing.Point(476, 93);
+            this.lblIdMateria.Name = "lblIdMateria";
+            this.lblIdMateria.Size = new System.Drawing.Size(35, 13);
+            this.lblIdMateria.TabIndex = 4;
+            this.lblIdMateria.Text = "label3";
+            // 
             // materia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(618, 489);
+            this.Controls.Add(this.lblIdMateria);
             this.Controls.Add(this.btnModificarMateria);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnEliminarMateria);
@@ -212,5 +227,6 @@
         private System.Windows.Forms.Button btnEliminarMateria;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label lblIdMateria;
     }
 }

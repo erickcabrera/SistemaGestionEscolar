@@ -74,5 +74,29 @@ namespace SistemaEscolar.Clases
             }
             return tabla;
         }
+
+        public bool Modificar(string nombreMateria, int idMateria)
+        {
+            try
+            {
+                this.nombreMateria = nombreMateria.Trim().ToUpper();
+
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = this.Conectar();
+                comando.CommandText = "ps_modificar_materia";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@idMateria", idMateria);
+                comando.Parameters.AddWithValue("@nombreMateria", this.nombreMateria);
+                comando.ExecuteNonQuery();
+                comando.Parameters.Clear();
+                this.Desconectar();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("No se pudo modificar el registro " + e.Message);
+            }
+            return false;
+        }
     }
 }

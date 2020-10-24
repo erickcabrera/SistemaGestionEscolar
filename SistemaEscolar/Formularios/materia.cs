@@ -135,5 +135,78 @@ namespace SistemaEscolar.Formularios
                 MessageBox.Show("Error al mostrar datos " + Ex.Message);
             }
         }
+
+        private void btnModificarMateria_Click(object sender, EventArgs e)
+        {
+            if (txtMateria.Text == String.Empty && lblIdMateria.Text == String.Empty)
+            {
+                MessageBox.Show("Por favor ingresar todos los datos");
+            }
+            else
+            {
+                try
+                {
+                    Materia materia = new Materia();
+                    materia.NombreMateria = txtMateria.Text.ToUpper();
+
+                    if (materia.Modificar(materia.NombreMateria, int.Parse(lblIdMateria.Text)) == true)
+                    {
+                        MessageBox.Show("La materia ha sido modificada correctamente");
+                        ActualizarDataGrid();
+                        Limpiar();
+                        lblIdMateria.Text = "";
+                        btnModificarMateria.Enabled = false;
+                        btnAgregarMateria.Enabled = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al modificar la materia");
+                    }
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        private void dgvMaterias_DoubleClick(object sender, EventArgs e)
+        {
+            if (dgvMaterias.SelectedRows.Count > 0)
+            {
+                txtMateria.Text = dgvMaterias.CurrentRow.Cells["Materia"].Value.ToString();
+                lblIdMateria.Text = dgvMaterias.CurrentRow.Cells["Num"].Value.ToString();
+
+                btnModificarMateria.Enabled = true;
+                btnEliminarMateria.Enabled = false;
+                btnAgregarMateria.Enabled = false;
+                txtMateria.Focus();
+                dgvMaterias.CurrentCell.Selected = false;
+                dgvMaterias.ClearSelection();
+            }
+            else
+            {
+                MessageBox.Show("seleccione una fila por favor");
+            }
+        }
+
+        private void dgvMaterias_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvMaterias.SelectedRows.Count > 0)
+            {
+                try
+                {
+                    Limpiar();
+                    btnModificarMateria.Enabled = false;
+                    btnEliminarMateria.Enabled = true;
+                    btnAgregarMateria.Enabled = true;
+                    lblIdMateria.Text = dgvMaterias.CurrentRow.Cells["Num"].Value.ToString();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+        }
     }
 }
