@@ -98,5 +98,54 @@ namespace SistemaEscolar.Clases
             }
             return false;
         }
+
+        public bool Eliminar(int idMateria)
+        {
+            try
+            {
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = this.Conectar();
+                comando.CommandText = "ps_eliminar_materia";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@idMateria", idMateria);
+                comando.ExecuteNonQuery();
+                comando.Parameters.Clear();
+                this.Desconectar();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("No se pudo eliminar el registro " + e.Message);
+            }
+            return false;
+        }
+
+
+        public DataTable Buscar(string nombreMateria)
+        {
+            DataTable tabla = new DataTable();
+            try
+            {
+                this.nombreMateria = nombreMateria.Trim().ToUpper();
+                SqlDataReader leer = null;
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = this.Conectar();
+                comando.CommandText = "ps_buscar_materia";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@nombreMateria", this.nombreMateria);
+
+                leer = comando.ExecuteReader();
+                tabla.Load(leer);
+
+                this.Desconectar();
+                leer.Close();
+                return tabla;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine("Error al buscar datos " + e);
+            }
+            return tabla;
+        }
     }
 }

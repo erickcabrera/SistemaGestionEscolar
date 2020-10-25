@@ -40,9 +40,10 @@
             this.btnAgregarMateria = new System.Windows.Forms.Button();
             this.btnModificarMateria = new System.Windows.Forms.Button();
             this.btnEliminarMateria = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblIdMateria = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
@@ -118,7 +119,7 @@
             // dgvMaterias
             // 
             this.dgvMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMaterias.Location = new System.Drawing.Point(18, 219);
+            this.dgvMaterias.Location = new System.Drawing.Point(18, 245);
             this.dgvMaterias.Name = "dgvMaterias";
             this.dgvMaterias.Size = new System.Drawing.Size(581, 245);
             this.dgvMaterias.TabIndex = 2;
@@ -128,7 +129,7 @@
             // btnAgregarMateria
             // 
             this.btnAgregarMateria.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarMateria.Location = new System.Drawing.Point(25, 141);
+            this.btnAgregarMateria.Location = new System.Drawing.Point(18, 141);
             this.btnAgregarMateria.Name = "btnAgregarMateria";
             this.btnAgregarMateria.Size = new System.Drawing.Size(139, 45);
             this.btnAgregarMateria.TabIndex = 3;
@@ -139,7 +140,7 @@
             // btnModificarMateria
             // 
             this.btnModificarMateria.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarMateria.Location = new System.Drawing.Point(170, 141);
+            this.btnModificarMateria.Location = new System.Drawing.Point(245, 141);
             this.btnModificarMateria.Name = "btnModificarMateria";
             this.btnModificarMateria.Size = new System.Drawing.Size(139, 45);
             this.btnModificarMateria.TabIndex = 3;
@@ -150,22 +151,13 @@
             // btnEliminarMateria
             // 
             this.btnEliminarMateria.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarMateria.Location = new System.Drawing.Point(315, 141);
+            this.btnEliminarMateria.Location = new System.Drawing.Point(460, 141);
             this.btnEliminarMateria.Name = "btnEliminarMateria";
             this.btnEliminarMateria.Size = new System.Drawing.Size(139, 45);
             this.btnEliminarMateria.TabIndex = 3;
             this.btnEliminarMateria.Text = "Eliminar";
             this.btnEliminarMateria.UseVisualStyleBackColor = true;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(460, 141);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(139, 45);
-            this.btnBuscar.TabIndex = 3;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnEliminarMateria.Click += new System.EventHandler(this.btnEliminarMateria_Click);
             // 
             // errorProvider1
             // 
@@ -181,20 +173,41 @@
             this.lblIdMateria.TabIndex = 4;
             this.lblIdMateria.Text = "label3";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(14, 204);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 24);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Buscar: ";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(96, 201);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(260, 27);
+            this.txtBuscar.TabIndex = 5;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // materia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(618, 489);
+            this.ClientSize = new System.Drawing.Size(618, 512);
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.lblIdMateria);
             this.Controls.Add(this.btnModificarMateria);
-            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnEliminarMateria);
             this.Controls.Add(this.btnAgregarMateria);
             this.Controls.Add(this.dgvMaterias);
             this.Controls.Add(this.txtMateria);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -225,8 +238,9 @@
         private System.Windows.Forms.Button btnAgregarMateria;
         private System.Windows.Forms.Button btnModificarMateria;
         private System.Windows.Forms.Button btnEliminarMateria;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label lblIdMateria;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label label3;
     }
 }

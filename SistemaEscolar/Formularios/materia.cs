@@ -208,5 +208,59 @@ namespace SistemaEscolar.Formularios
                 }
             }
         }
+
+        private void btnEliminarMateria_Click(object sender, EventArgs e)
+        {
+            if (dgvMaterias.SelectedRows.Count > 0)
+            {
+                DialogResult resultado = MessageBox.Show("¿Seguro que desea eliminar el registro numero " + lblIdMateria.Text + "?", "SALIR", MessageBoxButtons.YesNo);
+                if (resultado == DialogResult.Yes)
+                {
+                    Materia materia = new Materia();
+
+                    if (materia.Eliminar(int.Parse(lblIdMateria.Text)) == true)
+                    {
+                        MessageBox.Show("El grado ha sido eliminado correctamente");
+                        ActualizarDataGrid();
+                        Limpiar();
+                        btnEliminarMateria.Enabled = false;
+                        btnAgregarMateria.Enabled = true;
+                        btnModificarMateria.Enabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al eliminar el grado");
+                        txtMateria.Text = "";
+                    }
+                }
+                else if (resultado == DialogResult.No)
+                {
+                    btnEliminarMateria.Enabled = false;
+                    dgvMaterias.ClearSelection();
+                    Limpiar();
+                }
+            }
+            else
+            {
+                MessageBox.Show("seleccione una fila por favor");
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Materia materia = new Materia();
+
+                dgvMaterias.DataSource = null;
+                dgvMaterias.DataSource = materia.Buscar(txtBuscar.Text);
+                dgvMaterias.ClearSelection();
+                txtBuscar.Focus();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        }
     }
 }
