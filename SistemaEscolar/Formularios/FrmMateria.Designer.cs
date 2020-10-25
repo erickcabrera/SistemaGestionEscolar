@@ -1,6 +1,6 @@
 ﻿namespace SistemaEscolar.Formularios
 {
-    partial class materia
+    partial class FrmMateria
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(materia));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMateria));
             this.panel1 = new System.Windows.Forms.Panel();
             this.picBSalir = new System.Windows.Forms.PictureBox();
             this.picBMinimizar = new System.Windows.Forms.PictureBox();
@@ -118,9 +118,17 @@
             // 
             // dgvMaterias
             // 
+            this.dgvMaterias.AllowUserToAddRows = false;
+            this.dgvMaterias.AllowUserToDeleteRows = false;
+            this.dgvMaterias.AllowUserToResizeRows = false;
+            this.dgvMaterias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMaterias.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dgvMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMaterias.Location = new System.Drawing.Point(18, 245);
+            this.dgvMaterias.MultiSelect = false;
             this.dgvMaterias.Name = "dgvMaterias";
+            this.dgvMaterias.ReadOnly = true;
+            this.dgvMaterias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMaterias.Size = new System.Drawing.Size(581, 245);
             this.dgvMaterias.TabIndex = 2;
             this.dgvMaterias.SelectionChanged += new System.EventHandler(this.dgvMaterias_SelectionChanged);
@@ -193,7 +201,7 @@
             this.txtBuscar.TabIndex = 5;
             this.txtBuscar.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // materia
+            // FrmMateria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -211,7 +219,7 @@
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "materia";
+            this.Name = "FrmMateria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "materia";
             this.Load += new System.EventHandler(this.materia_Load);

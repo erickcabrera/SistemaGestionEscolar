@@ -12,7 +12,7 @@ using SistemaEscolar.Clases;
 
 namespace SistemaEscolar.Formularios
 {
-    public partial class materia : Form
+    public partial class FrmMateria : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -25,7 +25,7 @@ namespace SistemaEscolar.Formularios
             int nHeightEllipse
         );
 
-        public materia()
+        public FrmMateria()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
@@ -123,7 +123,7 @@ namespace SistemaEscolar.Formularios
 
         private void materia_Load(object sender, EventArgs e)
         {
-            materia  materia = new materia();
+            FrmMateria  materia = new FrmMateria();
             try
             {
                 ActualizarDataGrid();

@@ -151,8 +151,12 @@
             // 
             // dgvSecciones
             // 
+            this.dgvSecciones.AllowUserToAddRows = false;
+            this.dgvSecciones.AllowUserToDeleteRows = false;
+            this.dgvSecciones.AllowUserToOrderColumns = true;
             this.dgvSecciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSecciones.Location = new System.Drawing.Point(44, 264);
+            this.dgvSecciones.MultiSelect = false;
             this.dgvSecciones.Name = "dgvSecciones";
             this.dgvSecciones.Size = new System.Drawing.Size(470, 159);
             this.dgvSecciones.TabIndex = 3;

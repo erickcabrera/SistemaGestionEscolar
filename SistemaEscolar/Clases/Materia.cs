@@ -59,7 +59,7 @@ namespace SistemaEscolar.Clases
                 SqlDataReader leer = null;
                 SqlCommand comando = new SqlCommand();
                 comando.Connection = this.Conectar();
-                comando.CommandText = "ps_mostrar_materias";
+                comando.CommandText = "ps_mostrar_materia";
                 comando.CommandType = CommandType.StoredProcedure;
                 leer = comando.ExecuteReader();
                 tabla.Load(leer);

@@ -103,6 +103,7 @@
             this.dgvGrados.AllowUserToDeleteRows = false;
             this.dgvGrados.AllowUserToResizeRows = false;
             this.dgvGrados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvGrados.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dgvGrados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGrados.Location = new System.Drawing.Point(50, 240);
             this.dgvGrados.MultiSelect = false;

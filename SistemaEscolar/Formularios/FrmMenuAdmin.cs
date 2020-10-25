@@ -95,7 +95,7 @@ namespace SistemaEscolar.Formularios
 
         private void btnMaterias_Click(object sender, EventArgs e)
         {
-            materia frmM = new materia();
+            FrmMateria frmM = new FrmMateria();
             frmM.Show();
             this.Hide();
         }
