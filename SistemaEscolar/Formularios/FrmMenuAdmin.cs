@@ -121,7 +121,7 @@ namespace SistemaEscolar.Formularios
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            frmSecciones frmS = new frmSecciones();
+            FrmSecciones frmS = new FrmSecciones();
             frmS.Show();
             this.Hide();
         }

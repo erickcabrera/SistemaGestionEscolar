@@ -205,17 +205,17 @@
     <Compile Include="Formularios\FrmPruebas.Designer.cs">
       <DependentUpon>FrmPruebas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmSecciones.cs">
+    <Compile Include="Formularios\FrmSecciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmSecciones.Designer.cs">
-      <DependentUpon>frmSecciones.cs</DependentUpon>
+    <Compile Include="Formularios\FrmSecciones.Designer.cs">
+      <DependentUpon>FrmSecciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Login.cs">
+    <Compile Include="Formularios\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="Formularios\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmMateria.cs">
       <SubType>Form</SubType>
@@ -229,17 +229,17 @@
     <Compile Include="Formularios\FrmMenuProfesor.Designer.cs">
       <DependentUpon>FrmMenuProfesor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\VisualizarAlumnos.cs">
+    <Compile Include="Formularios\FrmVisualizarAlumnos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\VisualizarAlumnos.Designer.cs">
-      <DependentUpon>VisualizarAlumnos.cs</DependentUpon>
+    <Compile Include="Formularios\FrmVisualizarAlumnos.Designer.cs">
+      <DependentUpon>FrmVisualizarAlumnos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\VisualizarCursos.cs">
+    <Compile Include="Formularios\FrmVisualizarCursos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\VisualizarCursos.Designer.cs">
-      <DependentUpon>VisualizarCursos.cs</DependentUpon>
+    <Compile Include="Formularios\FrmVisualizarCursos.Designer.cs">
+      <DependentUpon>FrmVisualizarCursos.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -272,11 +272,11 @@
     <EmbeddedResource Include="Formularios\FrmPruebas.resx">
       <DependentUpon>FrmPruebas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmSecciones.resx">
-      <DependentUpon>frmSecciones.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\FrmSecciones.resx">
+      <DependentUpon>FrmSecciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmMateria.resx">
       <DependentUpon>FrmMateria.cs</DependentUpon>
@@ -284,11 +284,11 @@
     <EmbeddedResource Include="Formularios\FrmMenuProfesor.resx">
       <DependentUpon>FrmMenuProfesor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\VisualizarAlumnos.resx">
-      <DependentUpon>VisualizarAlumnos.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\FrmVisualizarAlumnos.resx">
+      <DependentUpon>FrmVisualizarAlumnos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\VisualizarCursos.resx">
-      <DependentUpon>VisualizarCursos.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\FrmVisualizarCursos.resx">
+      <DependentUpon>FrmVisualizarCursos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

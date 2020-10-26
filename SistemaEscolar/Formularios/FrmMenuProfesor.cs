@@ -74,14 +74,14 @@ namespace SistemaEscolar.Formularios
 
         private void btnGruposP_Click(object sender, EventArgs e)
         {
-            VisualizarCursos frmVC = new VisualizarCursos();
+            FrmVisualizarCursos frmVC = new FrmVisualizarCursos();
             frmVC.Show();
             this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            VisualizarAlumnos frmVA = new VisualizarAlumnos();
+            FrmVisualizarAlumnos frmVA = new FrmVisualizarAlumnos();
             frmVA.Show();
             this.Hide();
         }
