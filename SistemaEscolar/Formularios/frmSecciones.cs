@@ -218,5 +218,44 @@ namespace SistemaEscolar.Formularios
                 MessageBox.Show(Ex.Message);
             }
         }
+
+        private void dgvSecciones_DoubleClick(object sender, EventArgs e)
+        {
+            if (dgvSecciones.SelectedRows.Count > 0)
+            {
+                txtSeccion.Text = dgvSecciones.CurrentRow.Cells["Sección"].Value.ToString();
+                lblseccion.Text = dgvSecciones.CurrentRow.Cells["Num"].Value.ToString();
+
+                btnModificar.Enabled = true;
+                btnEliminar.Enabled = false;
+                btnAgregar.Enabled = false;
+                txtSeccion.Focus();
+                dgvSecciones.CurrentCell.Selected = false;
+                dgvSecciones.ClearSelection();
+            }
+            else
+            {
+                MessageBox.Show("seleccione una fila por favor");
+            }
+        }
+
+        private void dgvSecciones_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvSecciones.SelectedRows.Count > 0)
+            {
+                try
+                {
+                    Limpiar();
+                    btnModificar.Enabled = false;
+                    btnEliminar.Enabled = true;
+                    btnAgregar.Enabled = true;
+                    lblseccion.Text = dgvSecciones.CurrentRow.Cells["Num"].Value.ToString();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+        }
     }
 }
