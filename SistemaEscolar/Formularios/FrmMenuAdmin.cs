@@ -128,7 +128,7 @@ namespace SistemaEscolar.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Cursos frmC = new Cursos();
+            FrmCursos frmC = new FrmCursos();
             frmC.Show();
             this.Hide();
         }
@@ -140,7 +140,7 @@ namespace SistemaEscolar.Formularios
 
         private void btnUsuario_Click(object sender, EventArgs e)
         {
-            Creditos frmC = new Creditos();
+            FrmCreditos frmC = new FrmCreditos();
             frmC.ShowDialog();
         }
     }

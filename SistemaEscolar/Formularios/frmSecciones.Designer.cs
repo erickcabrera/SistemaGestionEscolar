@@ -153,11 +153,13 @@
             // 
             this.dgvSecciones.AllowUserToAddRows = false;
             this.dgvSecciones.AllowUserToDeleteRows = false;
-            this.dgvSecciones.AllowUserToOrderColumns = true;
+            this.dgvSecciones.AllowUserToResizeRows = false;
+            this.dgvSecciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSecciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSecciones.Location = new System.Drawing.Point(44, 264);
             this.dgvSecciones.MultiSelect = false;
             this.dgvSecciones.Name = "dgvSecciones";
+            this.dgvSecciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSecciones.Size = new System.Drawing.Size(470, 159);
             this.dgvSecciones.TabIndex = 3;
             // 
@@ -193,7 +195,7 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Buscar:";
             // 
-            // frmSecciones
+            // FrmSecciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -211,7 +213,7 @@
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmSecciones";
+            this.Name = "FrmSecciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmSecciones";
             this.Load += new System.EventHandler(this.frmSecciones_Load);

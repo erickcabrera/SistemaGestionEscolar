@@ -59,45 +59,66 @@ namespace SistemaEscolar
            
         }
 
-        private void btnIngresar_Click(object sender, EventArgs e)
+        private void IniciarSesion()
         {
-
-        }
-
-        private void BtnIngresar(object sender, EventArgs e)
-        {
-            try
+            if (txtContra.Text == "" && txtUsuario.Text == "")
             {
-                Sesion sesion = new Sesion();
-                sesion.Nivel = sesion.Iniciar(txtUsuario.Text, txtContra.Text);
-                if (sesion.Nivel == 1)
+                MessageBox.Show("Debe ingresar su usuario y contraseña");
+            }
+            else
+            {
+                if (txtContra.Text == "")
                 {
-                    idProfesor = sesion.ExtraerID(txtUsuario.Text, txtContra.Text);
-                    nombreProfesor = sesion.ExtraerNombre(txtUsuario.Text, txtContra.Text);
-                    fotoPerfilProfesor = sesion.ExtraerFoto(txtUsuario.Text, txtContra.Text);
-
-                    FrmMenuAdmin formMenuPrueba = new FrmMenuAdmin();
-                    formMenuPrueba.Show();
-                    this.Hide();
-                }
-                else if (sesion.Nivel == 2)
-                {
-                    idProfesor = sesion.ExtraerID(txtUsuario.Text, txtContra.Text);
-                    nombreProfesor = sesion.ExtraerNombre(txtUsuario.Text, txtContra.Text);
-                    fotoPerfilProfesor = sesion.ExtraerFoto(txtUsuario.Text, txtContra.Text);
-                    MenuProfesor menuProfesor = new MenuProfesor();
-                    menuProfesor.Show();
-                    this.Hide();
+                    MessageBox.Show("Debe ingresar su contraseña");
                 }
                 else
                 {
-                    MessageBox.Show("Usuario ó contraseña incorrecta");
+                    if (txtUsuario.Text == "")
+                    {
+                        MessageBox.Show("Debe ingresar su usuario");
+                    }
+                    else
+                    {
+                        try
+                        {
+                            Sesion sesion = new Sesion();
+                            sesion.Nivel = sesion.Iniciar(txtUsuario.Text, txtContra.Text);
+                            if (sesion.Nivel == 1)
+                            {
+                                idProfesor = sesion.ExtraerID(txtUsuario.Text, txtContra.Text);
+                                nombreProfesor = sesion.ExtraerNombre(txtUsuario.Text, txtContra.Text);
+                                fotoPerfilProfesor = sesion.ExtraerFoto(txtUsuario.Text, txtContra.Text);
+
+                                FrmMenuAdmin formMenuPrueba = new FrmMenuAdmin();
+                                formMenuPrueba.Show();
+                                this.Hide();
+                            }
+                            else if (sesion.Nivel == 2)
+                            {
+                                idProfesor = sesion.ExtraerID(txtUsuario.Text, txtContra.Text);
+                                nombreProfesor = sesion.ExtraerNombre(txtUsuario.Text, txtContra.Text);
+                                fotoPerfilProfesor = sesion.ExtraerFoto(txtUsuario.Text, txtContra.Text);
+                                MenuProfesor menuProfesor = new MenuProfesor();
+                                menuProfesor.Show();
+                                this.Hide();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Usuario ó contraseña incorrecta");
+                            }
+                        }
+                        catch (Exception Ex)
+                        {
+                            Console.WriteLine("Error: " + Ex);
+                        }
+                    }
                 }
             }
-            catch (Exception Ex)
-            {
-                Console.WriteLine("Error: " + Ex);
-            }
+        }
+        
+        private void BtnIngresar(object sender, EventArgs e)
+        {
+            IniciarSesion();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -105,7 +126,7 @@ namespace SistemaEscolar
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void PictureBox3_Click(object sender, EventArgs e)
         {
             Application.Exit();            
         }
@@ -114,6 +135,22 @@ namespace SistemaEscolar
         {
             Application.Exit();
 
+        }
+
+        private void TxtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                IniciarSesion();
+            }
+        }
+
+        private void TxtContra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                IniciarSesion();
+            }
         }
     }
 }

@@ -150,7 +150,7 @@
             this.lblNombreUsuario.AutoSize = true;
             this.lblNombreUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreUsuario.ForeColor = System.Drawing.Color.White;
-            this.lblNombreUsuario.Location = new System.Drawing.Point(42, 50);
+            this.lblNombreUsuario.Location = new System.Drawing.Point(49, 67);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
             this.lblNombreUsuario.Size = new System.Drawing.Size(157, 21);
             this.lblNombreUsuario.TabIndex = 0;
@@ -182,7 +182,7 @@
             // btnEstudiantes
             // 
             this.btnEstudiantes.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstudiantes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnEstudiantes.ForeColor = System.Drawing.Color.Black;
             this.btnEstudiantes.Location = new System.Drawing.Point(130, 72);
             this.btnEstudiantes.Name = "btnEstudiantes";
             this.btnEstudiantes.Size = new System.Drawing.Size(230, 38);
@@ -227,7 +227,7 @@
             // btnProfesores
             // 
             this.btnProfesores.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProfesores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnProfesores.ForeColor = System.Drawing.Color.Black;
             this.btnProfesores.Location = new System.Drawing.Point(126, 73);
             this.btnProfesores.Name = "btnProfesores";
             this.btnProfesores.Size = new System.Drawing.Size(230, 38);
@@ -272,7 +272,7 @@
             // btnUsuario
             // 
             this.btnUsuario.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnUsuario.ForeColor = System.Drawing.Color.Black;
             this.btnUsuario.Location = new System.Drawing.Point(130, 72);
             this.btnUsuario.Name = "btnUsuario";
             this.btnUsuario.Size = new System.Drawing.Size(230, 38);
@@ -317,7 +317,7 @@
             // btnDetalleGS
             // 
             this.btnDetalleGS.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetalleGS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnDetalleGS.ForeColor = System.Drawing.Color.Black;
             this.btnDetalleGS.Location = new System.Drawing.Point(130, 72);
             this.btnDetalleGS.Name = "btnDetalleGS";
             this.btnDetalleGS.Size = new System.Drawing.Size(230, 38);
@@ -362,7 +362,7 @@
             // btnMaterias
             // 
             this.btnMaterias.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMaterias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnMaterias.ForeColor = System.Drawing.Color.Black;
             this.btnMaterias.Location = new System.Drawing.Point(123, 72);
             this.btnMaterias.Name = "btnMaterias";
             this.btnMaterias.Size = new System.Drawing.Size(230, 38);

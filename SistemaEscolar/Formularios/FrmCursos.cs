@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 
 namespace SistemaEscolar.Formularios
 {
-    public partial class Cursos : Form
+    public partial class FrmCursos : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -24,7 +24,7 @@ namespace SistemaEscolar.Formularios
             int nHeightEllipse
         );
 
-        public Cursos()
+        public FrmCursos()
         {           
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;

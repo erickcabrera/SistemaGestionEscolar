@@ -135,15 +135,17 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(201, 27);
             this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtUsuario_KeyPress);
             // 
             // txtContra
             // 
             this.txtContra.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContra.Location = new System.Drawing.Point(195, 251);
+            this.txtContra.Location = new System.Drawing.Point(192, 251);
             this.txtContra.MaxLength = 20;
             this.txtContra.Name = "txtContra";
             this.txtContra.Size = new System.Drawing.Size(201, 27);
             this.txtContra.TabIndex = 2;
+            this.txtContra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtContra_KeyPress);
             // 
             // btnIngresar
             // 
@@ -163,7 +165,7 @@
             this.btnIngresar.IdleFillColor = System.Drawing.Color.White;
             this.btnIngresar.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(164)))), ((int)(((byte)(243)))));
             this.btnIngresar.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(164)))), ((int)(((byte)(243)))));
-            this.btnIngresar.Location = new System.Drawing.Point(154, 339);
+            this.btnIngresar.Location = new System.Drawing.Point(144, 358);
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(5);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(182, 41);
@@ -197,7 +199,7 @@
             this.pictureBox3.Size = new System.Drawing.Size(40, 40);
             this.pictureBox3.TabIndex = 8;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.pictureBox3.Click += new System.EventHandler(this.PictureBox3_Click);
             // 
             // pictureBox2
             // 

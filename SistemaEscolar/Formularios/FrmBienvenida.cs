@@ -10,10 +10,9 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using SistemaEscolar.Formularios;
 
-
 namespace SistemaEscolar.Formularios
 {
-    public partial class Creditos : Form
+    public partial class FrmBienvenida : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -25,31 +24,51 @@ namespace SistemaEscolar.Formularios
               int nWidthEllipse,
               int nHeightEllipse
           );
-        public Creditos()
+
+        public FrmBienvenida()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        int contador = 0;
+        private void Bienvenida_Load(object sender, EventArgs e)
         {
-            //Falta redirigir a la aplicación principal
+            timer.Start();
+            proBar.Minimum = 0;
+            proBar.Maximum = 100;
+            proBar.Step = 2;
+        }
+        
+        private void timer_Tick(object sender, EventArgs e)
+        {
+           
+            
         }
 
-        private void picBMinimizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
+        private void timer_Tick_1(object sender, EventArgs e)
+        {                       
+            proBar.PerformStep();
+            proBar.Value = contador;           
+            if (proBar.Value == 100)
+            {
+                timer.Stop();
+                FrmLogin frm = new FrmLogin();
+                frm.Show();
+                this.Hide();
+            }
+            contador++;
         }
 
-        private void Creditos_Load(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void picBSalir_Click(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
-            this.Hide();                  
+
         }
     }
 }

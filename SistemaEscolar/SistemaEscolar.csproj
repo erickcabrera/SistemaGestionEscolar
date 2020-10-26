@@ -151,11 +151,11 @@
     <Compile Include="Clases\Persona.cs" />
     <Compile Include="Clases\Profesor.cs" />
     <Compile Include="Clases\Seccion.cs" />
-    <Compile Include="Formularios\Cursos.cs">
+    <Compile Include="Formularios\FrmCursos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Cursos.Designer.cs">
-      <DependentUpon>Cursos.cs</DependentUpon>
+    <Compile Include="Formularios\FrmCursos.Designer.cs">
+      <DependentUpon>FrmCursos.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmAlumno.cs">
       <SubType>Form</SubType>
@@ -163,17 +163,17 @@
     <Compile Include="Formularios\FrmAlumno.Designer.cs">
       <DependentUpon>FrmAlumno.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Bienvenida.cs">
+    <Compile Include="Formularios\FrmBienvenida.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Bienvenida.Designer.cs">
-      <DependentUpon>Bienvenida.cs</DependentUpon>
+    <Compile Include="Formularios\FrmBienvenida.Designer.cs">
+      <DependentUpon>FrmBienvenida.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Creditos.cs">
+    <Compile Include="Formularios\FrmCreditos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Creditos.Designer.cs">
-      <DependentUpon>Creditos.cs</DependentUpon>
+    <Compile Include="Formularios\FrmCreditos.Designer.cs">
+      <DependentUpon>FrmCreditos.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmDetalleGradoSeccion.cs">
       <SubType>Form</SubType>
@@ -244,17 +244,17 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Clases\Sesion.cs" />
-    <EmbeddedResource Include="Formularios\Cursos.resx">
-      <DependentUpon>Cursos.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\FrmCursos.resx">
+      <DependentUpon>FrmCursos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmAlumno.resx">
       <DependentUpon>FrmAlumno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Bienvenida.resx">
-      <DependentUpon>Bienvenida.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\FrmBienvenida.resx">
+      <DependentUpon>FrmBienvenida.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Creditos.resx">
-      <DependentUpon>Creditos.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\FrmCreditos.resx">
+      <DependentUpon>FrmCreditos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmDetalleGradoSeccion.resx">
       <DependentUpon>FrmDetalleGradoSeccion.cs</DependentUpon>
