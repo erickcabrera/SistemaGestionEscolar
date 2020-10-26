@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProfesor));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.picBMinimizar = new System.Windows.Forms.PictureBox();
             this.picBSalir = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -59,12 +60,14 @@
             this.mtxtDUIP = new System.Windows.Forms.MaskedTextBox();
             this.mtxtNITP = new System.Windows.Forms.MaskedTextBox();
             this.mtxtNumEscalafonP = new System.Windows.Forms.MaskedTextBox();
-            this.picBMinimizar = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtFoto = new System.Windows.Forms.Button();
+            this.openFileFoto = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -79,6 +82,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1387, 76);
             this.panel1.TabIndex = 2;
+            // 
+            // picBMinimizar
+            // 
+            this.picBMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picBMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("picBMinimizar.Image")));
+            this.picBMinimizar.Location = new System.Drawing.Point(1197, 20);
+            this.picBMinimizar.Name = "picBMinimizar";
+            this.picBMinimizar.Size = new System.Drawing.Size(45, 42);
+            this.picBMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBMinimizar.TabIndex = 39;
+            this.picBMinimizar.TabStop = false;
+            this.picBMinimizar.Click += new System.EventHandler(this.picBMinimizar_Click_2);
             // 
             // picBSalir
             // 
@@ -244,6 +259,7 @@
             // dtpFechaP
             // 
             this.dtpFechaP.CalendarFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaP.Location = new System.Drawing.Point(276, 194);
             this.dtpFechaP.Name = "dtpFechaP";
             this.dtpFechaP.Size = new System.Drawing.Size(258, 20);
@@ -273,7 +289,7 @@
             this.btnGuardarP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardarP.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarP.ForeColor = System.Drawing.Color.Black;
-            this.btnGuardarP.Location = new System.Drawing.Point(52, 556);
+            this.btnGuardarP.Location = new System.Drawing.Point(52, 591);
             this.btnGuardarP.Name = "btnGuardarP";
             this.btnGuardarP.Size = new System.Drawing.Size(493, 38);
             this.btnGuardarP.TabIndex = 33;
@@ -307,7 +323,7 @@
             this.btnEditarP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEditarP.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarP.ForeColor = System.Drawing.Color.Black;
-            this.btnEditarP.Location = new System.Drawing.Point(576, 556);
+            this.btnEditarP.Location = new System.Drawing.Point(576, 591);
             this.btnEditarP.Name = "btnEditarP";
             this.btnEditarP.Size = new System.Drawing.Size(301, 38);
             this.btnEditarP.TabIndex = 36;
@@ -320,7 +336,7 @@
             this.btnEliminarP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminarP.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarP.ForeColor = System.Drawing.Color.Black;
-            this.btnEliminarP.Location = new System.Drawing.Point(994, 556);
+            this.btnEliminarP.Location = new System.Drawing.Point(994, 591);
             this.btnEliminarP.Name = "btnEliminarP";
             this.btnEliminarP.Size = new System.Drawing.Size(301, 38);
             this.btnEliminarP.TabIndex = 37;
@@ -367,24 +383,39 @@
             this.mtxtNumEscalafonP.Size = new System.Drawing.Size(258, 27);
             this.mtxtNumEscalafonP.TabIndex = 38;
             // 
-            // picBMinimizar
+            // label6
             // 
-            this.picBMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picBMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("picBMinimizar.Image")));
-            this.picBMinimizar.Location = new System.Drawing.Point(1197, 20);
-            this.picBMinimizar.Name = "picBMinimizar";
-            this.picBMinimizar.Size = new System.Drawing.Size(45, 42);
-            this.picBMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBMinimizar.TabIndex = 39;
-            this.picBMinimizar.TabStop = false;
-            this.picBMinimizar.Click += new System.EventHandler(this.picBMinimizar_Click_2);
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(48, 547);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 22);
+            this.label6.TabIndex = 39;
+            this.label6.Text = "Foto:";
+            // 
+            // txtFoto
+            // 
+            this.txtFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtFoto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.txtFoto.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFoto.ForeColor = System.Drawing.Color.Black;
+            this.txtFoto.Location = new System.Drawing.Point(276, 547);
+            this.txtFoto.Name = "txtFoto";
+            this.txtFoto.Size = new System.Drawing.Size(258, 22);
+            this.txtFoto.TabIndex = 40;
+            this.txtFoto.Text = "Seleccionar foto...";
+            this.txtFoto.UseVisualStyleBackColor = false;
+            this.txtFoto.Click += new System.EventHandler(this.txtFoto_Click);
             // 
             // FrmProfesor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1321, 623);
+            this.ClientSize = new System.Drawing.Size(1321, 653);
+            this.Controls.Add(this.txtFoto);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.mtxtNumEscalafonP);
             this.Controls.Add(this.mtxtNITP);
             this.Controls.Add(this.mtxtDUIP);
@@ -418,10 +449,10 @@
             this.Text = "FrmProfesor";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -459,5 +490,8 @@
         private System.Windows.Forms.MaskedTextBox mtxtTelefonoP;
         private System.Windows.Forms.MaskedTextBox mtxtNumEscalafonP;
         private System.Windows.Forms.PictureBox picBMinimizar;
+        private System.Windows.Forms.Button txtFoto;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.OpenFileDialog openFileFoto;
     }
 }

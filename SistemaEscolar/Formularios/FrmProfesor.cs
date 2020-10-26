@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using SistemaEscolar.Formularios;
 using System.Text.RegularExpressions;
+using SistemaEscolar.Clases;
 
 namespace SistemaEscolar.Formularios
 {
@@ -157,8 +158,34 @@ namespace SistemaEscolar.Formularios
             BorrarMensaje();
             if (validarCampos() || ValidarFechaySexo())
             {
-                MessageBox.Show("Los datos se han ingresado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //creo un objeto de la clase persona y guardo a través de las propiedades 
 
+                if (txtFoto.Text == "Seleccionar...")
+                {
+                    MessageBox.Show("Debe seleccionar una foto");
+                }
+                else
+                {
+                    Profesor profesor = new Profesor();
+
+                    profesor.Nombres = txtNombreP.Text;
+                    profesor.NumEscalafon = mtxtNumEscalafonP.Text;
+                    
+                    String sourceFile = txtFoto.Text;
+                    String destinationFile = "fotosUsuarios\\" + profesor.Nombres + " - " + profesor.NumEscalafon + ".png";
+
+                    try
+                    {
+                        System.IO.File.Copy(sourceFile, destinationFile);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    
+                    profesor.Foto = destinationFile;
+                }
+                MessageBox.Show("Los datos se han ingresado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -243,6 +270,24 @@ namespace SistemaEscolar.Formularios
         private void picBMinimizar_Click_2(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void txtFoto_Click(object sender, EventArgs e)
+        {
+            openFileFoto.InitialDirectory = "C:\\";
+            openFileFoto.Filter = "Image Files|*.jpg;*.jpeg;*.png;";
+            try
+            {
+                if (openFileFoto.ShowDialog() == DialogResult.OK)
+                {
+                    string sourceFile = openFileFoto.FileName;
+                    txtFoto.Text = sourceFile;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         /* private void picBMinimizar_Click(object sender, EventArgs e)
