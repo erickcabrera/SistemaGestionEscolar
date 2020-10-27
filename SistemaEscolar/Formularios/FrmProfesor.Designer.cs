@@ -235,7 +235,7 @@
             this.txtNombreP.Location = new System.Drawing.Point(276, 112);
             this.txtNombreP.Name = "txtNombreP";
             this.txtNombreP.Size = new System.Drawing.Size(258, 27);
-            this.txtNombreP.TabIndex = 29;
+            this.txtNombreP.TabIndex = 1;
             this.txtNombreP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreP_KeyPress);
             // 
             // txtApellidoP
@@ -244,7 +244,7 @@
             this.txtApellidoP.Location = new System.Drawing.Point(276, 152);
             this.txtApellidoP.Name = "txtApellidoP";
             this.txtApellidoP.Size = new System.Drawing.Size(258, 27);
-            this.txtApellidoP.TabIndex = 29;
+            this.txtApellidoP.TabIndex = 2;
             this.txtApellidoP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidoP_KeyPress);
             // 
             // txtEmailP
@@ -253,7 +253,7 @@
             this.txtEmailP.Location = new System.Drawing.Point(276, 279);
             this.txtEmailP.Name = "txtEmailP";
             this.txtEmailP.Size = new System.Drawing.Size(258, 27);
-            this.txtEmailP.TabIndex = 29;
+            this.txtEmailP.TabIndex = 5;
             this.txtEmailP.TextChanged += new System.EventHandler(this.txtEmailP_TextChanged);
             // 
             // dtpFechaP
@@ -263,16 +263,20 @@
             this.dtpFechaP.Location = new System.Drawing.Point(276, 194);
             this.dtpFechaP.Name = "dtpFechaP";
             this.dtpFechaP.Size = new System.Drawing.Size(258, 20);
-            this.dtpFechaP.TabIndex = 30;
+            this.dtpFechaP.TabIndex = 3;
             // 
             // cmbSexoP
             // 
+            this.cmbSexoP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSexoP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSexoP.FormattingEnabled = true;
+            this.cmbSexoP.Items.AddRange(new object[] {
+            "M",
+            "F"});
             this.cmbSexoP.Location = new System.Drawing.Point(276, 440);
             this.cmbSexoP.Name = "cmbSexoP";
             this.cmbSexoP.Size = new System.Drawing.Size(258, 29);
-            this.cmbSexoP.TabIndex = 31;
+            this.cmbSexoP.TabIndex = 9;
             // 
             // rtbDireccionP
             // 
@@ -280,7 +284,7 @@
             this.rtbDireccionP.Location = new System.Drawing.Point(276, 484);
             this.rtbDireccionP.Name = "rtbDireccionP";
             this.rtbDireccionP.Size = new System.Drawing.Size(258, 48);
-            this.rtbDireccionP.TabIndex = 32;
+            this.rtbDireccionP.TabIndex = 10;
             this.rtbDireccionP.Text = "";
             // 
             // btnGuardarP
@@ -291,19 +295,27 @@
             this.btnGuardarP.ForeColor = System.Drawing.Color.Black;
             this.btnGuardarP.Location = new System.Drawing.Point(52, 591);
             this.btnGuardarP.Name = "btnGuardarP";
-            this.btnGuardarP.Size = new System.Drawing.Size(493, 38);
-            this.btnGuardarP.TabIndex = 33;
+            this.btnGuardarP.Size = new System.Drawing.Size(482, 38);
+            this.btnGuardarP.TabIndex = 12;
             this.btnGuardarP.Text = "Guardar";
             this.btnGuardarP.UseVisualStyleBackColor = false;
             this.btnGuardarP.Click += new System.EventHandler(this.btnGuardarP_Click);
             // 
             // dgvDatosP
             // 
+            this.dgvDatosP.AllowUserToAddRows = false;
+            this.dgvDatosP.AllowUserToDeleteRows = false;
+            this.dgvDatosP.AllowUserToOrderColumns = true;
+            this.dgvDatosP.AllowUserToResizeRows = false;
+            this.dgvDatosP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDatosP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDatosP.Location = new System.Drawing.Point(576, 141);
+            this.dgvDatosP.Location = new System.Drawing.Point(576, 124);
+            this.dgvDatosP.MultiSelect = false;
             this.dgvDatosP.Name = "dgvDatosP";
+            this.dgvDatosP.ReadOnly = true;
+            this.dgvDatosP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDatosP.Size = new System.Drawing.Size(719, 375);
-            this.dgvDatosP.TabIndex = 34;
+            this.dgvDatosP.TabIndex = 15;
             // 
             // label12
             // 
@@ -326,7 +338,7 @@
             this.btnEditarP.Location = new System.Drawing.Point(576, 591);
             this.btnEditarP.Name = "btnEditarP";
             this.btnEditarP.Size = new System.Drawing.Size(301, 38);
-            this.btnEditarP.TabIndex = 36;
+            this.btnEditarP.TabIndex = 13;
             this.btnEditarP.Text = "Editar";
             this.btnEditarP.UseVisualStyleBackColor = false;
             // 
@@ -339,7 +351,7 @@
             this.btnEliminarP.Location = new System.Drawing.Point(994, 591);
             this.btnEliminarP.Name = "btnEliminarP";
             this.btnEliminarP.Size = new System.Drawing.Size(301, 38);
-            this.btnEliminarP.TabIndex = 37;
+            this.btnEliminarP.TabIndex = 14;
             this.btnEliminarP.Text = "Eliminar";
             this.btnEliminarP.UseVisualStyleBackColor = false;
             // 
@@ -354,7 +366,7 @@
             this.mtxtTelefonoP.Mask = "0000-0000";
             this.mtxtTelefonoP.Name = "mtxtTelefonoP";
             this.mtxtTelefonoP.Size = new System.Drawing.Size(258, 27);
-            this.mtxtTelefonoP.TabIndex = 38;
+            this.mtxtTelefonoP.TabIndex = 4;
             // 
             // mtxtDUIP
             // 
@@ -363,7 +375,7 @@
             this.mtxtDUIP.Mask = "00000000-0";
             this.mtxtDUIP.Name = "mtxtDUIP";
             this.mtxtDUIP.Size = new System.Drawing.Size(258, 27);
-            this.mtxtDUIP.TabIndex = 38;
+            this.mtxtDUIP.TabIndex = 6;
             // 
             // mtxtNITP
             // 
@@ -372,7 +384,7 @@
             this.mtxtNITP.Mask = "0000-000000-000-0";
             this.mtxtNITP.Name = "mtxtNITP";
             this.mtxtNITP.Size = new System.Drawing.Size(258, 27);
-            this.mtxtNITP.TabIndex = 38;
+            this.mtxtNITP.TabIndex = 7;
             // 
             // mtxtNumEscalafonP
             // 
@@ -381,7 +393,7 @@
             this.mtxtNumEscalafonP.Mask = "0000000";
             this.mtxtNumEscalafonP.Name = "mtxtNumEscalafonP";
             this.mtxtNumEscalafonP.Size = new System.Drawing.Size(258, 27);
-            this.mtxtNumEscalafonP.TabIndex = 38;
+            this.mtxtNumEscalafonP.TabIndex = 8;
             // 
             // label6
             // 
@@ -403,7 +415,7 @@
             this.txtFoto.Location = new System.Drawing.Point(276, 547);
             this.txtFoto.Name = "txtFoto";
             this.txtFoto.Size = new System.Drawing.Size(258, 22);
-            this.txtFoto.TabIndex = 40;
+            this.txtFoto.TabIndex = 11;
             this.txtFoto.Text = "Seleccionar foto...";
             this.txtFoto.UseVisualStyleBackColor = false;
             this.txtFoto.Click += new System.EventHandler(this.txtFoto_Click);
@@ -447,6 +459,7 @@
             this.Name = "FrmProfesor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmProfesor";
+            this.Load += new System.EventHandler(this.FrmProfesor_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).EndInit();

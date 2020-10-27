@@ -48,34 +48,70 @@ namespace SistemaEscolar.Clases
             try
             {
                 this.nombres = nombres.Trim().ToUpper();
-                this.apellidos = nombres.Trim().ToUpper();
-                this.fechaNac = nombres.Trim().ToUpper();
-                this.sexo = nombres.Trim().ToUpper();
-                this.telefono = nombres.Trim().ToUpper();
-                this.direccion = nombres.Trim().ToUpper();
-                this.foto = nombres.Trim().ToUpper();
-                this.dui = nombres.Trim().ToUpper();
-                this.nit = nombres.Trim().ToUpper();
-                this.correo = nombres.Trim().ToUpper(); 
-                this.numEscalafon = nombres.Trim().ToUpper();
+                this.apellidos = apellidos.Trim().ToUpper();
+                this.fechaNac = fechaNac;
+                this.sexo = sexo;
+                this.telefono = telefono;
+                this.direccion = direccion.Trim().ToUpper();
+                this.foto = fotoProfesor;
+                this.dui = dui;
+                this.nit = nit;
+                this.correo = correo; 
+                this.numEscalafon = numEscalafon;
 
                 Conexion conexion = new Conexion();
                 SqlCommand comando = new SqlCommand();
                 comando.Connection = conexion.Conectar();
                 comando.CommandText = "ps_insertar_profesor";
                 comando.CommandType = CommandType.StoredProcedure;
-                //comando.Parameters.AddWithValue("@nombreMateria", this.nombreMateria);
+                comando.Parameters.AddWithValue("@dui", this.dui);
+                comando.Parameters.AddWithValue("@nit", this.nit);
+                comando.Parameters.AddWithValue("@nombreProfesor", this.nombres);
+                comando.Parameters.AddWithValue("@apellidoProfesor", this.apellidos);
+                comando.Parameters.AddWithValue("@direccionProfesor", this.direccion);
+                comando.Parameters.AddWithValue("@telefonoProfesor", this.telefono);
+                comando.Parameters.AddWithValue("@correoProfesor", this.correo);
+                comando.Parameters.Add(new SqlParameter("@fechaNacProfesor", SqlDbType.Date));
+                comando.Parameters["@fechaNacProfesor"].Value = this.fechaNac;
+                comando.Parameters.AddWithValue("@fotoPerfilProfesor", this.foto);
+                comando.Parameters.AddWithValue("@numeroEscalafon", this.numEscalafon);
+                comando.Parameters.AddWithValue("@sexo", this.sexo);
                 comando.ExecuteNonQuery();
                 comando.Parameters.Clear();
                 conexion.Desconectar();
                 return true;
-
             }
             catch (Exception ex)
             {
                 Console.WriteLine("No se pudo agregar el nuevo registro " + ex.Message);
             }
             return false;
+        }
+
+
+        public DataTable Mostrar()
+        {
+            DataTable tabla = new DataTable();
+            try
+            {
+                Conexion conexion = new Conexion();
+                SqlDataReader leer = null;
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = conexion.Conectar();
+                comando.CommandText = "ps_mostrar_profesor";
+                comando.CommandType = CommandType.StoredProcedure;
+                leer = comando.ExecuteReader();
+                tabla.Load(leer);
+
+                conexion.Desconectar();
+                leer.Close();
+                return tabla;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine("Error al mostrar datos " + e);
+            }
+            return tabla;
         }
 
 

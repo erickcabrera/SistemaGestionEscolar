@@ -160,33 +160,85 @@ namespace SistemaEscolar.Formularios
             {
                 //creo un objeto de la clase persona y guardo a través de las propiedades 
 
-                if (txtFoto.Text == "Seleccionar...")
+                if (txtFoto.Text == "Seleccionar foto...")
                 {
                     MessageBox.Show("Debe seleccionar una foto");
                 }
                 else
                 {
-                    Profesor profesor = new Profesor();
-
-                    profesor.Nombres = txtNombreP.Text;
-                    profesor.NumEscalafon = mtxtNumEscalafonP.Text;
-                    
-                    String sourceFile = txtFoto.Text;
-                    String destinationFile = "fotosUsuarios\\" + profesor.Nombres + " - " + profesor.NumEscalafon + ".png";
-
                     try
                     {
-                        System.IO.File.Copy(sourceFile, destinationFile);
+                        Profesor profesor = new Profesor();
+
+                        profesor.Nombres = txtNombreP.Text;
+                        profesor.Apellidos = txtApellidoP.Text;
+                        profesor.FechaNac = Convert.ToString(dtpFechaP.Value.ToString("yyyy-MM-dd"));
+                        profesor.Telefono = mtxtTelefonoP.Text;
+                        profesor.Correo = txtEmailP.Text;
+                        profesor.Dui = mtxtDUIP.Text;
+                        profesor.Nit = mtxtNITP.Text;
+                        profesor.NumEscalafon = mtxtNumEscalafonP.Text;
+                        profesor.Sexo = cmbSexoP.Text;
+                        profesor.Direccion = rtbDireccionP.Text;
+
+                        String sourceFile = txtFoto.Text;
+                        String destinationFile = "fotosUsuarios\\" + profesor.Nombres + " - " + profesor.NumEscalafon + ".png";
+                        
+                        System.IO.File.Copy(sourceFile, "..\\..\\" + destinationFile);
+
+                        MessageBox.Show(profesor.FechaNac);
+                        profesor.Foto = destinationFile;
+
+                        if (profesor.Agregar(profesor.Nombres, profesor.Apellidos, profesor.FechaNac, profesor.Sexo, profesor.Telefono, profesor.Direccion,  profesor.Foto, profesor.Dui, profesor.Nit, profesor.Correo, profesor.NumEscalafon) == true)
+                        {
+                            MessageBox.Show("El registro ha sido agregado correctamente");
+                            ActualizarDataGrid();
+                            Limpiar();
+                            btnEliminarP.Enabled = false;
+                            btnGuardarP.Enabled = true;
+                            btnEditarP.Enabled = false;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al agregar el registro");
+                        }
                     }
-                    catch (Exception ex)
+                    catch (Exception Ex)
                     {
-                        MessageBox.Show(ex.Message);
+                        MessageBox.Show("Error al registrar el profesor" + Ex.Message);
                     }
-                    
-                    profesor.Foto = destinationFile;
                 }
-                MessageBox.Show("Los datos se han ingresado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else
+            {
+                MessageBox.Show("Debe llenar todos los campos");
+            }
+        }
+
+        private void ActualizarDataGrid()
+        {
+            Profesor profesor = new Profesor();
+            dgvDatosP.DataSource = null;
+            dgvDatosP.DataSource = profesor.Mostrar();
+            dgvDatosP.ClearSelection();
+        }
+
+
+        private void Limpiar()
+        {
+            txtNombreP.Clear();
+            txtApellidoP.Clear();
+            dtpFechaP.Value = DateTime.Now;
+            mtxtTelefonoP.Clear();
+            txtEmailP.Clear();
+            mtxtDUIP.Clear();
+            mtxtNITP.Clear();
+            mtxtNumEscalafonP.Clear();
+            cmbSexoP.SelectedIndex = -1;
+            rtbDireccionP.Clear();
+
+            txtNombreP.Focus();
+            //lblIdGrado.Text = "";
         }
 
         private void picBSalir_Click(object sender, EventArgs e)
@@ -290,9 +342,20 @@ namespace SistemaEscolar.Formularios
             }
         }
 
-        /* private void picBMinimizar_Click(object sender, EventArgs e)
-         {
-             this.WindowState = FormWindowState.Minimized;
-         }*/
+        private void FrmProfesor_Load(object sender, EventArgs e)
+        {
+            dtpFechaP.Value.ToString("yyyy-MM-dd");
+            Profesor profesor = new Profesor();
+            try
+            {
+                ActualizarDataGrid();
+                btnEditarP.Enabled = false;
+                btnEliminarP.Enabled = false;
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Error al mostrar datos " + Ex.Message);
+            }
+        }
     }
 }
