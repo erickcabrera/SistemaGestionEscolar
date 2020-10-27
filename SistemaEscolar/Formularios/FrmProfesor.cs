@@ -159,7 +159,6 @@ namespace SistemaEscolar.Formularios
             if (validarCampos() || ValidarFechaySexo())
             {
                 //creo un objeto de la clase persona y guardo a través de las propiedades 
-
                 if (txtFoto.Text == "Seleccionar foto...")
                 {
                     MessageBox.Show("Debe seleccionar una foto");
@@ -186,7 +185,6 @@ namespace SistemaEscolar.Formularios
                         
                         System.IO.File.Copy(sourceFile, "..\\..\\" + destinationFile);
 
-                        MessageBox.Show(profesor.FechaNac);
                         profesor.Foto = destinationFile;
 
                         if (profesor.Agregar(profesor.Nombres, profesor.Apellidos, profesor.FechaNac, profesor.Sexo, profesor.Telefono, profesor.Direccion,  profesor.Foto, profesor.Dui, profesor.Nit, profesor.Correo, profesor.NumEscalafon) == true)
@@ -230,15 +228,18 @@ namespace SistemaEscolar.Formularios
             txtApellidoP.Clear();
             dtpFechaP.Value = DateTime.Now;
             mtxtTelefonoP.Clear();
-            txtEmailP.Clear();
+            txtEmailP.Text = String.Empty;
             mtxtDUIP.Clear();
             mtxtNITP.Clear();
             mtxtNumEscalafonP.Clear();
             cmbSexoP.SelectedIndex = -1;
             rtbDireccionP.Clear();
+            pbFotoProfesor.Image = null;
+            pbFotoProfesor.BackgroundImage = null;
+            txtFoto.Text = "Seleccionar foto...";
 
             txtNombreP.Focus();
-            //lblIdGrado.Text = "";
+            lblIdProfesor.Text = "";
         }
 
         private void picBSalir_Click(object sender, EventArgs e)
@@ -334,6 +335,11 @@ namespace SistemaEscolar.Formularios
                 {
                     string sourceFile = openFileFoto.FileName;
                     txtFoto.Text = sourceFile;
+                    
+                    System.IO.FileStream fs = new System.IO.FileStream(sourceFile, System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                    pbFotoProfesor.Image = System.Drawing.Image.FromStream(fs);
+                    fs.Close();
+                    btnGuardarP.Focus();
                 }
             }
             catch (Exception ex)
@@ -355,6 +361,68 @@ namespace SistemaEscolar.Formularios
             catch (Exception Ex)
             {
                 MessageBox.Show("Error al mostrar datos " + Ex.Message);
+            }
+        }
+
+        private void dgvDatosP_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvDatosP.SelectedRows.Count > 0)
+            {
+                try
+                {
+                    Limpiar();
+                    btnEditarP.Enabled = false;
+                    btnEliminarP.Enabled = true;
+                    btnGuardarP.Enabled = true;
+                    lblIdProfesor.Text = dgvDatosP.CurrentRow.Cells["Num"].Value.ToString();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+        }
+
+        private void dgvDatosP_DoubleClick(object sender, EventArgs e)
+        {
+            if (dgvDatosP.SelectedRows.Count > 0)
+            {
+                lblIdProfesor.Text = dgvDatosP.CurrentRow.Cells["Num"].Value.ToString();
+                txtNombreP.Text = dgvDatosP.CurrentRow.Cells["Nombres"].Value.ToString();
+                txtApellidoP.Text = dgvDatosP.CurrentRow.Cells["Apellidos"].Value.ToString();
+                dtpFechaP.Value = DateTime.Parse(dgvDatosP.CurrentRow.Cells["Fecha de nacimiento"].Value.ToString());
+                mtxtTelefonoP.Text = dgvDatosP.CurrentRow.Cells["Teléfono"].Value.ToString();
+                txtEmailP.Text = dgvDatosP.CurrentRow.Cells["Correo"].Value.ToString();
+                mtxtDUIP.Text = dgvDatosP.CurrentRow.Cells["DUI"].Value.ToString();
+                mtxtNITP.Text = dgvDatosP.CurrentRow.Cells["NIT"].Value.ToString();
+                mtxtNumEscalafonP.Text = dgvDatosP.CurrentRow.Cells["Escalafon"].Value.ToString();
+                cmbSexoP.Text = dgvDatosP.CurrentRow.Cells["Sexo"].Value.ToString();
+                rtbDireccionP.Text = dgvDatosP.CurrentRow.Cells["Dirección"].Value.ToString();
+
+                Profesor profesor = new Profesor();
+                
+                try
+                {
+                    string idProfesor = lblIdProfesor.Text;
+                    string ruta = profesor.ExtraerFoto(idProfesor);
+                    Image image = Image.FromFile(@"..\\..\\" + ruta);
+                    this.pbFotoProfesor.Image = image;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error al cargar foto " + ex.Message);
+                }
+                
+                btnEditarP.Enabled = true;
+                btnEliminarP.Enabled = false;
+                btnGuardarP.Enabled = false;
+                txtNombreP.Focus();
+                dgvDatosP.CurrentCell.Selected = false;
+                dgvDatosP.ClearSelection();
+            }
+            else
+            {
+                MessageBox.Show("seleccione una fila por favor");
             }
         }
     }

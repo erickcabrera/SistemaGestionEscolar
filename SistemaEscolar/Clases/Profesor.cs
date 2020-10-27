@@ -114,6 +114,37 @@ namespace SistemaEscolar.Clases
             return tabla;
         }
 
-
+        public string ExtraerFoto(string idProfesor)
+        {
+            string ruta = "";
+            try
+            {
+                Conexion conexion = new Conexion();
+                SqlDataReader leer = null;
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = conexion.Conectar();
+                comando.CommandText = "ps_extraer_foto_profesor";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@idProfesor", idProfesor);
+                leer = comando.ExecuteReader();
+                
+                while (leer.Read())
+                {
+                    ruta = leer["fotoPerfilProfesor"].ToString();
+                }
+                if (leer != null)
+                {
+                    Console.WriteLine("Datos encontrados");
+                }
+                conexion.Desconectar();
+                leer.Close();
+                return ruta;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine("Error al extraer foto " + e.Message);
+            }
+            return ruta;
+        }
     }
 }

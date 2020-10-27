@@ -63,11 +63,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtFoto = new System.Windows.Forms.Button();
             this.openFileFoto = new System.Windows.Forms.OpenFileDialog();
+            this.pbFotoProfesor = new System.Windows.Forms.PictureBox();
+            this.lblIdProfesor = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFotoProfesor)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -293,9 +296,9 @@
             this.btnGuardarP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardarP.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarP.ForeColor = System.Drawing.Color.Black;
-            this.btnGuardarP.Location = new System.Drawing.Point(52, 591);
+            this.btnGuardarP.Location = new System.Drawing.Point(576, 531);
             this.btnGuardarP.Name = "btnGuardarP";
-            this.btnGuardarP.Size = new System.Drawing.Size(482, 38);
+            this.btnGuardarP.Size = new System.Drawing.Size(160, 38);
             this.btnGuardarP.TabIndex = 12;
             this.btnGuardarP.Text = "Guardar";
             this.btnGuardarP.UseVisualStyleBackColor = false;
@@ -316,6 +319,8 @@
             this.dgvDatosP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDatosP.Size = new System.Drawing.Size(719, 375);
             this.dgvDatosP.TabIndex = 15;
+            this.dgvDatosP.SelectionChanged += new System.EventHandler(this.dgvDatosP_SelectionChanged);
+            this.dgvDatosP.DoubleClick += new System.EventHandler(this.dgvDatosP_DoubleClick);
             // 
             // label12
             // 
@@ -335,9 +340,9 @@
             this.btnEditarP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEditarP.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarP.ForeColor = System.Drawing.Color.Black;
-            this.btnEditarP.Location = new System.Drawing.Point(576, 591);
+            this.btnEditarP.Location = new System.Drawing.Point(861, 531);
             this.btnEditarP.Name = "btnEditarP";
-            this.btnEditarP.Size = new System.Drawing.Size(301, 38);
+            this.btnEditarP.Size = new System.Drawing.Size(160, 38);
             this.btnEditarP.TabIndex = 13;
             this.btnEditarP.Text = "Editar";
             this.btnEditarP.UseVisualStyleBackColor = false;
@@ -348,9 +353,9 @@
             this.btnEliminarP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminarP.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarP.ForeColor = System.Drawing.Color.Black;
-            this.btnEliminarP.Location = new System.Drawing.Point(994, 591);
+            this.btnEliminarP.Location = new System.Drawing.Point(1135, 531);
             this.btnEliminarP.Name = "btnEliminarP";
-            this.btnEliminarP.Size = new System.Drawing.Size(301, 38);
+            this.btnEliminarP.Size = new System.Drawing.Size(160, 38);
             this.btnEliminarP.TabIndex = 14;
             this.btnEliminarP.Text = "Eliminar";
             this.btnEliminarP.UseVisualStyleBackColor = false;
@@ -420,12 +425,34 @@
             this.txtFoto.UseVisualStyleBackColor = false;
             this.txtFoto.Click += new System.EventHandler(this.txtFoto_Click);
             // 
+            // pbFotoProfesor
+            // 
+            this.pbFotoProfesor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbFotoProfesor.Location = new System.Drawing.Point(276, 575);
+            this.pbFotoProfesor.Name = "pbFotoProfesor";
+            this.pbFotoProfesor.Size = new System.Drawing.Size(77, 79);
+            this.pbFotoProfesor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbFotoProfesor.TabIndex = 40;
+            this.pbFotoProfesor.TabStop = false;
+            // 
+            // lblIdProfesor
+            // 
+            this.lblIdProfesor.AutoSize = true;
+            this.lblIdProfesor.Location = new System.Drawing.Point(673, 99);
+            this.lblIdProfesor.Name = "lblIdProfesor";
+            this.lblIdProfesor.Size = new System.Drawing.Size(55, 13);
+            this.lblIdProfesor.TabIndex = 41;
+            this.lblIdProfesor.Text = "IdProfesor";
+            this.lblIdProfesor.Visible = false;
+            // 
             // FrmProfesor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1321, 653);
+            this.ClientSize = new System.Drawing.Size(1321, 666);
+            this.Controls.Add(this.lblIdProfesor);
+            this.Controls.Add(this.pbFotoProfesor);
             this.Controls.Add(this.txtFoto);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.mtxtNumEscalafonP);
@@ -466,6 +493,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFotoProfesor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -506,5 +534,7 @@
         private System.Windows.Forms.Button txtFoto;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.OpenFileDialog openFileFoto;
+        private System.Windows.Forms.PictureBox pbFotoProfesor;
+        private System.Windows.Forms.Label lblIdProfesor;
     }
 }
