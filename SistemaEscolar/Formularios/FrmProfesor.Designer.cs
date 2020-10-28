@@ -65,6 +65,8 @@
             this.openFileFoto = new System.Windows.Forms.OpenFileDialog();
             this.pbFotoProfesor = new System.Windows.Forms.PictureBox();
             this.lblIdProfesor = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
@@ -296,7 +298,7 @@
             this.btnGuardarP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardarP.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarP.ForeColor = System.Drawing.Color.Black;
-            this.btnGuardarP.Location = new System.Drawing.Point(576, 531);
+            this.btnGuardarP.Location = new System.Drawing.Point(576, 600);
             this.btnGuardarP.Name = "btnGuardarP";
             this.btnGuardarP.Size = new System.Drawing.Size(160, 38);
             this.btnGuardarP.TabIndex = 12;
@@ -312,12 +314,12 @@
             this.dgvDatosP.AllowUserToResizeRows = false;
             this.dgvDatosP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDatosP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDatosP.Location = new System.Drawing.Point(576, 124);
+            this.dgvDatosP.Location = new System.Drawing.Point(576, 152);
             this.dgvDatosP.MultiSelect = false;
             this.dgvDatosP.Name = "dgvDatosP";
             this.dgvDatosP.ReadOnly = true;
             this.dgvDatosP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDatosP.Size = new System.Drawing.Size(719, 375);
+            this.dgvDatosP.Size = new System.Drawing.Size(719, 417);
             this.dgvDatosP.TabIndex = 15;
             this.dgvDatosP.SelectionChanged += new System.EventHandler(this.dgvDatosP_SelectionChanged);
             this.dgvDatosP.DoubleClick += new System.EventHandler(this.dgvDatosP_DoubleClick);
@@ -327,7 +329,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Gray;
-            this.label12.Location = new System.Drawing.Point(1085, 99);
+            this.label12.Location = new System.Drawing.Point(1085, 109);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(210, 22);
             this.label12.TabIndex = 35;
@@ -340,7 +342,7 @@
             this.btnEditarP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEditarP.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarP.ForeColor = System.Drawing.Color.Black;
-            this.btnEditarP.Location = new System.Drawing.Point(861, 531);
+            this.btnEditarP.Location = new System.Drawing.Point(851, 600);
             this.btnEditarP.Name = "btnEditarP";
             this.btnEditarP.Size = new System.Drawing.Size(160, 38);
             this.btnEditarP.TabIndex = 13;
@@ -353,12 +355,13 @@
             this.btnEliminarP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminarP.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarP.ForeColor = System.Drawing.Color.Black;
-            this.btnEliminarP.Location = new System.Drawing.Point(1135, 531);
+            this.btnEliminarP.Location = new System.Drawing.Point(1135, 600);
             this.btnEliminarP.Name = "btnEliminarP";
             this.btnEliminarP.Size = new System.Drawing.Size(160, 38);
             this.btnEliminarP.TabIndex = 14;
             this.btnEliminarP.Text = "Eliminar";
             this.btnEliminarP.UseVisualStyleBackColor = false;
+            this.btnEliminarP.Click += new System.EventHandler(this.btnEliminarP_Click);
             // 
             // errorProvider1
             // 
@@ -438,12 +441,32 @@
             // lblIdProfesor
             // 
             this.lblIdProfesor.AutoSize = true;
-            this.lblIdProfesor.Location = new System.Drawing.Point(673, 99);
+            this.lblIdProfesor.Location = new System.Drawing.Point(1024, 116);
             this.lblIdProfesor.Name = "lblIdProfesor";
             this.lblIdProfesor.Size = new System.Drawing.Size(55, 13);
             this.lblIdProfesor.TabIndex = 41;
             this.lblIdProfesor.Text = "IdProfesor";
             this.lblIdProfesor.Visible = false;
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(678, 107);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(333, 27);
+            this.txtBuscar.TabIndex = 43;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(572, 110);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(88, 24);
+            this.label13.TabIndex = 42;
+            this.label13.Text = "Buscar: ";
             // 
             // FrmProfesor
             // 
@@ -451,6 +474,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1321, 666);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.lblIdProfesor);
             this.Controls.Add(this.pbFotoProfesor);
             this.Controls.Add(this.txtFoto);
@@ -536,5 +561,7 @@
         private System.Windows.Forms.OpenFileDialog openFileFoto;
         private System.Windows.Forms.PictureBox pbFotoProfesor;
         private System.Windows.Forms.Label lblIdProfesor;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label label13;
     }
 }

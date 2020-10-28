@@ -425,5 +425,58 @@ namespace SistemaEscolar.Formularios
                 MessageBox.Show("seleccione una fila por favor");
             }
         }
+
+        private void btnEliminarP_Click(object sender, EventArgs e)
+        {
+            if (dgvDatosP.SelectedRows.Count > 0)
+            {
+                DialogResult resultado = MessageBox.Show("¿Seguro que desea eliminar el registro numero " + lblIdProfesor.Text + "?", "SALIR", MessageBoxButtons.YesNo);
+                if (resultado == DialogResult.Yes)
+                {
+                    Profesor profesor = new Profesor();
+
+                    if (profesor.Eliminar(int.Parse(lblIdProfesor.Text)) == true)
+                    {
+                        MessageBox.Show("El profesor ha sido eliminado correctamente");
+                        ActualizarDataGrid();
+                        Limpiar();
+                        btnEliminarP.Enabled = false;
+                        btnGuardarP.Enabled = true;
+                        btnEditarP.Enabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al eliminar el grado");
+                    }
+                }
+                else if (resultado == DialogResult.No)
+                {
+                    btnEliminarP.Enabled = false;
+                    dgvDatosP.ClearSelection();
+                    Limpiar();
+                }
+            }
+            else
+            {
+                MessageBox.Show("seleccione una fila por favor");
+            }
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Profesor profesor = new Profesor();
+
+                dgvDatosP.DataSource = null;
+                dgvDatosP.DataSource = profesor.Buscar(txtBuscar.Text.Trim());
+                dgvDatosP.ClearSelection();
+                txtBuscar.Focus();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Error al buscar datos" + Ex.Message);
+            }
+        }
     }
 }

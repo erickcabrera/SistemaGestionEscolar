@@ -146,5 +146,54 @@ namespace SistemaEscolar.Clases
             }
             return ruta;
         }
+
+        public bool Eliminar(int idProfesor)
+        {
+            try
+            {
+                Conexion conexion = new Conexion();
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = conexion.Conectar();
+                comando.CommandText = "ps_eliminar_profesor";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@idProfesor", idProfesor);
+                comando.ExecuteNonQuery();
+                comando.Parameters.Clear();
+                conexion.Desconectar();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("No se pudo eliminar el registro " + e.Message);
+            }
+            return false;
+        }
+
+        public DataTable Buscar(string filtro)
+        {
+            DataTable tabla = new DataTable();
+            try
+            {
+                Conexion conexion = new Conexion();
+
+                SqlDataReader leer = null;
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = conexion.Conectar();
+                comando.CommandText = "ps_buscar_profesores";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@filtro", filtro);
+                leer = comando.ExecuteReader();
+                tabla.Load(leer);
+
+                conexion.Desconectar();
+                leer.Close();
+                return tabla;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine("Error al buscar datos " + e.Message);
+            }
+            return tabla;
+        }
     }
 }
