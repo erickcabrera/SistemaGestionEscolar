@@ -67,6 +67,7 @@
             this.lblIdProfesor = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.lblRutaFoto = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
@@ -348,6 +349,7 @@
             this.btnEditarP.TabIndex = 13;
             this.btnEditarP.Text = "Editar";
             this.btnEditarP.UseVisualStyleBackColor = false;
+            this.btnEditarP.Click += new System.EventHandler(this.btnEditarP_Click);
             // 
             // btnEliminarP
             // 
@@ -468,12 +470,23 @@
             this.label13.TabIndex = 42;
             this.label13.Text = "Buscar: ";
             // 
+            // lblRutaFoto
+            // 
+            this.lblRutaFoto.AutoSize = true;
+            this.lblRutaFoto.Location = new System.Drawing.Point(373, 616);
+            this.lblRutaFoto.Name = "lblRutaFoto";
+            this.lblRutaFoto.Size = new System.Drawing.Size(46, 13);
+            this.lblRutaFoto.TabIndex = 44;
+            this.lblRutaFoto.Text = "rutaFoto";
+            this.lblRutaFoto.Visible = false;
+            // 
             // FrmProfesor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1321, 666);
+            this.Controls.Add(this.lblRutaFoto);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.lblIdProfesor);
@@ -563,5 +576,6 @@
         private System.Windows.Forms.Label lblIdProfesor;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblRutaFoto;
     }
 }

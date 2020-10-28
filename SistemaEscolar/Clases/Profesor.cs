@@ -195,5 +195,51 @@ namespace SistemaEscolar.Clases
             }
             return tabla;
         }
+
+        public bool Modificar(int idProfesor,string nombres, string apellidos, string fechaNac, string sexo, string telefono, string direccion, string fotoProfesor, string dui, string nit, string correo, string numEscalafon)
+        {
+            try
+            {
+                this.nombres = nombres.Trim().ToUpper();
+                this.apellidos = apellidos.Trim().ToUpper();
+                this.fechaNac = fechaNac;
+                this.sexo = sexo;
+                this.telefono = telefono;
+                this.direccion = direccion.Trim().ToUpper();
+                this.foto = fotoProfesor;
+                this.dui = dui;
+                this.nit = nit;
+                this.correo = correo;
+                this.numEscalafon = numEscalafon;
+
+                Conexion conexion = new Conexion();
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = conexion.Conectar();
+                comando.CommandText = "ps_modificar_profesor";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@idProfesor", idProfesor);
+                comando.Parameters.AddWithValue("@dui", this.dui);
+                comando.Parameters.AddWithValue("@nit", this.nit);
+                comando.Parameters.AddWithValue("@nombreProfesor", this.nombres);
+                comando.Parameters.AddWithValue("@apellidoProfesor", this.apellidos);
+                comando.Parameters.AddWithValue("@direccionProfesor", this.direccion);
+                comando.Parameters.AddWithValue("@telefonoProfesor", this.telefono);
+                comando.Parameters.AddWithValue("@correoProfesor", this.correo);
+                comando.Parameters.Add(new SqlParameter("@fechaNacProfesor", SqlDbType.Date));
+                comando.Parameters["@fechaNacProfesor"].Value = this.fechaNac;
+                comando.Parameters.AddWithValue("@fotoPerfilProfesor", this.foto);
+                comando.Parameters.AddWithValue("@numeroEscalafon", this.numEscalafon);
+                comando.Parameters.AddWithValue("@sexo", this.sexo);
+                comando.ExecuteNonQuery();
+                comando.Parameters.Clear();
+                conexion.Desconectar();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("No se pudo modificar el registro " + e.Message);
+            }
+            return false;
+        }
     }
 }

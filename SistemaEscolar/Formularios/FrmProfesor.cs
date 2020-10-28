@@ -400,16 +400,17 @@ namespace SistemaEscolar.Formularios
                 rtbDireccionP.Text = dgvDatosP.CurrentRow.Cells["Dirección"].Value.ToString();
 
                 Profesor profesor = new Profesor();
-                
+
                 try
                 {
                     string idProfesor = lblIdProfesor.Text;
                     string ruta = profesor.ExtraerFoto(idProfesor);
                     Image image = Image.FromFile(@"..\\..\\" + ruta);
                     this.pbFotoProfesor.Image = image;
+                    this.lblRutaFoto.Text = ruta;
                 }
                 catch (Exception ex)
-                {
+                {   
                     Console.WriteLine("Error al cargar foto " + ex.Message);
                 }
                 
@@ -476,6 +477,65 @@ namespace SistemaEscolar.Formularios
             catch (Exception Ex)
             {
                 MessageBox.Show("Error al buscar datos" + Ex.Message);
+            }
+        }
+
+        private void btnEditarP_Click(object sender, EventArgs e)
+        {
+            //validaciones
+            BorrarMensaje();
+            if (validarCampos() || ValidarFechaySexo())
+            {
+                try
+                {
+                    Profesor profesor = new Profesor();
+
+                    profesor.Nombres = txtNombreP.Text;
+                    profesor.Apellidos = txtApellidoP.Text;
+                    profesor.FechaNac = Convert.ToString(dtpFechaP.Value.ToString("yyyy-MM-dd"));
+                    profesor.Telefono = mtxtTelefonoP.Text;
+                    profesor.Correo = txtEmailP.Text;
+                    profesor.Dui = mtxtDUIP.Text;
+                    profesor.Nit = mtxtNITP.Text;
+                    profesor.NumEscalafon = mtxtNumEscalafonP.Text;
+                    profesor.Sexo = cmbSexoP.Text;
+                    profesor.Direccion = rtbDireccionP.Text;
+                    
+                    if (txtFoto.Text != "Seleccionar foto...")
+                    {
+                        String sourceFile = txtFoto.Text;
+                        String destinationFile = "fotosUsuarios\\" + profesor.Nombres + " - " + profesor.NumEscalafon + ".png";
+
+                        System.IO.File.Copy(sourceFile, "..\\..\\" + destinationFile);
+                        profesor.Foto = destinationFile;
+                    }
+                    else
+                    {
+                        profesor.Foto = lblRutaFoto.Text;
+                    }
+                    if (profesor.Modificar(int.Parse(lblIdProfesor.Text),profesor.Nombres, profesor.Apellidos, profesor.FechaNac, profesor.Sexo, profesor.Telefono, profesor.Direccion, profesor.Foto, profesor.Dui, profesor.Nit, profesor.Correo, profesor.NumEscalafon) == true)
+                    {
+                        MessageBox.Show("Los datos del profesor han sido modificados correctamente");
+                        ActualizarDataGrid();
+                        Limpiar();
+                        lblIdProfesor.Text = "";
+                        lblRutaFoto.Text = "";
+                        btnEditarP.Enabled = false;
+                        btnGuardarP.Enabled = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al modificar el registro");
+                    }
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show("Error al modificar datos" + Ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe llenar todos los campos");
             }
         }
     }
