@@ -210,6 +210,7 @@ namespace SistemaEscolar.Formularios
             else
             {
                 MessageBox.Show("Debe llenar todos los campos");
+
             }
         }
 
@@ -259,7 +260,7 @@ namespace SistemaEscolar.Formularios
         private void txtEmailP_TextChanged(object sender, EventArgs e)
         {
             BorrarMensaje();
-            if (validarCorreo(txtEmailP.Text))
+            if (validarCorreo(txtEmailP.Text)||txtEmailP.Text=="")
             {
 
             }
@@ -350,6 +351,7 @@ namespace SistemaEscolar.Formularios
 
         private void FrmProfesor_Load(object sender, EventArgs e)
         {
+            BorrarMensaje();
             dtpFechaP.Value.ToString("yyyy-MM-dd");
             Profesor profesor = new Profesor();
             try
