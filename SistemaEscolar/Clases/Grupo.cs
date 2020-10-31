@@ -41,7 +41,7 @@ namespace SistemaEscolar.Clases
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@id_Profesor", idProfesor);
                 comando.ExecuteNonQuery();
-                comando.Parameters.Clear();
+               // comando.Parameters.Clear();
                 leer = comando.ExecuteReader();
 
                 while (leer.Read())
