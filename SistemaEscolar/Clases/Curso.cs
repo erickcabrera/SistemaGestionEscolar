@@ -11,6 +11,16 @@ namespace SistemaEscolar.Clases
 {
     class Curso: Conexion
     {
+        private int id_Curso;
+        private int id_Detalle_Grado;
+        private int id_Materia;
+        private int id_Profesor;
+
+        public int Id_Curso { get => id_Curso; set => id_Curso = value; }
+        public int Id_Detalle_Grado { get => id_Detalle_Grado; set => id_Detalle_Grado = value; }
+        public int Id_Materia { get => id_Materia; set => id_Materia = value; }
+        public int Id_Profesor { get => id_Profesor; set => id_Profesor = value; }
+
         public DataTable Mostrar()
         {
             DataTable tabla = new DataTable();
@@ -88,5 +98,32 @@ namespace SistemaEscolar.Clases
             }
         }
 
+        public Boolean agregarCurso(int idDetalle, int idMateria,int idProfesor)
+        {           
+            try
+            {
+                this.id_Detalle_Grado = idDetalle;
+                this.id_Materia = idMateria;
+                this.id_Profesor = idProfesor;
+
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = this.Conectar();
+                comando.CommandText = "ps_insertar_curso";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@idDetalle", this.id_Detalle_Grado);
+                comando.Parameters.AddWithValue("@idMateria", this.id_Materia);
+                comando.Parameters.AddWithValue("@idProfesor", this.id_Profesor);
+
+                comando.ExecuteNonQuery();
+                comando.Parameters.Clear();
+                this.Desconectar();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                Console.WriteLine("No se pudo agregar el nuevo registro " + Ex.Message);
+            }
+            return false;
+        }
     }
 }
