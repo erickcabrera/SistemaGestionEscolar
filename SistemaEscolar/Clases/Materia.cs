@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Windows.Forms;
 
 namespace SistemaEscolar.Clases
 {
@@ -146,6 +147,30 @@ namespace SistemaEscolar.Clases
                 Console.WriteLine("Error al buscar datos " + e);
             }
             return tabla;
+        }
+
+        public void llenarComboMaterias(ComboBox nombreC)
+        {
+            try
+            {
+                SqlDataReader leer = null;
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = this.Conectar();
+                comando.CommandText = "ps_mostrar_materias";
+                comando.CommandType = CommandType.StoredProcedure;
+                leer = comando.ExecuteReader();
+                while (leer.Read())
+                {
+                    nombreC.Items.Add(leer["Materia"].ToString());
+                }
+
+                this.Desconectar();
+                leer.Close();
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine("Error al mostrar datos " + e);
+            }
         }
     }
 }

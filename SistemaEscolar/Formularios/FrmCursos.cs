@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using SistemaEscolar.Clases;
 
 namespace SistemaEscolar.Formularios
 {
@@ -84,6 +85,12 @@ namespace SistemaEscolar.Formularios
             {
                 MessageBox.Show("Los datos se han ingresado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void FrmCursos_Load(object sender, EventArgs e)
+        {
+            Materia objMateria = new Materia();
+            objMateria.llenarComboMaterias(cmbMaterias);
         }
     }
 }
