@@ -53,7 +53,8 @@ namespace SistemaEscolar.Formularios
         private void FrmVisualizarAlumnos_Load(object sender, EventArgs e)
         {
             Grupo grupo = new Grupo();
-            grupo.llenarComboGrupos(cmbCurso,FrmLogin.idProfesor);
+            grupo.llenarComboGrupos(cmbCurso, FrmLogin.idProfesor.ToString());
+            //MessageBox.Show(FrmLogin.idProfesor.ToString());
         }
     }
 }

@@ -30,7 +30,7 @@ namespace SistemaEscolar.Clases
             this.turno = turno;
         }
 
-        public void llenarComboGrupos(ComboBox grupo, int idProfesor)
+        public void llenarComboGrupos(ComboBox grupo, string idProfesor)
         {
             try
             {
@@ -41,8 +41,8 @@ namespace SistemaEscolar.Clases
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@id_Profesor", idProfesor);
                 comando.ExecuteNonQuery();
-                comando.Parameters.Clear();
                 leer = comando.ExecuteReader();
+                comando.Parameters.Clear();
 
                 while (leer.Read())
                 {
@@ -55,7 +55,7 @@ namespace SistemaEscolar.Clases
             catch (SqlException e)
             {
                 Console.WriteLine("Error al mostrar datos " + e);
-                MessageBox.Show(e.ToString());
+                
 
             }
         }
