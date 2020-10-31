@@ -80,10 +80,56 @@ namespace SistemaEscolar.Formularios
 
         private void btnAsignar_Click(object sender, EventArgs e)
         {
-            BorrarMensaje();
+            /*BorrarMensaje();
             if (validarCampos())
             {
                 MessageBox.Show("Los datos se han ingresado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }*/
+            if(lblIdMateria.Text != "")
+            {
+                if(lblDetalle.Text != "")
+                {
+                    if(lblIdProfesor.Text != "")
+                    {
+                        try
+                        {
+                            Curso curso = new Curso();
+                            curso.Id_Detalle_Grado = int.Parse(lblDetalle.Text);
+                            curso.Id_Materia = int.Parse(lblIdMateria.Text);
+                            curso.Id_Profesor = int.Parse(lblIdProfesor.Text);
+
+                            if(curso.agregarCurso(curso.Id_Detalle_Grado, curso.Id_Materia, curso.Id_Profesor) == true)
+                            {
+                                MessageBox.Show("El curso ha sido registrado correctamente");
+                                ActualizarDataGrid();
+                                lblDetalle.Text = "";
+                                lblIdMateria.Text = "";
+                                lblIdProfesor.Text = "";
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error al agregar curso");
+                            }
+
+
+                        }catch(Exception Ex)
+                        {
+                            MessageBox.Show(Ex.Message);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe de seleccionar profesor");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Debe de seleccionar un detalle de grado");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe de seleccionar una materia");
             }
         }
 
@@ -96,6 +142,10 @@ namespace SistemaEscolar.Formularios
             objProfesor.llenarComboMaestros(cmbProfesor);
 
             ActualizarDataGrid();
+
+            lblDetalle.Text = "";
+            lblIdMateria.Text = "";
+            lblIdProfesor.Text = "";
         }
 
         private void ActualizarDataGrid()
@@ -123,6 +173,36 @@ namespace SistemaEscolar.Formularios
             MessageBox.Show(trozos[1]);
             Curso curso = new Curso();
             curso.obtenerCodigoProfesor(lblIdProfesor, trozos[0], trozos[1]);
+        }
+
+        private void dgvDetalleGrado_DoubleClick(object sender, EventArgs e)
+        {
+            if (dgvDetalleGrado.SelectedRows.Count > 0)
+            {
+                lblDetalle.Text = dgvDetalleGrado.CurrentRow.Cells["Codigo"].Value.ToString();
+                                
+                dgvDetalleGrado.CurrentCell.Selected = false;
+                dgvDetalleGrado.ClearSelection();
+            }
+            else
+            {
+                MessageBox.Show("seleccione una fila por favor");
+            }
+        }
+
+        private void dgvDetalleGrado_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvDetalleGrado.SelectedRows.Count > 0)
+            {
+                try
+                {                                       
+                    lblDetalle.Text = dgvDetalleGrado.CurrentRow.Cells["Codigo"].Value.ToString();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
         }
     }
 }

@@ -266,5 +266,10 @@ namespace SistemaEscolar.Formularios
                 MessageBox.Show(Ex.Message);
             }
         }
+
+        private void dgvGrados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

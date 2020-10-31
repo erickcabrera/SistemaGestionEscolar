@@ -106,11 +106,15 @@
             // 
             // dgvDetalleGrado
             // 
+            this.dgvDetalleGrado.AllowUserToAddRows = false;
             this.dgvDetalleGrado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalleGrado.Location = new System.Drawing.Point(382, 109);
             this.dgvDetalleGrado.Name = "dgvDetalleGrado";
+            this.dgvDetalleGrado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalleGrado.Size = new System.Drawing.Size(555, 212);
             this.dgvDetalleGrado.TabIndex = 1;
+            this.dgvDetalleGrado.SelectionChanged += new System.EventHandler(this.dgvDetalleGrado_SelectionChanged);
+            this.dgvDetalleGrado.DoubleClick += new System.EventHandler(this.dgvDetalleGrado_DoubleClick);
             // 
             // label2
             // 
