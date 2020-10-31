@@ -27,7 +27,7 @@ namespace SistemaEscolar.Formularios
 
         public FrmVisualizarAlumnos()
         {
-            InitializeComponent();
+            InitializeComponent();            
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
@@ -56,5 +56,11 @@ namespace SistemaEscolar.Formularios
             grupo.llenarComboGrupos(cmbCurso, FrmLogin.idProfesor.ToString());
             //MessageBox.Show(FrmLogin.idProfesor.ToString());
         }
+
+        /*private void button1_Click(object sender, EventArgs e)
+        {
+            Grupo grupo = new Grupo();
+            grupo.llenarComboGrupos(cmbCurso, FrmLogin.idProfesor);
+        }*/
     }
 }
