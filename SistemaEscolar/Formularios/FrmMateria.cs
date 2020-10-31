@@ -123,7 +123,7 @@ namespace SistemaEscolar.Formularios
 
         private void materia_Load(object sender, EventArgs e)
         {
-            FrmMateria  materia = new FrmMateria();
+            Materia  materia = new Materia();
             try
             {
                 ActualizarDataGrid();

@@ -123,6 +123,7 @@
             // 
             // cmbMaterias
             // 
+            this.cmbMaterias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMaterias.FormattingEnabled = true;
             this.cmbMaterias.Location = new System.Drawing.Point(136, 109);
             this.cmbMaterias.Name = "cmbMaterias";
@@ -143,6 +144,7 @@
             // 
             // cmbProfesor
             // 
+            this.cmbProfesor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProfesor.FormattingEnabled = true;
             this.cmbProfesor.Location = new System.Drawing.Point(136, 170);
             this.cmbProfesor.Name = "cmbProfesor";
