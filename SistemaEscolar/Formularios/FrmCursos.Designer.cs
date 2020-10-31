@@ -34,7 +34,7 @@
             this.picBSalir = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.picBMinimizar = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDetalleGrado = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbMaterias = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,10 +46,13 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblIdMateria = new System.Windows.Forms.Label();
+            this.lblIdProfesor = new System.Windows.Forms.Label();
+            this.lblDetalle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleGrado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -101,13 +104,13 @@
             this.picBMinimizar.TabStop = false;
             this.picBMinimizar.Click += new System.EventHandler(this.picBMinimizar_Click);
             // 
-            // dataGridView1
+            // dgvDetalleGrado
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(382, 109);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(555, 212);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvDetalleGrado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetalleGrado.Location = new System.Drawing.Point(382, 109);
+            this.dgvDetalleGrado.Name = "dgvDetalleGrado";
+            this.dgvDetalleGrado.Size = new System.Drawing.Size(555, 212);
+            this.dgvDetalleGrado.TabIndex = 1;
             // 
             // label2
             // 
@@ -128,6 +131,7 @@
             this.cmbMaterias.Name = "cmbMaterias";
             this.cmbMaterias.Size = new System.Drawing.Size(209, 21);
             this.cmbMaterias.TabIndex = 2;
+            this.cmbMaterias.SelectedIndexChanged += new System.EventHandler(this.cmbMaterias_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -148,6 +152,7 @@
             this.cmbProfesor.Name = "cmbProfesor";
             this.cmbProfesor.Size = new System.Drawing.Size(209, 21);
             this.cmbProfesor.TabIndex = 2;
+            this.cmbProfesor.SelectedIndexChanged += new System.EventHandler(this.cmbProfesor_SelectedIndexChanged);
             // 
             // btnAsignar
             // 
@@ -216,12 +221,42 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // lblIdMateria
+            // 
+            this.lblIdMateria.AutoSize = true;
+            this.lblIdMateria.Location = new System.Drawing.Point(77, 135);
+            this.lblIdMateria.Name = "lblIdMateria";
+            this.lblIdMateria.Size = new System.Drawing.Size(35, 13);
+            this.lblIdMateria.TabIndex = 4;
+            this.lblIdMateria.Text = "label6";
+            // 
+            // lblIdProfesor
+            // 
+            this.lblIdProfesor.AutoSize = true;
+            this.lblIdProfesor.Location = new System.Drawing.Point(114, 196);
+            this.lblIdProfesor.Name = "lblIdProfesor";
+            this.lblIdProfesor.Size = new System.Drawing.Size(35, 13);
+            this.lblIdProfesor.TabIndex = 5;
+            this.lblIdProfesor.Text = "label7";
+            // 
+            // lblDetalle
+            // 
+            this.lblDetalle.AutoSize = true;
+            this.lblDetalle.Location = new System.Drawing.Point(530, 92);
+            this.lblDetalle.Name = "lblDetalle";
+            this.lblDetalle.Size = new System.Drawing.Size(35, 13);
+            this.lblDetalle.TabIndex = 6;
+            this.lblDetalle.Text = "label8";
+            // 
             // FrmCursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(949, 586);
+            this.Controls.Add(this.lblDetalle);
+            this.Controls.Add(this.lblIdProfesor);
+            this.Controls.Add(this.lblIdMateria);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAsignar);
@@ -232,7 +267,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvDetalleGrado);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -244,7 +279,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleGrado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
@@ -256,7 +291,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDetalleGrado;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbMaterias;
         private System.Windows.Forms.Label label3;
@@ -270,5 +305,8 @@
         private System.Windows.Forms.PictureBox picBSalir;
         private System.Windows.Forms.PictureBox picBMinimizar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label lblDetalle;
+        private System.Windows.Forms.Label lblIdProfesor;
+        private System.Windows.Forms.Label lblIdMateria;
     }
 }

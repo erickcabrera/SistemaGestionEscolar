@@ -91,6 +91,38 @@ namespace SistemaEscolar.Formularios
         {
             Materia objMateria = new Materia();
             objMateria.llenarComboMaterias(cmbMaterias);
+
+            Profesor objProfesor = new Profesor();
+            objProfesor.llenarComboMaestros(cmbProfesor);
+
+            ActualizarDataGrid();
+        }
+
+        private void ActualizarDataGrid()
+        {
+            Curso curso = new Curso();
+            dgvDetalleGrado.DataSource = null;
+            dgvDetalleGrado.DataSource = curso.Mostrar();
+            dgvDetalleGrado.ClearSelection();
+        }
+
+        private void cmbMaterias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Curso curso = new Curso();
+            string nombreM = cmbMaterias.SelectedItem.ToString();
+            curso.obtenerCodigoMateria(lblIdMateria, nombreM);
+        }
+
+        private void cmbProfesor_SelectedIndexChanged(object sender, EventArgs e)
+        {            
+            string cadena = cmbProfesor.SelectedItem.ToString();
+            char delimitador = ' ';
+            string[] trozos = cadena.Split(delimitador);
+
+            MessageBox.Show(trozos[0]);
+            MessageBox.Show(trozos[1]);
+            Curso curso = new Curso();
+            curso.obtenerCodigoProfesor(lblIdProfesor, trozos[0], trozos[1]);
         }
     }
 }
