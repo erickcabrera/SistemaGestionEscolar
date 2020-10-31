@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVisualizarAlumnos));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.picBMinimizar = new System.Windows.Forms.PictureBox();
             this.picBSalir = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbCurso = new System.Windows.Forms.ComboBox();
             this.btnMostrar = new System.Windows.Forms.Button();
@@ -53,17 +53,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(817, 80);
             this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(28, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(343, 33);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Visualización de alumnos";
             // 
             // picBMinimizar
             // 
@@ -89,6 +78,17 @@
             this.picBSalir.TabIndex = 40;
             this.picBSalir.TabStop = false;
             this.picBSalir.Click += new System.EventHandler(this.picBSalir_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(28, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(343, 33);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Visualización de alumnos";
             // 
             // label2
             // 
@@ -118,6 +118,7 @@
             this.btnMostrar.TabIndex = 2;
             this.btnMostrar.Text = "Mostrar";
             this.btnMostrar.UseVisualStyleBackColor = true;
+            this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
             // 
             // dataGridView1
             // 
@@ -127,7 +128,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(702, 253);
             this.dataGridView1.TabIndex = 3;
             // 
-            // VisualizarAlumnos
+            // FrmVisualizarAlumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -139,9 +140,10 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "VisualizarAlumnos";
+            this.Name = "FrmVisualizarAlumnos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VisualizarAlumnos";
+            this.Load += new System.EventHandler(this.FrmVisualizarAlumnos_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).EndInit();

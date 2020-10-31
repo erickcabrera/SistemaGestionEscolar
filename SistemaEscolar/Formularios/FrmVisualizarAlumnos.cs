@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using SistemaEscolar.Clases;
 
 namespace SistemaEscolar.Formularios
 {
@@ -41,6 +42,18 @@ namespace SistemaEscolar.Formularios
             MenuProfesor frmMP = new MenuProfesor();
             frmMP.Show();
             this.Hide();
+        }
+
+        private void btnMostrar_Click(object sender, EventArgs e)
+        {
+           
+
+        }
+
+        private void FrmVisualizarAlumnos_Load(object sender, EventArgs e)
+        {
+            Grupo grupo = new Grupo();
+            grupo.llenarComboGrupos(cmbCurso,FrmLogin.idProfesor);
         }
     }
 }

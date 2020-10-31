@@ -540,5 +540,7 @@ namespace SistemaEscolar.Formularios
                 MessageBox.Show("Debe llenar todos los campos");
             }
         }
+
+       
     }
 }
