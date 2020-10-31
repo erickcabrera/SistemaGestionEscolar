@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SistemaEscolar.Clases
 {
@@ -240,6 +241,33 @@ namespace SistemaEscolar.Clases
                 Console.WriteLine("No se pudo modificar el registro " + e.Message);
             }
             return false;
+        }
+
+        public void llenarComboMaestros(ComboBox nombreC)
+        {
+            try
+            {
+                Conexion conexion = new Conexion();
+
+                SqlDataReader leer = null;
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = conexion.Conectar();
+                comando.CommandText = "ps_leer_profesores";
+                comando.CommandType = CommandType.StoredProcedure;                
+                leer = comando.ExecuteReader();
+                while (leer.Read())
+                {
+                    nombreC.Items.Add(leer["Profesor"].ToString());
+                }
+
+                conexion.Desconectar();
+                leer.Close();
+                
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine("Error al buscar datos " + e.Message);
+            }            
         }
     }
 }
