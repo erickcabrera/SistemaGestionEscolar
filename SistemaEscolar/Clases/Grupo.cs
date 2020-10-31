@@ -14,10 +14,12 @@ namespace SistemaEscolar.Clases
         private Grado grado;
         private Seccion seccion;
         private string turno;
+        private int id_Detale;
 
         internal Grado Grado { get => grado; set => grado = value; }
         internal Seccion Seccion { get => seccion; set => seccion = value; }
         public string Turno { get => turno; set => turno = value; }
+        public int Id_Detale { get => id_Detale; set => id_Detale = value; }
 
         public Grupo()
         {
@@ -58,6 +60,67 @@ namespace SistemaEscolar.Clases
                 
 
             }
+        }
+
+        public void llenardgv(Label nombreL, string grado, string seccion)
+        {
+            
+            try
+            {
+                SqlDataReader leer = null;
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = this.Conectar();
+                comando.CommandText = "ps_mostrar_alumnos_curso";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@nombreGrado", grado);
+                comando.Parameters.AddWithValue("@nombreSeccion",seccion);
+                comando.ExecuteNonQuery();
+                leer = comando.ExecuteReader();
+              
+                while (leer.Read())
+                {
+                    nombreL.Text = leer["Codigo"].ToString();
+                }
+                this.Desconectar();
+                leer.Close();
+             
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine("Error al mostrar datos " + e);
+
+
+            }
+           
+        }
+
+        public DataTable mostrarAlumnos(int idDetalle)
+        {
+            DataTable tabla = new DataTable();
+            try
+            {
+                SqlDataReader leer = null;
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = this.Conectar();
+                comando.CommandText = "ps_mostrar_alumnos_nombres";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@grupo", idDetalle);
+                comando.ExecuteNonQuery();
+                leer = comando.ExecuteReader();
+                tabla.Load(leer);
+                comando.Parameters.Clear();
+               
+                this.Desconectar();
+                leer.Close();
+                return tabla;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine("Error al mostrar datos " + e);
+
+
+            }
+            return tabla;
         }
         ~Grupo()
         {

@@ -43,24 +43,59 @@ namespace SistemaEscolar.Formularios
             frmMP.Show();
             this.Hide();
         }
+        private void ActualizarDataGrid()
+        {
+            Grupo grupo = new Grupo();
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = grupo.mostrarAlumnos(int.Parse(lblidDetalle.Text));
+            dataGridView1.ClearSelection();
+        }
 
         private void btnMostrar_Click(object sender, EventArgs e)
         {
-           
+            string iddet = lblidDetalle.Text;
+           if(cmbCurso.SelectedIndex==-1 && lblidDetalle.Text==string.Empty)
+            {
+                MessageBox.Show("Debe llenar todos los campos");
 
+            }
+            else
+            {
+
+                Grupo grupo = new Grupo();
+               // grupo.Id_Detale = int.Parse(lblidDetalle.Text);
+                grupo.mostrarAlumnos(int.Parse(lblidDetalle.Text));
+                ActualizarDataGrid();
+                
+                    
+                
+            }
         }
 
         private void FrmVisualizarAlumnos_Load(object sender, EventArgs e)
         {
             Grupo grupo = new Grupo();
             grupo.llenarComboGrupos(cmbCurso, FrmLogin.idProfesor.ToString());
-            //MessageBox.Show(FrmLogin.idProfesor.ToString());
+            lblidDetalle.Visible = false;
+            lblidDetalle.Text = "";
+
         }
 
-        /*private void button1_Click(object sender, EventArgs e)
+        private void cmbCurso_SelectedIndexChanged(object sender, EventArgs e)
         {
+          
+            
+            
+
+            string cadena = cmbCurso.SelectedItem.ToString();
+            char delimitador = ' ';
+            string[] trozos = cadena.Split(delimitador);
+
             Grupo grupo = new Grupo();
-            grupo.llenarComboGrupos(cmbCurso, FrmLogin.idProfesor);
-        }*/
+            grupo.llenardgv(lblidDetalle,trozos[0], trozos[1]);
+           
+           
+
+        }
     }
 }
