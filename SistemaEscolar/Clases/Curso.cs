@@ -126,6 +126,29 @@ namespace SistemaEscolar.Clases
             return false;
         }
 
-    
+        public DataTable MostrarCursos()
+        {
+            DataTable tabla = new DataTable();
+            try
+            {
+                SqlDataReader leer = null;
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = this.Conectar();
+                comando.CommandText = "ps_leer_cursos";
+                comando.CommandType = CommandType.StoredProcedure;
+                leer = comando.ExecuteReader();
+                tabla.Load(leer);
+
+                this.Desconectar();
+                leer.Close();
+                return tabla;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine("Error al mostrar datos " + e);
+            }
+            return tabla;
+        }
+
     }
 }

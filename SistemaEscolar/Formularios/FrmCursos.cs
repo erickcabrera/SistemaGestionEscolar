@@ -101,6 +101,7 @@ namespace SistemaEscolar.Formularios
                             if(curso.agregarCurso(curso.Id_Detalle_Grado, curso.Id_Materia, curso.Id_Profesor) == true)
                             {
                                 MessageBox.Show("El curso ha sido registrado correctamente");
+                                ActualizarDataGridCurso();
                                 ActualizarDataGrid();
                                 lblDetalle.Text = "";
                                 lblIdMateria.Text = "";
@@ -146,6 +147,8 @@ namespace SistemaEscolar.Formularios
             lblDetalle.Text = "";
             lblIdMateria.Text = "";
             lblIdProfesor.Text = "";
+
+            ActualizarDataGridCurso();
         }
 
         private void ActualizarDataGrid()
@@ -168,9 +171,7 @@ namespace SistemaEscolar.Formularios
             string cadena = cmbProfesor.SelectedItem.ToString();
             char delimitador = ' ';
             string[] trozos = cadena.Split(delimitador);
-
-            MessageBox.Show(trozos[0]);
-            MessageBox.Show(trozos[1]);
+            
             Curso curso = new Curso();
             curso.obtenerCodigoProfesor(lblIdProfesor, trozos[0], trozos[1]);
         }
@@ -203,6 +204,14 @@ namespace SistemaEscolar.Formularios
                     throw;
                 }
             }
+        }
+
+        private void ActualizarDataGridCurso()
+        {
+            Curso curso = new Curso();
+            dgvCurso.DataSource = null;
+            dgvCurso.DataSource = curso.MostrarCursos();
+            dgvCurso.ClearSelection();
         }
     }
 }
