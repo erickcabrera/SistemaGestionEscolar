@@ -150,5 +150,54 @@ namespace SistemaEscolar.Clases
             return tabla;
         }
 
+
+        public bool EliminarCurso(int idCurso)
+        {
+            try
+            {
+                this.id_Curso = idCurso;
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = this.Conectar();
+                comando.CommandText = "ps_eliminar_curso";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@idCurso", idCurso);
+                comando.ExecuteNonQuery();
+                comando.Parameters.Clear();
+                this.Desconectar();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("No se pudo eliminar el registro " + e.Message);
+            }
+            return false;
+        }
+
+        public bool ModificarCurso(int idMateria, int idProfesor, int idCurso)
+        {
+            try
+            {
+                this.Id_Curso = idCurso;
+                this.Id_Profesor = idProfesor;
+                this.Id_Materia = idMateria; 
+
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = this.Conectar();
+                comando.CommandText = "ps_modificar_curso";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@idCurso", this.id_Curso);
+                comando.Parameters.AddWithValue("@idMateria", this.id_Materia);
+                comando.Parameters.AddWithValue("@idProfesor", this.id_Profesor);
+                comando.ExecuteNonQuery();
+                comando.Parameters.Clear();
+                this.Desconectar();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("No se pudo modificar el registro " + e.Message);
+            }
+            return false;
+        }
     }
 }

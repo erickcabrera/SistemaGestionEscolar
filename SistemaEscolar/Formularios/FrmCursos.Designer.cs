@@ -49,6 +49,10 @@
             this.lblIdMateria = new System.Windows.Forms.Label();
             this.lblIdProfesor = new System.Windows.Forms.Label();
             this.lblDetalle = new System.Windows.Forms.Label();
+            this.lblIdCurso = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
@@ -173,12 +177,17 @@
             // 
             // dgvCurso
             // 
+            this.dgvCurso.AllowDrop = true;
             this.dgvCurso.AllowUserToAddRows = false;
             this.dgvCurso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCurso.Location = new System.Drawing.Point(31, 369);
+            this.dgvCurso.Location = new System.Drawing.Point(31, 409);
             this.dgvCurso.Name = "dgvCurso";
+            this.dgvCurso.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCurso.Size = new System.Drawing.Size(569, 189);
             this.dgvCurso.TabIndex = 1;
+            this.dgvCurso.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCurso_CellContentClick);
+            this.dgvCurso.SelectionChanged += new System.EventHandler(this.dgvCurso_SelectionChanged);
+            this.dgvCurso.DoubleClick += new System.EventHandler(this.dgvCurso_DoubleClick);
             // 
             // label4
             // 
@@ -197,7 +206,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(27, 345);
+            this.label5.Location = new System.Drawing.Point(27, 375);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(149, 21);
             this.label5.TabIndex = 0;
@@ -207,22 +216,24 @@
             // btnModificar
             // 
             this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(623, 369);
+            this.btnModificar.Location = new System.Drawing.Point(623, 431);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(314, 40);
             this.btnModificar.TabIndex = 3;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(623, 456);
+            this.btnEliminar.Location = new System.Drawing.Point(623, 518);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(314, 40);
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // errorProvider1
             // 
@@ -231,8 +242,10 @@
             // lblIdMateria
             // 
             this.lblIdMateria.AutoSize = true;
-            this.lblIdMateria.Location = new System.Drawing.Point(77, 135);
+            this.lblIdMateria.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblIdMateria.Location = new System.Drawing.Point(166, 143);
             this.lblIdMateria.Name = "lblIdMateria";
+            this.lblIdMateria.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblIdMateria.Size = new System.Drawing.Size(35, 13);
             this.lblIdMateria.TabIndex = 4;
             this.lblIdMateria.Text = "label6";
@@ -240,8 +253,10 @@
             // lblIdProfesor
             // 
             this.lblIdProfesor.AutoSize = true;
+            this.lblIdProfesor.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblIdProfesor.Location = new System.Drawing.Point(114, 196);
             this.lblIdProfesor.Name = "lblIdProfesor";
+            this.lblIdProfesor.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblIdProfesor.Size = new System.Drawing.Size(35, 13);
             this.lblIdProfesor.TabIndex = 5;
             this.lblIdProfesor.Text = "label7";
@@ -249,20 +264,69 @@
             // lblDetalle
             // 
             this.lblDetalle.AutoSize = true;
+            this.lblDetalle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblDetalle.Location = new System.Drawing.Point(530, 92);
             this.lblDetalle.Name = "lblDetalle";
+            this.lblDetalle.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblDetalle.Size = new System.Drawing.Size(35, 13);
             this.lblDetalle.TabIndex = 6;
             this.lblDetalle.Text = "label8";
+            // 
+            // lblIdCurso
+            // 
+            this.lblIdCurso.AutoSize = true;
+            this.lblIdCurso.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdCurso.Location = new System.Drawing.Point(466, 375);
+            this.lblIdCurso.Name = "lblIdCurso";
+            this.lblIdCurso.Size = new System.Drawing.Size(57, 21);
+            this.lblIdCurso.TabIndex = 7;
+            this.lblIdCurso.Text = "label6";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(210, 375);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(250, 21);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Código de curso seleccionado:";
+            this.label6.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label7.Location = new System.Drawing.Point(166, 143);
+            this.label7.Name = "label7";
+            this.label7.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "label6";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label8.Location = new System.Drawing.Point(114, 196);
+            this.label8.Name = "label8";
+            this.label8.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "label7";
             // 
             // FrmCursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(949, 586);
+            this.ClientSize = new System.Drawing.Size(949, 610);
+            this.Controls.Add(this.lblIdCurso);
             this.Controls.Add(this.lblDetalle);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.lblIdProfesor);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.lblIdMateria);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
@@ -270,6 +334,7 @@
             this.Controls.Add(this.cmbProfesor);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbMaterias);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
@@ -315,5 +380,9 @@
         private System.Windows.Forms.Label lblDetalle;
         private System.Windows.Forms.Label lblIdProfesor;
         private System.Windows.Forms.Label lblIdMateria;
+        private System.Windows.Forms.Label lblIdCurso;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
     }
 }
