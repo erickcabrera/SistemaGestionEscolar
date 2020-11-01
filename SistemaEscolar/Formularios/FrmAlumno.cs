@@ -236,7 +236,7 @@ namespace SistemaEscolar.Formularios
         {
             //validaciones
             BorrarMensaje();
-            if (validarCampos() || ValidarFechaySexo())
+            if (validarCampos() && ValidarFechaySexo())
             {
                 //creo un objeto de la clase persona y guardo a través de las propiedades 
                 if (txtFoto.Text == "Seleccionar foto...")
@@ -514,7 +514,7 @@ namespace SistemaEscolar.Formularios
         {
             //validaciones
             BorrarMensaje();
-            if (validarCampos() || ValidarFechaySexo())
+            if (validarCampos() && ValidarFechaySexo())
             {
                 try
                 {

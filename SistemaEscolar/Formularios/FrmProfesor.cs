@@ -41,10 +41,15 @@ namespace SistemaEscolar.Formularios
 
            //if para validar camppos vacíos en el formulario de Profesor
             
-            if(txtApellidoP.Text=="")
+            if(txtApellidoP.Text== String.Empty)
             {
                 validado = false;
                 errorProvider1.SetError(txtApellidoP, "Ingresar los apellidos del docente");
+            }
+            if (txtNombreP.Text == String.Empty)
+            {
+                validado = false;
+                errorProvider1.SetError(txtApellidoP, "Ingresar los nombres del docente");
             }
 
             if (mtxtDUIP.MaskFull) { }
@@ -156,7 +161,7 @@ namespace SistemaEscolar.Formularios
         {
             //validaciones
             BorrarMensaje();
-            if (validarCampos() || ValidarFechaySexo())
+            if (validarCampos() && ValidarFechaySexo())
             {
                 //creo un objeto de la clase persona y guardo a través de las propiedades 
                 if (txtFoto.Text == "Seleccionar foto...")
@@ -486,7 +491,7 @@ namespace SistemaEscolar.Formularios
         {
             //validaciones
             BorrarMensaje();
-            if (validarCampos() || ValidarFechaySexo())
+            if (validarCampos() && ValidarFechaySexo())
             {
                 try
                 {
@@ -541,6 +546,6 @@ namespace SistemaEscolar.Formularios
             }
         }
 
-       
+ 
     }
 }
