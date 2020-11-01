@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVisualizarCursos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.picBMinimizar = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -106,7 +106,7 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(124, 143);
+            this.txtBuscar.Location = new System.Drawing.Point(206, 147);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(308, 20);
             this.txtBuscar.TabIndex = 8;
@@ -116,7 +116,7 @@
             // 
             this.lblidProfesor.AutoSize = true;
             this.lblidProfesor.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblidProfesor.Location = new System.Drawing.Point(498, 143);
+            this.lblidProfesor.Location = new System.Drawing.Point(566, 143);
             this.lblidProfesor.Name = "lblidProfesor";
             this.lblidProfesor.Size = new System.Drawing.Size(35, 13);
             this.lblidProfesor.TabIndex = 9;
@@ -134,8 +134,8 @@
             this.dgvCursos.MultiSelect = false;
             this.dgvCursos.Name = "dgvCursos";
             this.dgvCursos.ReadOnly = true;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.dgvCursos.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.dgvCursos.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCursos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCursos.Size = new System.Drawing.Size(547, 163);
             this.dgvCursos.TabIndex = 10;
@@ -147,9 +147,9 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(26, 143);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 22);
+            this.label3.Size = new System.Drawing.Size(174, 22);
             this.label3.TabIndex = 11;
-            this.label3.Text = "Buscar:";
+            this.label3.Text = "Buscar por grado:";
             // 
             // label2
             // 
