@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVisualizarCursos));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.picBMinimizar = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -54,17 +54,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(636, 65);
             this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(18, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(312, 33);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Visualización de cursos";
             // 
             // picBMinimizar
             // 
@@ -88,6 +77,17 @@
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(18, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(312, 33);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Visualización de cursos";
             // 
             // dateTimePicker1
             // 
@@ -134,13 +134,21 @@
             // 
             // dgvCursos
             // 
+            this.dgvCursos.AllowUserToAddRows = false;
+            this.dgvCursos.AllowUserToDeleteRows = false;
+            this.dgvCursos.AllowUserToOrderColumns = true;
+            this.dgvCursos.AllowUserToResizeRows = false;
+            this.dgvCursos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCursos.Location = new System.Drawing.Point(18, 197);
+            this.dgvCursos.MultiSelect = false;
             this.dgvCursos.Name = "dgvCursos";
+            this.dgvCursos.ReadOnly = true;
+            this.dgvCursos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCursos.Size = new System.Drawing.Size(559, 150);
             this.dgvCursos.TabIndex = 3;
             // 
-            // VisualizarCursos
+            // FrmVisualizarCursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -156,7 +164,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "VisualizarCursos";
+            this.Name = "FrmVisualizarCursos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VisualizarCursos";
             this.panel1.ResumeLayout(false);
