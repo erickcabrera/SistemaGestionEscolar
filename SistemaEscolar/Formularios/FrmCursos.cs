@@ -26,10 +26,10 @@ namespace SistemaEscolar.Formularios
         );
 
         public FrmCursos()
-        {           
+        {            
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -147,7 +147,7 @@ namespace SistemaEscolar.Formularios
             lblDetalle.Text = "";
             lblIdMateria.Text = "";
             lblIdProfesor.Text = "";
-
+            lblIdCurso.Text = "";
             ActualizarDataGridCurso();
         }
 
@@ -212,6 +212,119 @@ namespace SistemaEscolar.Formularios
             dgvCurso.DataSource = null;
             dgvCurso.DataSource = curso.MostrarCursos();
             dgvCurso.ClearSelection();
+        }
+
+        private void dgvCurso_DoubleClick(object sender, EventArgs e)
+        {
+            /*if (dgvCurso.SelectedRows.Count > 0)
+            {                
+                lblIdCurso.Text = dgvCurso.CurrentRow.Cells["Codigo_Curso"].Value.ToString();
+                cmbProfesor.Text = dgvCurso.CurrentRow.Cells["Profesor"].Value.ToString();
+                cmbMaterias.Text = dgvCurso.CurrentRow.Cells["Materia"].Value.ToString();
+                dgvCurso.CurrentCell.Selected = false;
+                dgvCurso.ClearSelection();
+            }
+            else
+            {
+                MessageBox.Show("seleccione una fila por favor");
+            }*/
+        }
+
+        private void dgvCurso_SelectionChanged(object sender, EventArgs e)
+        {
+            /*if (dgvCurso.SelectedRows.Count > 0)
+            {
+                try
+                {                   
+                    //lblIdCurso.Text = dgvCurso.CurrentRow.Cells["Codigo_Curso"].Value.ToString();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }*
+            }*/
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (lblIdCurso.Text != "")
+            {
+                DialogResult resultado = MessageBox.Show("¿Seguro que desea eliminar el curso con código " + lblIdCurso.Text + "?", "SALIR", MessageBoxButtons.YesNo);
+                if (resultado == DialogResult.Yes)
+                {
+                    Curso curso = new Curso();
+
+                    if (curso.EliminarCurso(int.Parse(lblIdCurso.Text)) == true)
+                    {
+                        MessageBox.Show("El curso ha sido eliminado correctamente");
+                        lblIdCurso.Text = "";
+                        ActualizarDataGridCurso();                                              
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al eliminar el grado");
+                        lblIdCurso.Text = "";
+                    }
+                }
+                else if (resultado == DialogResult.No)
+                {                    
+                    dgvCurso.ClearSelection();                  
+                }
+            }
+            else
+            {
+                MessageBox.Show("seleccione una fila por favor");
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (lblIdMateria.Text == "" || lblIdProfesor.Text == "" || lblIdCurso.Text == "")
+            {
+                MessageBox.Show("Por favor ingresar todos los datos");
+            }
+            else
+            {
+                try
+                {
+                    Curso curso = new Curso();
+
+                    if (curso.ModificarCurso(int.Parse(lblIdMateria.Text), int.Parse(lblIdProfesor.Text), int.Parse(lblIdCurso.Text)) == true)
+                    {
+                        MessageBox.Show("El curso ha sido modificado correctamente");
+                        ActualizarDataGridCurso();
+                        lblIdCurso.Text = "";
+                        /* lblIdMateria.Text = "";
+                         lblIdCurso.Text = "";
+                         lblIdProfesor.Text = "";*/
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al modificar el curso");
+                    }
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        private void dgvCurso_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvCurso.SelectedRows.Count > 0)
+            {
+                lblIdCurso.Text = dgvCurso.CurrentRow.Cells["Codigo_Curso"].Value.ToString();
+                cmbProfesor.Text = dgvCurso.CurrentRow.Cells["Profesor"].Value.ToString();
+                cmbMaterias.Text = dgvCurso.CurrentRow.Cells["Materia"].Value.ToString();
+                dgvCurso.CurrentCell.Selected = false;
+                dgvCurso.ClearSelection();
+            }
+            else
+            {
+                MessageBox.Show("seleccione una fila por favor");
+            }
         }
     }
 }

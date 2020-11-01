@@ -150,37 +150,54 @@ namespace SistemaEscolar.Clases
             return tabla;
         }
 
-        public DataTable mostrarCursos_Profesor(int idProfesor)
+
+        public bool EliminarCurso(int idCurso)
         {
-            DataTable tabla = new DataTable();
             try
             {
-                SqlDataReader leer = null;
+                this.id_Curso = idCurso;
                 SqlCommand comando = new SqlCommand();
                 comando.Connection = this.Conectar();
-                comando.CommandText = "ps_mostrar_cursos_profesor";
+                comando.CommandText = "ps_eliminar_curso";
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@id_Profesor", idProfesor);
+                comando.Parameters.AddWithValue("@idCurso", idCurso);
                 comando.ExecuteNonQuery();
-                leer = comando.ExecuteReader();
-                tabla.Load(leer);
                 comando.Parameters.Clear();
-
                 this.Desconectar();
-                leer.Close();
-                return tabla;
+                return true;
             }
-            catch (SqlException e)
+            catch (Exception e)
             {
-                Console.WriteLine("Error al mostrar datos " + e);
-
-
+                Console.WriteLine("No se pudo eliminar el registro " + e.Message);
             }
-            return tabla;
+            return false;
         }
 
-        
+        public bool ModificarCurso(int idMateria, int idProfesor, int idCurso)
+        {
+            try
+            {
+                this.Id_Curso = idCurso;
+                this.Id_Profesor = idProfesor;
+                this.Id_Materia = idMateria; 
 
-
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = this.Conectar();
+                comando.CommandText = "ps_modificar_curso";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@idCurso", this.id_Curso);
+                comando.Parameters.AddWithValue("@idMateria", this.id_Materia);
+                comando.Parameters.AddWithValue("@idProfesor", this.id_Profesor);
+                comando.ExecuteNonQuery();
+                comando.Parameters.Clear();
+                this.Desconectar();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("No se pudo modificar el registro " + e.Message);
+            }
+            return false;
+        }
     }
 }
