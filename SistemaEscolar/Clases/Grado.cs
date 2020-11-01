@@ -145,5 +145,33 @@ namespace SistemaEscolar.Clases
             }
             return tabla;
         }
+
+        public DataTable Buscar_curso(string nombreGrado, int idProfesor)
+        {
+            DataTable tabla = new DataTable();
+            try
+            {
+                this.nombreGrado = nombreGrado.Trim().ToUpper();
+                SqlDataReader leer = null;
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = this.Conectar();
+                comando.CommandText = "ps_buscar_grados_curso";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@nombreGrado", this.nombreGrado);
+                comando.Parameters.AddWithValue("@idprofesor", idProfesor);
+
+                leer = comando.ExecuteReader();
+                tabla.Load(leer);
+
+                this.Desconectar();
+                leer.Close();
+                return tabla;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine("Error al buscar datos " + e);
+            }
+            return tabla;
+        }
     }
 }

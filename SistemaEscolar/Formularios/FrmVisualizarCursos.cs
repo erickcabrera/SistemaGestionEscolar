@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using SistemaEscolar.Clases;
+
 
 namespace SistemaEscolar.Formularios
 {
@@ -41,6 +43,69 @@ namespace SistemaEscolar.Formularios
         private void picBMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void FrmVisualizarCursos_Load(object sender, EventArgs e)
+        {
+            string cadena = FrmLogin.nombreProfesor;
+            char delimitador = ' ';
+            string[] trozos = cadena.Split(delimitador);
+
+            Curso curso = new Curso();
+            curso.obtenerCodigoProfesor(lblidProfesor,trozos[0] , trozos[1] );
+
+            lblidProfesor.Visible = false;
+
+        }
+        private void ActualizarDataGrid()
+        {
+            Curso curso = new Curso();
+            dgvCursos.DataSource = null;
+            dgvCursos.DataSource = curso.mostrarCursos_Profesor(int.Parse(lblidProfesor.Text));
+            dgvCursos.ClearSelection();
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            string idProfesor = lblidProfesor.Text;
+            if (lblidProfesor.Text == string.Empty)
+            {
+                MessageBox.Show("Debe llenar todos los campos");
+
+            }
+            else
+            {
+
+                Curso curso = new Curso();
+                // grupo.Id_Detale = int.Parse(lblidDetalle.Text);
+                curso.mostrarCursos_Profesor(int.Parse(lblidProfesor.Text));
+                ActualizarDataGrid();
+
+
+
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Grado grado = new Grado();
+
+                dgvCursos.DataSource = null;
+                dgvCursos.DataSource = grado.Buscar_curso(txtBuscar.Text, int.Parse(lblidProfesor.Text));
+                dgvCursos.ClearSelection();
+                txtBuscar.Focus();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
         }
     }
 }

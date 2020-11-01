@@ -150,5 +150,37 @@ namespace SistemaEscolar.Clases
             return tabla;
         }
 
+        public DataTable mostrarCursos_Profesor(int idProfesor)
+        {
+            DataTable tabla = new DataTable();
+            try
+            {
+                SqlDataReader leer = null;
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = this.Conectar();
+                comando.CommandText = "ps_mostrar_cursos_profesor";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@id_Profesor", idProfesor);
+                comando.ExecuteNonQuery();
+                leer = comando.ExecuteReader();
+                tabla.Load(leer);
+                comando.Parameters.Clear();
+
+                this.Desconectar();
+                leer.Close();
+                return tabla;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine("Error al mostrar datos " + e);
+
+
+            }
+            return tabla;
+        }
+
+        
+
+
     }
 }
