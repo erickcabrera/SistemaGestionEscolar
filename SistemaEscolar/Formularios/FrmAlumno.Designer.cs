@@ -64,15 +64,15 @@
             this.mtxtTelefonoA = new System.Windows.Forms.MaskedTextBox();
             this.dgvDatosAlumnos = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.lblIdAlumno = new System.Windows.Forms.Label();
             this.lblRutaFoto = new System.Windows.Forms.Label();
             this.pbFotoProfesor = new System.Windows.Forms.PictureBox();
             this.txtFoto = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lblIdAlumno = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.openFileFoto = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
@@ -81,8 +81,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosAlumnos)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFotoProfesor)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -320,7 +320,7 @@
             this.btnGuardarA.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardarA.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarA.ForeColor = System.Drawing.Color.Black;
-            this.btnGuardarA.Location = new System.Drawing.Point(3, 523);
+            this.btnGuardarA.Location = new System.Drawing.Point(3, 570);
             this.btnGuardarA.Name = "btnGuardarA";
             this.btnGuardarA.Size = new System.Drawing.Size(151, 34);
             this.btnGuardarA.TabIndex = 13;
@@ -334,7 +334,7 @@
             this.btnEditarA.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEditarA.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarA.ForeColor = System.Drawing.Color.Black;
-            this.btnEditarA.Location = new System.Drawing.Point(284, 523);
+            this.btnEditarA.Location = new System.Drawing.Point(288, 569);
             this.btnEditarA.Name = "btnEditarA";
             this.btnEditarA.Size = new System.Drawing.Size(151, 35);
             this.btnEditarA.TabIndex = 14;
@@ -348,7 +348,7 @@
             this.btnEliminarA.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminarA.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarA.ForeColor = System.Drawing.Color.Black;
-            this.btnEliminarA.Location = new System.Drawing.Point(563, 522);
+            this.btnEliminarA.Location = new System.Drawing.Point(563, 566);
             this.btnEliminarA.Name = "btnEliminarA";
             this.btnEliminarA.Size = new System.Drawing.Size(151, 35);
             this.btnEliminarA.TabIndex = 15;
@@ -478,65 +478,6 @@
             this.panel2.Size = new System.Drawing.Size(515, 607);
             this.panel2.TabIndex = 41;
             // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.Controls.Add(this.txtBuscar);
-            this.panel3.Controls.Add(this.label15);
-            this.panel3.Controls.Add(this.lblIdAlumno);
-            this.panel3.Controls.Add(this.dgvDatosAlumnos);
-            this.panel3.Controls.Add(this.btnEliminarA);
-            this.panel3.Controls.Add(this.btnGuardarA);
-            this.panel3.Controls.Add(this.label14);
-            this.panel3.Controls.Add(this.btnEditarA);
-            this.panel3.Location = new System.Drawing.Point(533, 64);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(717, 607);
-            this.panel3.TabIndex = 42;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(455, 52);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(193, 22);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Registro de alumnos";
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(128, 15);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(311, 27);
-            this.txtBuscar.TabIndex = 16;
-            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(22, 18);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(88, 24);
-            this.label15.TabIndex = 45;
-            this.label15.Text = "Buscar: ";
-            // 
-            // lblIdAlumno
-            // 
-            this.lblIdAlumno.AutoSize = true;
-            this.lblIdAlumno.Location = new System.Drawing.Point(474, 24);
-            this.lblIdAlumno.Name = "lblIdAlumno";
-            this.lblIdAlumno.Size = new System.Drawing.Size(51, 13);
-            this.lblIdAlumno.TabIndex = 44;
-            this.lblIdAlumno.Text = "IdAlumno";
-            this.lblIdAlumno.Visible = false;
-            // 
             // lblRutaFoto
             // 
             this.lblRutaFoto.AutoSize = true;
@@ -582,6 +523,65 @@
             this.label16.TabIndex = 46;
             this.label16.Text = "Foto:";
             // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.txtBuscar);
+            this.panel3.Controls.Add(this.label15);
+            this.panel3.Controls.Add(this.lblIdAlumno);
+            this.panel3.Controls.Add(this.dgvDatosAlumnos);
+            this.panel3.Controls.Add(this.btnEliminarA);
+            this.panel3.Controls.Add(this.btnGuardarA);
+            this.panel3.Controls.Add(this.label14);
+            this.panel3.Controls.Add(this.btnEditarA);
+            this.panel3.Location = new System.Drawing.Point(533, 64);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(717, 607);
+            this.panel3.TabIndex = 42;
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(128, 15);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(311, 27);
+            this.txtBuscar.TabIndex = 16;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Black;
+            this.label15.Location = new System.Drawing.Point(22, 18);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(88, 24);
+            this.label15.TabIndex = 45;
+            this.label15.Text = "Buscar: ";
+            // 
+            // lblIdAlumno
+            // 
+            this.lblIdAlumno.AutoSize = true;
+            this.lblIdAlumno.Location = new System.Drawing.Point(474, 24);
+            this.lblIdAlumno.Name = "lblIdAlumno";
+            this.lblIdAlumno.Size = new System.Drawing.Size(51, 13);
+            this.lblIdAlumno.TabIndex = 44;
+            this.lblIdAlumno.Text = "IdAlumno";
+            this.lblIdAlumno.Visible = false;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.Location = new System.Drawing.Point(455, 52);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(193, 22);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Registro de alumnos";
+            // 
             // openFileFoto
             // 
             this.openFileFoto.FileName = "openFileDialog1";
@@ -610,9 +610,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosAlumnos)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFotoProfesor)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFotoProfesor)).EndInit();
             this.ResumeLayout(false);
 
         }
