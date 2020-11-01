@@ -35,13 +35,20 @@ namespace SistemaEscolar.Formularios
 
         private void FormMenuPrueba_Load(object sender, EventArgs e)
         {
+            try
+            {
+                string ruta = "";
+                ruta = "..\\..\\" + FrmLogin.fotoPerfilProfesor.ToString();
+                System.IO.FileStream fs = new System.IO.FileStream(ruta, System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                pbFotoPerfil.Image = System.Drawing.Image.FromStream(fs);
+                lblNombreUsuario.Text = FrmLogin.nombreProfesor.ToString();
+                fs.Close();
+            }
+            catch (Exception Ex)
+            {
+                Console.WriteLine(Ex.Message);
+            }
             
-            string ruta = "";
-            ruta = "..\\..\\" + FrmLogin.fotoPerfilProfesor.ToString();
-            System.IO.FileStream fs = new System.IO.FileStream(ruta, System.IO.FileMode.Open, System.IO.FileAccess.Read);
-            pbFotoPerfil.Image = System.Drawing.Image.FromStream(fs);
-            lblNombreUsuario.Text = FrmLogin.nombreProfesor.ToString();
-            fs.Close();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

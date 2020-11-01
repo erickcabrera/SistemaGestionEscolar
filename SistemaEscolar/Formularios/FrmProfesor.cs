@@ -440,7 +440,7 @@ namespace SistemaEscolar.Formularios
 
                     if (profesor.Eliminar(int.Parse(lblIdProfesor.Text)) == true)
                     {
-                        MessageBox.Show("El profesor ha sido eliminado correctamente");
+                        MessageBox.Show("El registro ha sido eliminado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ActualizarDataGrid();
                         Limpiar();
                         btnEliminarP.Enabled = false;
@@ -449,7 +449,7 @@ namespace SistemaEscolar.Formularios
                     }
                     else
                     {
-                        MessageBox.Show("Error al eliminar el grado");
+                        MessageBox.Show("Error al eliminar el alumno");
                     }
                 }
                 else if (resultado == DialogResult.No)
