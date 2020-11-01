@@ -473,14 +473,14 @@ namespace SistemaEscolar.Formularios
                 txtNombreA.Text = dgvDatosAlumnos.CurrentRow.Cells["Nombres"].Value.ToString();
                 txtApellidoA.Text = dgvDatosAlumnos.CurrentRow.Cells["Apellidos"].Value.ToString();
                 dtpFechanacimiento.Value = DateTime.Parse(dgvDatosAlumnos.CurrentRow.Cells["Fecha de nacimiento"].Value.ToString());
-                mtxtTelefonoA.Text = dgvDatosAlumnos.CurrentRow.Cells["Teléfono"].Value.ToString();
+                mtxtTelefonoA.Text = dgvDatosAlumnos.CurrentRow.Cells["Telefono"].Value.ToString();
                 txtEncargado.Text = dgvDatosAlumnos.CurrentRow.Cells["Encargado"].Value.ToString();
                 txtPadre.Text = dgvDatosAlumnos.CurrentRow.Cells["Padre"].Value.ToString();
                 txtMadre.Text = dgvDatosAlumnos.CurrentRow.Cells["Madre"].Value.ToString();
                 mtxtNIEA.Text = dgvDatosAlumnos.CurrentRow.Cells["NIE"].Value.ToString();
                 mtxtNumPartidaA.Text = dgvDatosAlumnos.CurrentRow.Cells["Num. Partida"].Value.ToString();
                 cmbSexoA.Text = dgvDatosAlumnos.CurrentRow.Cells["Sexo"].Value.ToString();
-                rtbDireccionA.Text = dgvDatosAlumnos.CurrentRow.Cells["Dirección"].Value.ToString();
+                rtbDireccionA.Text = dgvDatosAlumnos.CurrentRow.Cells["Direccion"].Value.ToString();
 
                 Alumno alumno = new Alumno();
 

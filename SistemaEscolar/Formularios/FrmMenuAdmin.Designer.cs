@@ -273,7 +273,7 @@
             // 
             this.btnUsuario.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuario.ForeColor = System.Drawing.Color.Black;
-            this.btnUsuario.Location = new System.Drawing.Point(130, 72);
+            this.btnUsuario.Location = new System.Drawing.Point(126, 76);
             this.btnUsuario.Name = "btnUsuario";
             this.btnUsuario.Size = new System.Drawing.Size(230, 38);
             this.btnUsuario.TabIndex = 7;
@@ -318,7 +318,7 @@
             // 
             this.btnDetalleGS.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalleGS.ForeColor = System.Drawing.Color.Black;
-            this.btnDetalleGS.Location = new System.Drawing.Point(130, 72);
+            this.btnDetalleGS.Location = new System.Drawing.Point(130, 73);
             this.btnDetalleGS.Name = "btnDetalleGS";
             this.btnDetalleGS.Size = new System.Drawing.Size(230, 38);
             this.btnDetalleGS.TabIndex = 3;
@@ -363,7 +363,7 @@
             // 
             this.btnMaterias.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMaterias.ForeColor = System.Drawing.Color.Black;
-            this.btnMaterias.Location = new System.Drawing.Point(123, 72);
+            this.btnMaterias.Location = new System.Drawing.Point(126, 73);
             this.btnMaterias.Name = "btnMaterias";
             this.btnMaterias.Size = new System.Drawing.Size(230, 38);
             this.btnMaterias.TabIndex = 4;
@@ -408,9 +408,9 @@
             // 
             this.button1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(134, 72);
+            this.button1.Location = new System.Drawing.Point(126, 72);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(219, 38);
+            this.button1.Size = new System.Drawing.Size(230, 38);
             this.button1.TabIndex = 5;
             this.button1.Text = "Acceder";
             this.button1.UseVisualStyleBackColor = true;
@@ -453,9 +453,9 @@
             // 
             this.button2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(123, 74);
+            this.button2.Location = new System.Drawing.Point(130, 72);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(219, 39);
+            this.button2.Size = new System.Drawing.Size(231, 39);
             this.button2.TabIndex = 6;
             this.button2.Text = "Acceder";
             this.button2.UseVisualStyleBackColor = true;
@@ -501,7 +501,7 @@
             this.btnGrados.ForeColor = System.Drawing.Color.Black;
             this.btnGrados.Location = new System.Drawing.Point(130, 72);
             this.btnGrados.Name = "btnGrados";
-            this.btnGrados.Size = new System.Drawing.Size(227, 39);
+            this.btnGrados.Size = new System.Drawing.Size(230, 39);
             this.btnGrados.TabIndex = 4;
             this.btnGrados.Text = "Acceder";
             this.btnGrados.UseVisualStyleBackColor = true;
