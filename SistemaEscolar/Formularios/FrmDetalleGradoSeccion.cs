@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Runtime.InteropServices;
+using SistemaEscolar.Clases;
 
 namespace SistemaEscolar.Formularios
 {
@@ -92,6 +93,19 @@ namespace SistemaEscolar.Formularios
             {
                 MessageBox.Show("Los datos se han ingresado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void ActualizarDataGrid()
+        {
+            DetalleGrupo detalle = new DetalleGrupo();
+            dgvDetalles.DataSource = null;
+            dgvDetalles.DataSource = detalle.Mostrar();
+            dgvDetalles.ClearSelection();
+        }
+
+        private void FrmDetalleGradoSeccion_Load(object sender, EventArgs e)
+        {
+            ActualizarDataGrid();
         }
     }
 }

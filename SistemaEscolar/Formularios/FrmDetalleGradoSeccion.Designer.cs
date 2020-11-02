@@ -42,7 +42,7 @@
             this.cmbProfesor = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dtpAnio = new System.Windows.Forms.DateTimePicker();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDetalles = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -50,7 +50,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -181,13 +181,14 @@
             this.dtpAnio.Size = new System.Drawing.Size(200, 27);
             this.dtpAnio.TabIndex = 2;
             // 
-            // dataGridView1
+            // dgvDetalles
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(449, 94);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(471, 232);
-            this.dataGridView1.TabIndex = 3;
+            this.dgvDetalles.AllowUserToAddRows = false;
+            this.dgvDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetalles.Location = new System.Drawing.Point(449, 94);
+            this.dgvDetalles.Name = "dgvDetalles";
+            this.dgvDetalles.Size = new System.Drawing.Size(471, 232);
+            this.dgvDetalles.TabIndex = 3;
             // 
             // btnAgregar
             // 
@@ -233,7 +234,7 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvDetalles);
             this.Controls.Add(this.dtpAnio);
             this.Controls.Add(this.cmbProfesor);
             this.Controls.Add(this.cmbSeccion);
@@ -248,11 +249,12 @@
             this.Name = "FrmDetalleGradoSeccion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmDetalleGradoSeccion";
+            this.Load += new System.EventHandler(this.FrmDetalleGradoSeccion_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -273,7 +275,7 @@
         private System.Windows.Forms.ComboBox cmbProfesor;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtpAnio;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDetalles;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
