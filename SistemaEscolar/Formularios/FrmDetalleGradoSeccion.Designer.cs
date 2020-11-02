@@ -188,6 +188,7 @@
             this.dtpAnio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpAnio.Location = new System.Drawing.Point(218, 223);
             this.dtpAnio.Name = "dtpAnio";
+            this.dtpAnio.ShowUpDown = true;
             this.dtpAnio.Size = new System.Drawing.Size(200, 27);
             this.dtpAnio.TabIndex = 2;
             // 

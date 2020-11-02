@@ -67,12 +67,13 @@ namespace SistemaEscolar.Formularios
                 errorProvider1.SetError(cmbSeccion, "Debe elegir una seccion");
             }
 
-            int anio = DateTime.Now.Year;
-            if(anio>dtpAnio.Value.Year)
-            {
-                errorProvider1.SetError(dtpAnio, "Debe elegir un ano no mayor al actual");
-            }
-            
+            //int anio = DateTime.Now.Year;
+            //if (dtpAnio.Value.Year<=anio)
+            //{
+            //    validado = false;
+            //    errorProvider1.SetError(dtpAnio, "Debe elegir un año no mayor al actual");
+            //}
+
 
             return validado;
         }
