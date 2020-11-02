@@ -41,7 +41,7 @@ namespace SistemaEscolar.Formularios
 
            //if para validar camppos vacíos en el formulario de Profesor
             
-            if(txtApellidoP.Text== String.Empty)
+            if(txtApellidoP.Text==String.Empty)
             {
                 validado = false;
                 errorProvider1.SetError(txtApellidoP, "Ingresar los apellidos del docente");
@@ -49,7 +49,7 @@ namespace SistemaEscolar.Formularios
             if (txtNombreP.Text == String.Empty)
             {
                 validado = false;
-                errorProvider1.SetError(txtApellidoP, "Ingresar los nombres del docente");
+                errorProvider1.SetError(txtNombreP, "Ingresar los nombres del docente");
             }
 
             if (mtxtDUIP.MaskFull) { }
@@ -145,6 +145,7 @@ namespace SistemaEscolar.Formularios
                 if (Regex.Replace(correo, cadena, String.Empty).Length == 0)
                 {
                     return true;
+                   
                 }
                 else
                 {
@@ -161,7 +162,7 @@ namespace SistemaEscolar.Formularios
         {
             //validaciones
             BorrarMensaje();
-            if (validarCampos() && ValidarFechaySexo())
+            if (validarCampos() && ValidarFechaySexo() && correo())
             {
                 //creo un objeto de la clase persona y guardo a través de las propiedades 
                 if (txtFoto.Text == "Seleccionar foto...")
@@ -260,19 +261,31 @@ namespace SistemaEscolar.Formularios
 
         }
 
-       
-
-        private void txtEmailP_TextChanged(object sender, EventArgs e)
+        private bool correo()
         {
+            bool ok = true;
             BorrarMensaje();
-            if (validarCorreo(txtEmailP.Text)||txtEmailP.Text=="")
+
+            if (validarCorreo(txtEmailP.Text) || txtEmailP.Text == "")
             {
 
             }
             else
             {
+                ok = false;
                 errorProvider1.SetError(txtEmailP, "El formato del correo no es válido");
+              
             }
+            return ok;
+        }
+       
+
+        private void txtEmailP_TextChanged(object sender, EventArgs e)
+        {
+
+            correo();
+           
+            
         }
 
         private void txtNombreP_KeyPress(object sender, KeyPressEventArgs e)
@@ -491,7 +504,7 @@ namespace SistemaEscolar.Formularios
         {
             //validaciones
             BorrarMensaje();
-            if (validarCampos() && ValidarFechaySexo())
+            if (validarCampos() && ValidarFechaySexo() && correo())
             {
                 try
                 {
@@ -507,7 +520,7 @@ namespace SistemaEscolar.Formularios
                     profesor.NumEscalafon = mtxtNumEscalafonP.Text;
                     profesor.Sexo = cmbSexoP.Text;
                     profesor.Direccion = rtbDireccionP.Text;
-                    
+
                     if (txtFoto.Text != "Seleccionar foto...")
                     {
                         String sourceFile = txtFoto.Text;
@@ -520,7 +533,7 @@ namespace SistemaEscolar.Formularios
                     {
                         profesor.Foto = lblRutaFoto.Text;
                     }
-                    if (profesor.Modificar(int.Parse(lblIdProfesor.Text),profesor.Nombres, profesor.Apellidos, profesor.FechaNac, profesor.Sexo, profesor.Telefono, profesor.Direccion, profesor.Foto, profesor.Dui, profesor.Nit, profesor.Correo, profesor.NumEscalafon) == true)
+                    if (profesor.Modificar(int.Parse(lblIdProfesor.Text), profesor.Nombres, profesor.Apellidos, profesor.FechaNac, profesor.Sexo, profesor.Telefono, profesor.Direccion, profesor.Foto, profesor.Dui, profesor.Nit, profesor.Correo, profesor.NumEscalafon) == true)
                     {
                         MessageBox.Show("Los datos del profesor han sido modificados correctamente");
                         ActualizarDataGrid();
@@ -538,11 +551,13 @@ namespace SistemaEscolar.Formularios
                 catch (Exception Ex)
                 {
                     MessageBox.Show("Error al modificar datos" + Ex.Message);
+
+
                 }
             }
             else
             {
-                MessageBox.Show("Debe llenar todos los campos");
+                MessageBox.Show("Debe ingresar todos los datos o verifique que sus datos esten con el formato correcto");
             }
         }
 
