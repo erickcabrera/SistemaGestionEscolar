@@ -91,7 +91,17 @@ namespace SistemaEscolar.Formularios
             BorrarMensaje();
             if (validarCampos())
             {
-                MessageBox.Show("Los datos se han ingresado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DetalleGrupo detalle = new DetalleGrupo();
+                if(detalle.AgregarGrupo(int.Parse(lblIdGrado.Text), int.Parse(lblIdSeccion.Text), int.Parse(lblIdProfesor.Text), int.Parse(dtpAnio.Text)) == true)
+                {
+                    MessageBox.Show("Los datos se han ingresado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ActualizarDataGrid();
+                }
+                else
+                {
+                    MessageBox.Show("Error al registrar grupo", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                
             }
         }
 
@@ -106,6 +116,159 @@ namespace SistemaEscolar.Formularios
         private void FrmDetalleGradoSeccion_Load(object sender, EventArgs e)
         {
             ActualizarDataGrid();
+            DetalleGrupo detalle = new DetalleGrupo();
+            detalle.llenarComboGrado(cmbGrado);
+            detalle.llenarComboSeccion(cmbSeccion);
+            detalle.llenarComboMaestros(cmbProfesor);
+            lblIdDetalle.Text = "";
+            lblIdGrado.Text = "";
+            lblIdProfesor.Text = "";
+            lblIdSeccion.Text = "";
+
+        }
+
+        private void cmbProfesor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string cadena = cmbProfesor.SelectedItem.ToString();
+            char delimitador = ' ';
+            string[] trozos = cadena.Split(delimitador);
+
+            DetalleGrupo detalle = new DetalleGrupo();
+            detalle.obtenerCodigoProfesor(lblIdProfesor, trozos[0], trozos[1]);
+        }
+
+        private void cmbSeccion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string seccion = cmbSeccion.SelectedItem.ToString();
+            DetalleGrupo detalle = new DetalleGrupo();
+            detalle.obtenerCodigoSeccion(lblIdSeccion, seccion);
+        }
+
+        private void cmbGrado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string grado = cmbGrado.SelectedItem.ToString();
+            DetalleGrupo detalle = new DetalleGrupo();
+            detalle.obtenerCodigoGrado(lblIdGrado, grado);
+        }
+
+        private void dgvDetalles_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvDetalles.SelectedRows.Count > 0)
+            {                
+                lblIdDetalle.Text = dgvDetalles.CurrentRow.Cells["Codigo_Grupo"].Value.ToString();
+                cmbGrado.Text = dgvDetalles.CurrentRow.Cells["Grado"].Value.ToString();
+                cmbProfesor.Text = dgvDetalles.CurrentRow.Cells["Profesor_Encargado"].Value.ToString();
+                cmbSeccion.Text = dgvDetalles.CurrentRow.Cells["Seccion"].Value.ToString();                
+                dgvDetalles.CurrentCell.Selected = false;
+                dgvDetalles.ClearSelection();
+            }
+            else
+            {
+                MessageBox.Show("seleccione una fila por favor");
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (lblIdDetalle.Text != "")
+            {
+                DialogResult resultado = MessageBox.Show("¿Seguro que desea eliminar el registro numero " + lblIdDetalle.Text + "?", "SALIR", MessageBoxButtons.YesNo);
+                if (resultado == DialogResult.Yes)
+                {
+                    DetalleGrupo detalle = new DetalleGrupo();
+
+                    if (detalle.EliminarGrupo(int.Parse(lblIdDetalle.Text)) == true)
+                    {
+                        MessageBox.Show("El grupo ha sido eliminado correctamente");
+                        ActualizarDataGrid();
+                        lblIdDetalle.Text = "";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al eliminar el grado");                        
+                    }
+                }
+                else if (resultado == DialogResult.No)
+                {
+                   
+                    dgvDetalles.ClearSelection();
+                    lblIdDetalle.Text = "";
+                }
+            }
+            else
+            {
+                MessageBox.Show("seleccione una fila por favor");
+            }
+        }
+
+        private void lblIdSeccion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblIdDetalle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblIdProfesor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblIdGrado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if(lblIdDetalle.Text != "")
+            {
+                if(lblIdGrado.Text != "")
+                {
+                    if(lblIdProfesor.Text != "")
+                    {
+                        if(lblIdSeccion.Text != "")
+                        {
+                            try
+                            {
+                                DetalleGrupo detalle = new DetalleGrupo();
+                                if(detalle.ModificarCurso(int.Parse(lblIdDetalle.Text), int.Parse(lblIdGrado.Text),int.Parse(lblIdSeccion.Text), int.Parse(lblIdProfesor.Text),int.Parse(dtpAnio.Text))== true)
+                                {
+                                    ActualizarDataGrid();
+                                    lblIdDetalle.Text = "";
+                                    MessageBox.Show("Grupo actualizado correctamente");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Error al actualizar el grupo");
+                                }
+                               
+                            }catch(Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Debe de seleccionar sección");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe de seleccionar profesor");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Debe de seleccionar un grado");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione registro para modificar");
+            }
         }
     }
 }

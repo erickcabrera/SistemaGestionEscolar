@@ -47,6 +47,10 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblIdProfesor = new System.Windows.Forms.Label();
+            this.lblIdSeccion = new System.Windows.Forms.Label();
+            this.lblIdGrado = new System.Windows.Forms.Label();
+            this.lblIdDetalle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
@@ -113,12 +117,14 @@
             // 
             // cmbGrado
             // 
+            this.cmbGrado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGrado.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGrado.FormattingEnabled = true;
             this.cmbGrado.Location = new System.Drawing.Point(218, 94);
             this.cmbGrado.Name = "cmbGrado";
             this.cmbGrado.Size = new System.Drawing.Size(197, 29);
             this.cmbGrado.TabIndex = 1;
+            this.cmbGrado.SelectedIndexChanged += new System.EventHandler(this.cmbGrado_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -133,12 +139,14 @@
             // 
             // cmbSeccion
             // 
+            this.cmbSeccion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSeccion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSeccion.FormattingEnabled = true;
             this.cmbSeccion.Location = new System.Drawing.Point(218, 132);
             this.cmbSeccion.Name = "cmbSeccion";
             this.cmbSeccion.Size = new System.Drawing.Size(197, 29);
             this.cmbSeccion.TabIndex = 1;
+            this.cmbSeccion.SelectedIndexChanged += new System.EventHandler(this.cmbSeccion_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -153,12 +161,14 @@
             // 
             // cmbProfesor
             // 
+            this.cmbProfesor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProfesor.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbProfesor.FormattingEnabled = true;
             this.cmbProfesor.Location = new System.Drawing.Point(218, 179);
             this.cmbProfesor.Name = "cmbProfesor";
             this.cmbProfesor.Size = new System.Drawing.Size(197, 29);
             this.cmbProfesor.TabIndex = 1;
+            this.cmbProfesor.SelectedIndexChanged += new System.EventHandler(this.cmbProfesor_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -185,10 +195,12 @@
             // 
             this.dgvDetalles.AllowUserToAddRows = false;
             this.dgvDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetalles.Location = new System.Drawing.Point(449, 94);
+            this.dgvDetalles.Location = new System.Drawing.Point(461, 94);
             this.dgvDetalles.Name = "dgvDetalles";
+            this.dgvDetalles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalles.Size = new System.Drawing.Size(471, 232);
             this.dgvDetalles.TabIndex = 3;
+            this.dgvDetalles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalles_CellContentClick);
             // 
             // btnAgregar
             // 
@@ -204,12 +216,13 @@
             // btnModificar
             // 
             this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(449, 353);
+            this.btnModificar.Location = new System.Drawing.Point(461, 353);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(164, 33);
             this.btnModificar.TabIndex = 4;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
@@ -220,10 +233,55 @@
             this.btnEliminar.TabIndex = 4;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // lblIdProfesor
+            // 
+            this.lblIdProfesor.AutoSize = true;
+            this.lblIdProfesor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblIdProfesor.Location = new System.Drawing.Point(424, 184);
+            this.lblIdProfesor.Name = "lblIdProfesor";
+            this.lblIdProfesor.Size = new System.Drawing.Size(35, 13);
+            this.lblIdProfesor.TabIndex = 5;
+            this.lblIdProfesor.Text = "label6";
+            this.lblIdProfesor.Click += new System.EventHandler(this.lblIdProfesor_Click);
+            // 
+            // lblIdSeccion
+            // 
+            this.lblIdSeccion.AutoSize = true;
+            this.lblIdSeccion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblIdSeccion.Location = new System.Drawing.Point(424, 139);
+            this.lblIdSeccion.Name = "lblIdSeccion";
+            this.lblIdSeccion.Size = new System.Drawing.Size(35, 13);
+            this.lblIdSeccion.TabIndex = 6;
+            this.lblIdSeccion.Text = "label7";
+            this.lblIdSeccion.Click += new System.EventHandler(this.lblIdSeccion_Click);
+            // 
+            // lblIdGrado
+            // 
+            this.lblIdGrado.AutoSize = true;
+            this.lblIdGrado.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblIdGrado.Location = new System.Drawing.Point(420, 103);
+            this.lblIdGrado.Name = "lblIdGrado";
+            this.lblIdGrado.Size = new System.Drawing.Size(35, 13);
+            this.lblIdGrado.TabIndex = 7;
+            this.lblIdGrado.Text = "label8";
+            this.lblIdGrado.Click += new System.EventHandler(this.lblIdGrado_Click);
+            // 
+            // lblIdDetalle
+            // 
+            this.lblIdDetalle.AutoSize = true;
+            this.lblIdDetalle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblIdDetalle.Location = new System.Drawing.Point(578, 75);
+            this.lblIdDetalle.Name = "lblIdDetalle";
+            this.lblIdDetalle.Size = new System.Drawing.Size(35, 13);
+            this.lblIdDetalle.TabIndex = 8;
+            this.lblIdDetalle.Text = "label6";
+            this.lblIdDetalle.Click += new System.EventHandler(this.lblIdDetalle_Click);
             // 
             // FrmDetalleGradoSeccion
             // 
@@ -231,6 +289,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(944, 422);
+            this.Controls.Add(this.lblIdDetalle);
+            this.Controls.Add(this.lblIdGrado);
+            this.Controls.Add(this.lblIdSeccion);
+            this.Controls.Add(this.lblIdProfesor);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
@@ -280,5 +342,9 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label lblIdGrado;
+        private System.Windows.Forms.Label lblIdSeccion;
+        private System.Windows.Forms.Label lblIdProfesor;
+        private System.Windows.Forms.Label lblIdDetalle;
     }
 }
