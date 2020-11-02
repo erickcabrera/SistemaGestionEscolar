@@ -35,7 +35,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbCurso = new System.Windows.Forms.ComboBox();
-            this.btnMostrar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblidDetalle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -108,20 +107,9 @@
             this.cmbCurso.FormattingEnabled = true;
             this.cmbCurso.Location = new System.Drawing.Point(114, 105);
             this.cmbCurso.Name = "cmbCurso";
-            this.cmbCurso.Size = new System.Drawing.Size(256, 21);
+            this.cmbCurso.Size = new System.Drawing.Size(357, 21);
             this.cmbCurso.TabIndex = 1;
             this.cmbCurso.SelectedIndexChanged += new System.EventHandler(this.cmbCurso_SelectedIndexChanged);
-            // 
-            // btnMostrar
-            // 
-            this.btnMostrar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMostrar.Location = new System.Drawing.Point(404, 96);
-            this.btnMostrar.Name = "btnMostrar";
-            this.btnMostrar.Size = new System.Drawing.Size(181, 30);
-            this.btnMostrar.TabIndex = 2;
-            this.btnMostrar.Text = "Mostrar";
-            this.btnMostrar.UseVisualStyleBackColor = true;
-            this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
             // 
             // dataGridView1
             // 
@@ -156,7 +144,6 @@
             this.ClientSize = new System.Drawing.Size(758, 450);
             this.Controls.Add(this.lblidDetalle);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.cmbCurso);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
@@ -183,7 +170,6 @@
         private System.Windows.Forms.PictureBox picBSalir;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbCurso;
-        private System.Windows.Forms.Button btnMostrar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lblidDetalle;
     }
