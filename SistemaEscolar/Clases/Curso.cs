@@ -200,7 +200,7 @@ namespace SistemaEscolar.Clases
             return false;
         }
 
-        public DataTable mostrarCursos_Profesor(int idProfesor)
+        public DataTable mostrarCursos_Profesor(int idProfesor, int anio)
         {
             DataTable tabla = new DataTable();
             try
@@ -211,6 +211,7 @@ namespace SistemaEscolar.Clases
                 comando.CommandText = "ps_mostrar_cursos_profesor";
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@id_Profesor", idProfesor);
+                comando.Parameters.AddWithValue("@anio", anio);
                 comando.ExecuteNonQuery();
                 leer = comando.ExecuteReader();
                 tabla.Load(leer);

@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVisualizarCursos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.picBMinimizar = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lblidProfesor = new System.Windows.Forms.Label();
             this.dgvCursos = new System.Windows.Forms.DataGridView();
@@ -92,18 +91,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Visualización de cursos";
             // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Location = new System.Drawing.Point(426, 90);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(137, 34);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Mostrar todo";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // txtBuscar
             // 
             this.txtBuscar.Location = new System.Drawing.Point(206, 147);
@@ -134,8 +121,8 @@
             this.dgvCursos.MultiSelect = false;
             this.dgvCursos.Name = "dgvCursos";
             this.dgvCursos.ReadOnly = true;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.dgvCursos.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.dgvCursos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCursos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCursos.Size = new System.Drawing.Size(547, 163);
             this.dgvCursos.TabIndex = 10;
@@ -172,6 +159,7 @@
             this.dateTimePicker1.ShowUpDown = true;
             this.dateTimePicker1.Size = new System.Drawing.Size(272, 27);
             this.dateTimePicker1.TabIndex = 1;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // FrmVisualizarCursos
             // 
@@ -183,7 +171,6 @@
             this.Controls.Add(this.dgvCursos);
             this.Controls.Add(this.lblidProfesor);
             this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
@@ -211,7 +198,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox picBMinimizar;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label lblidProfesor;
         private System.Windows.Forms.DataGridView dgvCursos;

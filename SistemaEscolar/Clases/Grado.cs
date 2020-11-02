@@ -159,7 +159,7 @@ namespace SistemaEscolar.Clases
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@nombreGrado", this.nombreGrado);
                 comando.Parameters.AddWithValue("@idprofesor", idProfesor);
-
+              
                 leer = comando.ExecuteReader();
                 tabla.Load(leer);
 

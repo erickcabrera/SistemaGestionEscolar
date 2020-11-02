@@ -14,7 +14,9 @@ using SistemaEscolar.Clases;
 namespace SistemaEscolar.Formularios
 {
     public partial class FrmVisualizarCursos : Form
+
     {
+       
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -59,13 +61,60 @@ namespace SistemaEscolar.Formularios
         }
         private void ActualizarDataGrid()
         {
+            int anio = dateTimePicker1.Value.Year;
             Curso curso = new Curso();
             dgvCursos.DataSource = null;
-            dgvCursos.DataSource = curso.mostrarCursos_Profesor(int.Parse(lblidProfesor.Text));
+            dgvCursos.DataSource = curso.mostrarCursos_Profesor(int.Parse(lblidProfesor.Text), anio);
             dgvCursos.ClearSelection();
         }
         private void button2_Click(object sender, EventArgs e)
         {
+
+            //string idProfesor = lblidProfesor.Text;
+            //if (lblidProfesor.Text == string.Empty)
+            //{
+            //    MessageBox.Show("Debe llenar todos los campos");
+
+            //}
+            //else
+            //{
+
+            //    Curso curso = new Curso();
+            //    // grupo.Id_Detale = int.Parse(lblidDetalle.Text);
+            //    curso.mostrarCursos_Profesor(int.Parse(lblidProfesor.Text));
+            //    ActualizarDataGrid();
+
+
+
+            //}
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            
+            try
+            {
+                Grado grado = new Grado();
+
+                dgvCursos.DataSource = null;
+                dgvCursos.DataSource = grado.Buscar_curso(txtBuscar.Text, int.Parse(lblidProfesor.Text) );
+                dgvCursos.ClearSelection();
+                txtBuscar.Focus();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            int anio = dateTimePicker1.Value.Year;
 
             string idProfesor = lblidProfesor.Text;
             if (lblidProfesor.Text == string.Empty)
@@ -78,34 +127,13 @@ namespace SistemaEscolar.Formularios
 
                 Curso curso = new Curso();
                 // grupo.Id_Detale = int.Parse(lblidDetalle.Text);
-                curso.mostrarCursos_Profesor(int.Parse(lblidProfesor.Text));
+                curso.mostrarCursos_Profesor(int.Parse(lblidProfesor.Text), anio);
                 ActualizarDataGrid();
 
 
 
             }
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                Grado grado = new Grado();
-
-                dgvCursos.DataSource = null;
-                dgvCursos.DataSource = grado.Buscar_curso(txtBuscar.Text, int.Parse(lblidProfesor.Text));
-                dgvCursos.ClearSelection();
-                txtBuscar.Focus();
-            }
-            catch (Exception Ex)
-            {
-                MessageBox.Show(Ex.Message);
-            }
         }
     }
 }
