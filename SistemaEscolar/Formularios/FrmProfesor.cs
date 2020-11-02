@@ -475,6 +475,7 @@ namespace SistemaEscolar.Formularios
                     btnEliminarP.Enabled = false;
                     dgvDatosP.ClearSelection();
                     Limpiar();
+                    
                 }
             }
             else
