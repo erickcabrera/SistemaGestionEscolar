@@ -131,6 +131,7 @@
             // 
             this.txtGrado.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGrado.Location = new System.Drawing.Point(236, 92);
+            this.txtGrado.MaxLength = 20;
             this.txtGrado.Name = "txtGrado";
             this.txtGrado.Size = new System.Drawing.Size(206, 27);
             this.txtGrado.TabIndex = 1;

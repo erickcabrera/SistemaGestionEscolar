@@ -239,6 +239,7 @@
             // 
             this.txtNombreP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreP.Location = new System.Drawing.Point(276, 112);
+            this.txtNombreP.MaxLength = 50;
             this.txtNombreP.Name = "txtNombreP";
             this.txtNombreP.Size = new System.Drawing.Size(258, 27);
             this.txtNombreP.TabIndex = 1;
@@ -248,6 +249,7 @@
             // 
             this.txtApellidoP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellidoP.Location = new System.Drawing.Point(276, 152);
+            this.txtApellidoP.MaxLength = 50;
             this.txtApellidoP.Name = "txtApellidoP";
             this.txtApellidoP.Size = new System.Drawing.Size(258, 27);
             this.txtApellidoP.TabIndex = 2;
@@ -257,6 +259,7 @@
             // 
             this.txtEmailP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailP.Location = new System.Drawing.Point(276, 279);
+            this.txtEmailP.MaxLength = 150;
             this.txtEmailP.Name = "txtEmailP";
             this.txtEmailP.Size = new System.Drawing.Size(258, 27);
             this.txtEmailP.TabIndex = 5;
@@ -288,6 +291,7 @@
             // 
             this.rtbDireccionP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbDireccionP.Location = new System.Drawing.Point(276, 484);
+            this.rtbDireccionP.MaxLength = 100;
             this.rtbDireccionP.Name = "rtbDireccionP";
             this.rtbDireccionP.Size = new System.Drawing.Size(258, 48);
             this.rtbDireccionP.TabIndex = 10;

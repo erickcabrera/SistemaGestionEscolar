@@ -143,6 +143,7 @@
             this.txtContra.Location = new System.Drawing.Point(192, 251);
             this.txtContra.MaxLength = 20;
             this.txtContra.Name = "txtContra";
+            this.txtContra.PasswordChar = '*';
             this.txtContra.Size = new System.Drawing.Size(201, 27);
             this.txtContra.TabIndex = 2;
             this.txtContra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtContra_KeyPress);
