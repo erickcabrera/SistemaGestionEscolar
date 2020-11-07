@@ -69,6 +69,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFotoPerfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
@@ -91,6 +95,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel11.SuspendLayout();
+            this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.SuspendLayout();
             // 
             // panel8
@@ -264,7 +270,7 @@
             this.panel4.Controls.Add(this.btnUsuario);
             this.panel4.Controls.Add(this.pictureBox3);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(443, 474);
+            this.panel4.Location = new System.Drawing.Point(17, 637);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(399, 137);
             this.panel4.TabIndex = 4;
@@ -532,6 +538,7 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.panel12);
             this.panel1.Controls.Add(this.panel9);
             this.panel1.Controls.Add(this.panel10);
             this.panel1.Controls.Add(this.panel7);
@@ -553,6 +560,51 @@
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(892, 549);
             this.panel11.TabIndex = 7;
+            // 
+            // panel12
+            // 
+            this.panel12.AutoScroll = true;
+            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(164)))), ((int)(((byte)(243)))));
+            this.panel12.Controls.Add(this.button4);
+            this.panel12.Controls.Add(this.pictureBox10);
+            this.panel12.Controls.Add(this.label10);
+            this.panel12.Location = new System.Drawing.Point(440, 477);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(399, 137);
+            this.panel12.TabIndex = 8;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
+            this.pictureBox10.Location = new System.Drawing.Point(16, 27);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(85, 84);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox10.TabIndex = 1;
+            this.pictureBox10.TabStop = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(175, 27);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(126, 30);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Matricula";
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.Location = new System.Drawing.Point(126, 72);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(228, 39);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "Acceder";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // FrmMenuAdmin
             // 
@@ -599,6 +651,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -644,5 +699,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button4;
     }
 }

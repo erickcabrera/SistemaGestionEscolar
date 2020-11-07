@@ -223,7 +223,7 @@ namespace SistemaEscolar.Formularios
         {
             if (dgvSecciones.SelectedRows.Count > 0)
             {
-                txtSeccion.Text = dgvSecciones.CurrentRow.Cells["Sección"].Value.ToString();
+                txtSeccion.Text = dgvSecciones.CurrentRow.Cells["Seccion"].Value.ToString();
                 lblseccion.Text = dgvSecciones.CurrentRow.Cells["Num"].Value.ToString();
 
                 btnModificar.Enabled = true;
@@ -256,6 +256,11 @@ namespace SistemaEscolar.Formularios
                     throw;
                 }
             }
+        }
+
+        private void dgvSecciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

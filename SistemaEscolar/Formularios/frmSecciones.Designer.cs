@@ -162,6 +162,7 @@
             this.dgvSecciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSecciones.Size = new System.Drawing.Size(470, 159);
             this.dgvSecciones.TabIndex = 3;
+            this.dgvSecciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSecciones_CellContentClick);
             this.dgvSecciones.SelectionChanged += new System.EventHandler(this.dgvSecciones_SelectionChanged);
             this.dgvSecciones.DoubleClick += new System.EventHandler(this.dgvSecciones_DoubleClick);
             // 

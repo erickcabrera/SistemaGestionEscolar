@@ -51,8 +51,6 @@
             this.lblDetalle = new System.Windows.Forms.Label();
             this.lblIdCurso = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
@@ -242,6 +240,7 @@
             // lblIdMateria
             // 
             this.lblIdMateria.AutoSize = true;
+            this.lblIdMateria.BackColor = System.Drawing.SystemColors.Window;
             this.lblIdMateria.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblIdMateria.Location = new System.Drawing.Point(166, 143);
             this.lblIdMateria.Name = "lblIdMateria";
@@ -294,39 +293,15 @@
             this.label6.Text = "Código de curso seleccionado:";
             this.label6.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(166, 143);
-            this.label7.Name = "label7";
-            this.label7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "label6";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(114, 196);
-            this.label8.Name = "label8";
-            this.label8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label8.Size = new System.Drawing.Size(35, 13);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "label7";
-            // 
             // FrmCursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(949, 610);
             this.Controls.Add(this.lblIdCurso);
             this.Controls.Add(this.lblDetalle);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.lblIdProfesor);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.lblIdMateria);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
@@ -341,6 +316,7 @@
             this.Controls.Add(this.dgvCurso);
             this.Controls.Add(this.dgvDetalleGrado);
             this.Controls.Add(this.panel1);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCursos";
@@ -382,7 +358,5 @@
         private System.Windows.Forms.Label lblIdMateria;
         private System.Windows.Forms.Label lblIdCurso;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
     }
 }

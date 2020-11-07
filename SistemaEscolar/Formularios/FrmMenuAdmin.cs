@@ -150,5 +150,12 @@ namespace SistemaEscolar.Formularios
             FrmCreditos frmC = new FrmCreditos();
             frmC.ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FrmMatriculaAlumno frmMatricula = new FrmMatriculaAlumno();
+            this.Hide();
+            frmMatricula.Show();
+        }
     }
 }
