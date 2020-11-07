@@ -56,7 +56,7 @@ namespace SistemaEscolar.Clases
             }
             catch (SqlException e)
             {
-                Console.WriteLine("Error al mostrar datos " + e);
+                Console.WriteLine("Error al mostrar datos " + e.Message);
                 
 
             }
@@ -87,7 +87,7 @@ namespace SistemaEscolar.Clases
             }
             catch (SqlException e)
             {
-                Console.WriteLine("Error al mostrar datos " + e);
+                Console.WriteLine("Error al mostrar datos " + e.Message);
 
 
             }
@@ -116,7 +116,7 @@ namespace SistemaEscolar.Clases
             }
             catch (SqlException e)
             {
-                Console.WriteLine("Error al mostrar datos " + e);
+                Console.WriteLine("Error al mostrar datos " + e.Message);
 
 
             }

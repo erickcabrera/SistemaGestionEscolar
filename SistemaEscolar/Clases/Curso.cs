@@ -38,9 +38,9 @@ namespace SistemaEscolar.Clases
                 leer.Close();
                 return tabla;
             }
-            catch (SqlException e)
+            catch (SqlException Ex)
             {
-                Console.WriteLine("Error al mostrar datos de las materias " + e);
+                Console.WriteLine("Error al mostrar datos de las materias " + Ex.Message);
             }
             return tabla;
         }
@@ -66,7 +66,7 @@ namespace SistemaEscolar.Clases
             }
             catch (SqlException e)
             {
-                Console.WriteLine("Error al mostrar datos " + e);
+                Console.WriteLine("Error al mostrar datos " + e.Message);
             }
         }
 
@@ -94,7 +94,7 @@ namespace SistemaEscolar.Clases
             }
             catch (SqlException e)
             {
-                Console.WriteLine("Error al mostrar datos " + e);
+                Console.WriteLine("Error al mostrar datos " + e.Message);
             }
         }
 
@@ -145,7 +145,7 @@ namespace SistemaEscolar.Clases
             }
             catch (SqlException e)
             {
-                Console.WriteLine("Error al mostrar datos " + e);
+                Console.WriteLine("Error al mostrar datos " + e.Message);
             }
             return tabla;
         }
@@ -223,7 +223,7 @@ namespace SistemaEscolar.Clases
             }
             catch (SqlException e)
             {
-                Console.WriteLine("Error al mostrar datos " + e);
+                Console.WriteLine("Error al mostrar datos " + e.Message);
 
 
             }

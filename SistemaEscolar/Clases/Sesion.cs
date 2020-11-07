@@ -61,7 +61,7 @@ namespace SistemaEscolar
             }
             catch (SqlException e)
             {
-                Console.WriteLine("Error al inicar sesión " + e);
+                Console.WriteLine("Error al inicar sesión " + e.Message);
             }
             return idProfesor;
         }
@@ -95,7 +95,7 @@ namespace SistemaEscolar
             }
             catch (SqlException e)
             {
-                Console.WriteLine("Error al inicar sesión " + e);
+                Console.WriteLine("Error al inicar sesión " + e.Message);
             }
             return nombreProfesor;
         }
@@ -129,7 +129,7 @@ namespace SistemaEscolar
             }
             catch (SqlException e)
             {
-                Console.WriteLine("Error al inicar sesión " + e);
+                Console.WriteLine("Error al inicar sesión " + e.Message);
             }
             return id_Profesor;
         }
@@ -162,7 +162,7 @@ namespace SistemaEscolar
             }
             catch (SqlException e)
             {
-                Console.WriteLine("Error al inicar sesión " + e);
+                Console.WriteLine("Error al inicar sesión " + e.Message);
             }
             return fotoPerfilProfesor;
         }
