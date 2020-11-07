@@ -257,6 +257,7 @@
             // 
             this.txtNombreA.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreA.Location = new System.Drawing.Point(276, 15);
+            this.txtNombreA.MaxLength = 50;
             this.txtNombreA.Name = "txtNombreA";
             this.txtNombreA.Size = new System.Drawing.Size(229, 27);
             this.txtNombreA.TabIndex = 1;
@@ -266,6 +267,7 @@
             // 
             this.txtApellidoA.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellidoA.Location = new System.Drawing.Point(276, 52);
+            this.txtApellidoA.MaxLength = 50;
             this.txtApellidoA.Name = "txtApellidoA";
             this.txtApellidoA.Size = new System.Drawing.Size(229, 27);
             this.txtApellidoA.TabIndex = 2;
@@ -275,6 +277,7 @@
             // 
             this.txtPadre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPadre.Location = new System.Drawing.Point(276, 263);
+            this.txtPadre.MaxLength = 100;
             this.txtPadre.Name = "txtPadre";
             this.txtPadre.Size = new System.Drawing.Size(229, 27);
             this.txtPadre.TabIndex = 7;
@@ -284,6 +287,7 @@
             // 
             this.txtMadre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMadre.Location = new System.Drawing.Point(276, 308);
+            this.txtMadre.MaxLength = 100;
             this.txtMadre.Name = "txtMadre";
             this.txtMadre.Size = new System.Drawing.Size(229, 27);
             this.txtMadre.TabIndex = 8;
@@ -293,6 +297,7 @@
             // 
             this.txtEncargado.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEncargado.Location = new System.Drawing.Point(276, 352);
+            this.txtEncargado.MaxLength = 100;
             this.txtEncargado.Name = "txtEncargado";
             this.txtEncargado.Size = new System.Drawing.Size(229, 27);
             this.txtEncargado.TabIndex = 9;
@@ -309,6 +314,7 @@
             // rtbDireccionA
             // 
             this.rtbDireccionA.Location = new System.Drawing.Point(276, 441);
+            this.rtbDireccionA.MaxLength = 100;
             this.rtbDireccionA.Name = "rtbDireccionA";
             this.rtbDireccionA.Size = new System.Drawing.Size(229, 40);
             this.rtbDireccionA.TabIndex = 11;

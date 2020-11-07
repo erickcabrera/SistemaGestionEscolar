@@ -112,6 +112,7 @@
             // 
             this.txtSeccion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSeccion.Location = new System.Drawing.Point(133, 103);
+            this.txtSeccion.MaxLength = 20;
             this.txtSeccion.Name = "txtSeccion";
             this.txtSeccion.Size = new System.Drawing.Size(227, 27);
             this.txtSeccion.TabIndex = 1;
