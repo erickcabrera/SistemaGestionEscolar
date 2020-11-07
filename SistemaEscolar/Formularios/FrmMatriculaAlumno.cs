@@ -105,6 +105,7 @@ namespace SistemaEscolar.Formularios
                                     lblApellidoA.Text = "";
                                     lblNombreA.Text = "";
                                     ActualizarDataGrid();
+                                    mostrarMatriculas();
                                 }
                                 else
                                 {
@@ -151,12 +152,21 @@ namespace SistemaEscolar.Formularios
                 ActualizarDataGrid();
                 Matricula matricula = new Matricula();
                 matricula.llenarComboGrupos(cmbGrupos, anio);
+                mostrarMatriculas();
                 
             }
             catch (Exception Ex)
             {
                 MessageBox.Show("Error al mostrar datos " + Ex.Message);
             }
+        }
+
+        public void mostrarMatriculas()
+        {
+            Matricula objMatricula = new Matricula();
+            dgvMatriculas.DataSource = null;
+            dgvMatriculas.DataSource = objMatricula.mostrarMatriculas();
+            dgvMatriculas.ClearSelection();
         }
 
         private void ActualizarDataGrid()
@@ -191,6 +201,87 @@ namespace SistemaEscolar.Formularios
             lblNombreA.Text = dgvMatriculaAlumnos.CurrentRow.Cells["Nombres"].Value.ToString();
             lblApellidoA.Text = dgvMatriculaAlumnos.CurrentRow.Cells["Apellidos"].Value.ToString();
             lblIAlumno.Text = dgvMatriculaAlumnos.CurrentRow.Cells["Num"].Value.ToString();
+        }
+
+        private void dgvMatriculas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lblIAlumno.Text = dgvMatriculas.CurrentRow.Cells["Codigo"].Value.ToString();
+            lblNombreA.Text = dgvMatriculas.CurrentRow.Cells["Nombre"].Value.ToString();
+            lblApellidoA.Text = dgvMatriculas.CurrentRow.Cells["Apellido"].Value.ToString();
+            lblIdMatricula.Text = dgvMatriculas.CurrentRow.Cells["Codigo Matricula"].Value.ToString();
+            cmbGrupos.Text = dgvMatriculas.CurrentRow.Cells["Grupo"].Value.ToString();
+
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (cmbGrupos.SelectedIndex > -1)
+            {
+                if (lblIdDetalle.Text != "")
+                {
+                    if (lblIAlumno.Text != "")
+                    {
+                        try
+                        {
+                            Matricula matricula = new Matricula();
+                            if (matricula.modificarMatricula(int.Parse(lblIdMatricula.Text), int.Parse(lblIdDetalle.Text)) == true)
+                            {                               
+                                 MessageBox.Show("Datos actualizados con éxito");
+                                 lblApellidoA.Text = "";
+                                 lblNombreA.Text = "";
+                                 lblIdMatricula.Text = "";
+                                 lblIAlumno.Text = "";
+                                 mostrarMatriculas();                                                                                                    
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("ERROR AL ACTUALIZAR");
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Seleccione un alumno");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un grupo");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un grupo");
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if(lblIAlumno.Text != "")
+            {
+                Matricula matricula = new Matricula();
+                if(matricula.darDeBaja(int.Parse(lblIAlumno.Text)) == true)
+                {
+                    lblIAlumno.Text = "";
+                    MessageBox.Show("Registro dado de baja");
+                    matricula.actualizarEstadoM(int.Parse(lblIdMatricula.Text));
+                    ActualizarDataGrid();
+                    mostrarMatriculas();
+                }
+                else
+                {
+                    MessageBox.Show("Error al dar de baja a la matrícula");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione registro para dar de baja");
+            }
         }
     }
 }

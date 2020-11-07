@@ -49,11 +49,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lblNombreA = new System.Windows.Forms.Label();
             this.lblApellidoA = new System.Windows.Forms.Label();
+            this.dgvMatriculas = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblIdMatricula = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMatriculaAlumnos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMatriculas)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -155,22 +159,24 @@
             // btnModificar
             // 
             this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(619, 353);
+            this.btnModificar.Location = new System.Drawing.Point(549, 469);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(130, 33);
+            this.btnModificar.Size = new System.Drawing.Size(242, 33);
             this.btnModificar.TabIndex = 4;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(790, 353);
+            this.btnEliminar.Location = new System.Drawing.Point(549, 553);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(130, 33);
+            this.btnEliminar.Size = new System.Drawing.Size(242, 33);
             this.btnEliminar.TabIndex = 4;
             this.btnEliminar.Text = "Dar de baja";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // errorProvider1
             // 
@@ -263,12 +269,44 @@
             this.lblApellidoA.TabIndex = 0;
             this.lblApellidoA.Click += new System.EventHandler(this.label4_Click);
             // 
+            // dgvMatriculas
+            // 
+            this.dgvMatriculas.AllowUserToAddRows = false;
+            this.dgvMatriculas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMatriculas.Location = new System.Drawing.Point(12, 422);
+            this.dgvMatriculas.Name = "dgvMatriculas";
+            this.dgvMatriculas.Size = new System.Drawing.Size(515, 223);
+            this.dgvMatriculas.TabIndex = 38;
+            this.dgvMatriculas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMatriculas_CellClick);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(14, 387);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(333, 22);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Código de matricula seleccionada:";
+            // 
+            // lblIdMatricula
+            // 
+            this.lblIdMatricula.AutoSize = true;
+            this.lblIdMatricula.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdMatricula.ForeColor = System.Drawing.Color.Black;
+            this.lblIdMatricula.Location = new System.Drawing.Point(353, 387);
+            this.lblIdMatricula.Name = "lblIdMatricula";
+            this.lblIdMatricula.Size = new System.Drawing.Size(0, 22);
+            this.lblIdMatricula.TabIndex = 0;
+            // 
             // FrmMatriculaAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1169, 422);
+            this.ClientSize = new System.Drawing.Size(1169, 657);
+            this.Controls.Add(this.dgvMatriculas);
             this.Controls.Add(this.lblIdDetalle);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.btnEliminar);
@@ -278,6 +316,8 @@
             this.Controls.Add(this.cmbGrupos);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblIAlumno);
+            this.Controls.Add(this.lblIdMatricula);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblApellidoA);
             this.Controls.Add(this.lblNombreA);
@@ -296,6 +336,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMatriculaAlumnos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMatriculas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,5 +363,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblApellidoA;
         private System.Windows.Forms.Label lblNombreA;
+        private System.Windows.Forms.DataGridView dgvMatriculas;
+        private System.Windows.Forms.Label lblIdMatricula;
+        private System.Windows.Forms.Label label6;
     }
 }

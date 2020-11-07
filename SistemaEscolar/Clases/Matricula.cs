@@ -136,5 +136,93 @@ namespace SistemaEscolar.Clases
             return false;
         }
 
+        public DataTable mostrarMatriculas()
+        {
+            DataTable tabla = new DataTable();
+            try
+            {
+                SqlDataReader leer = null;
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = this.Conectar();
+                comando.CommandText = "ps_leer_matriculas";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                leer = comando.ExecuteReader();
+                tabla.Load(leer);
+
+                this.Desconectar();
+                leer.Close();
+                return tabla;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine("Error al buscar datos " + e);
+            }
+            return tabla;
+        }
+
+        public bool modificarMatricula(int idMatricula, int idDetalle)
+        {
+            try
+            {               
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = this.Conectar();
+                comando.CommandText = "ps_modificar_matricula";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@idDetalle", idDetalle);               
+                comando.Parameters.AddWithValue("@idMatricula", idMatricula);
+                comando.ExecuteNonQuery();
+                comando.Parameters.Clear();
+                this.Desconectar();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                Console.WriteLine("No se pudo agregar el nuevo registro " + Ex.Message);
+            }
+            return false;
+        }
+
+        public bool darDeBaja(int idAlumno)
+        {
+            try
+            {
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = this.Conectar();
+                comando.CommandText = "ps_dardeBaja";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@idAlumno", idAlumno);                
+                comando.ExecuteNonQuery();
+                comando.Parameters.Clear();
+                this.Desconectar();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                Console.WriteLine("No se pudo agregar el nuevo registro " + Ex.Message);
+            }
+            return false;
+        }
+
+        public bool actualizarEstadoM(int idMatricula)
+        {
+            try
+            {
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = this.Conectar();
+                comando.CommandText = "ps_actualizar_estado_activo_matricula";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@idMatricula", idMatricula);
+                comando.ExecuteNonQuery();
+                comando.Parameters.Clear();
+                this.Desconectar();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                Console.WriteLine("No se pudo agregar el nuevo registro " + Ex.Message);
+            }
+            return false;
+        }
     }
 }
