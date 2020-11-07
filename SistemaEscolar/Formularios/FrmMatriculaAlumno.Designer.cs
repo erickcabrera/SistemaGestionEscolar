@@ -35,23 +35,24 @@
             this.picBMinimizar = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cmbGrado = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cmbSeccion = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cmbProfesor = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dtpAnio = new System.Windows.Forms.DateTimePicker();
-            this.dgvAlumnos = new System.Windows.Forms.DataGridView();
+            this.cmbGrupos = new System.Windows.Forms.ComboBox();
+            this.dgvMatriculaAlumnos = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.label12 = new System.Windows.Forms.Label();
+            this.lblIdDetalle = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblIAlumno = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblNombreA = new System.Windows.Forms.Label();
+            this.lblApellidoA = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMatriculaAlumnos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,14 +64,14 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(-7, -7);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(951, 74);
+            this.panel1.Size = new System.Drawing.Size(1193, 74);
             this.panel1.TabIndex = 0;
             // 
             // picBSalir
             // 
             this.picBSalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picBSalir.Image = ((System.Drawing.Image)(resources.GetObject("picBSalir.Image")));
-            this.picBSalir.Location = new System.Drawing.Point(887, 19);
+            this.picBSalir.Location = new System.Drawing.Point(1124, 20);
             this.picBSalir.Name = "picBSalir";
             this.picBSalir.Size = new System.Drawing.Size(40, 42);
             this.picBSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -82,7 +83,7 @@
             // 
             this.picBMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picBMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("picBMinimizar.Image")));
-            this.picBMinimizar.Location = new System.Drawing.Point(836, 19);
+            this.picBMinimizar.Location = new System.Drawing.Point(1073, 20);
             this.picBMinimizar.Name = "picBMinimizar";
             this.picBMinimizar.Size = new System.Drawing.Size(45, 42);
             this.picBMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -108,101 +109,44 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(9, 111);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 22);
+            this.label2.Size = new System.Drawing.Size(75, 22);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Grado:";
+            this.label2.Text = "Grupo:";
             // 
-            // cmbGrado
+            // cmbGrupos
             // 
-            this.cmbGrado.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbGrado.FormattingEnabled = true;
-            this.cmbGrado.Location = new System.Drawing.Point(213, 115);
-            this.cmbGrado.Name = "cmbGrado";
-            this.cmbGrado.Size = new System.Drawing.Size(197, 29);
-            this.cmbGrado.TabIndex = 1;
+            this.cmbGrupos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGrupos.FormattingEnabled = true;
+            this.cmbGrupos.Location = new System.Drawing.Point(90, 111);
+            this.cmbGrupos.Name = "cmbGrupos";
+            this.cmbGrupos.Size = new System.Drawing.Size(320, 29);
+            this.cmbGrupos.TabIndex = 1;
+            this.cmbGrupos.SelectedIndexChanged += new System.EventHandler(this.cmbGrupos_SelectedIndexChanged);
             // 
-            // label3
+            // dgvMatriculaAlumnos
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(9, 153);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 22);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Sección:";
-            // 
-            // cmbSeccion
-            // 
-            this.cmbSeccion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSeccion.FormattingEnabled = true;
-            this.cmbSeccion.Location = new System.Drawing.Point(213, 153);
-            this.cmbSeccion.Name = "cmbSeccion";
-            this.cmbSeccion.Size = new System.Drawing.Size(197, 29);
-            this.cmbSeccion.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(9, 196);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(198, 22);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Profesor encargado:";
-            // 
-            // cmbProfesor
-            // 
-            this.cmbProfesor.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbProfesor.FormattingEnabled = true;
-            this.cmbProfesor.Location = new System.Drawing.Point(213, 200);
-            this.cmbProfesor.Name = "cmbProfesor";
-            this.cmbProfesor.Size = new System.Drawing.Size(197, 29);
-            this.cmbProfesor.TabIndex = 1;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(7, 242);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(124, 22);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Año escolar:";
-            // 
-            // dtpAnio
-            // 
-            this.dtpAnio.CustomFormat = "yyyy";
-            this.dtpAnio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpAnio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpAnio.Location = new System.Drawing.Point(213, 244);
-            this.dtpAnio.Name = "dtpAnio";
-            this.dtpAnio.Size = new System.Drawing.Size(200, 27);
-            this.dtpAnio.TabIndex = 2;
-            // 
-            // dgvAlumnos
-            // 
-            this.dgvAlumnos.AllowUserToAddRows = false;
-            this.dgvAlumnos.AllowUserToDeleteRows = false;
-            this.dgvAlumnos.AllowUserToResizeRows = false;
-            this.dgvAlumnos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAlumnos.Location = new System.Drawing.Point(449, 115);
-            this.dgvAlumnos.MultiSelect = false;
-            this.dgvAlumnos.Name = "dgvAlumnos";
-            this.dgvAlumnos.ReadOnly = true;
-            this.dgvAlumnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAlumnos.Size = new System.Drawing.Size(471, 232);
-            this.dgvAlumnos.TabIndex = 3;
+            this.dgvMatriculaAlumnos.AllowUserToAddRows = false;
+            this.dgvMatriculaAlumnos.AllowUserToDeleteRows = false;
+            this.dgvMatriculaAlumnos.AllowUserToResizeRows = false;
+            this.dgvMatriculaAlumnos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMatriculaAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMatriculaAlumnos.Location = new System.Drawing.Point(449, 115);
+            this.dgvMatriculaAlumnos.MultiSelect = false;
+            this.dgvMatriculaAlumnos.Name = "dgvMatriculaAlumnos";
+            this.dgvMatriculaAlumnos.ReadOnly = true;
+            this.dgvMatriculaAlumnos.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dgvMatriculaAlumnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMatriculaAlumnos.Size = new System.Drawing.Size(708, 232);
+            this.dgvMatriculaAlumnos.TabIndex = 3;
+            this.dgvMatriculaAlumnos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMatriculaAlumnos_CellClick);
+            this.dgvMatriculaAlumnos.SelectionChanged += new System.EventHandler(this.dgvMatriculaAlumnos_SelectionChanged);
             // 
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(449, 353);
+            this.btnAgregar.Location = new System.Drawing.Point(12, 314);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(130, 33);
+            this.btnAgregar.Size = new System.Drawing.Size(398, 33);
             this.btnAgregar.TabIndex = 4;
             this.btnAgregar.Text = "Matricular";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -237,31 +181,107 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Gray;
-            this.label12.Location = new System.Drawing.Point(807, 90);
+            this.label12.Location = new System.Drawing.Point(892, 90);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(113, 22);
+            this.label12.Size = new System.Drawing.Size(265, 22);
             this.label12.TabIndex = 36;
-            this.label12.Text = "Estudiantes";
+            this.label12.Text = "Estudiantes no matriculados";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // lblIdDetalle
+            // 
+            this.lblIdDetalle.AutoSize = true;
+            this.lblIdDetalle.Location = new System.Drawing.Point(213, 143);
+            this.lblIdDetalle.Name = "lblIdDetalle";
+            this.lblIdDetalle.Size = new System.Drawing.Size(35, 13);
+            this.lblIdDetalle.TabIndex = 37;
+            this.lblIdDetalle.Text = "label3";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(9, 174);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(157, 22);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Código alumno:";
+            // 
+            // lblIAlumno
+            // 
+            this.lblIAlumno.AutoSize = true;
+            this.lblIAlumno.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIAlumno.ForeColor = System.Drawing.Color.Black;
+            this.lblIAlumno.Location = new System.Drawing.Point(172, 174);
+            this.lblIAlumno.Name = "lblIAlumno";
+            this.lblIAlumno.Size = new System.Drawing.Size(0, 22);
+            this.lblIAlumno.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(8, 217);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(157, 22);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Código alumno:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(8, 264);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(157, 22);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Código alumno:";
+            // 
+            // lblNombreA
+            // 
+            this.lblNombreA.AutoSize = true;
+            this.lblNombreA.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreA.ForeColor = System.Drawing.Color.Black;
+            this.lblNombreA.Location = new System.Drawing.Point(171, 217);
+            this.lblNombreA.Name = "lblNombreA";
+            this.lblNombreA.Size = new System.Drawing.Size(0, 22);
+            this.lblNombreA.TabIndex = 0;
+            this.lblNombreA.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // lblApellidoA
+            // 
+            this.lblApellidoA.AutoSize = true;
+            this.lblApellidoA.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellidoA.ForeColor = System.Drawing.Color.Black;
+            this.lblApellidoA.Location = new System.Drawing.Point(172, 264);
+            this.lblApellidoA.Name = "lblApellidoA";
+            this.lblApellidoA.Size = new System.Drawing.Size(0, 22);
+            this.lblApellidoA.TabIndex = 0;
+            this.lblApellidoA.Click += new System.EventHandler(this.label4_Click);
             // 
             // FrmMatriculaAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(944, 422);
+            this.ClientSize = new System.Drawing.Size(1169, 422);
+            this.Controls.Add(this.lblIdDetalle);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.dgvAlumnos);
-            this.Controls.Add(this.dtpAnio);
-            this.Controls.Add(this.cmbProfesor);
-            this.Controls.Add(this.cmbSeccion);
-            this.Controls.Add(this.cmbGrado);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.dgvMatriculaAlumnos);
+            this.Controls.Add(this.cmbGrupos);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lblIAlumno);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblApellidoA);
+            this.Controls.Add(this.lblNombreA);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -274,7 +294,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMatriculaAlumnos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -288,18 +308,19 @@
         private System.Windows.Forms.PictureBox picBSalir;
         private System.Windows.Forms.PictureBox picBMinimizar;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmbGrado;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cmbSeccion;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cmbProfesor;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dtpAnio;
-        private System.Windows.Forms.DataGridView dgvAlumnos;
+        private System.Windows.Forms.ComboBox cmbGrupos;
+        private System.Windows.Forms.DataGridView dgvMatriculaAlumnos;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblIdDetalle;
+        private System.Windows.Forms.Label lblIAlumno;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblApellidoA;
+        private System.Windows.Forms.Label lblNombreA;
     }
 }

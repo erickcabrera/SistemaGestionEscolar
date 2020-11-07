@@ -150,6 +150,7 @@
     <Compile Include="Clases\Grado.cs" />
     <Compile Include="Clases\Grupo.cs" />
     <Compile Include="Clases\Materia.cs" />
+    <Compile Include="Clases\Matricula.cs" />
     <Compile Include="Clases\Persona.cs" />
     <Compile Include="Clases\Profesor.cs" />
     <Compile Include="Clases\Seccion.cs" />

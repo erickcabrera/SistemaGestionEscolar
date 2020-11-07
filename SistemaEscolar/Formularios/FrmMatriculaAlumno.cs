@@ -51,7 +51,7 @@ namespace SistemaEscolar.Formularios
 
             //if para validar camppos vacíos en el formulario de Profesor
 
-            if (cmbGrado.SelectedIndex==-1)
+          /*  if (cmbGrado.SelectedIndex==-1)
             {
                 validado = false;
                 errorProvider1.SetError(cmbGrado, "Debe elegir un grado");
@@ -71,7 +71,7 @@ namespace SistemaEscolar.Formularios
             if(anio>dtpAnio.Value.Year)
             {
                 errorProvider1.SetError(dtpAnio, "Debe elegir un ano no mayor al actual");
-            }
+            }*/
             
 
             return validado;
@@ -80,29 +80,78 @@ namespace SistemaEscolar.Formularios
         //borrar los mensajes que provee el error provider
         private void BorrarMensaje()
         {
-            errorProvider1.SetError(cmbGrado, "");
+          /*  errorProvider1.SetError(cmbGrado, "");
             errorProvider1.SetError(cmbProfesor, "");
-            errorProvider1.SetError(cmbSeccion, "");
+            errorProvider1.SetError(cmbSeccion, "");*/
         }
        
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            BorrarMensaje();
-            if (validarCampos())
+            if (cmbGrupos.SelectedIndex > -1)
             {
-                MessageBox.Show("Los datos se han ingresado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if(lblIdDetalle.Text != "")
+                {
+                    if(lblIAlumno.Text != "")
+                    {
+                        try
+                        {
+                            Matricula matricula = new Matricula();
+                            if(matricula.Matricular(int.Parse(lblIdDetalle.Text), int.Parse(lblIAlumno.Text)) == true)
+                            {
+                                if(matricula.actualizarEstadoMatricula(int.Parse(lblIAlumno.Text)) == true)
+                                {
+                                    MessageBox.Show("Alumno matriculado con éxito");
+                                    lblApellidoA.Text = "";
+                                    lblNombreA.Text = "";
+                                    ActualizarDataGrid();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("ERROR AL MATRICULAR");
+                                }
+                                
+                            }
+                            else
+                            {
+                                MessageBox.Show("ERROR AL MATRICULAR");
+                            }
+                        }catch(Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Seleccione un alumno");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un grupo");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un grupo");
             }
         }
 
+        
         private void FrmMatriculaAlumno_Load(object sender, EventArgs e)
         {
-            BorrarMensaje();
+            //BorrarMensaje();
             try
             {
+                /* ActualizarDataGrid();
+                 btnModificar.Enabled = false;
+                 btnEliminar.Enabled = false;*/
+                DateTime fecha = DateTime.Now.Date;
+                int anio = fecha.Year;               
                 ActualizarDataGrid();
-                btnModificar.Enabled = false;
-                btnEliminar.Enabled = false;
+                Matricula matricula = new Matricula();
+                matricula.llenarComboGrupos(cmbGrupos, anio);
+                
             }
             catch (Exception Ex)
             {
@@ -112,10 +161,36 @@ namespace SistemaEscolar.Formularios
 
         private void ActualizarDataGrid()
         {
-            Alumno alumno = new Alumno();
-            dgvAlumnos.DataSource = null;
-            dgvAlumnos.DataSource = alumno.Mostrar();
-            dgvAlumnos.ClearSelection();
+            Matricula objMatricula = new Matricula();            
+            dgvMatriculaAlumnos.DataSource = null;
+            dgvMatriculaAlumnos.DataSource = objMatricula.mostrarAlumnosSinMatricular();
+            dgvMatriculaAlumnos.ClearSelection();
+        }
+
+        private void cmbGrupos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Matricula objMatricula = new Matricula();
+            string cadena = cmbGrupos.SelectedItem.ToString();
+            char delimitador = ' ';
+            string[] trozos = cadena.Split(delimitador);
+            objMatricula.obtenerIdGrupo(lblIdDetalle, trozos[0], trozos[1]);
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvMatriculaAlumnos_SelectionChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dgvMatriculaAlumnos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lblNombreA.Text = dgvMatriculaAlumnos.CurrentRow.Cells["Nombres"].Value.ToString();
+            lblApellidoA.Text = dgvMatriculaAlumnos.CurrentRow.Cells["Apellidos"].Value.ToString();
+            lblIAlumno.Text = dgvMatriculaAlumnos.CurrentRow.Cells["Num"].Value.ToString();
         }
     }
 }
