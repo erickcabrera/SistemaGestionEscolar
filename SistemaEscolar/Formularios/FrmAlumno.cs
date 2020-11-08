@@ -53,8 +53,8 @@ namespace SistemaEscolar.Formularios
             cmbSexoA.SelectedIndex = -1;
             txtEncargado.Clear();
             rtbDireccionA.Clear();
-            pbFotoProfesor.Image = null;
-            pbFotoProfesor.BackgroundImage = null;
+            pbFotoAlumno.Image = null;
+            pbFotoAlumno.BackgroundImage = null;
             txtFoto.Text = "Seleccionar foto...";
 
             txtNombreA.Focus();
@@ -264,7 +264,7 @@ namespace SistemaEscolar.Formularios
                         String sourceFile = txtFoto.Text;
                         String destinationFile = "Fotos\\" + alumno.Nombres + " - " + alumno.Nie + ".png";
 
-                        System.IO.File.Copy(sourceFile, "..\\..\\" + destinationFile);
+                        System.IO.File.Copy(sourceFile, destinationFile);
 
                         alumno.Foto = destinationFile;
 
@@ -401,7 +401,7 @@ namespace SistemaEscolar.Formularios
                     txtFoto.Text = sourceFile;
 
                     System.IO.FileStream fs = new System.IO.FileStream(sourceFile, System.IO.FileMode.Open, System.IO.FileAccess.Read);
-                    pbFotoProfesor.Image = System.Drawing.Image.FromStream(fs);
+                    pbFotoAlumno.Image = System.Drawing.Image.FromStream(fs);
                     fs.Close();
                     btnGuardarA.Focus();
                 }
@@ -488,9 +488,11 @@ namespace SistemaEscolar.Formularios
                 {
                     string idAlumno = lblIdAlumno.Text;
                     string ruta = alumno.ExtraerFoto(idAlumno);
-                    Image image = Image.FromFile(@"..\\..\\" + ruta);
-                    this.pbFotoProfesor.Image = image;
-                    this.lblRutaFoto.Text = ruta;
+
+                    lblRutaFoto.Text = ruta;
+                    System.IO.FileStream fs = new System.IO.FileStream(ruta, System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                    pbFotoAlumno.Image = System.Drawing.Image.FromStream(fs);
+                    fs.Close();
                 }
                 catch (Exception ex)
                 {
@@ -537,8 +539,15 @@ namespace SistemaEscolar.Formularios
                         String sourceFile = txtFoto.Text;
                         String destinationFile = "Fotos\\" + alumno.Nombres + " - " + alumno.Nie + ".png";
 
-                        System.IO.File.Copy(sourceFile, "..\\..\\" + destinationFile);
-                        alumno.Foto = destinationFile;
+                        if (System.IO.File.Exists(destinationFile))
+                        {
+                            System.IO.File.Delete(destinationFile);
+                        }
+                        if (System.IO.File.Exists(destinationFile) == false)
+                        {
+                            System.IO.File.Copy(sourceFile, destinationFile);
+                            alumno.Foto = destinationFile;
+                        }
                     }
                     else
                     {

@@ -189,7 +189,7 @@ namespace SistemaEscolar.Formularios
                         String sourceFile = txtFoto.Text;
                         String destinationFile = "Fotos\\" + profesor.Nombres + " - " + profesor.NumEscalafon + ".png";
                         
-                        System.IO.File.Copy(sourceFile, "..\\..\\" + destinationFile);
+                        System.IO.File.Copy(sourceFile, destinationFile);
 
                         profesor.Foto = destinationFile;
 
@@ -425,9 +425,11 @@ namespace SistemaEscolar.Formularios
                 {
                     string idProfesor = lblIdProfesor.Text;
                     string ruta = profesor.ExtraerFoto(idProfesor);
-                    Image image = Image.FromFile(@"..\\..\\" + ruta);
-                    this.pbFotoProfesor.Image = image;
-                    this.lblRutaFoto.Text = ruta;
+                    lblRutaFoto.Text = ruta;
+                    System.IO.FileStream fs = new System.IO.FileStream(ruta, System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                    pbFotoProfesor.Image = System.Drawing.Image.FromStream(fs);
+                    fs.Close();
+
                 }
                 catch (Exception ex)
                 {   
@@ -527,8 +529,15 @@ namespace SistemaEscolar.Formularios
                         String sourceFile = txtFoto.Text;
                         String destinationFile = "Fotos\\" + profesor.Nombres + " - " + profesor.NumEscalafon + ".png";
 
-                        System.IO.File.Copy(sourceFile, "..\\..\\" + destinationFile);
-                        profesor.Foto = destinationFile;
+                        if (System.IO.File.Exists(destinationFile)) 
+                        {
+                            System.IO.File.Delete(destinationFile);
+                        }
+                        if (System.IO.File.Exists(destinationFile)==false) 
+                        {
+                            System.IO.File.Copy(sourceFile, destinationFile);
+                            profesor.Foto = destinationFile;
+                        }
                     }
                     else
                     {

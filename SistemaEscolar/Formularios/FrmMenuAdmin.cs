@@ -38,7 +38,7 @@ namespace SistemaEscolar.Formularios
             try
             {
                 string ruta = "";
-                ruta = "..\\..\\" + FrmLogin.fotoPerfilProfesor.ToString();
+                ruta = FrmLogin.fotoPerfilProfesor.ToString();
                 System.IO.FileStream fs = new System.IO.FileStream(ruta, System.IO.FileMode.Open, System.IO.FileAccess.Read);
                 pbFotoPerfil.Image = System.Drawing.Image.FromStream(fs);
                 lblNombreUsuario.Text = FrmLogin.nombreProfesor.ToString();

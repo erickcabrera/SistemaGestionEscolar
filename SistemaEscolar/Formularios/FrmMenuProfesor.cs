@@ -64,12 +64,21 @@ namespace SistemaEscolar.Formularios
 
         private void MenuProfesor_Load(object sender, EventArgs e)
         {
-            string ruta = "";
-            ruta = "..\\..\\" + FrmLogin.fotoPerfilProfesor.ToString();
-            System.IO.FileStream fs = new System.IO.FileStream(ruta, System.IO.FileMode.Open, System.IO.FileAccess.Read);
-            pbFotoPerfil.Image = System.Drawing.Image.FromStream(fs);
-            lblNombreUsuario.Text = FrmLogin.nombreProfesor.ToString();
-            fs.Close();
+            try
+            {
+                string ruta = "";
+                ruta = FrmLogin.fotoPerfilProfesor.ToString();
+                System.IO.FileStream fs = new System.IO.FileStream(ruta, System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                pbFotoPerfil.Image = System.Drawing.Image.FromStream(fs);
+                lblNombreUsuario.Text = FrmLogin.nombreProfesor.ToString();
+                fs.Close();
+            }
+            catch (Exception Ex)
+            {
+
+                Console.WriteLine("Error al mostrar foto: " + Ex.Message);
+            }
+            
         }
 
         private void btnGruposP_Click(object sender, EventArgs e)
