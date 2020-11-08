@@ -262,7 +262,7 @@ namespace SistemaEscolar.Formularios
                         alumno.Direccion = rtbDireccionA.Text;
 
                         String sourceFile = txtFoto.Text;
-                        String destinationFile = "fotosUsuarios\\" + alumno.Nombres + " - " + alumno.Nie + ".png";
+                        String destinationFile = "Fotos\\" + alumno.Nombres + " - " + alumno.Nie + ".png";
 
                         System.IO.File.Copy(sourceFile, "..\\..\\" + destinationFile);
 
@@ -535,7 +535,7 @@ namespace SistemaEscolar.Formularios
                     if (txtFoto.Text != "Seleccionar foto...")
                     {
                         String sourceFile = txtFoto.Text;
-                        String destinationFile = "fotosUsuarios\\" + alumno.Nombres + " - " + alumno.Nie + ".png";
+                        String destinationFile = "Fotos\\" + alumno.Nombres + " - " + alumno.Nie + ".png";
 
                         System.IO.File.Copy(sourceFile, "..\\..\\" + destinationFile);
                         alumno.Foto = destinationFile;
