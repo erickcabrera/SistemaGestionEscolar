@@ -201,11 +201,11 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(653, 85);
+            this.label4.Location = new System.Drawing.Point(774, 85);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(284, 21);
+            this.label4.Size = new System.Drawing.Size(163, 21);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Selección de detalle grado-sección";
+            this.label4.Text = "Selección de Grupo";
             this.label4.Click += new System.EventHandler(this.label1_Click);
             // 
             // label5
@@ -257,6 +257,7 @@
             this.lblIdMateria.Size = new System.Drawing.Size(35, 13);
             this.lblIdMateria.TabIndex = 4;
             this.lblIdMateria.Text = "label6";
+            this.lblIdMateria.Visible = false;
             // 
             // lblIdProfesor
             // 
@@ -268,6 +269,7 @@
             this.lblIdProfesor.Size = new System.Drawing.Size(35, 13);
             this.lblIdProfesor.TabIndex = 5;
             this.lblIdProfesor.Text = "label7";
+            this.lblIdProfesor.Visible = false;
             // 
             // lblDetalle
             // 
