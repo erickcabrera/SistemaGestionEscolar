@@ -109,9 +109,14 @@
             // dgvDetalleGrado
             // 
             this.dgvDetalleGrado.AllowUserToAddRows = false;
+            this.dgvDetalleGrado.AllowUserToDeleteRows = false;
+            this.dgvDetalleGrado.AllowUserToResizeRows = false;
+            this.dgvDetalleGrado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDetalleGrado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalleGrado.Location = new System.Drawing.Point(382, 109);
+            this.dgvDetalleGrado.MultiSelect = false;
             this.dgvDetalleGrado.Name = "dgvDetalleGrado";
+            this.dgvDetalleGrado.ReadOnly = true;
             this.dgvDetalleGrado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalleGrado.Size = new System.Drawing.Size(555, 212);
             this.dgvDetalleGrado.TabIndex = 1;
@@ -175,11 +180,15 @@
             // 
             // dgvCurso
             // 
-            this.dgvCurso.AllowDrop = true;
             this.dgvCurso.AllowUserToAddRows = false;
+            this.dgvCurso.AllowUserToDeleteRows = false;
+            this.dgvCurso.AllowUserToResizeRows = false;
+            this.dgvCurso.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCurso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCurso.Location = new System.Drawing.Point(31, 409);
+            this.dgvCurso.MultiSelect = false;
             this.dgvCurso.Name = "dgvCurso";
+            this.dgvCurso.ReadOnly = true;
             this.dgvCurso.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCurso.Size = new System.Drawing.Size(569, 189);
             this.dgvCurso.TabIndex = 1;
@@ -192,11 +201,11 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(653, 85);
+            this.label4.Location = new System.Drawing.Point(774, 85);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(284, 21);
+            this.label4.Size = new System.Drawing.Size(163, 21);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Selección de detalle grado-sección";
+            this.label4.Text = "Selección de Grupo";
             this.label4.Click += new System.EventHandler(this.label1_Click);
             // 
             // label5
@@ -241,24 +250,26 @@
             // 
             this.lblIdMateria.AutoSize = true;
             this.lblIdMateria.BackColor = System.Drawing.SystemColors.Window;
-            this.lblIdMateria.ForeColor = System.Drawing.Color.White;
-            this.lblIdMateria.Location = new System.Drawing.Point(166, 143);
+            this.lblIdMateria.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblIdMateria.Location = new System.Drawing.Point(133, 145);
             this.lblIdMateria.Name = "lblIdMateria";
             this.lblIdMateria.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblIdMateria.Size = new System.Drawing.Size(35, 13);
             this.lblIdMateria.TabIndex = 4;
             this.lblIdMateria.Text = "label6";
+            this.lblIdMateria.Visible = false;
             // 
             // lblIdProfesor
             // 
             this.lblIdProfesor.AutoSize = true;
-            this.lblIdProfesor.ForeColor = System.Drawing.Color.White;
-            this.lblIdProfesor.Location = new System.Drawing.Point(114, 196);
+            this.lblIdProfesor.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblIdProfesor.Location = new System.Drawing.Point(133, 194);
             this.lblIdProfesor.Name = "lblIdProfesor";
             this.lblIdProfesor.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblIdProfesor.Size = new System.Drawing.Size(35, 13);
             this.lblIdProfesor.TabIndex = 5;
             this.lblIdProfesor.Text = "label7";
+            this.lblIdProfesor.Visible = false;
             // 
             // lblDetalle
             // 

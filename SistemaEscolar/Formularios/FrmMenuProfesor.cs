@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.IO;
+using SistemaEscolar.Properties;
 
 namespace SistemaEscolar.Formularios
 {
@@ -64,12 +66,35 @@ namespace SistemaEscolar.Formularios
 
         private void MenuProfesor_Load(object sender, EventArgs e)
         {
-            string ruta = "";
-            ruta = "..\\..\\" + FrmLogin.fotoPerfilProfesor.ToString();
-            System.IO.FileStream fs = new System.IO.FileStream(ruta, System.IO.FileMode.Open, System.IO.FileAccess.Read);
-            pbFotoPerfil.Image = System.Drawing.Image.FromStream(fs);
-            lblNombreUsuario.Text = FrmLogin.nombreProfesor.ToString();
-            fs.Close();
+            try
+            {
+                lblNombreUsuario.Text = FrmLogin.nombreProfesor;
+
+                byte[] foto = null;
+                foto = FrmLogin.fotoPerfilProfesor;
+
+                MemoryStream mem = new MemoryStream(foto);
+
+                Bitmap bitmap = new Bitmap(mem);
+
+                pbFotoPerfil.Image = bitmap;
+            }
+            catch (Exception Ex)
+            {
+                try
+                {
+                    System.IO.FileStream fs = new System.IO.FileStream("profile.png", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                    pbFotoPerfil.Image = System.Drawing.Image.FromStream(fs);
+                    fs.Close();
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Error al cargar foto" + Ex.Message);
+                }
+                
+                Console.WriteLine("Error al cargar foto" + Ex.Message);
+            }
+            
         }
 
         private void btnGruposP_Click(object sender, EventArgs e)

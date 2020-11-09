@@ -100,9 +100,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(19, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(378, 33);
+            this.label1.Size = new System.Drawing.Size(109, 33);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Detalle de grados - sección";
+            this.label1.Text = "Grupos";
             // 
             // label2
             // 
@@ -195,6 +195,9 @@
             // dgvDetalles
             // 
             this.dgvDetalles.AllowUserToAddRows = false;
+            this.dgvDetalles.AllowUserToDeleteRows = false;
+            this.dgvDetalles.AllowUserToResizeRows = false;
+            this.dgvDetalles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalles.Location = new System.Drawing.Point(461, 94);
             this.dgvDetalles.Name = "dgvDetalles";

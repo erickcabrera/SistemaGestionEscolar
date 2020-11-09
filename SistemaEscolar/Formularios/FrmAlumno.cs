@@ -10,6 +10,11 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using SistemaEscolar.Formularios;
 using SistemaEscolar.Clases;
+using System.IO;
+using System.Security.AccessControl;
+using System.Security.Principal;
+using System.Security.Permissions;
+using System.Security;
 
 namespace SistemaEscolar.Formularios
 {
@@ -53,8 +58,8 @@ namespace SistemaEscolar.Formularios
             cmbSexoA.SelectedIndex = -1;
             txtEncargado.Clear();
             rtbDireccionA.Clear();
-            pbFotoProfesor.Image = null;
-            pbFotoProfesor.BackgroundImage = null;
+            pbFotoAlumno.Image = null;
+            pbFotoAlumno.BackgroundImage = null;
             txtFoto.Text = "Seleccionar foto...";
 
             txtNombreA.Focus();
@@ -73,7 +78,7 @@ namespace SistemaEscolar.Formularios
             }
             catch (Exception Ex)
             {
-                MessageBox.Show("Error al mostrar datos " + Ex.Message);
+                MessageBox.Show("Error al mostrar datos " + Ex.Message, "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -241,7 +246,7 @@ namespace SistemaEscolar.Formularios
                 //creo un objeto de la clase persona y guardo a través de las propiedades 
                 if (txtFoto.Text == "Seleccionar foto...")
                 {
-                    MessageBox.Show("Debe seleccionar una foto");
+                    MessageBox.Show("Debe seleccionar una foto", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -261,12 +266,17 @@ namespace SistemaEscolar.Formularios
                         alumno.Sexo = cmbSexoA.Text;
                         alumno.Direccion = rtbDireccionA.Text;
 
-                        String sourceFile = txtFoto.Text;
-                        String destinationFile = "fotosUsuarios\\" + alumno.Nombres + " - " + alumno.Nie + ".png";
+                        byte[] file = null;
+                        Stream stream = openFileFoto.OpenFile();
 
-                        System.IO.File.Copy(sourceFile, "..\\..\\" + destinationFile);
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            stream.CopyTo(ms);
+                            file = ms.ToArray();
+                        }
 
-                        alumno.Foto = destinationFile;
+                        alumno.Foto = file;
+
 
                         if (alumno.Agregar(alumno.Nombres, alumno.Apellidos, alumno.FechaNac, alumno.Sexo, alumno.Telefono, alumno.Direccion, alumno.NumPartida, alumno.Nie,
                             alumno.NombrePadre, alumno.NombreMadre, alumno.NombreEncargado, alumno.Foto) == true)
@@ -280,18 +290,18 @@ namespace SistemaEscolar.Formularios
                         }
                         else
                         {
-                            MessageBox.Show("Error al agregar el registro");
+                            MessageBox.Show("Error al agregar el registro", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     catch (Exception Ex)
                     {
-                        MessageBox.Show("Error al registrar el alumno" + Ex.Message);
+                        MessageBox.Show("Error al agregar el registro " + Ex.Message, "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Debe llenar todos los campos");
+                MessageBox.Show("Debe ingresar todos los datos", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
         }
@@ -401,7 +411,7 @@ namespace SistemaEscolar.Formularios
                     txtFoto.Text = sourceFile;
 
                     System.IO.FileStream fs = new System.IO.FileStream(sourceFile, System.IO.FileMode.Open, System.IO.FileAccess.Read);
-                    pbFotoProfesor.Image = System.Drawing.Image.FromStream(fs);
+                    pbFotoAlumno.Image = System.Drawing.Image.FromStream(fs);
                     fs.Close();
                     btnGuardarA.Focus();
                 }
@@ -423,7 +433,7 @@ namespace SistemaEscolar.Formularios
 
                     if (alumno.Eliminar(int.Parse(lblIdAlumno.Text)) == true)
                     {
-                        MessageBox.Show("El alumno ha sido eliminado correctamente");
+                        MessageBox.Show("El alumno ha sido eliminado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ActualizarDataGrid();
                         Limpiar();
                         btnEliminarA.Enabled = false;
@@ -432,7 +442,7 @@ namespace SistemaEscolar.Formularios
                     }
                     else
                     {
-                        MessageBox.Show("Error al eliminar el alumno");
+                        MessageBox.Show("Error al eliminar el alumno", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else if (resultado == DialogResult.No)
@@ -444,7 +454,7 @@ namespace SistemaEscolar.Formularios
             }
             else
             {
-                MessageBox.Show("seleccione una fila por favor");
+                MessageBox.Show("Debe seleccionar una fila", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -461,7 +471,7 @@ namespace SistemaEscolar.Formularios
             }
             catch (Exception Ex)
             {
-                MessageBox.Show("Error al buscar datos" + Ex.Message);
+                MessageBox.Show("Error al buscar registros " + Ex.Message, "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -487,10 +497,7 @@ namespace SistemaEscolar.Formularios
                 try
                 {
                     string idAlumno = lblIdAlumno.Text;
-                    string ruta = alumno.ExtraerFoto(idAlumno);
-                    Image image = Image.FromFile(@"..\\..\\" + ruta);
-                    this.pbFotoProfesor.Image = image;
-                    this.lblRutaFoto.Text = ruta;
+                    alumno.ExtraerFoto(idAlumno,pbFotoAlumno);
                 }
                 catch (Exception ex)
                 {
@@ -506,7 +513,7 @@ namespace SistemaEscolar.Formularios
             }
             else
             {
-                MessageBox.Show("seleccione una fila por favor");
+                MessageBox.Show("Debe seleccionar una fila", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -532,18 +539,26 @@ namespace SistemaEscolar.Formularios
                     alumno.Sexo = cmbSexoA.Text;
                     alumno.Direccion = rtbDireccionA.Text;
 
+
                     if (txtFoto.Text != "Seleccionar foto...")
                     {
-                        String sourceFile = txtFoto.Text;
-                        String destinationFile = "fotosUsuarios\\" + alumno.Nombres + " - " + alumno.Nie + ".png";
+                        byte[] file = null;
+                        Stream stream = openFileFoto.OpenFile();
 
-                        System.IO.File.Copy(sourceFile, "..\\..\\" + destinationFile);
-                        alumno.Foto = destinationFile;
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            stream.CopyTo(ms);
+                            file = ms.ToArray();
+                        }
+                        alumno.Foto = file;
                     }
                     else
                     {
-                        alumno.Foto = lblRutaFoto.Text;
+                        ImageConverter converter = new ImageConverter();
+
+                        alumno.Foto = (byte[])converter.ConvertTo(pbFotoAlumno.Image, typeof(byte[]));
                     }
+
                     if (alumno.Modificar(int.Parse(lblIdAlumno.Text), alumno.Nombres, alumno.Apellidos, alumno.FechaNac, alumno.Sexo, alumno.Telefono, alumno.Direccion, alumno.NumPartida, alumno.Nie,
                             alumno.NombrePadre, alumno.NombreMadre, alumno.NombreEncargado, alumno.Foto) == true)
                     {
@@ -557,17 +572,17 @@ namespace SistemaEscolar.Formularios
                     }
                     else
                     {
-                        MessageBox.Show("Error al modificar el registro");
+                        MessageBox.Show("Error al modificar registro", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception Ex)
                 {
-                    MessageBox.Show("Error al modificar datos" + Ex.Message);
+                    MessageBox.Show("Error al modificar registro " + Ex.Message, "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Debe llenar todos los campos");
+                MessageBox.Show("Debe llenar todos los campos", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

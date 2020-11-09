@@ -18,7 +18,7 @@ namespace SistemaEscolar
         //VARIABLES GLOBALES
         internal static int idProfesor = 0;
         internal static String nombreProfesor = String.Empty;
-        internal static String fotoPerfilProfesor = String.Empty;
+        internal static byte[] fotoPerfilProfesor = null;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -63,19 +63,19 @@ namespace SistemaEscolar
         {
             if (txtContra.Text == "" && txtUsuario.Text == "")
             {
-                MessageBox.Show("Debe ingresar su usuario y contraseña");
+                MessageBox.Show("Debe ingresar su usuario y contraseña", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 if (txtContra.Text == "")
                 {
-                    MessageBox.Show("Debe ingresar su contraseña");
+                    MessageBox.Show("Debe ingresar su contraseña", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
                     if (txtUsuario.Text == "")
                     {
-                        MessageBox.Show("Debe ingresar su usuario");
+                        MessageBox.Show("Debe ingresar su usuario", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
@@ -88,7 +88,7 @@ namespace SistemaEscolar
                                 idProfesor = sesion.ExtraerID(txtUsuario.Text, txtContra.Text);
                                 nombreProfesor = sesion.ExtraerNombre(txtUsuario.Text, txtContra.Text);
                                 fotoPerfilProfesor = sesion.ExtraerFoto(txtUsuario.Text, txtContra.Text);
-
+                                
                                 FrmMenuAdmin formMenuPrueba = new FrmMenuAdmin();
                                 formMenuPrueba.Show();
                                 this.Hide();
@@ -104,12 +104,12 @@ namespace SistemaEscolar
                             }
                             else
                             {
-                                MessageBox.Show("Usuario ó contraseña incorrecta");
+                                MessageBox.Show("Usuario ó contraseña incorrecta", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                         }
                         catch (Exception Ex)
                         {
-                            Console.WriteLine("Error: " + Ex);
+                            Console.WriteLine("Error: " + Ex.Message);
                         }
                     }
                 }

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data.OleDb;
 using System.Data;
+using System.IO;
+using System.Windows.Forms;
+using System.Drawing;
 
 namespace SistemaEscolar.Clases
 {
@@ -28,7 +31,7 @@ namespace SistemaEscolar.Clases
 
         }
         public Alumno(string nombres, string apellidos, string fechaNac, string sexo, string telefono, string direccion, string numPartida, string nie,
-            string nombrePadre, string nombreMadre, string nombreEncargado, string fotoAlumno)
+            string nombrePadre, string nombreMadre, string nombreEncargado, byte[] fotoAlumno)
         {
             this.nombres = nombres;
             this.apellidos = apellidos;
@@ -49,7 +52,7 @@ namespace SistemaEscolar.Clases
 
 
         public bool Agregar(string nombres, string apellidos, string fechaNac, string sexo, string telefono, string direccion, string numPartida, string nie,
-            string nombrePadre, string nombreMadre, string nombreEncargado, string fotoAlumno)
+            string nombrePadre, string nombreMadre, string nombreEncargado, byte[] fotoAlumno)
         {
             try
             {
@@ -79,7 +82,8 @@ namespace SistemaEscolar.Clases
                 comando.Parameters.AddWithValue("@telefonoAlumno", this.telefono);
                 comando.Parameters.Add(new SqlParameter("@fechaNacAlumno", SqlDbType.Date));
                 comando.Parameters["@fechaNacAlumno"].Value = this.fechaNac;
-                comando.Parameters.AddWithValue("@fotoAlumno", this.foto);
+                comando.Parameters.Add(new SqlParameter("@fotoAlumno", SqlDbType.Image));
+                comando.Parameters["@fotoAlumno"].Value = this.foto;
                 comando.Parameters.AddWithValue("@NombrePapaAlumno", this.NombrePadre);
                 comando.Parameters.AddWithValue("@NombreMamaAlumno", this.NombreMadre);
                 comando.Parameters.AddWithValue("@NombreEncargadoAlumno", this.NombreEncargado);
@@ -172,9 +176,8 @@ namespace SistemaEscolar.Clases
             return tabla;
         }
 
-        public string ExtraerFoto(string idAlumno)
+        public void ExtraerFoto(string idAlumno, PictureBox pbFotoAlumno)
         {
-            string ruta = "";
             try
             {
                 Conexion conexion = new Conexion();
@@ -188,7 +191,15 @@ namespace SistemaEscolar.Clases
 
                 while (leer.Read())
                 {
-                    ruta = leer["fotoAlumno"].ToString();
+                    Byte[] data = new Byte[0];
+
+                    data = (Byte[])(leer["fotoAlumno"]);
+
+                    MemoryStream mem = new MemoryStream(data);
+
+                    Bitmap bitmap = new Bitmap(mem);
+
+                    pbFotoAlumno.Image = bitmap;
                 }
                 if (leer != null)
                 {
@@ -196,17 +207,15 @@ namespace SistemaEscolar.Clases
                 }
                 conexion.Desconectar();
                 leer.Close();
-                return ruta;
             }
             catch (SqlException e)
             {
                 Console.WriteLine("Error al extraer foto " + e.Message);
             }
-            return ruta;
         }
 
         public bool Modificar(int idAlumno, string nombres, string apellidos, string fechaNac, string sexo, string telefono, string direccion, string numPartida, string nie,
-            string nombrePadre, string nombreMadre, string nombreEncargado, string fotoAlumno)
+            string nombrePadre, string nombreMadre, string nombreEncargado, byte[] fotoAlumno)
         {
             try
             {
@@ -237,7 +246,8 @@ namespace SistemaEscolar.Clases
                 comando.Parameters.AddWithValue("@telefonoAlumno", this.telefono);
                 comando.Parameters.Add(new SqlParameter("@fechaNacAlumno", SqlDbType.Date));
                 comando.Parameters["@fechaNacAlumno"].Value = this.fechaNac;
-                comando.Parameters.AddWithValue("@fotoAlumno", this.foto);
+                comando.Parameters.Add(new SqlParameter("@fotoAlumno", SqlDbType.Image));
+                comando.Parameters["@fotoAlumno"].Value = this.foto;
                 comando.Parameters.AddWithValue("@NombrePapaAlumno", this.NombrePadre);
                 comando.Parameters.AddWithValue("@NombreMamaAlumno", this.NombreMadre);
                 comando.Parameters.AddWithValue("@NombreEncargadoAlumno", this.NombreEncargado);

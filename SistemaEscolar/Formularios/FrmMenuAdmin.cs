@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SistemaEscolar.Formularios;
 using System.Runtime.InteropServices;
-
+using System.IO;
 
 namespace SistemaEscolar.Formularios
 {
@@ -37,18 +37,26 @@ namespace SistemaEscolar.Formularios
         {
             try
             {
-                string ruta = "";
-                ruta = "..\\..\\" + FrmLogin.fotoPerfilProfesor.ToString();
-                System.IO.FileStream fs = new System.IO.FileStream(ruta, System.IO.FileMode.Open, System.IO.FileAccess.Read);
-                pbFotoPerfil.Image = System.Drawing.Image.FromStream(fs);
-                lblNombreUsuario.Text = FrmLogin.nombreProfesor.ToString();
-                fs.Close();
+                btnEstudiantes.Focus();
+                lblNombreUsuario.Text = FrmLogin.nombreProfesor;
+
+                byte[] foto = null;
+                foto = FrmLogin.fotoPerfilProfesor;
+
+                MemoryStream mem = new MemoryStream(foto);
+
+                Bitmap bitmap = new Bitmap(mem);
+
+                pbFotoPerfil.Image = bitmap;
+
             }
             catch (Exception Ex)
             {
-                Console.WriteLine(Ex.Message);
+                System.IO.FileStream fs = new System.IO.FileStream("profile.png\\", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                pbFotoPerfil.Image = System.Drawing.Image.FromStream(fs);
+                fs.Close();
+                Console.WriteLine("Error al cargar foto" + Ex.Message);
             }
-            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -63,7 +71,7 @@ namespace SistemaEscolar.Formularios
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("¿Seguro que desea salir?", "SALIR", MessageBoxButtons.YesNo);
+            DialogResult resultado = MessageBox.Show("¿Seguro que desea salir?", "SALIR", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if(resultado == DialogResult.Yes)
             {
                 this.Hide();
@@ -87,7 +95,6 @@ namespace SistemaEscolar.Formularios
 
         private void btnEstudiantes_Click(object sender, EventArgs e)
         {
-
             FrmAlumno frmA = new FrmAlumno();
             frmA.Show();
             this.Hide();
@@ -116,9 +123,7 @@ namespace SistemaEscolar.Formularios
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FrmGrado frmG = new FrmGrado();
-            frmG.Show();
-            this.Hide();
+            
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -156,6 +161,13 @@ namespace SistemaEscolar.Formularios
             FrmMatriculaAlumno frmMatricula = new FrmMatriculaAlumno();
             this.Hide();
             frmMatricula.Show();
+        }
+
+        private void btnGrados_Click(object sender, EventArgs e)
+        {
+            FrmGrado frmGrado = new FrmGrado();
+            this.Hide();
+            frmGrado.Show();
         }
     }
 }

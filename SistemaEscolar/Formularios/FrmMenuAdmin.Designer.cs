@@ -64,15 +64,15 @@
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.btnGrados = new System.Windows.Forms.Button();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.btnGrados = new System.Windows.Forms.Button();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFotoPerfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
@@ -94,8 +94,8 @@
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
+            this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,7 +119,7 @@
             // pbFotoPerfil
             // 
             this.pbFotoPerfil.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbFotoPerfil.Location = new System.Drawing.Point(853, 11);
+            this.pbFotoPerfil.Location = new System.Drawing.Point(853, 22);
             this.pbFotoPerfil.Name = "pbFotoPerfil";
             this.pbFotoPerfil.Size = new System.Drawing.Size(72, 66);
             this.pbFotoPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -131,7 +131,7 @@
             this.picBMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picBMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picBMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("picBMinimizar.Image")));
-            this.picBMinimizar.Location = new System.Drawing.Point(744, 24);
+            this.picBMinimizar.Location = new System.Drawing.Point(741, 38);
             this.picBMinimizar.Name = "picBMinimizar";
             this.picBMinimizar.Size = new System.Drawing.Size(45, 41);
             this.picBMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -144,7 +144,7 @@
             this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(792, 24);
+            this.pictureBox7.Location = new System.Drawing.Point(792, 38);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(40, 44);
             this.pictureBox7.TabIndex = 1;
@@ -156,7 +156,7 @@
             this.lblNombreUsuario.AutoSize = true;
             this.lblNombreUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreUsuario.ForeColor = System.Drawing.Color.White;
-            this.lblNombreUsuario.Location = new System.Drawing.Point(49, 67);
+            this.lblNombreUsuario.Location = new System.Drawing.Point(28, 67);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
             this.lblNombreUsuario.Size = new System.Drawing.Size(157, 21);
             this.lblNombreUsuario.TabIndex = 0;
@@ -167,7 +167,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(35, 11);
+            this.label7.Location = new System.Drawing.Point(17, 22);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(213, 39);
             this.label7.TabIndex = 0;
@@ -214,9 +214,9 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(107, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(287, 30);
+            this.label1.Size = new System.Drawing.Size(254, 30);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Gestión de estudiantes";
+            this.label1.Text = "Gestión de Alumnos";
             // 
             // panel3
             // 
@@ -259,9 +259,9 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(118, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(273, 30);
+            this.label2.Size = new System.Drawing.Size(271, 30);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Gestión de profesores";
+            this.label2.Text = "Gestión de Profesores";
             // 
             // panel4
             // 
@@ -346,11 +346,11 @@
             // 
             this.label5.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(125, 7);
+            this.label5.Location = new System.Drawing.Point(118, 7);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(269, 70);
             this.label5.TabIndex = 3;
-            this.label5.Text = "Detalle de grados y sección";
+            this.label5.Text = "Gestión de Grupos";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel5
@@ -394,9 +394,9 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(129, 27);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(254, 30);
+            this.label4.Size = new System.Drawing.Size(253, 30);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Gestión de materias";
+            this.label4.Text = "Gestión de Materias";
             // 
             // panel7
             // 
@@ -439,9 +439,9 @@
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(129, 27);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(225, 30);
+            this.label6.Size = new System.Drawing.Size(229, 30);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Gestión de cursos";
+            this.label6.Text = "Gestión de Cursos";
             // 
             // panel10
             // 
@@ -484,9 +484,9 @@
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(118, 27);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(272, 30);
+            this.label9.Size = new System.Drawing.Size(274, 30);
             this.label9.TabIndex = 5;
-            this.label9.Text = "Gestión de secciones";
+            this.label9.Text = "Gestión de Secciones";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // panel9
@@ -500,18 +500,6 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(399, 137);
             this.panel9.TabIndex = 4;
-            // 
-            // btnGrados
-            // 
-            this.btnGrados.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrados.ForeColor = System.Drawing.Color.Black;
-            this.btnGrados.Location = new System.Drawing.Point(130, 72);
-            this.btnGrados.Name = "btnGrados";
-            this.btnGrados.Size = new System.Drawing.Size(230, 39);
-            this.btnGrados.TabIndex = 4;
-            this.btnGrados.Text = "Acceder";
-            this.btnGrados.UseVisualStyleBackColor = true;
-            this.btnGrados.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox8
             // 
@@ -530,9 +518,9 @@
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(129, 27);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(232, 30);
+            this.label8.Size = new System.Drawing.Size(237, 30);
             this.label8.TabIndex = 5;
-            this.label8.Text = "Gestión de grados";
+            this.label8.Text = "Gestión de Grados";
             // 
             // panel1
             // 
@@ -552,47 +540,17 @@
             this.panel1.Size = new System.Drawing.Size(858, 566);
             this.panel1.TabIndex = 5;
             // 
-            // panel11
-            // 
-            this.panel11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.panel11.Controls.Add(this.panel1);
-            this.panel11.Location = new System.Drawing.Point(58, 112);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(892, 549);
-            this.panel11.TabIndex = 7;
-            // 
             // panel12
             // 
             this.panel12.AutoScroll = true;
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(164)))), ((int)(((byte)(243)))));
-            this.panel12.Controls.Add(this.button4);
             this.panel12.Controls.Add(this.pictureBox10);
+            this.panel12.Controls.Add(this.button4);
             this.panel12.Controls.Add(this.label10);
             this.panel12.Location = new System.Drawing.Point(440, 477);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(399, 137);
             this.panel12.TabIndex = 8;
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(16, 27);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(85, 84);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox10.TabIndex = 1;
-            this.pictureBox10.TabStop = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(175, 27);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(126, 30);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "Matricula";
             // 
             // button4
             // 
@@ -605,6 +563,48 @@
             this.button4.Text = "Acceder";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(175, 27);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(126, 30);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Matricula";
+            // 
+            // panel11
+            // 
+            this.panel11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel11.Controls.Add(this.panel1);
+            this.panel11.Location = new System.Drawing.Point(58, 112);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(892, 549);
+            this.panel11.TabIndex = 7;
+            // 
+            // btnGrados
+            // 
+            this.btnGrados.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrados.ForeColor = System.Drawing.Color.Black;
+            this.btnGrados.Location = new System.Drawing.Point(130, 72);
+            this.btnGrados.Name = "btnGrados";
+            this.btnGrados.Size = new System.Drawing.Size(230, 38);
+            this.btnGrados.TabIndex = 6;
+            this.btnGrados.Text = "Acceder";
+            this.btnGrados.UseVisualStyleBackColor = true;
+            this.btnGrados.Click += new System.EventHandler(this.btnGrados_Click);
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
+            this.pictureBox10.Location = new System.Drawing.Point(19, 27);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(85, 84);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox10.TabIndex = 9;
+            this.pictureBox10.TabStop = false;
             // 
             // FrmMenuAdmin
             // 
@@ -650,9 +650,9 @@
             this.panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
+            this.panel11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.ResumeLayout(false);
 
@@ -694,14 +694,14 @@
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Button btnGrados;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnGrados;
+        private System.Windows.Forms.PictureBox pictureBox10;
     }
 }

@@ -51,7 +51,6 @@
             this.txtMadre = new System.Windows.Forms.TextBox();
             this.txtEncargado = new System.Windows.Forms.TextBox();
             this.dtpFechanacimiento = new System.Windows.Forms.DateTimePicker();
-            this.rtbDireccionA = new System.Windows.Forms.RichTextBox();
             this.btnGuardarA = new System.Windows.Forms.Button();
             this.btnEditarA = new System.Windows.Forms.Button();
             this.btnEliminarA = new System.Windows.Forms.Button();
@@ -65,7 +64,7 @@
             this.dgvDatosAlumnos = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblRutaFoto = new System.Windows.Forms.Label();
-            this.pbFotoProfesor = new System.Windows.Forms.PictureBox();
+            this.pbFotoAlumno = new System.Windows.Forms.PictureBox();
             this.txtFoto = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -74,6 +73,7 @@
             this.lblIdAlumno = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.openFileFoto = new System.Windows.Forms.OpenFileDialog();
+            this.rtbDireccionA = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -81,7 +81,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosAlumnos)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFotoProfesor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFotoAlumno)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -311,15 +311,6 @@
             this.dtpFechanacimiento.Size = new System.Drawing.Size(229, 20);
             this.dtpFechanacimiento.TabIndex = 5;
             // 
-            // rtbDireccionA
-            // 
-            this.rtbDireccionA.Location = new System.Drawing.Point(276, 441);
-            this.rtbDireccionA.MaxLength = 100;
-            this.rtbDireccionA.Name = "rtbDireccionA";
-            this.rtbDireccionA.Size = new System.Drawing.Size(229, 40);
-            this.rtbDireccionA.TabIndex = 11;
-            this.rtbDireccionA.Text = "";
-            // 
             // btnGuardarA
             // 
             this.btnGuardarA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -452,8 +443,9 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel2.Controls.Add(this.rtbDireccionA);
             this.panel2.Controls.Add(this.lblRutaFoto);
-            this.panel2.Controls.Add(this.pbFotoProfesor);
+            this.panel2.Controls.Add(this.pbFotoAlumno);
             this.panel2.Controls.Add(this.txtFoto);
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.label2);
@@ -465,7 +457,6 @@
             this.panel2.Controls.Add(this.mtxtNumPartidaA);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.mtxtNIEA);
-            this.panel2.Controls.Add(this.rtbDireccionA);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label6);
@@ -494,15 +485,15 @@
             this.lblRutaFoto.Text = "rutaFoto";
             this.lblRutaFoto.Visible = false;
             // 
-            // pbFotoProfesor
+            // pbFotoAlumno
             // 
-            this.pbFotoProfesor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbFotoProfesor.Location = new System.Drawing.Point(276, 525);
-            this.pbFotoProfesor.Name = "pbFotoProfesor";
-            this.pbFotoProfesor.Size = new System.Drawing.Size(77, 79);
-            this.pbFotoProfesor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbFotoProfesor.TabIndex = 47;
-            this.pbFotoProfesor.TabStop = false;
+            this.pbFotoAlumno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbFotoAlumno.Location = new System.Drawing.Point(276, 525);
+            this.pbFotoAlumno.Name = "pbFotoAlumno";
+            this.pbFotoAlumno.Size = new System.Drawing.Size(77, 79);
+            this.pbFotoAlumno.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbFotoAlumno.TabIndex = 47;
+            this.pbFotoAlumno.TabStop = false;
             // 
             // txtFoto
             // 
@@ -592,6 +583,16 @@
             // 
             this.openFileFoto.FileName = "openFileDialog1";
             // 
+            // rtbDireccionA
+            // 
+            this.rtbDireccionA.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbDireccionA.Location = new System.Drawing.Point(276, 437);
+            this.rtbDireccionA.MaxLength = 100;
+            this.rtbDireccionA.Name = "rtbDireccionA";
+            this.rtbDireccionA.Size = new System.Drawing.Size(229, 48);
+            this.rtbDireccionA.TabIndex = 49;
+            this.rtbDireccionA.Text = "";
+            // 
             // FrmAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -616,7 +617,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosAlumnos)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFotoProfesor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFotoAlumno)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -643,7 +644,6 @@
         private System.Windows.Forms.TextBox txtMadre;
         private System.Windows.Forms.TextBox txtEncargado;
         private System.Windows.Forms.DateTimePicker dtpFechanacimiento;
-        private System.Windows.Forms.RichTextBox rtbDireccionA;
         private System.Windows.Forms.Button btnGuardarA;
         private System.Windows.Forms.Button btnEditarA;
         private System.Windows.Forms.Button btnEliminarA;
@@ -664,9 +664,10 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label lblIdAlumno;
         private System.Windows.Forms.Label lblRutaFoto;
-        private System.Windows.Forms.PictureBox pbFotoProfesor;
+        private System.Windows.Forms.PictureBox pbFotoAlumno;
         private System.Windows.Forms.Button txtFoto;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.OpenFileDialog openFileFoto;
+        private System.Windows.Forms.RichTextBox rtbDireccionA;
     }
 }
