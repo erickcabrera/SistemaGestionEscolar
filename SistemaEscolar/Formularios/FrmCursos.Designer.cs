@@ -250,7 +250,7 @@
             // 
             this.lblIdMateria.AutoSize = true;
             this.lblIdMateria.BackColor = System.Drawing.SystemColors.Window;
-            this.lblIdMateria.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblIdMateria.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblIdMateria.Location = new System.Drawing.Point(133, 145);
             this.lblIdMateria.Name = "lblIdMateria";
             this.lblIdMateria.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -262,7 +262,7 @@
             // lblIdProfesor
             // 
             this.lblIdProfesor.AutoSize = true;
-            this.lblIdProfesor.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblIdProfesor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblIdProfesor.Location = new System.Drawing.Point(133, 194);
             this.lblIdProfesor.Name = "lblIdProfesor";
             this.lblIdProfesor.RightToLeft = System.Windows.Forms.RightToLeft.No;
