@@ -109,9 +109,14 @@
             // dgvDetalleGrado
             // 
             this.dgvDetalleGrado.AllowUserToAddRows = false;
+            this.dgvDetalleGrado.AllowUserToDeleteRows = false;
+            this.dgvDetalleGrado.AllowUserToResizeRows = false;
+            this.dgvDetalleGrado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDetalleGrado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalleGrado.Location = new System.Drawing.Point(382, 109);
+            this.dgvDetalleGrado.MultiSelect = false;
             this.dgvDetalleGrado.Name = "dgvDetalleGrado";
+            this.dgvDetalleGrado.ReadOnly = true;
             this.dgvDetalleGrado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalleGrado.Size = new System.Drawing.Size(555, 212);
             this.dgvDetalleGrado.TabIndex = 1;
@@ -175,11 +180,15 @@
             // 
             // dgvCurso
             // 
-            this.dgvCurso.AllowDrop = true;
             this.dgvCurso.AllowUserToAddRows = false;
+            this.dgvCurso.AllowUserToDeleteRows = false;
+            this.dgvCurso.AllowUserToResizeRows = false;
+            this.dgvCurso.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCurso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCurso.Location = new System.Drawing.Point(31, 409);
+            this.dgvCurso.MultiSelect = false;
             this.dgvCurso.Name = "dgvCurso";
+            this.dgvCurso.ReadOnly = true;
             this.dgvCurso.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCurso.Size = new System.Drawing.Size(569, 189);
             this.dgvCurso.TabIndex = 1;
@@ -242,7 +251,7 @@
             this.lblIdMateria.AutoSize = true;
             this.lblIdMateria.BackColor = System.Drawing.SystemColors.Window;
             this.lblIdMateria.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblIdMateria.Location = new System.Drawing.Point(166, 143);
+            this.lblIdMateria.Location = new System.Drawing.Point(133, 145);
             this.lblIdMateria.Name = "lblIdMateria";
             this.lblIdMateria.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblIdMateria.Size = new System.Drawing.Size(35, 13);
@@ -253,7 +262,7 @@
             // 
             this.lblIdProfesor.AutoSize = true;
             this.lblIdProfesor.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblIdProfesor.Location = new System.Drawing.Point(114, 196);
+            this.lblIdProfesor.Location = new System.Drawing.Point(133, 194);
             this.lblIdProfesor.Name = "lblIdProfesor";
             this.lblIdProfesor.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblIdProfesor.Size = new System.Drawing.Size(35, 13);

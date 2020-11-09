@@ -63,19 +63,19 @@ namespace SistemaEscolar
         {
             if (txtContra.Text == "" && txtUsuario.Text == "")
             {
-                MessageBox.Show("Debe ingresar su usuario y contraseña");
+                MessageBox.Show("Debe ingresar su usuario y contraseña", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 if (txtContra.Text == "")
                 {
-                    MessageBox.Show("Debe ingresar su contraseña");
+                    MessageBox.Show("Debe ingresar su contraseña", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
                     if (txtUsuario.Text == "")
                     {
-                        MessageBox.Show("Debe ingresar su usuario");
+                        MessageBox.Show("Debe ingresar su usuario", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
@@ -104,7 +104,7 @@ namespace SistemaEscolar
                             }
                             else
                             {
-                                MessageBox.Show("Usuario ó contraseña incorrecta");
+                                MessageBox.Show("Usuario ó contraseña incorrecta", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                         }
                         catch (Exception Ex)

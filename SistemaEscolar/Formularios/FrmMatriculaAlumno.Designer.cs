@@ -119,6 +119,7 @@
             // 
             // cmbGrupos
             // 
+            this.cmbGrupos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGrupos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGrupos.FormattingEnabled = true;
             this.cmbGrupos.Location = new System.Drawing.Point(90, 111);

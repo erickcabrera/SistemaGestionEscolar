@@ -78,7 +78,7 @@ namespace SistemaEscolar.Formularios
             }
             catch (Exception Ex)
             {
-                MessageBox.Show("Error al mostrar datos " + Ex.Message);
+                MessageBox.Show("Error al mostrar datos " + Ex.Message, "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -246,7 +246,7 @@ namespace SistemaEscolar.Formularios
                 //creo un objeto de la clase persona y guardo a través de las propiedades 
                 if (txtFoto.Text == "Seleccionar foto...")
                 {
-                    MessageBox.Show("Debe seleccionar una foto");
+                    MessageBox.Show("Debe seleccionar una foto", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -290,18 +290,18 @@ namespace SistemaEscolar.Formularios
                         }
                         else
                         {
-                            MessageBox.Show("Error al agregar el registro");
+                            MessageBox.Show("Error al agregar el registro", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     catch (Exception Ex)
                     {
-                        MessageBox.Show("Error al registrar el alumno " + Ex.Message);
+                        MessageBox.Show("Error al agregar el registro " + Ex.Message, "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Debe llenar todos los campos");
+                MessageBox.Show("Debe ingresar todos los datos", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
         }
@@ -433,7 +433,7 @@ namespace SistemaEscolar.Formularios
 
                     if (alumno.Eliminar(int.Parse(lblIdAlumno.Text)) == true)
                     {
-                        MessageBox.Show("El alumno ha sido eliminado correctamente");
+                        MessageBox.Show("El alumno ha sido eliminado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ActualizarDataGrid();
                         Limpiar();
                         btnEliminarA.Enabled = false;
@@ -442,7 +442,7 @@ namespace SistemaEscolar.Formularios
                     }
                     else
                     {
-                        MessageBox.Show("Error al eliminar el alumno");
+                        MessageBox.Show("Error al eliminar el alumno", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else if (resultado == DialogResult.No)
@@ -454,7 +454,7 @@ namespace SistemaEscolar.Formularios
             }
             else
             {
-                MessageBox.Show("seleccione una fila por favor");
+                MessageBox.Show("Debe seleccionar una fila", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -471,7 +471,7 @@ namespace SistemaEscolar.Formularios
             }
             catch (Exception Ex)
             {
-                MessageBox.Show("Error al buscar datos" + Ex.Message);
+                MessageBox.Show("Error al buscar registros " + Ex.Message, "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -513,7 +513,7 @@ namespace SistemaEscolar.Formularios
             }
             else
             {
-                MessageBox.Show("seleccione una fila por favor");
+                MessageBox.Show("Debe seleccionar una fila", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -572,17 +572,17 @@ namespace SistemaEscolar.Formularios
                     }
                     else
                     {
-                        MessageBox.Show("Error al modificar el registro");
+                        MessageBox.Show("Error al modificar registro", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception Ex)
                 {
-                    MessageBox.Show("Error al modificar datos" + Ex.Message);
+                    MessageBox.Show("Error al modificar registro " + Ex.Message, "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Debe llenar todos los campos");
+                MessageBox.Show("Debe llenar todos los campos", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

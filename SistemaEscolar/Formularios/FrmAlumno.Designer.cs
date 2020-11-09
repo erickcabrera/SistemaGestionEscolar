@@ -51,7 +51,6 @@
             this.txtMadre = new System.Windows.Forms.TextBox();
             this.txtEncargado = new System.Windows.Forms.TextBox();
             this.dtpFechanacimiento = new System.Windows.Forms.DateTimePicker();
-            this.rtbDireccionA = new System.Windows.Forms.RichTextBox();
             this.btnGuardarA = new System.Windows.Forms.Button();
             this.btnEditarA = new System.Windows.Forms.Button();
             this.btnEliminarA = new System.Windows.Forms.Button();
@@ -74,6 +73,7 @@
             this.lblIdAlumno = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.openFileFoto = new System.Windows.Forms.OpenFileDialog();
+            this.rtbDireccionA = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -311,15 +311,6 @@
             this.dtpFechanacimiento.Size = new System.Drawing.Size(229, 20);
             this.dtpFechanacimiento.TabIndex = 5;
             // 
-            // rtbDireccionA
-            // 
-            this.rtbDireccionA.Location = new System.Drawing.Point(276, 441);
-            this.rtbDireccionA.MaxLength = 100;
-            this.rtbDireccionA.Name = "rtbDireccionA";
-            this.rtbDireccionA.Size = new System.Drawing.Size(229, 40);
-            this.rtbDireccionA.TabIndex = 11;
-            this.rtbDireccionA.Text = "";
-            // 
             // btnGuardarA
             // 
             this.btnGuardarA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -452,6 +443,7 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel2.Controls.Add(this.rtbDireccionA);
             this.panel2.Controls.Add(this.lblRutaFoto);
             this.panel2.Controls.Add(this.pbFotoAlumno);
             this.panel2.Controls.Add(this.txtFoto);
@@ -465,7 +457,6 @@
             this.panel2.Controls.Add(this.mtxtNumPartidaA);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.mtxtNIEA);
-            this.panel2.Controls.Add(this.rtbDireccionA);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label6);
@@ -592,6 +583,16 @@
             // 
             this.openFileFoto.FileName = "openFileDialog1";
             // 
+            // rtbDireccionA
+            // 
+            this.rtbDireccionA.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbDireccionA.Location = new System.Drawing.Point(276, 437);
+            this.rtbDireccionA.MaxLength = 100;
+            this.rtbDireccionA.Name = "rtbDireccionA";
+            this.rtbDireccionA.Size = new System.Drawing.Size(229, 48);
+            this.rtbDireccionA.TabIndex = 49;
+            this.rtbDireccionA.Text = "";
+            // 
             // FrmAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -643,7 +644,6 @@
         private System.Windows.Forms.TextBox txtMadre;
         private System.Windows.Forms.TextBox txtEncargado;
         private System.Windows.Forms.DateTimePicker dtpFechanacimiento;
-        private System.Windows.Forms.RichTextBox rtbDireccionA;
         private System.Windows.Forms.Button btnGuardarA;
         private System.Windows.Forms.Button btnEditarA;
         private System.Windows.Forms.Button btnEliminarA;
@@ -668,5 +668,6 @@
         private System.Windows.Forms.Button txtFoto;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.OpenFileDialog openFileFoto;
+        private System.Windows.Forms.RichTextBox rtbDireccionA;
     }
 }

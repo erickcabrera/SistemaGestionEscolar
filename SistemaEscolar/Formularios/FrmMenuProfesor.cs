@@ -67,6 +67,8 @@ namespace SistemaEscolar.Formularios
         {
             try
             {
+                lblNombreUsuario.Text = FrmLogin.nombreProfesor;
+
                 byte[] foto = null;
                 foto = FrmLogin.fotoPerfilProfesor;
 
@@ -78,8 +80,18 @@ namespace SistemaEscolar.Formularios
             }
             catch (Exception Ex)
             {
-
-                Console.WriteLine("Error al mostrar foto: " + Ex.Message);
+                try
+                {
+                    System.IO.FileStream fs = new System.IO.FileStream("profile.png", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                    pbFotoPerfil.Image = System.Drawing.Image.FromStream(fs);
+                    fs.Close();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                
+                Console.WriteLine("Error al cargar foto" + Ex.Message);
             }
             
         }
