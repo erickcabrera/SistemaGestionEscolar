@@ -10,6 +10,11 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using SistemaEscolar.Formularios;
 using SistemaEscolar.Clases;
+using System.IO;
+using System.Security.AccessControl;
+using System.Security.Principal;
+using System.Security.Permissions;
+using System.Security;
 
 namespace SistemaEscolar.Formularios
 {
@@ -261,12 +266,17 @@ namespace SistemaEscolar.Formularios
                         alumno.Sexo = cmbSexoA.Text;
                         alumno.Direccion = rtbDireccionA.Text;
 
-                        String sourceFile = txtFoto.Text;
-                        String destinationFile = "Fotos\\" + alumno.Nombres + " - " + alumno.Nie + ".png";
+                        byte[] file = null;
+                        Stream stream = openFileFoto.OpenFile();
 
-                        System.IO.File.Copy(sourceFile, destinationFile);
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            stream.CopyTo(ms);
+                            file = ms.ToArray();
+                        }
 
-                        alumno.Foto = destinationFile;
+                        alumno.Foto = file;
+
 
                         if (alumno.Agregar(alumno.Nombres, alumno.Apellidos, alumno.FechaNac, alumno.Sexo, alumno.Telefono, alumno.Direccion, alumno.NumPartida, alumno.Nie,
                             alumno.NombrePadre, alumno.NombreMadre, alumno.NombreEncargado, alumno.Foto) == true)
@@ -285,7 +295,7 @@ namespace SistemaEscolar.Formularios
                     }
                     catch (Exception Ex)
                     {
-                        MessageBox.Show("Error al registrar el alumno" + Ex.Message);
+                        MessageBox.Show("Error al registrar el alumno " + Ex.Message);
                     }
                 }
             }
@@ -487,12 +497,7 @@ namespace SistemaEscolar.Formularios
                 try
                 {
                     string idAlumno = lblIdAlumno.Text;
-                    string ruta = alumno.ExtraerFoto(idAlumno);
-
-                    lblRutaFoto.Text = ruta;
-                    System.IO.FileStream fs = new System.IO.FileStream(ruta, System.IO.FileMode.Open, System.IO.FileAccess.Read);
-                    pbFotoAlumno.Image = System.Drawing.Image.FromStream(fs);
-                    fs.Close();
+                    alumno.ExtraerFoto(idAlumno,pbFotoAlumno);
                 }
                 catch (Exception ex)
                 {
@@ -534,25 +539,26 @@ namespace SistemaEscolar.Formularios
                     alumno.Sexo = cmbSexoA.Text;
                     alumno.Direccion = rtbDireccionA.Text;
 
+
                     if (txtFoto.Text != "Seleccionar foto...")
                     {
-                        String sourceFile = txtFoto.Text;
-                        String destinationFile = "Fotos\\" + alumno.Nombres + " - " + alumno.Nie + ".png";
+                        byte[] file = null;
+                        Stream stream = openFileFoto.OpenFile();
 
-                        if (System.IO.File.Exists(destinationFile))
+                        using (MemoryStream ms = new MemoryStream())
                         {
-                            System.IO.File.Delete(destinationFile);
+                            stream.CopyTo(ms);
+                            file = ms.ToArray();
                         }
-                        if (System.IO.File.Exists(destinationFile) == false)
-                        {
-                            System.IO.File.Copy(sourceFile, destinationFile);
-                            alumno.Foto = destinationFile;
-                        }
+                        alumno.Foto = file;
                     }
                     else
                     {
-                        alumno.Foto = lblRutaFoto.Text;
+                        ImageConverter converter = new ImageConverter();
+
+                        alumno.Foto = (byte[])converter.ConvertTo(pbFotoAlumno.Image, typeof(byte[]));
                     }
+
                     if (alumno.Modificar(int.Parse(lblIdAlumno.Text), alumno.Nombres, alumno.Apellidos, alumno.FechaNac, alumno.Sexo, alumno.Telefono, alumno.Direccion, alumno.NumPartida, alumno.Nie,
                             alumno.NombrePadre, alumno.NombreMadre, alumno.NombreEncargado, alumno.Foto) == true)
                     {

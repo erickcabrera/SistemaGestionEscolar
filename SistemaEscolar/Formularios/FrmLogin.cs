@@ -18,7 +18,7 @@ namespace SistemaEscolar
         //VARIABLES GLOBALES
         internal static int idProfesor = 0;
         internal static String nombreProfesor = String.Empty;
-        internal static String fotoPerfilProfesor = String.Empty;
+        internal static byte[] fotoPerfilProfesor = null;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -88,7 +88,7 @@ namespace SistemaEscolar
                                 idProfesor = sesion.ExtraerID(txtUsuario.Text, txtContra.Text);
                                 nombreProfesor = sesion.ExtraerNombre(txtUsuario.Text, txtContra.Text);
                                 fotoPerfilProfesor = sesion.ExtraerFoto(txtUsuario.Text, txtContra.Text);
-
+                                
                                 FrmMenuAdmin formMenuPrueba = new FrmMenuAdmin();
                                 formMenuPrueba.Show();
                                 this.Hide();
@@ -109,7 +109,7 @@ namespace SistemaEscolar
                         }
                         catch (Exception Ex)
                         {
-                            Console.WriteLine("Error: " + Ex);
+                            Console.WriteLine("Error: " + Ex.Message);
                         }
                     }
                 }

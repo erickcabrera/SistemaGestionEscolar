@@ -14,7 +14,7 @@ namespace SistemaEscolar.Clases
         protected string sexo;
         protected string telefono;
         protected string direccion;
-        protected string foto;
+        protected byte[] foto;
 
         public string Nombres { get => nombres; set => nombres = value; }
         public string Apellidos { get => apellidos; set => apellidos = value; }
@@ -22,13 +22,13 @@ namespace SistemaEscolar.Clases
         public string Sexo { get => sexo; set => sexo = value; }
         public string Telefono { get => telefono; set => telefono = value; }
         public string Direccion { get => direccion; set => direccion = value; }
-        public string Foto { get => foto; set => foto = value; }
+        public byte[] Foto { get => foto; set => foto = value; }
 
         public Persona()
         {
 
         }
-        public Persona(string nombres, string apellidos, string fechaNac, string sexo, string telefono, string direccion, string foto)
+        public Persona(string nombres, string apellidos, string fechaNac, string sexo, string telefono, string direccion, byte[] foto)
         {
             this.nombres = nombres;
             this.apellidos = apellidos;

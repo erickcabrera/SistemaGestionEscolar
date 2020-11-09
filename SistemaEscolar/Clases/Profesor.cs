@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +27,7 @@ namespace SistemaEscolar.Clases
         {
 
         }
-        public Profesor(string nombres, string apellidos, string fechaNac, string sexo, string telefono, string direccion,  string fotoProfesor, string dui, string nit, string correo, string numEscalafon)
+        public Profesor(string nombres, string apellidos, string fechaNac, string sexo, string telefono, string direccion,  byte[] fotoProfesor, string dui, string nit, string correo, string numEscalafon)
         {
             this.nombres = nombres;
             this.apellidos = apellidos;
@@ -44,7 +46,7 @@ namespace SistemaEscolar.Clases
 
         }
 
-        public bool Agregar(string nombres, string apellidos, string fechaNac, string sexo, string telefono, string direccion, string fotoProfesor, string dui, string nit, string correo, string numEscalafon)
+        public bool Agregar(string nombres, string apellidos, string fechaNac, string sexo, string telefono, string direccion, byte[] fotoProfesor, string dui, string nit, string correo, string numEscalafon)
         {
             try
             {
@@ -74,7 +76,8 @@ namespace SistemaEscolar.Clases
                 comando.Parameters.AddWithValue("@correoProfesor", this.correo);
                 comando.Parameters.Add(new SqlParameter("@fechaNacProfesor", SqlDbType.Date));
                 comando.Parameters["@fechaNacProfesor"].Value = this.fechaNac;
-                comando.Parameters.AddWithValue("@fotoPerfilProfesor", this.foto);
+                comando.Parameters.Add(new SqlParameter("@fotoPerfilProfesor", SqlDbType.Image));
+                comando.Parameters["@fotoPerfilProfesor"].Value = this.foto;
                 comando.Parameters.AddWithValue("@numeroEscalafon", this.numEscalafon);
                 comando.Parameters.AddWithValue("@sexo", this.sexo);
                 comando.ExecuteNonQuery();
@@ -115,9 +118,8 @@ namespace SistemaEscolar.Clases
             return tabla;
         }
 
-        public string ExtraerFoto(string idProfesor)
+        public void ExtraerFoto(string idProfesor, PictureBox pbFotoProfesor)
         {
-            string ruta = "";
             try
             {
                 Conexion conexion = new Conexion();
@@ -128,10 +130,18 @@ namespace SistemaEscolar.Clases
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@idProfesor", idProfesor);
                 leer = comando.ExecuteReader();
-                
+
                 while (leer.Read())
                 {
-                    ruta = leer["fotoPerfilProfesor"].ToString();
+                    Byte[] data = new Byte[0];
+
+                    data = (Byte[])(leer["fotoPerfilProfesor"]);
+
+                    MemoryStream mem = new MemoryStream(data);
+
+                    Bitmap bitmap = new Bitmap(mem);
+
+                    pbFotoProfesor.Image = bitmap;
                 }
                 if (leer != null)
                 {
@@ -139,13 +149,11 @@ namespace SistemaEscolar.Clases
                 }
                 conexion.Desconectar();
                 leer.Close();
-                return ruta;
             }
             catch (SqlException e)
             {
                 Console.WriteLine("Error al extraer foto " + e.Message);
             }
-            return ruta;
         }
 
         public bool Eliminar(int idProfesor)
@@ -197,7 +205,7 @@ namespace SistemaEscolar.Clases
             return tabla;
         }
 
-        public bool Modificar(int idProfesor,string nombres, string apellidos, string fechaNac, string sexo, string telefono, string direccion, string fotoProfesor, string dui, string nit, string correo, string numEscalafon)
+        public bool Modificar(int idProfesor,string nombres, string apellidos, string fechaNac, string sexo, string telefono, string direccion, byte[] fotoProfesor, string dui, string nit, string correo, string numEscalafon)
         {
             try
             {
@@ -228,7 +236,8 @@ namespace SistemaEscolar.Clases
                 comando.Parameters.AddWithValue("@correoProfesor", this.correo);
                 comando.Parameters.Add(new SqlParameter("@fechaNacProfesor", SqlDbType.Date));
                 comando.Parameters["@fechaNacProfesor"].Value = this.fechaNac;
-                comando.Parameters.AddWithValue("@fotoPerfilProfesor", this.foto);
+                comando.Parameters.Add(new SqlParameter("@fotoPerfilProfesor", SqlDbType.Image));
+                comando.Parameters["@fotoPerfilProfesor"].Value = this.foto;
                 comando.Parameters.AddWithValue("@numeroEscalafon", this.numEscalafon);
                 comando.Parameters.AddWithValue("@sexo", this.sexo);
                 comando.ExecuteNonQuery();

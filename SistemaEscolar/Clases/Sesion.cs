@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data.OleDb;
 using System.Data;
+using System.Windows.Forms;
+using System.IO;
+using System.Drawing;
+
 namespace SistemaEscolar
 {
     class Sesion : Conexion
@@ -134,9 +138,9 @@ namespace SistemaEscolar
             return id_Profesor;
         }
 
-        public string ExtraerFoto(String user, String password)
+        public byte[] ExtraerFoto(String user, String password)
         {
-            string fotoPerfilProfesor = "";
+            Byte[] data = new Byte[0];
             try
             {
                 SqlDataReader dr1 = null;
@@ -148,23 +152,27 @@ namespace SistemaEscolar
                 comando.Parameters.AddWithValue("@contra", password);
                 dr1 = comando.ExecuteReader();
 
-                while (dr1.Read())
-                {
-                    fotoPerfilProfesor = dr1["fotoPerfilProfesor"].ToString();
-                }
                 if (dr1 != null)
                 {
-                    Console.WriteLine("Datos encontrados");
+                    while (dr1.Read())
+                    {
+                        data = (Byte[])(dr1["fotoPerfilProfesor"]);
+                    }
+                    if (dr1 != null)
+                    {
+                        Console.WriteLine("Datos encontrados");
+                    }
                 }
+                
                 this.Desconectar();
                 dr1.Close();
-                return fotoPerfilProfesor;
+                return data;
             }
             catch (SqlException e)
             {
-                Console.WriteLine("Error al inicar sesión " + e.Message);
+                Console.WriteLine("Error al extraer foto " + e.Message);
             }
-            return fotoPerfilProfesor;
+            return data;
         }
     }
 }
