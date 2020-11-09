@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.IO;
+using SistemaEscolar.Properties;
 
 namespace SistemaEscolar.Formularios
 {
@@ -88,7 +89,7 @@ namespace SistemaEscolar.Formularios
                 }
                 catch (Exception)
                 {
-                    throw;
+                    Console.WriteLine("Error al cargar foto" + Ex.Message);
                 }
                 
                 Console.WriteLine("Error al cargar foto" + Ex.Message);
