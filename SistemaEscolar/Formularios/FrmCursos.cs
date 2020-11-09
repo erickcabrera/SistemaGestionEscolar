@@ -293,11 +293,11 @@ namespace SistemaEscolar.Formularios
                     {
                         MessageBox.Show("El curso ha sido modificado correctamente");
                         ActualizarDataGridCurso();
-                        //cmbMaterias.SelectedIndex = -1;
-                        //mbProfesor.SelectedIndex = -1;
+                        /* cmbMaterias.SelectedIndex = -1;
+                        cmbProfesor.SelectedIndex = -1;
                         
-                       /* lblIdCurso.Text = "";
-                        lblIdMateria.Text = "";
+                         lblIdCurso.Text = "";
+                         lblIdMateria.Text = "";
                          lblIdCurso.Text = "";
                          lblIdProfesor.Text = "";*/
 
