@@ -197,6 +197,7 @@
             // lblIdDetalle
             // 
             this.lblIdDetalle.AutoSize = true;
+            this.lblIdDetalle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblIdDetalle.Location = new System.Drawing.Point(213, 143);
             this.lblIdDetalle.Name = "lblIdDetalle";
             this.lblIdDetalle.Size = new System.Drawing.Size(35, 13);
