@@ -103,9 +103,9 @@ namespace SistemaEscolar.Formularios
                                 MessageBox.Show("El curso ha sido registrado correctamente");
                                 ActualizarDataGridCurso();
                                 ActualizarDataGrid();
-                                lblDetalle.Text = "";
+                                /*lblDetalle.Text = "";
                                 lblIdMateria.Text = "";
-                                lblIdProfesor.Text = "";
+                                lblIdProfesor.Text = "";*/
                             }
                             else
                             {
@@ -292,9 +292,7 @@ namespace SistemaEscolar.Formularios
                     if (curso.ModificarCurso(int.Parse(lblIdMateria.Text), int.Parse(lblIdProfesor.Text), int.Parse(lblIdCurso.Text)) == true)
                     {
                         MessageBox.Show("El curso ha sido modificado correctamente");
-                        ActualizarDataGridCurso();
-                        //cmbMaterias.SelectedIndex = -1;
-                        //mbProfesor.SelectedIndex = -1;
+                        ActualizarDataGridCurso();                       
                         
                        /* lblIdCurso.Text = "";
                         lblIdMateria.Text = "";
