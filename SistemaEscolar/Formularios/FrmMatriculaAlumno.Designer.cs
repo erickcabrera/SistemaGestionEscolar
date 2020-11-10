@@ -144,6 +144,7 @@
             this.dgvMatriculaAlumnos.Size = new System.Drawing.Size(708, 232);
             this.dgvMatriculaAlumnos.TabIndex = 3;
             this.dgvMatriculaAlumnos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMatriculaAlumnos_CellClick);
+            this.dgvMatriculaAlumnos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMatriculaAlumnos_CellDoubleClick);
             this.dgvMatriculaAlumnos.SelectionChanged += new System.EventHandler(this.dgvMatriculaAlumnos_SelectionChanged);
             // 
             // btnAgregar
@@ -280,6 +281,7 @@
             this.dgvMatriculas.Size = new System.Drawing.Size(515, 223);
             this.dgvMatriculas.TabIndex = 38;
             this.dgvMatriculas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMatriculas_CellClick);
+            this.dgvMatriculas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMatriculas_CellDoubleClick);
             // 
             // label6
             // 

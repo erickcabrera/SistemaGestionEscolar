@@ -198,9 +198,9 @@ namespace SistemaEscolar.Formularios
 
         private void dgvMatriculaAlumnos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            lblNombreA.Text = dgvMatriculaAlumnos.CurrentRow.Cells["Nombres"].Value.ToString();
+            /*lblNombreA.Text = dgvMatriculaAlumnos.CurrentRow.Cells["Nombres"].Value.ToString();
             lblApellidoA.Text = dgvMatriculaAlumnos.CurrentRow.Cells["Apellidos"].Value.ToString();
-            lblIAlumno.Text = dgvMatriculaAlumnos.CurrentRow.Cells["Num"].Value.ToString();
+            lblIAlumno.Text = dgvMatriculaAlumnos.CurrentRow.Cells["Num"].Value.ToString();*/
         }
 
         private void dgvMatriculas_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -282,6 +282,22 @@ namespace SistemaEscolar.Formularios
             {
                 MessageBox.Show("Seleccione registro para dar de baja");
             }
+        }
+
+        private void dgvMatriculaAlumnos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lblNombreA.Text = dgvMatriculaAlumnos.CurrentRow.Cells["Nombres"].Value.ToString();
+            lblApellidoA.Text = dgvMatriculaAlumnos.CurrentRow.Cells["Apellidos"].Value.ToString();
+            lblIAlumno.Text = dgvMatriculaAlumnos.CurrentRow.Cells["Num"].Value.ToString();
+        }
+
+        private void dgvMatriculas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lblIAlumno.Text = dgvMatriculas.CurrentRow.Cells["Codigo"].Value.ToString();
+            lblNombreA.Text = dgvMatriculas.CurrentRow.Cells["Nombre"].Value.ToString();
+            lblApellidoA.Text = dgvMatriculas.CurrentRow.Cells["Apellido"].Value.ToString();
+            lblIdMatricula.Text = dgvMatriculas.CurrentRow.Cells["Codigo Matricula"].Value.ToString();
+            cmbGrupos.Text = dgvMatriculas.CurrentRow.Cells["Grupo"].Value.ToString();
         }
     }
 }
