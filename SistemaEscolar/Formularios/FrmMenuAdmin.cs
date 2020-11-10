@@ -42,19 +42,26 @@ namespace SistemaEscolar.Formularios
 
                 byte[] foto = null;
                 foto = FrmLogin.fotoPerfilProfesor;
-
                 MemoryStream mem = new MemoryStream(foto);
-
                 Bitmap bitmap = new Bitmap(mem);
-
                 pbFotoPerfil.Image = bitmap;
-
             }
             catch (Exception Ex)
             {
-                System.IO.FileStream fs = new System.IO.FileStream("profile.png\\", System.IO.FileMode.Open, System.IO.FileAccess.Read);
-                pbFotoPerfil.Image = System.Drawing.Image.FromStream(fs);
-                fs.Close();
+                try
+                {
+                    if (File.Exists("profile.png"))
+                    {
+                        FileStream fs = new System.IO.FileStream("profile.png", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                        pbFotoPerfil.Image = System.Drawing.Image.FromStream(fs);
+                        fs.Close();
+                    }
+                    
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Error al cargar foto" + Ex.Message);
+                }
                 Console.WriteLine("Error al cargar foto" + Ex.Message);
             }
         }
