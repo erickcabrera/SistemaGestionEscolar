@@ -70,23 +70,6 @@ namespace SistemaEscolar.Formularios
         private void button2_Click(object sender, EventArgs e)
         {
 
-            //string idProfesor = lblidProfesor.Text;
-            //if (lblidProfesor.Text == string.Empty)
-            //{
-            //    MessageBox.Show("Debe llenar todos los campos");
-
-            //}
-            //else
-            //{
-
-            //    Curso curso = new Curso();
-            //    // grupo.Id_Detale = int.Parse(lblidDetalle.Text);
-            //    curso.mostrarCursos_Profesor(int.Parse(lblidProfesor.Text));
-            //    ActualizarDataGrid();
-
-
-
-            //}
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -119,19 +102,14 @@ namespace SistemaEscolar.Formularios
             string idProfesor = lblidProfesor.Text;
             if (lblidProfesor.Text == string.Empty)
             {
-                MessageBox.Show("Debe llenar todos los campos");
-
+                MessageBox.Show("Debe ingresar todos los datos", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-
                 Curso curso = new Curso();
                 // grupo.Id_Detale = int.Parse(lblidDetalle.Text);
                 curso.mostrarCursos_Profesor(int.Parse(lblidProfesor.Text), anio);
                 ActualizarDataGrid();
-
-
-
             }
 
         }

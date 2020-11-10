@@ -66,15 +66,7 @@ namespace SistemaEscolar.Formularios
                 validado = false;
                 errorProvider1.SetError(cmbSeccion, "Debe elegir una seccion");
             }
-
-            //int anio = DateTime.Now.Year;
-            //if (dtpAnio.Value.Year<=anio)
-            //{
-            //    validado = false;
-            //    errorProvider1.SetError(dtpAnio, "Debe elegir un año no mayor al actual");
-            //}
-
-
+            
             return validado;
         }
 
@@ -116,16 +108,22 @@ namespace SistemaEscolar.Formularios
 
         private void FrmDetalleGradoSeccion_Load(object sender, EventArgs e)
         {
-            ActualizarDataGrid();
-            DetalleGrupo detalle = new DetalleGrupo();
-            detalle.llenarComboGrado(cmbGrado);
-            detalle.llenarComboSeccion(cmbSeccion);
-            detalle.llenarComboMaestros(cmbProfesor);
-            lblIdDetalle.Text = "";
-            lblIdGrado.Text = "";
-            lblIdProfesor.Text = "";
-            lblIdSeccion.Text = "";
-
+            try
+            {
+                ActualizarDataGrid();
+                DetalleGrupo detalle = new DetalleGrupo();
+                detalle.llenarComboGrado(cmbGrado);
+                detalle.llenarComboSeccion(cmbSeccion);
+                detalle.llenarComboMaestros(cmbProfesor);
+                lblIdDetalle.Text = "";
+                lblIdGrado.Text = "";
+                lblIdProfesor.Text = "";
+                lblIdSeccion.Text = "";
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Error al mostrar datos " + Ex.Message, "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);;
+            }
         }
 
         private void cmbProfesor_SelectedIndexChanged(object sender, EventArgs e)
@@ -165,7 +163,7 @@ namespace SistemaEscolar.Formularios
             }
             else
             {
-                MessageBox.Show("seleccione una fila por favor");
+                MessageBox.Show("Seleccione una fila por favor", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -180,13 +178,15 @@ namespace SistemaEscolar.Formularios
 
                     if (detalle.EliminarGrupo(int.Parse(lblIdDetalle.Text)) == true)
                     {
-                        MessageBox.Show("El grupo ha sido eliminado correctamente");
+                        MessageBox.Show("El grupo ha sido eliminado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                         ActualizarDataGrid();
                         lblIdDetalle.Text = "";
                     }
                     else
                     {
-                        MessageBox.Show("Error al eliminar el grado");                        
+                        MessageBox.Show("Error al eliminar registro", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                     }
                 }
                 else if (resultado == DialogResult.No)
@@ -198,7 +198,7 @@ namespace SistemaEscolar.Formularios
             }
             else
             {
-                MessageBox.Show("seleccione una fila por favor");
+                MessageBox.Show("Seleccione una fila por favor", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -224,51 +224,52 @@ namespace SistemaEscolar.Formularios
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if(lblIdDetalle.Text != "")
+            if (lblIdDetalle.Text != "")
             {
-                if(lblIdGrado.Text != "")
+                if (lblIdGrado.Text != "")
                 {
-                    if(lblIdProfesor.Text != "")
+                    if (lblIdProfesor.Text != "")
                     {
-                        if(lblIdSeccion.Text != "")
+                        if (lblIdSeccion.Text != "")
                         {
                             try
                             {
                                 DetalleGrupo detalle = new DetalleGrupo();
-                                if(detalle.ModificarCurso(int.Parse(lblIdDetalle.Text), int.Parse(lblIdGrado.Text),int.Parse(lblIdSeccion.Text), int.Parse(lblIdProfesor.Text),int.Parse(dtpAnio.Text))== true)
+                                if (detalle.ModificarCurso(int.Parse(lblIdDetalle.Text), int.Parse(lblIdGrado.Text), int.Parse(lblIdSeccion.Text), int.Parse(lblIdProfesor.Text), int.Parse(dtpAnio.Text)) == true)
                                 {
                                     ActualizarDataGrid();
                                     lblIdDetalle.Text = "";
-                                    MessageBox.Show("Grupo actualizado correctamente");
+                                    MessageBox.Show("Grupo actualizado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Error al actualizar el grupo");
+                                    MessageBox.Show("Error al actualizar el grupo", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
-                               
-                            }catch(Exception ex)
+
+                            }
+                            catch (Exception ex)
                             {
-                                MessageBox.Show(ex.Message);
+                                MessageBox.Show("Error al actualizar el grupo " + ex.Message, "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Debe de seleccionar sección");
+                            MessageBox.Show("Debe de seleccionar sección", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Debe de seleccionar profesor");
+                        MessageBox.Show("Debe de seleccionar profesor", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Debe de seleccionar un grado");
+                    MessageBox.Show("Debe de seleccionar un grado", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Seleccione registro para modificar");
+                MessageBox.Show("Seleccione registro para modificar", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

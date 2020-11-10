@@ -78,7 +78,7 @@ namespace SistemaEscolar.Formularios
             }
             catch (Exception Ex)
             {
-                MessageBox.Show("Error al mostrar datos " + Ex.Message);
+                MessageBox.Show("Error al mostrar datos " + Ex.Message, "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -110,7 +110,7 @@ namespace SistemaEscolar.Formularios
         {
             if (txtGrado.Text == String.Empty)
             {
-                MessageBox.Show("Por favor ingresar todos los datos");
+                MessageBox.Show("Debe ingresar todos los datos", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -121,7 +121,7 @@ namespace SistemaEscolar.Formularios
 
                     if (grado.Agregar(grado.NombreGrado) == true)
                     {
-                        MessageBox.Show("El grado ha sido agregado correctamente");
+                        MessageBox.Show("El grado ha sido agregado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ActualizarDataGrid();
                         Limpiar();
                         btnEliminar.Enabled = false;
@@ -130,12 +130,12 @@ namespace SistemaEscolar.Formularios
                     }
                     else
                     {
-                        MessageBox.Show("Error al agregar el grado");
+                        MessageBox.Show("Error al agregar el grado", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception Ex)
                 {
-                    MessageBox.Show(Ex.Message);
+                    MessageBox.Show("Error al agregar el grado " + Ex.Message, "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -156,7 +156,7 @@ namespace SistemaEscolar.Formularios
             }
             else
             {
-                MessageBox.Show("seleccione una fila por favor");
+                MessageBox.Show("Seleccione una fila por favor", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -164,7 +164,7 @@ namespace SistemaEscolar.Formularios
         {
             if (txtGrado.Text == String.Empty && lblIdGrado.Text == String.Empty)
             {
-                MessageBox.Show("Por favor ingresar todos los datos");
+                MessageBox.Show("Debe ingresar todos los datos", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -175,7 +175,7 @@ namespace SistemaEscolar.Formularios
                     
                     if (grado.Modificar(grado.NombreGrado,int.Parse(lblIdGrado.Text)) == true)
                     {
-                        MessageBox.Show("El grado ha sido modificado correctamente");
+                        MessageBox.Show("El grado ha sido modificado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ActualizarDataGrid();
                         Limpiar();
                         lblIdGrado.Text = "";
@@ -184,12 +184,12 @@ namespace SistemaEscolar.Formularios
                     }
                     else
                     {
-                        MessageBox.Show("Error al modificar el grado");
+                        MessageBox.Show("Error al modificar el grado", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception Ex)
                 {
-                    MessageBox.Show(Ex.Message);
+                    MessageBox.Show("Error al modificar el grado " + Ex.Message, "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -205,7 +205,7 @@ namespace SistemaEscolar.Formularios
 
                     if (grado.Eliminar(int.Parse(lblIdGrado.Text)) == true)
                     {
-                        MessageBox.Show("El grado ha sido eliminado correctamente");
+                        MessageBox.Show("El grado ha sido eliminado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ActualizarDataGrid();
                         Limpiar();
                         btnEliminar.Enabled = false;
@@ -214,7 +214,7 @@ namespace SistemaEscolar.Formularios
                     }
                     else
                     {
-                        MessageBox.Show("Error al eliminar el grado");
+                        MessageBox.Show("Error al eliminar el grado", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtGrado.Text = "";
                     }
                 }
@@ -227,7 +227,7 @@ namespace SistemaEscolar.Formularios
             }
             else
             {
-                MessageBox.Show("seleccione una fila por favor");
+                MessageBox.Show("Seleccione una fila por favor", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

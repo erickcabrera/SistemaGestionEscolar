@@ -83,9 +83,12 @@ namespace SistemaEscolar.Formularios
             {
                 try
                 {
-                    System.IO.FileStream fs = new System.IO.FileStream("profile.png", System.IO.FileMode.Open, System.IO.FileAccess.Read);
-                    pbFotoPerfil.Image = System.Drawing.Image.FromStream(fs);
-                    fs.Close();
+                    if (File.Exists("profile.png"))
+                    {
+                        FileStream fs = new System.IO.FileStream("profile.png", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                        pbFotoPerfil.Image = System.Drawing.Image.FromStream(fs);
+                        fs.Close();
+                    }
                 }
                 catch (Exception)
                 {
