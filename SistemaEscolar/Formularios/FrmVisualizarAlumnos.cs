@@ -53,23 +53,7 @@ namespace SistemaEscolar.Formularios
 
         private void btnMostrar_Click(object sender, EventArgs e)
         {
-           // string iddet = lblidDetalle.Text;
-           //if(cmbCurso.SelectedIndex==-1 && lblidDetalle.Text==string.Empty)
-           // {
-           //     MessageBox.Show("Debe llenar todos los campos");
 
-           // }
-           // else
-           // {
-
-           //     Grupo grupo = new Grupo();
-           //    // grupo.Id_Detale = int.Parse(lblidDetalle.Text);
-           //     grupo.mostrarAlumnos(int.Parse(lblidDetalle.Text));
-           //     ActualizarDataGrid();
-                
-                    
-                
-           // }
         }
 
         private void FrmVisualizarAlumnos_Load(object sender, EventArgs e)
@@ -96,8 +80,7 @@ namespace SistemaEscolar.Formularios
             int iddet = int.Parse(lblidDetalle.Text);
             if (cmbCurso.SelectedIndex == -1 && lblidDetalle.Text == string.Empty)
             {
-                MessageBox.Show("Debe llenar todos los campos");
-
+                MessageBox.Show("Debe ingresar todos los datos", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {

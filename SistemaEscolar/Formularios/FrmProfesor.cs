@@ -168,7 +168,7 @@ namespace SistemaEscolar.Formularios
                 //creo un objeto de la clase persona y guardo a través de las propiedades 
                 if (txtFoto.Text == "Seleccionar foto...")
                 {
-                    MessageBox.Show("Debe seleccionar una foto");
+                    MessageBox.Show("Debe seleccionar una foto", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -200,7 +200,7 @@ namespace SistemaEscolar.Formularios
 
                         if (profesor.Agregar(profesor.Nombres, profesor.Apellidos, profesor.FechaNac, profesor.Sexo, profesor.Telefono, profesor.Direccion,  profesor.Foto, profesor.Dui, profesor.Nit, profesor.Correo, profesor.NumEscalafon) == true)
                         {
-                            MessageBox.Show("El registro ha sido agregado correctamente");
+                            MessageBox.Show("El registro ha sido agregado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             ActualizarDataGrid();
                             Limpiar();
                             btnEliminarP.Enabled = false;
@@ -209,19 +209,18 @@ namespace SistemaEscolar.Formularios
                         }
                         else
                         {
-                            MessageBox.Show("Error al agregar el registro");
+                            MessageBox.Show("Error al agregar el registro", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     catch (Exception Ex)
                     {
-                        MessageBox.Show("Error al registrar el profesor" + Ex.Message);
+                        MessageBox.Show("Error al registrar el profesor " + Ex.Message, "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Debe llenar todos los campos");
-
+                MessageBox.Show("Debe llenar todos los campos", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -385,7 +384,7 @@ namespace SistemaEscolar.Formularios
             }
             catch (Exception Ex)
             {
-                MessageBox.Show("Error al mostrar datos " + Ex.Message);
+                MessageBox.Show("Error al mostrar datos " + Ex.Message, "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -445,7 +444,7 @@ namespace SistemaEscolar.Formularios
             }
             else
             {
-                MessageBox.Show("seleccione una fila por favor");
+                MessageBox.Show("Seleccione una fila por favor","¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -469,7 +468,7 @@ namespace SistemaEscolar.Formularios
                     }
                     else
                     {
-                        MessageBox.Show("Error al eliminar el alumno");
+                        MessageBox.Show("Error al eliminar el alumno", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else if (resultado == DialogResult.No)
@@ -482,7 +481,7 @@ namespace SistemaEscolar.Formularios
             }
             else
             {
-                MessageBox.Show("seleccione una fila por favor");
+                MessageBox.Show("Seleccione una fila por favor", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -499,7 +498,7 @@ namespace SistemaEscolar.Formularios
             }
             catch (Exception Ex)
             {
-                MessageBox.Show("Error al buscar datos" + Ex.Message);
+                MessageBox.Show("Error al buscar datos" + Ex.Message, "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -543,28 +542,28 @@ namespace SistemaEscolar.Formularios
                         profesor.Foto = (byte[])converter.ConvertTo(pbFotoProfesor.Image, typeof(byte[]));
                     }
                     if (profesor.Modificar(int.Parse(lblIdProfesor.Text), profesor.Nombres, profesor.Apellidos, profesor.FechaNac, profesor.Sexo, profesor.Telefono, profesor.Direccion, profesor.Foto, profesor.Dui, profesor.Nit, profesor.Correo, profesor.NumEscalafon) == true)
-                     {
-                         MessageBox.Show("Los datos del profesor han sido modificados correctamente");
-                         ActualizarDataGrid();
-                         Limpiar();
-                         lblIdProfesor.Text = "";
-                         lblRutaFoto.Text = "";
-                         btnEditarP.Enabled = false;
-                         btnGuardarP.Enabled = true;
-                     }
-                     else
-                     {
-                         MessageBox.Show("Error al modificar el registro");
-                     }
+                    {
+                        MessageBox.Show("Los datos del profesor han sido modificados correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ActualizarDataGrid();
+                        Limpiar();
+                        lblIdProfesor.Text = "";
+                        lblRutaFoto.Text = "";
+                        btnEditarP.Enabled = false;
+                        btnGuardarP.Enabled = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al modificar el registro", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 catch (Exception Ex)
                 {
-                    MessageBox.Show("Error al modificar datos" + Ex.Message);
+                    MessageBox.Show("Error al modificar datos " + Ex.Message, "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Debe ingresar todos los datos o verifique que sus datos esten con el formato correcto");
+                MessageBox.Show("Debe ingresar todos los datos", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

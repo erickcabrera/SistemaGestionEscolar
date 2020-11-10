@@ -68,15 +68,9 @@ namespace SistemaEscolar.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /*BorrarMensaje();
-            if(validarCampos())
-            {
-                MessageBox.Show("Los datos se han ingresado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }*/
-
             if(txtMateria.Text == string.Empty)
             {
-                MessageBox.Show("Por favor ingresar todos los datos");
+                MessageBox.Show("Debe ingresar todos los datos", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -87,7 +81,8 @@ namespace SistemaEscolar.Formularios
 
                     if(materia.Agregar(materia.NombreMateria) == true)
                     {
-                        MessageBox.Show("La materia ha sido agregada correctamente");
+                        MessageBox.Show("ELa materia ha sido agregada correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                         btnEliminarMateria.Enabled = false;
                         btnAgregarMateria.Enabled = true;
                         btnModificarMateria.Enabled = false;
@@ -96,12 +91,13 @@ namespace SistemaEscolar.Formularios
                     }
                     else
                     {
-                        MessageBox.Show("Error al agregar materia");
+                        MessageBox.Show("Error al agregar materia", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                catch(Exception ex)
+                catch(Exception Ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Error al agregar materia " + Ex.Message, "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 }
             }
              
@@ -132,7 +128,7 @@ namespace SistemaEscolar.Formularios
             }
             catch (Exception Ex)
             {
-                MessageBox.Show("Error al mostrar datos " + Ex.Message);
+                MessageBox.Show("Error al mostrar datos " + Ex.Message, "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -140,7 +136,7 @@ namespace SistemaEscolar.Formularios
         {
             if (txtMateria.Text == String.Empty && lblIdMateria.Text == String.Empty)
             {
-                MessageBox.Show("Por favor ingresar todos los datos");
+                MessageBox.Show("Debe ingresar todos los datos", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -151,7 +147,8 @@ namespace SistemaEscolar.Formularios
 
                     if (materia.Modificar(materia.NombreMateria, int.Parse(lblIdMateria.Text)) == true)
                     {
-                        MessageBox.Show("La materia ha sido modificada correctamente");
+                        MessageBox.Show("La materia ha sido modificada correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                         ActualizarDataGrid();
                         Limpiar();
                         lblIdMateria.Text = "";
@@ -160,12 +157,12 @@ namespace SistemaEscolar.Formularios
                     }
                     else
                     {
-                        MessageBox.Show("Error al modificar la materia");
+                        MessageBox.Show("Error al modificar materia", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception Ex)
                 {
-                    MessageBox.Show(Ex.Message);
+                    MessageBox.Show("Error al modificar materia " + Ex.Message, "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -186,7 +183,7 @@ namespace SistemaEscolar.Formularios
             }
             else
             {
-                MessageBox.Show("seleccione una fila por favor");
+                MessageBox.Show("Seleccione una fila por favor", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -220,7 +217,7 @@ namespace SistemaEscolar.Formularios
 
                     if (materia.Eliminar(int.Parse(lblIdMateria.Text)) == true)
                     {
-                        MessageBox.Show("El grado ha sido eliminado correctamente");
+                        MessageBox.Show("El grado ha sido eliminado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ActualizarDataGrid();
                         Limpiar();
                         btnEliminarMateria.Enabled = false;
@@ -229,7 +226,7 @@ namespace SistemaEscolar.Formularios
                     }
                     else
                     {
-                        MessageBox.Show("Error al eliminar el grado");
+                        MessageBox.Show("Error al eliminar el grado", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtMateria.Text = "";
                     }
                 }
@@ -242,7 +239,7 @@ namespace SistemaEscolar.Formularios
             }
             else
             {
-                MessageBox.Show("seleccione una fila por favor");
+                MessageBox.Show("Seleccione una fila por favor", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

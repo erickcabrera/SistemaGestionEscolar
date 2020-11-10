@@ -80,11 +80,6 @@ namespace SistemaEscolar.Formularios
 
         private void btnAsignar_Click(object sender, EventArgs e)
         {
-            /*BorrarMensaje();
-            if (validarCampos())
-            {
-                MessageBox.Show("Los datos se han ingresado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }*/
             if(lblIdMateria.Text != "")
             {
                 if(lblDetalle.Text != "")
@@ -100,7 +95,8 @@ namespace SistemaEscolar.Formularios
 
                             if(curso.agregarCurso(curso.Id_Detalle_Grado, curso.Id_Materia, curso.Id_Profesor) == true)
                             {
-                                MessageBox.Show("El curso ha sido registrado correctamente");
+                                MessageBox.Show("El curso ha sido registrado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                                 ActualizarDataGridCurso();
                                 ActualizarDataGrid();
                                 lblDetalle.Text = "";
@@ -109,46 +105,55 @@ namespace SistemaEscolar.Formularios
                             }
                             else
                             {
-                                MessageBox.Show("Error al agregar curso");
+                                MessageBox.Show("Error al agregar curso", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
 
 
-                        }catch(Exception Ex)
+                        }
+                        catch(Exception Ex)
                         {
-                            MessageBox.Show(Ex.Message);
+                            MessageBox.Show("Error al agregar curso " + Ex.Message, "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Debe de seleccionar profesor");
+                        MessageBox.Show("Debe de seleccionar profesor", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Debe de seleccionar un detalle de grado");
+                    MessageBox.Show("Debe de seleccionar un grupo", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Debe de seleccionar una materia");
+                MessageBox.Show("Debe de seleccionar una materia", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void FrmCursos_Load(object sender, EventArgs e)
         {
-            Materia objMateria = new Materia();
-            objMateria.llenarComboMaterias(cmbMaterias);
+            try
+            {
+                Materia objMateria = new Materia();
+                objMateria.llenarComboMaterias(cmbMaterias);
 
-            Profesor objProfesor = new Profesor();
-            objProfesor.llenarComboMaestros(cmbProfesor);
+                Profesor objProfesor = new Profesor();
+                objProfesor.llenarComboMaestros(cmbProfesor);
 
-            ActualizarDataGrid();
+                ActualizarDataGrid();
 
-            lblDetalle.Text = "";
-            lblIdMateria.Text = "";
-            lblIdProfesor.Text = "";
-            lblIdCurso.Text = "";
-            ActualizarDataGridCurso();
+                lblDetalle.Text = "";
+                lblIdMateria.Text = "";
+                lblIdProfesor.Text = "";
+                lblIdCurso.Text = "";
+                ActualizarDataGridCurso();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Error cargar datos " + Ex.Message, "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);;
+            }
+            
         }
 
         private void ActualizarDataGrid()
@@ -187,7 +192,7 @@ namespace SistemaEscolar.Formularios
             }
             else
             {
-                MessageBox.Show("seleccione una fila por favor");
+                MessageBox.Show("Seleccione una fila por favor", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -256,13 +261,14 @@ namespace SistemaEscolar.Formularios
 
                     if (curso.EliminarCurso(int.Parse(lblIdCurso.Text)) == true)
                     {
-                        MessageBox.Show("El curso ha sido eliminado correctamente");
+                        MessageBox.Show("El curso ha sido eliminado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                         lblIdCurso.Text = "";
                         ActualizarDataGridCurso();                                              
                     }
                     else
                     {
-                        MessageBox.Show("Error al eliminar el grado");
+                        MessageBox.Show("Error al eliminar el grado", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         lblIdCurso.Text = "";
                     }
                 }
@@ -273,7 +279,7 @@ namespace SistemaEscolar.Formularios
             }
             else
             {
-                MessageBox.Show("seleccione una fila por favor");
+                MessageBox.Show("Seleccione una fila por favor", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -281,7 +287,7 @@ namespace SistemaEscolar.Formularios
         {
             if (lblIdMateria.Text == "" || lblIdProfesor.Text == "" || lblIdCurso.Text == "")
             {
-                MessageBox.Show("Por favor ingresar todos los datos");
+                MessageBox.Show("Debe ingresar todos los datos", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -291,7 +297,8 @@ namespace SistemaEscolar.Formularios
 
                     if (curso.ModificarCurso(int.Parse(lblIdMateria.Text), int.Parse(lblIdProfesor.Text), int.Parse(lblIdCurso.Text)) == true)
                     {
-                        MessageBox.Show("El curso ha sido modificado correctamente");
+                        MessageBox.Show("El curso ha sido modificado correctamente", "¡Enhorabuena!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                         ActualizarDataGridCurso();
                         /* cmbMaterias.SelectedIndex = -1;
                         cmbProfesor.SelectedIndex = -1;
@@ -304,12 +311,12 @@ namespace SistemaEscolar.Formularios
                     }
                     else
                     {
-                        MessageBox.Show("Error al modificar el curso");
+                        MessageBox.Show("Error al modificar el curso", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception Ex)
                 {
-                    MessageBox.Show(Ex.Message);
+                    MessageBox.Show("Error al modificar el curso " + Ex.Message, "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -326,7 +333,7 @@ namespace SistemaEscolar.Formularios
             }
             else
             {
-                MessageBox.Show("seleccione una fila por favor");
+                MessageBox.Show("Seleccione una fila por favor", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
