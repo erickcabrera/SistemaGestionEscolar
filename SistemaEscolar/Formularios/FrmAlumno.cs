@@ -212,6 +212,7 @@ namespace SistemaEscolar.Formularios
             errorProvider1.SetError(mtxtTelefonoA, "");
             errorProvider1.SetError(txtEncargado, "");
             errorProvider1.SetError(rtbDireccionA, "");
+            errorProvider1.SetError(dtpFechanacimiento, "");
         }
 
         private void txtApellidoA_KeyPress(object sender, KeyPressEventArgs e)

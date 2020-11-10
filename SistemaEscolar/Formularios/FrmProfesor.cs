@@ -115,6 +115,7 @@ namespace SistemaEscolar.Formularios
             errorProvider1.SetError(txtEmailP, "");
             errorProvider1.SetError(dtpFechaP, "");
             errorProvider1.SetError(rtbDireccionP, "");
+            errorProvider1.SetError(dtpFechaP, "");
         }
 
         private bool ValidarFechaySexo()
@@ -287,7 +288,7 @@ namespace SistemaEscolar.Formularios
         private void txtEmailP_TextChanged(object sender, EventArgs e)
         {
 
-            correo();
+           
            
             
         }
@@ -567,6 +568,9 @@ namespace SistemaEscolar.Formularios
             }
         }
 
- 
+        private void txtEmailP_Leave(object sender, EventArgs e)
+        {
+            correo();
+        }
     }
 }

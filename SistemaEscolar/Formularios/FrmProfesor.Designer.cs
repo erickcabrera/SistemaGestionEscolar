@@ -264,6 +264,7 @@
             this.txtEmailP.Size = new System.Drawing.Size(258, 27);
             this.txtEmailP.TabIndex = 5;
             this.txtEmailP.TextChanged += new System.EventHandler(this.txtEmailP_TextChanged);
+            this.txtEmailP.Leave += new System.EventHandler(this.txtEmailP_Leave);
             // 
             // dtpFechaP
             // 
