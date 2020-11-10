@@ -192,13 +192,13 @@ namespace SistemaEscolar.Formularios
             }
             else
             {
-                MessageBox.Show("Seleccione una fila por favor", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+              //  MessageBox.Show("Seleccione una fila por favor", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void dgvDetalleGrado_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgvDetalleGrado.SelectedRows.Count > 0)
+            /*if (dgvDetalleGrado.SelectedRows.Count > 0)
             {
                 try
                 {                                       
@@ -208,7 +208,7 @@ namespace SistemaEscolar.Formularios
                 {
                     throw;
                 }
-            }
+            }*/
         }
 
         private void ActualizarDataGridCurso()
@@ -323,6 +323,27 @@ namespace SistemaEscolar.Formularios
 
         private void dgvCurso_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+           /* if (dgvCurso.SelectedRows.Count > 0)
+            {
+                lblIdCurso.Text = dgvCurso.CurrentRow.Cells["Codigo_Curso"].Value.ToString();
+                cmbProfesor.Text = dgvCurso.CurrentRow.Cells["Profesor"].Value.ToString();
+                cmbMaterias.Text = dgvCurso.CurrentRow.Cells["Materia"].Value.ToString();
+                dgvCurso.CurrentCell.Selected = false;
+                dgvCurso.ClearSelection();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila por favor", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }*/
+        }
+
+        private void dgvCurso_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvCurso_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
             if (dgvCurso.SelectedRows.Count > 0)
             {
                 lblIdCurso.Text = dgvCurso.CurrentRow.Cells["Codigo_Curso"].Value.ToString();
@@ -335,6 +356,43 @@ namespace SistemaEscolar.Formularios
             {
                 MessageBox.Show("Seleccione una fila por favor", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void dgvDetalleGrado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvCurso.SelectedRows.Count > 0)
+            {
+                lblIdCurso.Text = dgvCurso.CurrentRow.Cells["Codigo_Curso"].Value.ToString();
+                cmbProfesor.Text = dgvCurso.CurrentRow.Cells["Profesor"].Value.ToString();
+                cmbMaterias.Text = dgvCurso.CurrentRow.Cells["Materia"].Value.ToString();
+                dgvCurso.CurrentCell.Selected = false;
+                dgvCurso.ClearSelection();
+            }
+            else
+            {
+               // MessageBox.Show("Seleccione una fila por favor", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void dgvDetalleGrado_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            /*if (dgvCurso.SelectedRows.Count > 0)
+            {
+                lblIdCurso.Text = dgvCurso.CurrentRow.Cells["Codigo_Curso"].Value.ToString();
+                cmbProfesor.Text = dgvCurso.CurrentRow.Cells["Profesor"].Value.ToString();
+                cmbMaterias.Text = dgvCurso.CurrentRow.Cells["Materia"].Value.ToString();
+                dgvCurso.CurrentCell.Selected = false;
+                dgvCurso.ClearSelection();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila por favor", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }*/
+        }
+
+        private void dgvDetalleGrado_CellContextMenuStripChanged(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

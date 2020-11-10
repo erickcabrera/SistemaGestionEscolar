@@ -17,7 +17,7 @@ namespace SistemaEscolar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmBienvenida());
+            Application.Run(new FrmCursos());
         }
     }
 }

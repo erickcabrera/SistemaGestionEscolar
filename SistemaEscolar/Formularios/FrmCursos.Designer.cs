@@ -121,6 +121,9 @@
             this.dgvDetalleGrado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalleGrado.Size = new System.Drawing.Size(555, 212);
             this.dgvDetalleGrado.TabIndex = 1;
+            this.dgvDetalleGrado.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalleGrado_CellContentDoubleClick);
+            this.dgvDetalleGrado.CellContextMenuStripChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalleGrado_CellContextMenuStripChanged);
+            this.dgvDetalleGrado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalleGrado_CellDoubleClick);
             this.dgvDetalleGrado.SelectionChanged += new System.EventHandler(this.dgvDetalleGrado_SelectionChanged);
             this.dgvDetalleGrado.DoubleClick += new System.EventHandler(this.dgvDetalleGrado_DoubleClick);
             // 
@@ -193,7 +196,9 @@
             this.dgvCurso.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCurso.Size = new System.Drawing.Size(569, 189);
             this.dgvCurso.TabIndex = 1;
+            this.dgvCurso.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCurso_CellClick);
             this.dgvCurso.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCurso_CellContentClick);
+            this.dgvCurso.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCurso_CellDoubleClick);
             this.dgvCurso.SelectionChanged += new System.EventHandler(this.dgvCurso_SelectionChanged);
             this.dgvCurso.DoubleClick += new System.EventHandler(this.dgvCurso_DoubleClick);
             // 
