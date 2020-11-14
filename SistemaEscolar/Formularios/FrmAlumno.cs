@@ -586,5 +586,55 @@ namespace SistemaEscolar.Formularios
                 MessageBox.Show("Debe llenar todos los campos", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void txtApellidoA_Leave(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(txtApellidoA, "");
+        }
+
+        private void txtNombreA_Leave(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(txtNombreA, "");
+        }
+
+        private void txtPadre_Leave(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(txtPadre, "");
+        }
+
+        private void txtMadre_Leave(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(txtMadre, "");
+        }
+
+        private void txtEncargado_Leave(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(txtEncargado, "");
+        }
+
+        private void dtpFechanacimiento_Leave(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(dtpFechanacimiento, "");
+        }
+
+        private void mtxtNIEA_Leave(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(mtxtNIEA, "");
+        }
+
+        private void mtxtNumPartidaA_Leave(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(mtxtNumPartidaA, "");
+        }
+
+        private void mtxtTelefonoA_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void mtxtTelefonoA_Leave(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(mtxtTelefonoA, "");
+        }
     }
 }

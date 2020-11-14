@@ -63,6 +63,7 @@
             this.mtxtTelefonoA = new System.Windows.Forms.MaskedTextBox();
             this.dgvDatosAlumnos = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.rtbDireccionA = new System.Windows.Forms.RichTextBox();
             this.lblRutaFoto = new System.Windows.Forms.Label();
             this.pbFotoAlumno = new System.Windows.Forms.PictureBox();
             this.txtFoto = new System.Windows.Forms.Button();
@@ -73,7 +74,6 @@
             this.lblIdAlumno = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.openFileFoto = new System.Windows.Forms.OpenFileDialog();
-            this.rtbDireccionA = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -262,6 +262,7 @@
             this.txtNombreA.Size = new System.Drawing.Size(229, 27);
             this.txtNombreA.TabIndex = 1;
             this.txtNombreA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreA_KeyPress);
+            this.txtNombreA.Leave += new System.EventHandler(this.txtNombreA_Leave);
             // 
             // txtApellidoA
             // 
@@ -272,6 +273,7 @@
             this.txtApellidoA.Size = new System.Drawing.Size(229, 27);
             this.txtApellidoA.TabIndex = 2;
             this.txtApellidoA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidoA_KeyPress);
+            this.txtApellidoA.Leave += new System.EventHandler(this.txtApellidoA_Leave);
             // 
             // txtPadre
             // 
@@ -282,6 +284,7 @@
             this.txtPadre.Size = new System.Drawing.Size(229, 27);
             this.txtPadre.TabIndex = 7;
             this.txtPadre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPadre_KeyPress);
+            this.txtPadre.Leave += new System.EventHandler(this.txtPadre_Leave);
             // 
             // txtMadre
             // 
@@ -292,6 +295,7 @@
             this.txtMadre.Size = new System.Drawing.Size(229, 27);
             this.txtMadre.TabIndex = 8;
             this.txtMadre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMadre_KeyPress);
+            this.txtMadre.Leave += new System.EventHandler(this.txtMadre_Leave);
             // 
             // txtEncargado
             // 
@@ -302,6 +306,7 @@
             this.txtEncargado.Size = new System.Drawing.Size(229, 27);
             this.txtEncargado.TabIndex = 9;
             this.txtEncargado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEncargado_KeyPress);
+            this.txtEncargado.Leave += new System.EventHandler(this.txtEncargado_Leave);
             // 
             // dtpFechanacimiento
             // 
@@ -310,6 +315,7 @@
             this.dtpFechanacimiento.Name = "dtpFechanacimiento";
             this.dtpFechanacimiento.Size = new System.Drawing.Size(229, 20);
             this.dtpFechanacimiento.TabIndex = 5;
+            this.dtpFechanacimiento.Leave += new System.EventHandler(this.dtpFechanacimiento_Leave);
             // 
             // btnGuardarA
             // 
@@ -401,6 +407,7 @@
             this.mtxtNIEA.Name = "mtxtNIEA";
             this.mtxtNIEA.Size = new System.Drawing.Size(229, 27);
             this.mtxtNIEA.TabIndex = 3;
+            this.mtxtNIEA.Leave += new System.EventHandler(this.mtxtNIEA_Leave);
             // 
             // mtxtNumPartidaA
             // 
@@ -410,6 +417,7 @@
             this.mtxtNumPartidaA.Name = "mtxtNumPartidaA";
             this.mtxtNumPartidaA.Size = new System.Drawing.Size(229, 27);
             this.mtxtNumPartidaA.TabIndex = 4;
+            this.mtxtNumPartidaA.Leave += new System.EventHandler(this.mtxtNumPartidaA_Leave);
             // 
             // mtxtTelefonoA
             // 
@@ -419,6 +427,8 @@
             this.mtxtTelefonoA.Name = "mtxtTelefonoA";
             this.mtxtTelefonoA.Size = new System.Drawing.Size(229, 27);
             this.mtxtTelefonoA.TabIndex = 6;
+            this.mtxtTelefonoA.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtxtTelefonoA_MaskInputRejected);
+            this.mtxtTelefonoA.Leave += new System.EventHandler(this.mtxtTelefonoA_Leave);
             // 
             // dgvDatosAlumnos
             // 
@@ -474,6 +484,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(515, 607);
             this.panel2.TabIndex = 41;
+            // 
+            // rtbDireccionA
+            // 
+            this.rtbDireccionA.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbDireccionA.Location = new System.Drawing.Point(276, 437);
+            this.rtbDireccionA.MaxLength = 100;
+            this.rtbDireccionA.Name = "rtbDireccionA";
+            this.rtbDireccionA.Size = new System.Drawing.Size(229, 48);
+            this.rtbDireccionA.TabIndex = 49;
+            this.rtbDireccionA.Text = "";
             // 
             // lblRutaFoto
             // 
@@ -582,16 +602,6 @@
             // openFileFoto
             // 
             this.openFileFoto.FileName = "openFileDialog1";
-            // 
-            // rtbDireccionA
-            // 
-            this.rtbDireccionA.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbDireccionA.Location = new System.Drawing.Point(276, 437);
-            this.rtbDireccionA.MaxLength = 100;
-            this.rtbDireccionA.Name = "rtbDireccionA";
-            this.rtbDireccionA.Size = new System.Drawing.Size(229, 48);
-            this.rtbDireccionA.TabIndex = 49;
-            this.rtbDireccionA.Text = "";
             // 
             // FrmAlumno
             // 
