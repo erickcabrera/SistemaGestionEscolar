@@ -199,7 +199,7 @@ namespace SistemaEscolar.Clases
             return false;
         }
 
-        public DataTable mostrarCursos_Profesor(int idProfesor, int anio)
+        public DataTable mostrarCursos_Profesor(int idProfesor, string anio)
         {
             DataTable tabla = new DataTable();
             try

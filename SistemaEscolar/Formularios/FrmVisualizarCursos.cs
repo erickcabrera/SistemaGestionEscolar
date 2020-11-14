@@ -52,14 +52,13 @@ namespace SistemaEscolar.Formularios
             string cadena = FrmLogin.nombreProfesor;
             lblidProfesor.Text = FrmLogin.idProfesor.ToString();
 
-            MessageBox.Show(cadena + lblidProfesor.Text);
 
             Curso curso = new Curso();
             curso.obtenerCodigoProfesor(lblidProfesor,cadena);
 
             lblidProfesor.Visible = false;
         }
-        private void ActualizarDataGrid(int idProfesor, int anio)
+        private void ActualizarDataGrid(int idProfesor, string anio)
         {
             //int anio = dateTimePicker1.Value.Year;
             Curso curso = new Curso();
@@ -99,7 +98,7 @@ namespace SistemaEscolar.Formularios
         {
             try
             {
-                int anio = dateTimePicker1.Value.Year;
+                string anio = Convert.ToString(dateTimePicker1.Value.Year);
 
                 string idProfesor = lblidProfesor.Text;
                 if (lblidProfesor.Text == string.Empty)
