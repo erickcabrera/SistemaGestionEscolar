@@ -200,11 +200,14 @@
             this.dgvDetalles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalles.Location = new System.Drawing.Point(461, 94);
+            this.dgvDetalles.MultiSelect = false;
             this.dgvDetalles.Name = "dgvDetalles";
+            this.dgvDetalles.ReadOnly = true;
             this.dgvDetalles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalles.Size = new System.Drawing.Size(471, 232);
             this.dgvDetalles.TabIndex = 3;
             this.dgvDetalles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalles_CellContentClick);
+            this.dgvDetalles.DoubleClick += new System.EventHandler(this.dgvDetalles_DoubleClick);
             // 
             // btnAgregar
             // 
@@ -246,34 +249,37 @@
             // lblIdProfesor
             // 
             this.lblIdProfesor.AutoSize = true;
-            this.lblIdProfesor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblIdProfesor.Location = new System.Drawing.Point(424, 184);
+            this.lblIdProfesor.ForeColor = System.Drawing.Color.Black;
+            this.lblIdProfesor.Location = new System.Drawing.Point(411, 207);
             this.lblIdProfesor.Name = "lblIdProfesor";
-            this.lblIdProfesor.Size = new System.Drawing.Size(35, 13);
+            this.lblIdProfesor.Size = new System.Drawing.Size(45, 13);
             this.lblIdProfesor.TabIndex = 5;
-            this.lblIdProfesor.Text = "label6";
+            this.lblIdProfesor.Text = "profesor";
+            this.lblIdProfesor.Visible = false;
             this.lblIdProfesor.Click += new System.EventHandler(this.lblIdProfesor_Click);
             // 
             // lblIdSeccion
             // 
             this.lblIdSeccion.AutoSize = true;
-            this.lblIdSeccion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblIdSeccion.Location = new System.Drawing.Point(424, 139);
+            this.lblIdSeccion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblIdSeccion.Location = new System.Drawing.Point(411, 164);
             this.lblIdSeccion.Name = "lblIdSeccion";
-            this.lblIdSeccion.Size = new System.Drawing.Size(35, 13);
+            this.lblIdSeccion.Size = new System.Drawing.Size(44, 13);
             this.lblIdSeccion.TabIndex = 6;
-            this.lblIdSeccion.Text = "label7";
+            this.lblIdSeccion.Text = "seccion";
+            this.lblIdSeccion.Visible = false;
             this.lblIdSeccion.Click += new System.EventHandler(this.lblIdSeccion_Click);
             // 
             // lblIdGrado
             // 
             this.lblIdGrado.AutoSize = true;
-            this.lblIdGrado.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblIdGrado.Location = new System.Drawing.Point(420, 103);
+            this.lblIdGrado.ForeColor = System.Drawing.Color.Black;
+            this.lblIdGrado.Location = new System.Drawing.Point(421, 110);
             this.lblIdGrado.Name = "lblIdGrado";
-            this.lblIdGrado.Size = new System.Drawing.Size(35, 13);
+            this.lblIdGrado.Size = new System.Drawing.Size(34, 13);
             this.lblIdGrado.TabIndex = 7;
-            this.lblIdGrado.Text = "label8";
+            this.lblIdGrado.Text = "grado";
+            this.lblIdGrado.Visible = false;
             this.lblIdGrado.Click += new System.EventHandler(this.lblIdGrado_Click);
             // 
             // lblIdDetalle

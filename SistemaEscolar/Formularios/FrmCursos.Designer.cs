@@ -121,8 +121,6 @@
             this.dgvDetalleGrado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalleGrado.Size = new System.Drawing.Size(555, 212);
             this.dgvDetalleGrado.TabIndex = 1;
-            this.dgvDetalleGrado.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalleGrado_CellContentDoubleClick);
-            this.dgvDetalleGrado.CellContextMenuStripChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalleGrado_CellContextMenuStripChanged);
             this.dgvDetalleGrado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalleGrado_CellDoubleClick);
             this.dgvDetalleGrado.SelectionChanged += new System.EventHandler(this.dgvDetalleGrado_SelectionChanged);
             this.dgvDetalleGrado.DoubleClick += new System.EventHandler(this.dgvDetalleGrado_DoubleClick);

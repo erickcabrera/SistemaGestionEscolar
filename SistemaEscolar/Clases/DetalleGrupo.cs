@@ -119,17 +119,17 @@ namespace SistemaEscolar.Clases
             }
         }
 
-        public void obtenerCodigoProfesor(Label nombreL, string nombre, string apellido)
+        public void obtenerCodigoProfesor(Label nombreL, string nombreProfesor)
         {
             try
             {
+                
                 SqlDataReader leer = null;
                 SqlCommand comando = new SqlCommand();
                 comando.Connection = this.Conectar();
                 comando.CommandText = "ps_obtener_idProfesor";
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@nombreProfesor", nombre);
-                comando.Parameters.AddWithValue("@ApellidoProfesor", apellido);
+                comando.Parameters.AddWithValue("@nombreProfesor", nombreProfesor.Trim().ToUpper());
                 leer = comando.ExecuteReader();
                 while (leer.Read())
                 {

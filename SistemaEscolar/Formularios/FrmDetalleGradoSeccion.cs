@@ -128,12 +128,11 @@ namespace SistemaEscolar.Formularios
 
         private void cmbProfesor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string cadena = cmbProfesor.SelectedItem.ToString();
-            char delimitador = ' ';
-            string[] trozos = cadena.Split(delimitador);
+            string nombreProfesor = cmbProfesor.Text;
+
 
             DetalleGrupo detalle = new DetalleGrupo();
-            detalle.obtenerCodigoProfesor(lblIdProfesor, trozos[0], trozos[1]);
+            detalle.obtenerCodigoProfesor(lblIdProfesor, nombreProfesor);
         }
 
         private void cmbSeccion_SelectedIndexChanged(object sender, EventArgs e)
@@ -152,19 +151,7 @@ namespace SistemaEscolar.Formularios
 
         private void dgvDetalles_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvDetalles.SelectedRows.Count > 0)
-            {                
-                lblIdDetalle.Text = dgvDetalles.CurrentRow.Cells["Codigo_Grupo"].Value.ToString();
-                cmbGrado.Text = dgvDetalles.CurrentRow.Cells["Grado"].Value.ToString();
-                cmbProfesor.Text = dgvDetalles.CurrentRow.Cells["Profesor_Encargado"].Value.ToString();
-                cmbSeccion.Text = dgvDetalles.CurrentRow.Cells["Seccion"].Value.ToString();                
-                dgvDetalles.CurrentCell.Selected = false;
-                dgvDetalles.ClearSelection();
-            }
-            else
-            {
-                MessageBox.Show("Seleccione una fila por favor", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+           
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -270,6 +257,24 @@ namespace SistemaEscolar.Formularios
             else
             {
                 MessageBox.Show("Seleccione registro para modificar", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void dgvDetalles_DoubleClick(object sender, EventArgs e)
+        {
+            if (dgvDetalles.SelectedRows.Count > 0)
+            {
+                lblIdDetalle.Text = dgvDetalles.CurrentRow.Cells["Codigo_Grupo"].Value.ToString();
+                cmbGrado.Text = dgvDetalles.CurrentRow.Cells["Grado"].Value.ToString();
+                cmbProfesor.Text = dgvDetalles.CurrentRow.Cells["Profesor_Encargado"].Value.ToString();
+                cmbSeccion.Text = dgvDetalles.CurrentRow.Cells["Seccion"].Value.ToString();
+
+                dgvDetalles.CurrentCell.Selected = false;
+                dgvDetalles.ClearSelection();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila por favor", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

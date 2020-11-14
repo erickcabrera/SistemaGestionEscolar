@@ -50,18 +50,18 @@ namespace SistemaEscolar.Formularios
         private void FrmVisualizarCursos_Load(object sender, EventArgs e)
         {
             string cadena = FrmLogin.nombreProfesor;
-            char delimitador = ' ';
-            string[] trozos = cadena.Split(delimitador);
+            lblidProfesor.Text = FrmLogin.idProfesor.ToString();
+
+            MessageBox.Show(cadena + lblidProfesor.Text);
 
             Curso curso = new Curso();
-            curso.obtenerCodigoProfesor(lblidProfesor,trozos[0] , trozos[1] );
+            curso.obtenerCodigoProfesor(lblidProfesor,cadena);
 
             lblidProfesor.Visible = false;
-
         }
-        private void ActualizarDataGrid()
+        private void ActualizarDataGrid(int idProfesor, int anio)
         {
-            int anio = dateTimePicker1.Value.Year;
+            //int anio = dateTimePicker1.Value.Year;
             Curso curso = new Curso();
             dgvCursos.DataSource = null;
             dgvCursos.DataSource = curso.mostrarCursos_Profesor(int.Parse(lblidProfesor.Text), anio);
@@ -97,21 +97,29 @@ namespace SistemaEscolar.Formularios
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            int anio = dateTimePicker1.Value.Year;
-
-            string idProfesor = lblidProfesor.Text;
-            if (lblidProfesor.Text == string.Empty)
+            try
             {
-                MessageBox.Show("Debe ingresar todos los datos", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                Curso curso = new Curso();
-                // grupo.Id_Detale = int.Parse(lblidDetalle.Text);
-                curso.mostrarCursos_Profesor(int.Parse(lblidProfesor.Text), anio);
-                ActualizarDataGrid();
-            }
+                int anio = dateTimePicker1.Value.Year;
 
+                string idProfesor = lblidProfesor.Text;
+                if (lblidProfesor.Text == string.Empty)
+                {
+                    MessageBox.Show("Debe ingresar todos los datos", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    Curso curso = new Curso();
+                    // grupo.Id_Detale = int.Parse(lblidDetalle.Text);
+                    //curso.mostrarCursos_Profesor(int.Parse(lblidProfesor.Text), anio);
+                    ActualizarDataGrid(int.Parse(lblidProfesor.Text), anio);
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Error " + Ex.Message);
+            }
+            
         }
     }
 }

@@ -172,13 +172,15 @@ namespace SistemaEscolar.Formularios
         }
 
         private void cmbProfesor_SelectedIndexChanged(object sender, EventArgs e)
-        {            
-            string cadena = cmbProfesor.SelectedItem.ToString();
+        {
+            /*string cadena = cmbProfesor.SelectedItem.ToString();
             char delimitador = ' ';
-            string[] trozos = cadena.Split(delimitador);
+            string[] trozos = cadena.Split(delimitador);*/
+
+            string nombreProfesor = cmbProfesor.Text;
             
             Curso curso = new Curso();
-            curso.obtenerCodigoProfesor(lblIdProfesor, trozos[0], trozos[1]);
+            curso.obtenerCodigoProfesor(lblIdProfesor, nombreProfesor);
         }
 
         private void dgvDetalleGrado_DoubleClick(object sender, EventArgs e)
