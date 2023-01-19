@@ -25,3 +25,4 @@ Esta licencia permite que otros distribuyan, mezclen, adapten y construyan sobre
 
 - [Link manuales e instalador] https://drive.google.com/file/d/1A-Px3hiDC8M0uCYtToZMRf5T-Re5Xch5/view
 - [Repositorio base de datos] https://github.com/erickcabrera/BaseDatosSistemaEscolar
+- [Interfaz gráfica del programa] https://drive.google.com/drive/folders/1BkXAsFnv8Q4NsFieELuLfWLdnFHMTGAm?usp=sharing
